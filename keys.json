@@ -10,6 +10,17 @@
       "agent": true,
       "ownerIv": "RKGIcxiWjXrwRzv+",
       "ownerData": "LGultbUqmd5S2LyMTTmMdkW3WNnwR0XCgIje9rlg20s+NbadIHwKRjaXm+oCgvPW/obMEjF1LbN5P6wNhCryq8LhXHWj5rzBbzCOqgVAlcJ7FvPm45qeB6xY"
+    },
+    {
+      "id": "2860ca69",
+      "level": 5,
+      "salt": "/KK4s+qY3FixpmFC629uSw==",
+      "iv": "Jp/G0qdJLJrjVQwV",
+      "data": "RzOMZT0MfQgj5gWBoUraJhjbUoXkdIHE9Os5r8eFUplLR2pVbmmE+Mp94hbTLZhywoPDhnSAH0Lq3wYRvjTDaTHmbwW6mOnplF4NHKhK/RAw1MimpG0C4Do9C2wAT8ySKq9rWdDCcXQjsFx1UeZGZDgeUvglSMwh/tky6YvNo7tiGVaLM3befJ12tR+UeHzJmWUYRs+4K31qAn5Jbv4bDBsu8wL7b2DHmOuOpwy0nPo1DQ5rlCP57UTgkcjQOloXlJZykxvo3azfGCoWUazc0ljOQE4AD+sIPLSJ1mzij8IEGOaaBqc9SDjcliE78KEA17ndDigvvD/m7wSEyVWojuhO1Afcoa49hylJlt45jEiv/SoVo7Ip0Y9i0M8Jp5fimT3UcodBoeylNPT6ViVBDfCSr5BYtXL4wVI5cBViyLcLYQaaCJFU",
+      "granted": "2026-11-01",
+      "agent": true,
+      "ownerIv": "PS7ZF08+MMm4h+Cg",
+      "ownerData": "1dMPvM3yoe/ZXsy19CQSSb98SPJdW4/DT/c+oZoFsN0bUQoTN/utMkf3S2n2FtH21I4xVLM04/4L84obIX2AnTGEE3HL99XxQ49fM+bYNIg+1lTM8srFTZ4s"
     }
   ]
 }
