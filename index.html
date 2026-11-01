@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Halcyon Terminal</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap">
+<style>
+/* layout: one locked terminal; login is all you see until a key opens the file list */
+:root {
+  --bg: #020604;
+  --panel: #04100a;
+  --line: #0f4026;
+  --dim: #2b8f58;
+  --green: #45ff98;
+  --glow: rgba(69, 255, 152, .55);
+  --amber: #ffd24a;
+  --red: #ff5468;
+  --cyan: #4dfff0;
+  --display: "VT323", "Share Tech Mono", ui-monospace, monospace;
+  --mono: "Share Tech Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box }
+[hidden] { display: none !important }
+html, body { height: 100% }
+body { background: var(--bg); color: var(--green); font: 400 15px/1.6 var(--mono); text-shadow: 0 0 6px var(--glow);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 50;
+  background: repeating-linear-gradient(0deg, rgba(0,0,0,.28) 0 1px, transparent 1px 3px), radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,.65) 100%) }
+::selection { background: var(--green); color: var(--bg) }
+:focus-visible { outline: 1px solid var(--green); outline-offset: 2px }
+button, input, select, textarea { font: inherit; color: inherit; text-shadow: inherit }
+
+.btn { appearance: none; background: transparent; border: 1px solid var(--green); padding: 8px 14px; cursor: pointer; letter-spacing: .12em; text-transform: uppercase; box-shadow: 0 0 10px -2px var(--glow) inset }
+.btn:hover { background: var(--green); color: var(--bg); text-shadow: none }
+.btn.quiet { border-color: var(--line); box-shadow: none; color: var(--dim) }
+.btn.quiet:hover { border-color: var(--green); color: var(--bg) }
+input, select, textarea { width: 100%; background: var(--panel); border: 1px solid var(--line); padding: 10px 12px; border-radius: 0; caret-color: var(--green) }
+input:focus, select:focus, textarea:focus { border-color: var(--green); outline: none; box-shadow: 0 0 12px -4px var(--glow) }
+textarea { min-height: 220px; resize: vertical; line-height: 1.6 }
+label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 6px }
+
+/* login */
+.login { min-height: 100%; display: grid; place-items: center; padding-block: 40px }
+.gate { width: 100%; max-width: 460px; border: 1px solid var(--line); background: var(--panel); padding: 30px 28px 26px; position: relative; box-shadow: 0 0 40px -18px var(--glow) }
+.gate::before, .gate::after { content: ""; position: absolute; width: 14px; height: 14px; border: 2px solid var(--green) }
+.gate::before { top: -2px; left: -2px; border-right: 0; border-bottom: 0 }
+.gate::after { bottom: -2px; right: -2px; border-left: 0; border-top: 0 }
+.hex { width: 64px; height: 64px; filter: drop-shadow(0 0 8px var(--glow)) }
+.gate h1 { font: 400 54px/.9 var(--display); letter-spacing: .06em; margin: 16px 0 4px }
+.gate .sub { color: var(--dim); letter-spacing: .2em; font-size: 12px; text-transform: uppercase }
+.prompt { margin-top: 28px; display: grid; gap: 10px }
+.keyrow { display: flex; gap: 8px }
+.keyrow input { min-width: 0; letter-spacing: .12em; text-transform: uppercase }
+.msg { min-height: 1.6em; font-size: 13px; color: var(--dim) }
+.msg.bad { color: var(--red); text-shadow: 0 0 6px rgba(255,84,104,.5) }
+.blink::after { content: "_"; animation: blink 1s steps(1) infinite }
+@keyframes blink { 50% { opacity: 0 } }
+
+/* app */
+.app { max-width: 1100px; margin: 0 auto; padding-block: 18px 40px; display: grid; gap: 16px }
+.bar { display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: space-between; align-items: center; border: 1px solid var(--line); background: var(--panel); padding: 10px 14px }
+.bar .name { font: 400 30px/1 var(--display); letter-spacing: .08em }
+.bar .who { color: var(--dim); font-size: 13px; letter-spacing: .1em }
+.bar .who b { color: var(--green); font-weight: 400 }
+.tabs { display: flex; flex-wrap: wrap; gap: 6px }
+.tabs button[aria-selected="true"] { background: var(--green); color: var(--bg); text-shadow: none }
+.view { border: 1px solid var(--line); background: var(--panel); min-height: 420px }
+
+.files { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); min-height: 420px }
+.list { border-right: 1px solid var(--line); display: flex; flex-direction: column; min-width: 0 }
+.list .head { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; border-bottom: 1px solid var(--line); color: var(--dim); font-size: 12px; letter-spacing: .14em }
+.list ul { list-style: none; margin: 0; padding: 0; overflow-y: auto; max-height: 560px }
+.list li button { all: unset; box-sizing: border-box; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 10px; width: 100%; padding: 10px 12px; border-bottom: 1px solid var(--line); cursor: pointer; text-shadow: 0 0 6px var(--glow) }
+.list li button:hover, .list li button[aria-current="true"] { background: rgba(69,255,152,.08) }
+.list li button[aria-current="true"] { box-shadow: 3px 0 0 var(--green) inset }
+.list .it { font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.list .lv { color: var(--dim); font-size: 12px }
+.list .ti { grid-column: 1 / -1; color: var(--dim); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.empty { padding: 28px 16px; color: var(--dim); font-size: 13px }
+
+.doc { padding: 22px 26px 30px; min-width: 0 }
+.doc .meta { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; color: var(--dim); font-size: 13px; letter-spacing: .08em; border-bottom: 1px dashed var(--line); padding-bottom: 14px }
+.doc h2 { font: 400 46px/.95 var(--display); letter-spacing: .04em; margin: 16px 0 4px; overflow-wrap: anywhere }
+.doc h3 { font-size: 15px; font-weight: 400; color: var(--dim); margin: 0 0 18px; letter-spacing: .06em }
+.doc .body { white-space: pre-wrap; overflow-wrap: anywhere; max-width: 72ch }
+.tag { border: 1px solid currentColor; padding: 1px 8px; letter-spacing: .14em; text-transform: uppercase; font-size: 12px }
+.c-Safe { color: var(--green) } .c-Euclid { color: var(--amber) } .c-Keter { color: var(--red) } .c-Thaumiel { color: var(--cyan) } .c-Neutralized, .c-Explained { color: var(--dim) }
+.c-Euclid, .c-Keter, .c-Thaumiel { text-shadow: 0 0 6px currentColor }
+
+.form { padding: 22px 26px 28px; display: grid; gap: 16px; max-width: 760px }
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px }
+.grid2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 160px); gap: 14px }
+.form .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center }
+.note { color: var(--dim); font-size: 13px; margin: 0 }
+
+@media (max-width: 760px) {
+  .files { grid-template-columns: minmax(0, 1fr) }
+  .list { border-right: 0; border-bottom: 1px solid var(--line) }
+  .list ul { max-height: 240px }
+  .grid3, .grid2 { grid-template-columns: minmax(0, 1fr) }
+  .doc, .form { padding: 18px 16px 24px }
+}
+@media (prefers-reduced-motion: reduce) { .blink::after { animation: none } }
+</style>
+<style>body{margin:0}</style>
+</head>
+<body>
+
+
+<section class="login" id="login">
+  <form class="gate" id="gate" novalidate>
+    <svg class="hex" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 3 57 17.5v29L32 61 7 46.5v-29Z" fill="none" stroke="#45ff98" stroke-width="2.5"/><path d="M32 15 47 23.7v16.6L32 49 17 40.3V23.7Z" fill="none" stroke="#45ff98" stroke-width="1.5" opacity=".6"/><circle cx="32" cy="32" r="5" fill="#45ff98"/></svg>
+    <h1>HALCYON</h1>
+    <div class="sub">Site-56 · RAISA secure terminal</div>
+    <div class="prompt">
+      <label for="key">&gt; Access key</label>
+      <div class="keyrow">
+        <input id="key" placeholder="HAL-XXXX-XXXX-XXXX" autocomplete="off" spellcheck="false" autofocus>
+        <button class="btn" type="submit">Enter</button>
+      </div>
+      <div class="msg blink" id="msg" aria-live="polite">Awaiting key</div>
+    </div>
+  </form>
+</section>
+
+<section class="app" id="app" hidden>
+  <header class="bar">
+    <div class="name">HALCYON</div>
+    <div class="who" id="who"></div>
+    <button class="btn quiet" type="button" id="logout">Log out</button>
+  </header>
+  <nav class="tabs" role="tablist">
+    <button class="btn" role="tab" data-tab="files" aria-selected="true">Files</button>
+    <button class="btn" role="tab" data-tab="new" aria-selected="false" id="newtab" hidden>New file</button>
+    <button class="btn" role="tab" data-tab="request" aria-selected="false">Request</button>
+  </nav>
+
+  <div class="view" data-view="files">
+    <div class="files">
+      <div class="list">
+        <div class="head"><span id="filecount">FILES</span><button class="btn quiet" type="button" id="refresh" style="padding:3px 8px;font-size:11px">Refresh</button></div>
+        <ul id="list"></ul>
+      </div>
+      <article class="doc" id="doc"><div class="empty">Select a file.</div></article>
+    </div>
+  </div>
+
+  <div class="view" data-view="new" hidden>
+    <form class="form" id="newform" novalidate>
+      <div class="grid3">
+        <div><label for="nitem">Item</label><input id="nitem" placeholder="SCP-0000" autocomplete="off"></div>
+        <div><label for="ncls">Class</label><select id="ncls"><option>Safe</option><option>Euclid</option><option>Keter</option><option>Thaumiel</option><option>Neutralized</option><option>Explained</option></select></div>
+        <div><label for="nlvl">Level</label><select id="nlvl"></select></div>
+      </div>
+      <div><label for="ntitle">Title</label><input id="ntitle" placeholder="Short description" autocomplete="off"></div>
+      <div><label for="nbody">Contents</label><textarea id="nbody" placeholder="Special containment procedures, description, addenda…"></textarea></div>
+      <div class="row"><button class="btn" type="submit">Transmit</button><p class="note" id="newmsg">Files appear for everyone with that level after a minute or two.</p></div>
+    </form>
+  </div>
+
+  <div class="view" data-view="request" hidden>
+    <form class="form" id="reqform" novalidate>
+      <div class="grid2">
+        <div><label for="ritem">Item</label><input id="ritem" placeholder="SCP-0000" autocomplete="off"></div>
+        <div><label for="rlvl">Level needed</label><select id="rlvl"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option></select></div>
+      </div>
+      <div><label for="rwhy">Reason</label><textarea id="rwhy" style="min-height:120px" placeholder="Why you need access."></textarea></div>
+      <div class="row"><button class="btn" type="submit">Transmit</button><p class="note" id="reqmsg">RAISA reviews every request.</p></div>
+    </form>
+  </div>
+</section>
+
+<script>
+var CONFIG = {
+  webhook: "",
+  writeLevel: 3
+};
+
+(function () {
+  var state = { key: null, id: null, level: 0, secrets: {}, files: [], open: null };
+  var $ = function (id) { return document.getElementById(id) };
+  var enc = new TextEncoder(), dec = new TextDecoder();
+
+  function b64(bytes) { var s = ""; bytes = new Uint8Array(bytes); for (var i = 0; i < bytes.length; i++) s += String.fromCharCode(bytes[i]); return btoa(s) }
+  function unb64(s) { var bin = atob(s), out = new Uint8Array(bin.length); for (var i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i); return out }
+  async function sha8(text) { var d = await crypto.subtle.digest("SHA-256", enc.encode(text)); return Array.prototype.map.call(new Uint8Array(d), function (b) { return b.toString(16).padStart(2, "0") }).join("").slice(0, 8) }
+  async function kek(key, salt) {
+    var base = await crypto.subtle.importKey("raw", enc.encode(key), "PBKDF2", false, ["deriveKey"]);
+    return crypto.subtle.deriveKey({ name: "PBKDF2", salt: unb64(salt), iterations: 200000, hash: "SHA-256" }, base, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
+  }
+  function aes(raw) { return crypto.subtle.importKey("raw", unb64(raw), "AES-GCM", false, ["encrypt", "decrypt"]) }
+  async function open(k, iv, data) { var p = await crypto.subtle.decrypt({ name: "AES-GCM", iv: unb64(iv) }, k, unb64(data)); return JSON.parse(dec.decode(p)) }
+  async function seal(k, value) { var iv = crypto.getRandomValues(new Uint8Array(12)); var c = await crypto.subtle.encrypt({ name: "AES-GCM", iv: iv }, k, enc.encode(JSON.stringify(value))); return { iv: b64(iv), data: b64(c) } }
+  async function getJson(file) { var r = await fetch(file + "?t=" + Date.now(), { cache: "no-store" }); if (!r.ok) throw new Error(file); return r.json() }
+
+  function msg(el, text, bad) { el.textContent = text; el.classList.toggle("bad", !!bad) }
+
+  async function login(key, quiet) {
+    key = key.trim().toUpperCase().replace(/\s+/g, "");
+    var m = $("msg");
+    if (!key) return msg(m, "Enter a key.", true);
+    m.classList.remove("blink"); msg(m, "Verifying…");
+    try {
+      var id = await sha8(key);
+      var keys = (await getJson("keys.json")).keys || [];
+      var entry = keys.find(function (k) { return k.id === id });
+      if (!entry) { m.classList.add("blink"); try { sessionStorage.removeItem("hal") } catch (e) {} return msg(m, quiet ? "Saved key no longer valid. Awaiting key" : "Access denied. Key not recognised.", true) }
+      var granted = await open(await kek(key, entry.salt), entry.iv, entry.data);
+      state.key = key; state.id = id; state.secrets = {};
+      for (var l in granted) state.secrets[l] = await aes(granted[l]);
+      state.level = Math.max.apply(null, Object.keys(granted).map(Number));
+      try { sessionStorage.setItem("hal", key) } catch (e) {}
+      enter();
+    } catch (e) {
+      m.classList.add("blink");
+      msg(m, "Terminal offline. Try again shortly.", true);
+    }
+  }
+
+  function enter() {
+    $("login").hidden = true; $("app").hidden = false;
+    $("who").innerHTML = "LEVEL <b>" + state.level + "</b> · KEY <b>" + state.id + "</b>";
+    var canWrite = state.level >= CONFIG.writeLevel;
+    $("newtab").hidden = !canWrite;
+    var sel = $("nlvl"); sel.innerHTML = "";
+    for (var l = 1; l <= state.level; l++) { var o = document.createElement("option"); o.textContent = l; sel.appendChild(o) }
+    sel.value = String(state.level);
+    tab("files");
+    loadFiles();
+  }
+
+  async function loadFiles() {
+    $("filecount").textContent = "LOADING…";
+    var out = [];
+    try {
+      var files = (await getJson("files.json")).files || [];
+      for (var i = 0; i < files.length; i++) {
+        var f = files[i], k = state.secrets[f.level];
+        if (!k) continue;
+        try { var d = await open(k, f.iv, f.data); d.id = f.id; d.level = f.level; d.added = f.added; out.push(d) } catch (e) {}
+      }
+    } catch (e) { $("filecount").textContent = "OFFLINE"; return }
+    out.sort(function (a, b) { return String(a.item).localeCompare(String(b.item), undefined, { numeric: true }) });
+    state.files = out;
+    $("filecount").textContent = out.length + (out.length === 1 ? " FILE" : " FILES");
+    var list = $("list"); list.innerHTML = "";
+    if (!out.length) { list.innerHTML = '<li class="empty">No files at your level yet.</li>'; $("doc").innerHTML = '<div class="empty">Nothing to show.</div>'; return }
+    out.forEach(function (f) {
+      var li = document.createElement("li"), b = document.createElement("button");
+      b.type = "button"; b.dataset.id = f.id;
+      b.innerHTML = '<span class="it"></span><span class="lv"></span><span class="ti"></span>';
+      b.querySelector(".it").textContent = f.item;
+      b.querySelector(".lv").textContent = "L" + f.level;
+      b.querySelector(".ti").textContent = f.title || f.cls;
+      b.addEventListener("click", function () { show(f.id) });
+      li.appendChild(b); list.appendChild(li);
+    });
+    show(state.open && out.some(function (f) { return f.id === state.open }) ? state.open : out[0].id);
+  }
+
+  function show(id) {
+    var f = state.files.find(function (x) { return x.id === id }); if (!f) return;
+    state.open = id;
+    document.querySelectorAll("#list button").forEach(function (b) { b.setAttribute("aria-current", String(b.dataset.id === id)) });
+    var doc = $("doc"); doc.innerHTML = "";
+    var meta = document.createElement("div"); meta.className = "meta";
+    var tag = document.createElement("span"); tag.className = "tag c-" + f.cls; tag.textContent = f.cls;
+    meta.appendChild(tag);
+    [["LEVEL " + f.level], ["FILE " + f.id], [f.added ? "FILED " + f.added : ""]].forEach(function (t) { if (t[0]) { var s = document.createElement("span"); s.textContent = t[0]; meta.appendChild(s) } });
+    var h2 = document.createElement("h2"); h2.textContent = f.item;
+    var h3 = document.createElement("h3"); h3.textContent = f.title || "";
+    var body = document.createElement("div"); body.className = "body"; body.textContent = f.body;
+    doc.appendChild(meta); doc.appendChild(h2); if (f.title) doc.appendChild(h3); doc.appendChild(body);
+  }
+
+  function tab(name) {
+    document.querySelectorAll(".tabs button").forEach(function (b) { b.setAttribute("aria-selected", String(b.dataset.tab === name)) });
+    document.querySelectorAll(".view").forEach(function (v) { v.hidden = v.dataset.view !== name });
+  }
+
+  async function transmit(type, secretLevel, inner, note) {
+    if (!CONFIG.webhook) return msg(note, "Uploads aren't set up on this terminal yet.", true);
+    var k = state.secrets[secretLevel]; if (!k) return msg(note, "Your key can't do that.", true);
+    msg(note, "Transmitting…");
+    try {
+      var sealed = await seal(k, inner);
+      var body = new FormData();
+      body.append("payload_json", JSON.stringify({ content: "" }));
+      body.append("files[0]", new Blob([JSON.stringify({ v: 1, type: type, by: state.id, iv: sealed.iv, data: sealed.data })], { type: "application/json" }), "submission.json");
+      var r = await fetch(CONFIG.webhook, { method: "POST", body: body });
+      if (!r.ok) throw new Error(r.status);
+      return true;
+    } catch (e) { msg(note, "Transmission failed. Try again.", true); return false }
+  }
+
+  $("gate").addEventListener("submit", function (e) { e.preventDefault(); login($("key").value, false) });
+  $("logout").addEventListener("click", function () { try { sessionStorage.removeItem("hal") } catch (e) {} location.reload() });
+  $("refresh").addEventListener("click", loadFiles);
+  document.querySelectorAll(".tabs button").forEach(function (b) { b.addEventListener("click", function () { tab(b.dataset.tab) }) });
+
+  $("newform").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    var note = $("newmsg");
+    var file = { item: $("nitem").value.trim(), cls: $("ncls").value, level: Number($("nlvl").value), title: $("ntitle").value.trim(), body: $("nbody").value.trim() };
+    if (!file.item || !file.body) return msg(note, "An item and contents are required.", true);
+    if (await transmit("file", CONFIG.writeLevel, { by: state.id, file: file }, note)) {
+      msg(note, "Transmitted. " + file.item + " appears in a minute or two. Use Refresh.");
+      $("newform").reset(); $("nlvl").value = String(state.level);
+    }
+  });
+
+  $("reqform").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    var note = $("reqmsg");
+    var item = $("ritem").value.trim(), why = $("rwhy").value.trim();
+    if (!item || !why) return msg(note, "An item and a reason are required.", true);
+    if (await transmit("request", 1, { by: state.id, item: item, level: $("rlvl").value, reason: why }, note)) {
+      msg(note, "Request sent to RAISA."); $("reqform").reset();
+    }
+  });
+
+  try { var saved = sessionStorage.getItem("hal"); if (saved) login(saved, true) } catch (e) {}
+})();
+</script>
+
+</body>
+</html>
