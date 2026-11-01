@@ -19,6 +19,7 @@ const e = payload.entry || {};
 if (action === "grant-key") {
   const data = load("keys.json", "keys");
   const entry = { id: id(e.id), level: level(e.level), salt: blob(e.salt, "salt"), iv: blob(e.iv, "iv"), data: blob(e.data, "data"), granted: new Date().toISOString().slice(0, 10) };
+  if (e.ownerIv || e.ownerData) { entry.ownerIv = blob(e.ownerIv, "ownerIv"); entry.ownerData = blob(e.ownerData, "ownerData"); }
   if (data.keys.some((k) => k.id === entry.id)) throw new Error("key id already exists");
   data.keys.push(entry);
   save("keys.json", data);
