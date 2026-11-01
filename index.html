@@ -108,7 +108,32 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .14e
 .gallery img { display: block; width: 100%; max-height: 320px; object-fit: contain; filter: saturate(.85) }
 .gallery figcaption { padding: 6px 10px; font-size: 12px; color: var(--dim); border-top: 1px solid var(--line) }
 .gallery .wait { padding: 40px 10px; text-align: center; color: var(--dim); font-size: 12px }
+.rich strong { color: #b6ffd6 } .rich u { text-underline-offset: 3px } .rich s { opacity: .75 }
+.box .body { display: flow-root }
+.fig { margin: 4px 0 12px; border: 1px solid var(--line); background: #000; max-width: 100% }
+.fig img { display: block; width: 100%; height: auto }
+.fig figcaption { padding: 6px 10px; font-size: 12px; color: var(--dim); border-top: 1px solid var(--line) }
+.fig .wait { padding: 34px 10px; text-align: center; color: var(--dim); font-size: 12px }
+.fig .blocked { aspect-ratio: 4 / 3; display: grid; place-items: center; text-align: center; color: var(--dim); font-size: 12px; letter-spacing: .14em; background: repeating-linear-gradient(-45deg, #000 0 10px, #03110a 10px 20px) }
+.fig-left { float: left; margin-right: 16px } .fig-right { float: right; margin-left: 16px } .fig-center { margin-left: auto; margin-right: auto }
+.fig-s { width: 25% } .fig-m { width: 40% } .fig-l { width: 60% } .fig-full { width: 100% }
 .sec { border: 1px solid var(--line); padding: 10px; display: grid; gap: 8px }
+.sec .tools { display: flex; flex-wrap: wrap; gap: 4px }
+.tb { appearance: none; background: transparent; border: 1px solid var(--line); color: var(--green); min-width: 30px; padding: 3px 8px; cursor: pointer; font: inherit; font-size: 13px; text-shadow: inherit }
+.tb:hover { border-color: var(--green) }
+.tb.red { color: var(--amber); border-color: rgba(255,210,74,.35) }
+.float { position: fixed; z-index: 60; display: flex; gap: 3px; padding: 4px; background: var(--bg); border: 1px solid var(--green); box-shadow: 0 0 18px -6px var(--glow) }
+.float .sep { width: 1px; background: var(--line); margin: 0 3px }
+.tray { display: grid; gap: 8px }
+.tile { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 10px; border: 1px solid var(--line); padding: 8px; align-items: start }
+.tile img { width: 72px; height: 72px; object-fit: cover; border: 1px solid var(--line) }
+.tile .opts { display: flex; flex-wrap: wrap; gap: 6px; align-items: center }
+.tile .opts select { width: auto; padding: 4px 6px }
+.tile .opts input { flex: 1; min-width: 140px; padding: 4px 8px }
+.tile .n { color: var(--amber); font-size: 13px; text-shadow: none }
+.drop { border: 1px dashed var(--line); padding: 10px 12px; color: var(--dim); font-size: 13px; text-align: center }
+.drop.over { border-color: var(--green); color: var(--green) }
+.preview.doc { border: 1px dashed var(--line); padding: 18px 20px 22px; max-width: none }
 .sec .top { display: flex; gap: 8px }
 .sec .top input { flex: 1; min-width: 0 }
 .sec textarea { min-height: 120px }
@@ -128,6 +153,7 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .14e
 .st-approved { color: var(--green) } .st-denied { color: var(--red) } .st-pending { color: var(--amber) }
 .btn.ok:hover { background: var(--green) } .btn.no { border-color: var(--red); color: var(--red) } .btn.no:hover { background: var(--red); color: var(--bg) }
 
+@media (max-width: 560px) { .fig-left, .fig-right { float: none; margin: 4px 0 12px } .fig-s, .fig-m, .fig-l { width: 100% } }
 @media (max-width: 760px) {
   .files { grid-template-columns: minmax(0, 1fr) }
   .list { border-right: 0; border-bottom: 1px solid var(--line) }
@@ -189,10 +215,15 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .14e
         <div><label for="nlvl">Level</label><select id="nlvl"></select></div>
       </div>
       <div><label for="ntitle">Title</label><input id="ntitle" placeholder="Short description" autocomplete="off"></div>
+      <p class="hint">Select text for a formatting bar, or use Ctrl+B / I / U. Paste (Ctrl+V) or drag images straight into a section. They appear where your cursor is.</p>
       <div class="picks" id="sections"></div>
-      <div class="row"><button class="btn quiet" type="button" id="addsec">+ Add section</button><p class="hint">Redact part of a section with <code>[[4: hidden text]]</code>. Only Level 4 and up can read it.</p></div>
-      <div><label for="nimg">Images (up to 4)</label><input id="nimg" type="file" accept="image/*" multiple><div class="picks" id="imgpicks" style="margin-top:8px"></div></div>
-      <div class="row"><button class="btn" type="submit">Transmit</button><p class="note" id="newmsg">Files appear for everyone with that level after a minute or two.</p></div>
+      <div class="row"><button class="btn quiet" type="button" id="addsec">+ Add section</button></div>
+      <div><label>Images</label>
+        <div class="drop" id="drop">Drop images here, paste them into a section, or <label for="nimg" style="display:inline;color:var(--green);cursor:pointer;text-decoration:underline;letter-spacing:0;text-transform:none;font-size:13px">choose files</label><input id="nimg" type="file" accept="image/*" multiple hidden></div>
+        <div class="tray" id="tray" style="margin-top:8px"></div>
+      </div>
+      <div class="row"><button class="btn" type="submit">Transmit</button><button class="btn quiet" type="button" id="previewbtn">Preview</button><p class="note" id="newmsg">Files appear for everyone with that level after a minute or two.</p></div>
+      <div class="preview doc" id="preview" hidden></div>
     </form>
   </div>
 
@@ -213,6 +244,18 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .14e
   </div>
 </section>
 
+<div class="float" id="float" hidden>
+  <button class="tb" type="button" data-fmt="b" title="Bold (Ctrl+B)"><b>B</b></button>
+  <button class="tb" type="button" data-fmt="i" title="Italic (Ctrl+I)"><i>I</i></button>
+  <button class="tb" type="button" data-fmt="u" title="Underline (Ctrl+U)"><u>U</u></button>
+  <button class="tb" type="button" data-fmt="s" title="Strikethrough"><s>S</s></button>
+  <span class="sep"></span>
+  <button class="tb red" type="button" data-fmt="r2" title="Redact below Level 2">▮2</button>
+  <button class="tb red" type="button" data-fmt="r3" title="Redact below Level 3">▮3</button>
+  <button class="tb red" type="button" data-fmt="r4" title="Redact below Level 4">▮4</button>
+  <button class="tb red" type="button" data-fmt="r5" title="Redact below Level 5">▮5</button>
+</div>
+
 <script>
 var CONFIG = {
   endpoint: "https://raisa-bot-production.up.railway.app/submit",
@@ -222,6 +265,9 @@ var CONFIG = {
 (function () {
   var state = { key: null, id: null, level: 0, secrets: {}, agent: null, files: [], open: null, images: {} };
   var DEFAULT_SECTIONS = ["Special Containment Procedures", "Description", "Behaviors"];
+  var draft = { images: [], next: 1, focus: null };
+  var MARKS = { b: ["**", "**"], i: ["*", "*"], u: ["__", "__"], s: ["~~", "~~"] };
+  var INLINE = /\*\*([\s\S]+?)\*\*|__([\s\S]+?)__|~~([\s\S]+?)~~|\*([^*\n]+?)\*|\{\{\s*img\s*(\d+)\s*\}\}/;
   var $ = function (id) { return document.getElementById(id) };
   var enc = new TextEncoder(), dec = new TextDecoder();
 
@@ -307,23 +353,40 @@ var CONFIG = {
     show(state.open && out.some(function (f) { return f.id === state.open }) ? state.open : out[0].id);
   }
 
-  async function partsTo(el, parts) {
-    for (var i = 0; i < parts.length; i++) {
-      var p = parts[i];
-      if (typeof p === "string") { el.appendChild(document.createTextNode(p)); continue }
-      var span = document.createElement("span");
-      var k = state.secrets[p.r];
-      if (k) {
-        try { span.textContent = await open(k, p.iv, p.data); span.className = "unred"; span.title = "Level " + p.r + " text" } catch (e) { span.textContent = "[corrupt]" }
-      } else {
-        var n = Math.max(3, Math.min(60, Math.round(atob(p.data).length - 18)));
-        span.textContent = "█".repeat(n); span.className = "red"; span.title = "Level " + p.r + " clearance required";
+  function rich(el, text, ctx) {
+    while (text) {
+      var m = INLINE.exec(text);
+      if (!m) { el.appendChild(document.createTextNode(text)); return }
+      if (m.index) el.appendChild(document.createTextNode(text.slice(0, m.index)));
+      if (m[5]) { figure(el, Number(m[5]), ctx) }
+      else {
+        var tag = m[1] ? "strong" : m[2] ? "u" : m[3] ? "s" : "em";
+        var node = document.createElement(tag);
+        rich(node, m[1] || m[2] || m[3] || m[4], ctx);
+        el.appendChild(node);
       }
-      el.appendChild(span);
+      text = text.slice(m.index + m[0].length);
     }
   }
 
-  async function loadImage(fig, img, level) {
+  function figure(el, n, ctx) {
+    var img = ctx.find(n); if (!img) return;
+    ctx.used[n] = true;
+    var fig = document.createElement("figure");
+    fig.className = "fig fig-" + (img.align || "right") + " fig-" + (img.size || "m");
+    var inner = document.createElement("div");
+    fig.appendChild(inner);
+    if (img.caption) { var cap = document.createElement("figcaption"); cap.textContent = img.caption; fig.appendChild(cap) }
+    el.appendChild(fig);
+    if (img.src) { var im = document.createElement("img"); im.src = img.src; im.alt = img.caption || "Image"; fig.replaceChild(im, inner); return }
+    var lvl = img.level || ctx.level;
+    if (!state.secrets[lvl]) { inner.className = "blocked"; inner.textContent = "IMAGE REDACTED · LEVEL " + lvl; return }
+    if (img.capData) open(state.secrets[lvl], img.capIv, img.capData).then(function (t) { var cap = document.createElement("figcaption"); cap.textContent = t; fig.appendChild(cap) }).catch(function () {});
+    inner.className = "wait"; inner.textContent = "Decrypting image…";
+    loadImage(fig, inner, img, lvl);
+  }
+
+  async function loadImage(fig, holder, img, level) {
     try {
       if (!state.images[img.img]) {
         var r = await fetch("images/" + img.img + ".json", { cache: "force-cache" });
@@ -333,8 +396,54 @@ var CONFIG = {
         state.images[img.img] = URL.createObjectURL(new Blob([bytes], { type: j.type || "image/jpeg" }));
       }
       var el = document.createElement("img"); el.src = state.images[img.img]; el.alt = img.caption || "File image";
-      fig.replaceChild(el, fig.firstChild);
-    } catch (e) { fig.firstChild.textContent = "Image not available yet." }
+      fig.replaceChild(el, holder);
+    } catch (e) { holder.textContent = "Image not available yet." }
+  }
+
+  async function renderParts(el, parts, ctx) {
+    for (var i = 0; i < parts.length; i++) {
+      var p = parts[i];
+      if (typeof p === "string") { rich(el, p, ctx); continue }
+      var span = document.createElement("span");
+      var text = p.text;
+      if (text == null && state.secrets[p.r]) { try { text = await open(state.secrets[p.r], p.iv, p.data) } catch (e) { text = "[corrupt]" } }
+      if (text != null) { span.className = "unred"; span.title = "Level " + p.r + " text"; rich(span, text, ctx) }
+      else {
+        var n = p.data ? Math.max(3, Math.min(60, Math.round(atob(p.data).length - 18))) : 8;
+        span.textContent = "█".repeat(n); span.className = "red"; span.title = "Level " + p.r + " clearance required";
+      }
+      el.appendChild(span);
+    }
+  }
+
+  async function renderFile(doc, f, live) {
+    var meta = document.createElement("div"); meta.className = "meta";
+    var tag = document.createElement("span"); tag.className = "tag c-" + f.cls; tag.textContent = f.cls;
+    meta.appendChild(tag);
+    [["LEVEL " + f.level], [f.id ? "FILE " + f.id : "PREVIEW"], [f.added ? "FILED " + f.added : ""]].forEach(function (t) { if (t[0]) { var s = document.createElement("span"); s.textContent = t[0]; meta.appendChild(s) } });
+    var h2 = document.createElement("h2"); h2.textContent = f.item || "SCP-????";
+    doc.appendChild(meta); doc.appendChild(h2);
+    if (f.title) { var h3 = document.createElement("h3"); h3.textContent = f.title; doc.appendChild(h3) }
+    var images = f.images || [];
+    var ctx = { level: f.level, used: {}, find: function (n) { return images.find(function (x) { return x.n === n }) || (images[0] && images[0].n == null ? images[n - 1] : null) } };
+    var sections = f.sections || [{ h: "", parts: [f.body || ""] }];
+    for (var i = 0; i < sections.length; i++) {
+      var box = document.createElement("section"); box.className = "box";
+      if (sections[i].h) { var h4 = document.createElement("h4"); h4.textContent = sections[i].h; box.appendChild(h4) }
+      var body = document.createElement("div"); body.className = "body rich";
+      box.appendChild(body); doc.appendChild(box);
+      await renderParts(body, sections[i].parts || [], ctx);
+      if (!live()) return;
+    }
+    var rest = images.filter(function (img, i) { return !ctx.used[img.n != null ? img.n : i + 1] && (img.src || state.secrets[img.level || f.level]) });
+    if (rest.length) {
+      var gal = document.createElement("div"); gal.className = "gallery"; doc.appendChild(gal);
+      rest.forEach(function (img, i) {
+        var holder = document.createElement("div");
+        figure(holder, img.n != null ? img.n : images.indexOf(img) + 1, ctx);
+        var fig = holder.firstChild; if (fig) { fig.className = "fig"; gal.appendChild(fig) }
+      });
+    }
   }
 
   async function show(id) {
@@ -342,32 +451,7 @@ var CONFIG = {
     state.open = id;
     document.querySelectorAll("#list button").forEach(function (b) { b.setAttribute("aria-current", String(b.dataset.id === id)) });
     var doc = $("doc"); doc.innerHTML = "";
-    var meta = document.createElement("div"); meta.className = "meta";
-    var tag = document.createElement("span"); tag.className = "tag c-" + f.cls; tag.textContent = f.cls;
-    meta.appendChild(tag);
-    [["LEVEL " + f.level], ["FILE " + f.id], [f.added ? "FILED " + f.added : ""]].forEach(function (t) { if (t[0]) { var s = document.createElement("span"); s.textContent = t[0]; meta.appendChild(s) } });
-    var h2 = document.createElement("h2"); h2.textContent = f.item;
-    doc.appendChild(meta); doc.appendChild(h2);
-    if (f.title) { var h3 = document.createElement("h3"); h3.textContent = f.title; doc.appendChild(h3) }
-    var sections = f.sections || [{ h: "", parts: [f.body || ""] }];
-    for (var i = 0; i < sections.length; i++) {
-      var box = document.createElement("section"); box.className = "box";
-      if (sections[i].h) { var h4 = document.createElement("h4"); h4.textContent = sections[i].h; box.appendChild(h4) }
-      var body = document.createElement("div"); body.className = "body";
-      box.appendChild(body); doc.appendChild(box);
-      await partsTo(body, sections[i].parts || []);
-      if (state.open !== id) return;
-    }
-    if (f.images && f.images.length) {
-      var gal = document.createElement("div"); gal.className = "gallery"; doc.appendChild(gal);
-      f.images.forEach(function (img) {
-        var fig = document.createElement("figure");
-        var wait = document.createElement("div"); wait.className = "wait"; wait.textContent = "Decrypting image…"; fig.appendChild(wait);
-        if (img.caption) { var cap = document.createElement("figcaption"); cap.textContent = img.caption; fig.appendChild(cap) }
-        gal.appendChild(fig);
-        loadImage(fig, img, f.level);
-      });
-    }
+    await renderFile(doc, f, function () { return state.open === id });
   }
 
   function tab(name) {
@@ -375,18 +459,142 @@ var CONFIG = {
     document.querySelectorAll(".view").forEach(function (v) { v.hidden = v.dataset.view !== name });
   }
 
+  function wrap(ta, kind) {
+    var s = ta.selectionStart, e = ta.selectionEnd, v = ta.value, before, after;
+    if (kind[0] === "r") { before = "[[" + kind[1] + ": "; after = "]]" } else { before = MARKS[kind][0]; after = MARKS[kind][1] }
+    if (v.slice(s - before.length, s) === before && v.slice(e, e + after.length) === after) {
+      ta.setRangeText(v.slice(s, e), s - before.length, e + after.length, "select");
+    } else {
+      ta.setRangeText(before + v.slice(s, e) + after, s, e, "select");
+      ta.setSelectionRange(s + before.length, e + before.length);
+    }
+    ta.focus();
+    ta.dispatchEvent(new Event("input"));
+  }
+
+  function caretXY(ta, pos) {
+    var cs = getComputedStyle(ta), div = document.createElement("div");
+    ["boxSizing", "width", "fontFamily", "fontSize", "fontWeight", "lineHeight", "letterSpacing", "paddingTop", "paddingRight", "paddingBottom", "paddingLeft", "borderTopWidth", "borderLeftWidth", "borderRightWidth", "borderBottomWidth", "borderStyle"].forEach(function (k) { div.style[k] = cs[k] });
+    div.style.position = "absolute"; div.style.visibility = "hidden"; div.style.whiteSpace = "pre-wrap"; div.style.overflowWrap = "break-word"; div.style.top = "0"; div.style.left = "-9999px";
+    div.textContent = ta.value.slice(0, pos);
+    var mark = document.createElement("span"); mark.textContent = "\u200b"; div.appendChild(mark);
+    document.body.appendChild(div);
+    var r = ta.getBoundingClientRect(), x = r.left + mark.offsetLeft - ta.scrollLeft, y = r.top + mark.offsetTop - ta.scrollTop;
+    div.remove();
+    return { x: x, y: y };
+  }
+
+  function placeFloat() {
+    var ta = draft.focus, bar = $("float");
+    if (!ta || document.activeElement !== ta || ta.selectionStart === ta.selectionEnd) { bar.hidden = true; return }
+    var p = caretXY(ta, ta.selectionStart);
+    bar.hidden = false;
+    var w = bar.offsetWidth, x = Math.max(8, Math.min(innerWidth - w - 8, p.x - 10)), y = p.y - bar.offsetHeight - 8;
+    if (y < 8) y = p.y + 28;
+    bar.style.left = x + "px"; bar.style.top = y + "px";
+  }
+
+  function insertAt(ta, text) {
+    if (!ta) return;
+    var s = ta.selectionStart;
+    ta.setRangeText(text, s, ta.selectionEnd, "end");
+    ta.dispatchEvent(new Event("input"));
+  }
+
+  async function addImages(files, ta) {
+    var note = $("newmsg");
+    files = Array.prototype.filter.call(files, function (f) { return /^image\//.test(f.type) });
+    for (var i = 0; i < files.length; i++) {
+      if (draft.images.length >= 8) { msg(note, "A file can have up to 8 images.", true); break }
+      try {
+        var img = await shrink(files[i]);
+        img.n = draft.next++; img.align = "right"; img.size = "m"; img.caption = "";
+        img.src = "data:" + img.type + ";base64," + img.data;
+        draft.images.push(img);
+        if (ta) insertAt(ta, "{{img " + img.n + "}}");
+      } catch (e) { msg(note, "One of the images couldn't be read. Try a JPG or PNG.", true) }
+    }
+    drawTray();
+  }
+
+  function drawTray() {
+    var tray = $("tray"); tray.innerHTML = "";
+    draft.images.forEach(function (img) {
+      var tile = document.createElement("div"); tile.className = "tile";
+      var th = document.createElement("img"); th.src = img.src; th.alt = "Image " + img.n;
+      var right = document.createElement("div"); right.style.display = "grid"; right.style.gap = "6px";
+      var opts = document.createElement("div"); opts.className = "opts";
+      var n = document.createElement("span"); n.className = "n"; n.textContent = "{{img " + img.n + "}}";
+      var align = document.createElement("select"); align.setAttribute("aria-label", "Position");
+      [["left", "Float left"], ["right", "Float right"], ["center", "Centered"]].forEach(function (o) { var op = new Option(o[1], o[0]); align.add(op) });
+      align.value = img.align; align.addEventListener("change", function () { img.align = align.value });
+      var size = document.createElement("select"); size.setAttribute("aria-label", "Size");
+      [["s", "Small"], ["m", "Medium"], ["l", "Large"], ["full", "Full width"]].forEach(function (o) { size.add(new Option(o[1], o[0])) });
+      size.value = img.size; size.addEventListener("change", function () { img.size = size.value });
+      var ins = document.createElement("button"); ins.type = "button"; ins.className = "tb"; ins.textContent = "Insert at cursor";
+      ins.addEventListener("click", function () { var ta = draft.focus || document.querySelector("#sections textarea"); if (ta) { ta.focus(); insertAt(ta, "{{img " + img.n + "}}") } });
+      var del = document.createElement("button"); del.type = "button"; del.className = "tb"; del.textContent = "Remove";
+      del.addEventListener("click", function () {
+        draft.images = draft.images.filter(function (x) { return x !== img });
+        document.querySelectorAll("#sections textarea").forEach(function (t) { t.value = t.value.split("{{img " + img.n + "}}").join("") });
+        drawTray();
+      });
+      opts.appendChild(n); opts.appendChild(align); opts.appendChild(size); opts.appendChild(ins); opts.appendChild(del);
+      var cap = document.createElement("input"); cap.placeholder = "Caption (optional)"; cap.value = img.caption; cap.setAttribute("aria-label", "Caption for image " + img.n);
+      cap.addEventListener("input", function () { img.caption = cap.value });
+      right.appendChild(opts); right.appendChild(cap);
+      tile.appendChild(th); tile.appendChild(right); tray.appendChild(tile);
+    });
+  }
+
   function addSection(name, text) {
-    var wrap = document.createElement("div"); wrap.className = "sec";
+    var wrapEl = document.createElement("div"); wrapEl.className = "sec";
     var top = document.createElement("div"); top.className = "top";
     var h = document.createElement("input"); h.placeholder = "Section name"; h.value = name || ""; h.setAttribute("aria-label", "Section name");
-    var del = document.createElement("button"); del.type = "button"; del.className = "btn quiet"; del.textContent = "Remove";
-    del.addEventListener("click", function () { wrap.remove() });
-    top.appendChild(h); top.appendChild(del);
+    var up = document.createElement("button"); up.type = "button"; up.className = "tb"; up.textContent = "↑"; up.title = "Move up";
+    var down = document.createElement("button"); down.type = "button"; down.className = "tb"; down.textContent = "↓"; down.title = "Move down";
+    var del = document.createElement("button"); del.type = "button"; del.className = "tb"; del.textContent = "Remove";
+    up.addEventListener("click", function () { if (wrapEl.previousElementSibling) wrapEl.parentNode.insertBefore(wrapEl, wrapEl.previousElementSibling) });
+    down.addEventListener("click", function () { if (wrapEl.nextElementSibling) wrapEl.parentNode.insertBefore(wrapEl.nextElementSibling, wrapEl) });
+    del.addEventListener("click", function () { wrapEl.remove() });
+    top.appendChild(h); top.appendChild(up); top.appendChild(down); top.appendChild(del);
+    var tools = document.createElement("div"); tools.className = "tools";
     var t = document.createElement("textarea"); t.value = text || ""; t.setAttribute("aria-label", (name || "Section") + " text");
-    wrap.appendChild(top); wrap.appendChild(t);
-    $("sections").appendChild(wrap);
+    [["b", "<b>B</b>"], ["i", "<i>I</i>"], ["u", "<u>U</u>"], ["s", "<s>S</s>"], ["r3", "▮3"], ["r4", "▮4"], ["r5", "▮5"]].forEach(function (k) {
+      var bt = document.createElement("button"); bt.type = "button"; bt.className = "tb" + (k[0][0] === "r" && k[0] !== "r" ? " red" : ""); bt.innerHTML = k[1];
+      bt.title = k[0][0] === "r" ? "Redact below Level " + k[0][1] : "";
+      bt.addEventListener("mousedown", function (e) { e.preventDefault() });
+      bt.addEventListener("click", function () { wrap(t, k[0]) });
+      tools.appendChild(bt);
+    });
+    var imgBtn = document.createElement("button"); imgBtn.type = "button"; imgBtn.className = "tb"; imgBtn.textContent = "+ Image";
+    imgBtn.addEventListener("click", function () { draft.focus = t; $("nimg").click() });
+    tools.appendChild(imgBtn);
+    t.addEventListener("focus", function () { draft.focus = t });
+    ["select", "keyup", "mouseup", "scroll"].forEach(function (ev) { t.addEventListener(ev, function () { setTimeout(placeFloat, 0) }) });
+    t.addEventListener("blur", function () { setTimeout(placeFloat, 150) });
+    t.addEventListener("keydown", function (e) {
+      if (!(e.ctrlKey || e.metaKey)) return;
+      var k = e.key.toLowerCase();
+      if (k === "b" || k === "i" || k === "u") { e.preventDefault(); wrap(t, k) }
+    });
+    t.addEventListener("paste", function (e) {
+      var files = e.clipboardData && e.clipboardData.files;
+      if (files && files.length) { e.preventDefault(); addImages(files, t) }
+    });
+    t.addEventListener("dragover", function (e) { if (e.dataTransfer && Array.prototype.some.call(e.dataTransfer.items || [], function (i) { return i.kind === "file" })) e.preventDefault() });
+    t.addEventListener("drop", function (e) {
+      if (!e.dataTransfer || !e.dataTransfer.files.length) return;
+      e.preventDefault(); t.focus(); addImages(e.dataTransfer.files, t);
+    });
+    wrapEl.appendChild(top); wrapEl.appendChild(tools); wrapEl.appendChild(t);
+    $("sections").appendChild(wrapEl);
   }
-  function resetSections() { $("sections").innerHTML = ""; DEFAULT_SECTIONS.forEach(function (n) { addSection(n, "") }); $("imgpicks").innerHTML = ""; $("nimg").value = "" }
+
+  function resetSections() {
+    $("sections").innerHTML = ""; DEFAULT_SECTIONS.forEach(function (n) { addSection(n, "") });
+    draft.images = []; draft.next = 1; drawTray(); $("nimg").value = ""; $("preview").hidden = true;
+  }
 
   function shrink(file) {
     return new Promise(function (resolve, reject) {
@@ -394,7 +602,7 @@ var CONFIG = {
       im.onload = function () {
         var scale = Math.min(1, 1600 / Math.max(im.width, im.height));
         var c = document.createElement("canvas"); c.width = Math.round(im.width * scale); c.height = Math.round(im.height * scale);
-        c.getContext("2d").drawImage(im, 0, 0, c.width, c.height);
+        var g = c.getContext("2d"); g.fillStyle = "#000"; g.fillRect(0, 0, c.width, c.height); g.drawImage(im, 0, 0, c.width, c.height);
         URL.revokeObjectURL(url);
         c.toBlob(function (b) {
           if (!b) return reject(new Error("image"));
@@ -406,14 +614,31 @@ var CONFIG = {
     });
   }
 
-  function listPicks() {
-    var box = $("imgpicks"); box.innerHTML = "";
-    Array.prototype.slice.call($("nimg").files, 0, 4).forEach(function (file, i) {
-      var row = document.createElement("div"); row.className = "pick";
-      var name = document.createElement("span"); name.textContent = file.name;
-      var cap = document.createElement("input"); cap.placeholder = "Caption (optional)"; cap.dataset.i = i; cap.setAttribute("aria-label", "Caption for " + file.name);
-      row.appendChild(name); row.appendChild(cap); box.appendChild(row);
-    });
+  function collect() {
+    var sections = Array.prototype.map.call(document.querySelectorAll("#sections .sec"), function (w) {
+      return { h: w.querySelector("input").value.trim(), text: w.querySelector("textarea").value.trim() };
+    }).filter(function (s) { return s.text });
+    return { item: $("nitem").value.trim(), cls: $("ncls").value, level: Number($("nlvl").value), title: $("ntitle").value.trim(), sections: sections };
+  }
+
+  function localParts(text, level) {
+    var parts = [], re = /\[\[\s*([1-5])\s*:\s*([\s\S]*?)\]\]/g, last = 0, m;
+    while ((m = re.exec(text))) {
+      if (m.index > last) parts.push(text.slice(last, m.index));
+      if (Number(m[1]) > level) parts.push({ r: Number(m[1]), text: m[2] }); else parts.push(m[2]);
+      last = re.lastIndex;
+    }
+    if (last < text.length) parts.push(text.slice(last));
+    return parts;
+  }
+
+  async function preview() {
+    var box = $("preview"), f = collect();
+    if (!box.hidden && box.dataset.on === "1") { box.hidden = true; box.dataset.on = "0"; $("previewbtn").textContent = "Preview"; return }
+    f.sections = f.sections.map(function (s) { return { h: s.h, parts: localParts(s.text, f.level) } });
+    f.images = draft.images.map(function (i) { return { n: i.n, src: i.src, align: i.align, size: i.size, caption: i.caption } });
+    box.innerHTML = ""; box.hidden = false; box.dataset.on = "1"; $("previewbtn").textContent = "Hide preview";
+    await renderFile(box, f, function () { return true });
   }
 
   async function loadRequests() {
@@ -492,26 +717,24 @@ var CONFIG = {
   document.querySelectorAll(".tabs button").forEach(function (b) { b.addEventListener("click", function () { tab(b.dataset.tab); if (b.dataset.tab === "review") loadRequests() }) });
   $("reqrefresh").addEventListener("click", loadRequests);
   $("addsec").addEventListener("click", function () { addSection("", "") });
-  $("nimg").addEventListener("change", listPicks);
+  $("nimg").addEventListener("change", function () { addImages($("nimg").files, draft.focus); $("nimg").value = "" });
+  $("previewbtn").addEventListener("click", preview);
+  document.querySelectorAll("#float .tb").forEach(function (b) {
+    b.addEventListener("mousedown", function (e) { e.preventDefault() });
+    b.addEventListener("click", function () { if (draft.focus) { wrap(draft.focus, b.dataset.fmt); setTimeout(placeFloat, 0) } });
+  });
+  addEventListener("scroll", function () { placeFloat() }, true);
+  addEventListener("resize", placeFloat);
+  var drop = $("drop");
+  drop.addEventListener("dragover", function (e) { e.preventDefault(); drop.classList.add("over") });
+  drop.addEventListener("dragleave", function () { drop.classList.remove("over") });
+  drop.addEventListener("drop", function (e) { e.preventDefault(); drop.classList.remove("over"); addImages(e.dataTransfer.files, draft.focus) });
 
   $("newform").addEventListener("submit", async function (e) {
     e.preventDefault();
-    var note = $("newmsg");
-    var sections = Array.prototype.map.call(document.querySelectorAll("#sections .sec"), function (w) {
-      return { h: w.querySelector("input").value.trim(), text: w.querySelector("textarea").value.trim() };
-    }).filter(function (s) { return s.text });
-    var file = { item: $("nitem").value.trim(), cls: $("ncls").value, level: Number($("nlvl").value), title: $("ntitle").value.trim(), sections: sections, images: [] };
-    if (!file.item || !sections.length) return msg(note, "An item and at least one filled section are required.", true);
-    var picked = Array.prototype.slice.call($("nimg").files, 0, 4);
-    try {
-      for (var i = 0; i < picked.length; i++) {
-        msg(note, "Preparing image " + (i + 1) + " of " + picked.length + "…");
-        var img = await shrink(picked[i]);
-        var cap = document.querySelector('#imgpicks input[data-i="' + i + '"]');
-        img.caption = cap ? cap.value.trim() : "";
-        file.images.push(img);
-      }
-    } catch (err) { return msg(note, "One of the images couldn't be read. Try a JPG or PNG.", true) }
+    var note = $("newmsg"), file = collect();
+    if (!file.item || !file.sections.length) return msg(note, "An item and at least one filled section are required.", true);
+    file.images = draft.images.map(function (i) { return { n: i.n, type: i.type, data: i.data, align: i.align, size: i.size, caption: i.caption.trim() } });
     if (await transmit("file", CONFIG.writeLevel, { by: state.id, file: file }, note)) {
       msg(note, "Transmitted. " + file.item + " appears in a minute or two. Use Refresh.");
       $("newform").reset(); $("nlvl").value = String(state.level); resetSections();
