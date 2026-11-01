@@ -4,11 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Halcyon Terminal</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap">
 <style>
-/* layout: one locked terminal; login is all you see until a key opens the file list */
 :root {
   --bg: #020604;
   --panel: #04100a;
@@ -26,7 +24,7 @@
 * { box-sizing: border-box }
 [hidden] { display: none !important }
 html, body { height: 100% }
-body { background: var(--bg); color: var(--green); font: 400 15px/1.6 var(--mono); text-shadow: 0 0 6px var(--glow);
+body { margin: 0; background: var(--bg); color: var(--green); font: 400 15px/1.6 var(--mono); text-shadow: 0 0 6px var(--glow);
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
 body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 50;
   background: repeating-linear-gradient(0deg, rgba(0,0,0,.28) 0 1px, transparent 1px 3px), radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,.65) 100%) }
@@ -43,7 +41,6 @@ input:focus, select:focus, textarea:focus { border-color: var(--green); outline:
 textarea { min-height: 220px; resize: vertical; line-height: 1.6 }
 label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 6px }
 
-/* login */
 .login { min-height: 100%; display: grid; place-items: center; padding-block: 40px }
 .gate { width: 100%; max-width: 460px; border: 1px solid var(--line); background: var(--panel); padding: 30px 28px 26px; position: relative; box-shadow: 0 0 40px -18px var(--glow) }
 .gate::before, .gate::after { content: ""; position: absolute; width: 14px; height: 14px; border: 2px solid var(--green) }
@@ -60,7 +57,6 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .14e
 .blink::after { content: "_"; animation: blink 1s steps(1) infinite }
 @keyframes blink { 50% { opacity: 0 } }
 
-/* app */
 .app { max-width: 1100px; margin: 0 auto; padding-block: 18px 40px; display: grid; gap: 16px }
 .bar { display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: space-between; align-items: center; border: 1px solid var(--line); background: var(--panel); padding: 10px 14px }
 .bar .name { font: 400 30px/1 var(--display); letter-spacing: .08em }
@@ -106,10 +102,8 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .14e
 }
 @media (prefers-reduced-motion: reduce) { .blink::after { animation: none } }
 </style>
-<style>body{margin:0}</style>
 </head>
 <body>
-
 
 <section class="login" id="login">
   <form class="gate" id="gate" novalidate>
@@ -176,7 +170,7 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .14e
 
 <script>
 var CONFIG = {
-  webhook: "",
+  endpoint: "",
   writeLevel: 3
 };
 
@@ -215,6 +209,7 @@ var CONFIG = {
       state.level = Math.max.apply(null, Object.keys(granted).map(Number));
       try { sessionStorage.setItem("hal", key) } catch (e) {}
       enter();
+      ping();
     } catch (e) {
       m.classList.add("blink");
       msg(m, "Terminal offline. Try again shortly.", true);
@@ -282,16 +277,21 @@ var CONFIG = {
     document.querySelectorAll(".view").forEach(function (v) { v.hidden = v.dataset.view !== name });
   }
 
+  async function ping() {
+    if (!CONFIG.endpoint || !state.secrets[1]) return;
+    try {
+      var sealed = await seal(state.secrets[1], { by: state.id, t: Date.now() });
+      await fetch(CONFIG.endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ v: 1, type: "login", by: state.id, iv: sealed.iv, data: sealed.data }) });
+    } catch (e) {}
+  }
+
   async function transmit(type, secretLevel, inner, note) {
-    if (!CONFIG.webhook) return msg(note, "Uploads aren't set up on this terminal yet.", true);
+    if (!CONFIG.endpoint) return msg(note, "Uploads aren't set up on this terminal yet.", true);
     var k = state.secrets[secretLevel]; if (!k) return msg(note, "Your key can't do that.", true);
     msg(note, "Transmitting…");
     try {
       var sealed = await seal(k, inner);
-      var body = new FormData();
-      body.append("payload_json", JSON.stringify({ content: "" }));
-      body.append("files[0]", new Blob([JSON.stringify({ v: 1, type: type, by: state.id, iv: sealed.iv, data: sealed.data })], { type: "application/json" }), "submission.json");
-      var r = await fetch(CONFIG.webhook, { method: "POST", body: body });
+      var r = await fetch(CONFIG.endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ v: 1, type: type, by: state.id, iv: sealed.iv, data: sealed.data }) });
       if (!r.ok) throw new Error(r.status);
       return true;
     } catch (e) { msg(note, "Transmission failed. Try again.", true); return false }
