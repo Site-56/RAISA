@@ -4,9 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Halcyon Terminal</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap">
 <style>
+/* layout: one locked terminal; login is all you see until a key opens the file list */
 :root {
   --bg: #020604;
   --panel: #04100a;
@@ -24,7 +26,7 @@
 * { box-sizing: border-box }
 [hidden] { display: none !important }
 html, body { height: 100% }
-body { margin: 0; background: var(--bg); color: var(--green); font: 400 15px/1.6 var(--mono); text-shadow: 0 0 6px var(--glow);
+body { background: var(--bg); color: var(--green); font: 400 15px/1.6 var(--mono); text-shadow: 0 0 6px var(--glow);
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
 body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 50;
   background: repeating-linear-gradient(0deg, rgba(0,0,0,.28) 0 1px, transparent 1px 3px), radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,.65) 100%) }
@@ -41,6 +43,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--green); outline:
 textarea { min-height: 220px; resize: vertical; line-height: 1.6 }
 label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 6px }
 
+/* login */
 .login { min-height: 100%; display: grid; place-items: center; padding-block: 40px }
 .gate { width: 100%; max-width: 460px; border: 1px solid var(--line); background: var(--panel); padding: 30px 28px 26px; position: relative; box-shadow: 0 0 40px -18px var(--glow) }
 .gate::before, .gate::after { content: ""; position: absolute; width: 14px; height: 14px; border: 2px solid var(--green) }
@@ -57,6 +60,7 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .14e
 .blink::after { content: "_"; animation: blink 1s steps(1) infinite }
 @keyframes blink { 50% { opacity: 0 } }
 
+/* app */
 .app { max-width: 1100px; margin: 0 auto; padding-block: 18px 40px; display: grid; gap: 16px }
 .bar { display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: space-between; align-items: center; border: 1px solid var(--line); background: var(--panel); padding: 10px 14px }
 .bar .name { font: 400 30px/1 var(--display); letter-spacing: .08em }
@@ -93,6 +97,37 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .14e
 .form .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center }
 .note { color: var(--dim); font-size: 13px; margin: 0 }
 
+.badge { border: 1px solid var(--cyan); color: var(--cyan); padding: 0 6px; margin-left: 6px; text-shadow: 0 0 6px var(--cyan) }
+.box { border: 1px solid var(--line); margin-top: 18px; background: rgba(69,255,152,.02) }
+.box h4 { margin: 0; padding: 7px 12px; border-bottom: 1px solid var(--line); font-weight: 400; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--dim) }
+.box .body { padding: 12px 14px 14px }
+.red { color: var(--dim); letter-spacing: -.08em; cursor: help; text-shadow: none }
+.unred { border-bottom: 1px dashed var(--amber); cursor: help }
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 18px }
+.gallery figure { margin: 0; border: 1px solid var(--line); background: #000 }
+.gallery img { display: block; width: 100%; max-height: 320px; object-fit: contain; filter: saturate(.85) }
+.gallery figcaption { padding: 6px 10px; font-size: 12px; color: var(--dim); border-top: 1px solid var(--line) }
+.gallery .wait { padding: 40px 10px; text-align: center; color: var(--dim); font-size: 12px }
+.sec { border: 1px solid var(--line); padding: 10px; display: grid; gap: 8px }
+.sec .top { display: flex; gap: 8px }
+.sec .top input { flex: 1; min-width: 0 }
+.sec textarea { min-height: 120px }
+.hint { color: var(--dim); font-size: 12px; margin: 0 }
+.hint code { color: var(--amber); text-shadow: none }
+.picks { display: grid; gap: 8px }
+.pick { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 13px }
+.pick span { color: var(--dim); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 220px }
+.pick input { flex: 1; min-width: 140px }
+.reqs { padding: 16px 20px 24px; display: grid; gap: 12px }
+.req { border: 1px solid var(--line); padding: 12px 14px; display: grid; gap: 6px }
+.req .row1 { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline }
+.req .row1 b { font: 400 26px/1 var(--display); letter-spacing: .04em; font-weight: 400 }
+.req .meta2 { color: var(--dim); font-size: 13px }
+.req .why { white-space: pre-wrap; overflow-wrap: anywhere }
+.req .acts { display: flex; gap: 8px; flex-wrap: wrap; align-items: center }
+.st-approved { color: var(--green) } .st-denied { color: var(--red) } .st-pending { color: var(--amber) }
+.btn.ok:hover { background: var(--green) } .btn.no { border-color: var(--red); color: var(--red) } .btn.no:hover { background: var(--red); color: var(--bg) }
+
 @media (max-width: 760px) {
   .files { grid-template-columns: minmax(0, 1fr) }
   .list { border-right: 0; border-bottom: 1px solid var(--line) }
@@ -102,8 +137,10 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .14e
 }
 @media (prefers-reduced-motion: reduce) { .blink::after { animation: none } }
 </style>
+<style>body{margin:0}</style>
 </head>
 <body>
+
 
 <section class="login" id="login">
   <form class="gate" id="gate" novalidate>
@@ -131,6 +168,7 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .14e
     <button class="btn" role="tab" data-tab="files" aria-selected="true">Files</button>
     <button class="btn" role="tab" data-tab="new" aria-selected="false" id="newtab" hidden>New file</button>
     <button class="btn" role="tab" data-tab="request" aria-selected="false">Request</button>
+    <button class="btn" role="tab" data-tab="review" aria-selected="false" id="reviewtab" hidden>Requests</button>
   </nav>
 
   <div class="view" data-view="files">
@@ -151,9 +189,16 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .14e
         <div><label for="nlvl">Level</label><select id="nlvl"></select></div>
       </div>
       <div><label for="ntitle">Title</label><input id="ntitle" placeholder="Short description" autocomplete="off"></div>
-      <div><label for="nbody">Contents</label><textarea id="nbody" placeholder="Special containment procedures, description, addenda…"></textarea></div>
+      <div class="picks" id="sections"></div>
+      <div class="row"><button class="btn quiet" type="button" id="addsec">+ Add section</button><p class="hint">Redact part of a section with <code>[[4: hidden text]]</code>. Only Level 4 and up can read it.</p></div>
+      <div><label for="nimg">Images (up to 4)</label><input id="nimg" type="file" accept="image/*" multiple><div class="picks" id="imgpicks" style="margin-top:8px"></div></div>
       <div class="row"><button class="btn" type="submit">Transmit</button><p class="note" id="newmsg">Files appear for everyone with that level after a minute or two.</p></div>
     </form>
+  </div>
+
+  <div class="view" data-view="review" hidden>
+    <div class="list" style="border-right:0"><div class="head"><span id="reqcount">REQUESTS</span><button class="btn quiet" type="button" id="reqrefresh" style="padding:3px 8px;font-size:11px">Refresh</button></div></div>
+    <div class="reqs" id="reqlist"></div>
   </div>
 
   <div class="view" data-view="request" hidden>
@@ -175,7 +220,8 @@ var CONFIG = {
 };
 
 (function () {
-  var state = { key: null, id: null, level: 0, secrets: {}, files: [], open: null };
+  var state = { key: null, id: null, level: 0, secrets: {}, agent: null, files: [], open: null, images: {} };
+  var DEFAULT_SECTIONS = ["Special Containment Procedures", "Description", "Behaviors"];
   var $ = function (id) { return document.getElementById(id) };
   var enc = new TextEncoder(), dec = new TextDecoder();
 
@@ -187,6 +233,7 @@ var CONFIG = {
     return crypto.subtle.deriveKey({ name: "PBKDF2", salt: unb64(salt), iterations: 200000, hash: "SHA-256" }, base, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
   }
   function aes(raw) { return crypto.subtle.importKey("raw", unb64(raw), "AES-GCM", false, ["encrypt", "decrypt"]) }
+  async function openBytes(k, iv, data) { return crypto.subtle.decrypt({ name: "AES-GCM", iv: unb64(iv) }, k, unb64(data)) }
   async function open(k, iv, data) { var p = await crypto.subtle.decrypt({ name: "AES-GCM", iv: unb64(iv) }, k, unb64(data)); return JSON.parse(dec.decode(p)) }
   async function seal(k, value) { var iv = crypto.getRandomValues(new Uint8Array(12)); var c = await crypto.subtle.encrypt({ name: "AES-GCM", iv: iv }, k, enc.encode(JSON.stringify(value))); return { iv: b64(iv), data: b64(c) } }
   async function getJson(file) { var r = await fetch(file + "?t=" + Date.now(), { cache: "no-store" }); if (!r.ok) throw new Error(file); return r.json() }
@@ -205,8 +252,9 @@ var CONFIG = {
       if (!entry) { m.classList.add("blink"); try { sessionStorage.removeItem("hal") } catch (e) {} return msg(m, quiet ? "Saved key no longer valid. Awaiting key" : "Access denied. Key not recognised.", true) }
       var granted = await open(await kek(key, entry.salt), entry.iv, entry.data);
       state.key = key; state.id = id; state.secrets = {};
-      for (var l in granted) state.secrets[l] = await aes(granted[l]);
-      state.level = Math.max.apply(null, Object.keys(granted).map(Number));
+      state.agent = null;
+      for (var l in granted) { if (l === "agent") state.agent = await aes(granted[l]); else state.secrets[l] = await aes(granted[l]) }
+      state.level = Math.max.apply(null, Object.keys(state.secrets).map(Number));
       try { sessionStorage.setItem("hal", key) } catch (e) {}
       enter();
       ping();
@@ -218,7 +266,9 @@ var CONFIG = {
 
   function enter() {
     $("login").hidden = true; $("app").hidden = false;
-    $("who").innerHTML = "LEVEL <b>" + state.level + "</b> · KEY <b>" + state.id + "</b>";
+    $("who").innerHTML = "LEVEL <b>" + state.level + "</b> · KEY <b>" + state.id + "</b>" + (state.agent ? '<span class="badge">AGENT</span>' : "");
+    $("reviewtab").hidden = !state.agent;
+    resetSections();
     var canWrite = state.level >= CONFIG.writeLevel;
     $("newtab").hidden = !canWrite;
     var sel = $("nlvl"); sel.innerHTML = "";
@@ -257,7 +307,37 @@ var CONFIG = {
     show(state.open && out.some(function (f) { return f.id === state.open }) ? state.open : out[0].id);
   }
 
-  function show(id) {
+  async function partsTo(el, parts) {
+    for (var i = 0; i < parts.length; i++) {
+      var p = parts[i];
+      if (typeof p === "string") { el.appendChild(document.createTextNode(p)); continue }
+      var span = document.createElement("span");
+      var k = state.secrets[p.r];
+      if (k) {
+        try { span.textContent = await open(k, p.iv, p.data); span.className = "unred"; span.title = "Level " + p.r + " text" } catch (e) { span.textContent = "[corrupt]" }
+      } else {
+        var n = Math.max(3, Math.min(60, Math.round(atob(p.data).length - 18)));
+        span.textContent = "█".repeat(n); span.className = "red"; span.title = "Level " + p.r + " clearance required";
+      }
+      el.appendChild(span);
+    }
+  }
+
+  async function loadImage(fig, img, level) {
+    try {
+      if (!state.images[img.img]) {
+        var r = await fetch("images/" + img.img + ".json", { cache: "force-cache" });
+        if (!r.ok) throw new Error();
+        var j = await r.json();
+        var bytes = await openBytes(state.secrets[level], j.iv, j.data);
+        state.images[img.img] = URL.createObjectURL(new Blob([bytes], { type: j.type || "image/jpeg" }));
+      }
+      var el = document.createElement("img"); el.src = state.images[img.img]; el.alt = img.caption || "File image";
+      fig.replaceChild(el, fig.firstChild);
+    } catch (e) { fig.firstChild.textContent = "Image not available yet." }
+  }
+
+  async function show(id) {
     var f = state.files.find(function (x) { return x.id === id }); if (!f) return;
     state.open = id;
     document.querySelectorAll("#list button").forEach(function (b) { b.setAttribute("aria-current", String(b.dataset.id === id)) });
@@ -267,14 +347,122 @@ var CONFIG = {
     meta.appendChild(tag);
     [["LEVEL " + f.level], ["FILE " + f.id], [f.added ? "FILED " + f.added : ""]].forEach(function (t) { if (t[0]) { var s = document.createElement("span"); s.textContent = t[0]; meta.appendChild(s) } });
     var h2 = document.createElement("h2"); h2.textContent = f.item;
-    var h3 = document.createElement("h3"); h3.textContent = f.title || "";
-    var body = document.createElement("div"); body.className = "body"; body.textContent = f.body;
-    doc.appendChild(meta); doc.appendChild(h2); if (f.title) doc.appendChild(h3); doc.appendChild(body);
+    doc.appendChild(meta); doc.appendChild(h2);
+    if (f.title) { var h3 = document.createElement("h3"); h3.textContent = f.title; doc.appendChild(h3) }
+    var sections = f.sections || [{ h: "", parts: [f.body || ""] }];
+    for (var i = 0; i < sections.length; i++) {
+      var box = document.createElement("section"); box.className = "box";
+      if (sections[i].h) { var h4 = document.createElement("h4"); h4.textContent = sections[i].h; box.appendChild(h4) }
+      var body = document.createElement("div"); body.className = "body";
+      box.appendChild(body); doc.appendChild(box);
+      await partsTo(body, sections[i].parts || []);
+      if (state.open !== id) return;
+    }
+    if (f.images && f.images.length) {
+      var gal = document.createElement("div"); gal.className = "gallery"; doc.appendChild(gal);
+      f.images.forEach(function (img) {
+        var fig = document.createElement("figure");
+        var wait = document.createElement("div"); wait.className = "wait"; wait.textContent = "Decrypting image…"; fig.appendChild(wait);
+        if (img.caption) { var cap = document.createElement("figcaption"); cap.textContent = img.caption; fig.appendChild(cap) }
+        gal.appendChild(fig);
+        loadImage(fig, img, f.level);
+      });
+    }
   }
 
   function tab(name) {
     document.querySelectorAll(".tabs button").forEach(function (b) { b.setAttribute("aria-selected", String(b.dataset.tab === name)) });
     document.querySelectorAll(".view").forEach(function (v) { v.hidden = v.dataset.view !== name });
+  }
+
+  function addSection(name, text) {
+    var wrap = document.createElement("div"); wrap.className = "sec";
+    var top = document.createElement("div"); top.className = "top";
+    var h = document.createElement("input"); h.placeholder = "Section name"; h.value = name || ""; h.setAttribute("aria-label", "Section name");
+    var del = document.createElement("button"); del.type = "button"; del.className = "btn quiet"; del.textContent = "Remove";
+    del.addEventListener("click", function () { wrap.remove() });
+    top.appendChild(h); top.appendChild(del);
+    var t = document.createElement("textarea"); t.value = text || ""; t.setAttribute("aria-label", (name || "Section") + " text");
+    wrap.appendChild(top); wrap.appendChild(t);
+    $("sections").appendChild(wrap);
+  }
+  function resetSections() { $("sections").innerHTML = ""; DEFAULT_SECTIONS.forEach(function (n) { addSection(n, "") }); $("imgpicks").innerHTML = ""; $("nimg").value = "" }
+
+  function shrink(file) {
+    return new Promise(function (resolve, reject) {
+      var url = URL.createObjectURL(file), im = new Image();
+      im.onload = function () {
+        var scale = Math.min(1, 1600 / Math.max(im.width, im.height));
+        var c = document.createElement("canvas"); c.width = Math.round(im.width * scale); c.height = Math.round(im.height * scale);
+        c.getContext("2d").drawImage(im, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(url);
+        c.toBlob(function (b) {
+          if (!b) return reject(new Error("image"));
+          b.arrayBuffer().then(function (buf) { resolve({ type: "image/jpeg", data: b64(buf) }) });
+        }, "image/jpeg", 0.85);
+      };
+      im.onerror = function () { reject(new Error("image")) };
+      im.src = url;
+    });
+  }
+
+  function listPicks() {
+    var box = $("imgpicks"); box.innerHTML = "";
+    Array.prototype.slice.call($("nimg").files, 0, 4).forEach(function (file, i) {
+      var row = document.createElement("div"); row.className = "pick";
+      var name = document.createElement("span"); name.textContent = file.name;
+      var cap = document.createElement("input"); cap.placeholder = "Caption (optional)"; cap.dataset.i = i; cap.setAttribute("aria-label", "Caption for " + file.name);
+      row.appendChild(name); row.appendChild(cap); box.appendChild(row);
+    });
+  }
+
+  async function loadRequests() {
+    if (!state.agent) return;
+    $("reqcount").textContent = "LOADING…";
+    var list = $("reqlist"); list.innerHTML = "";
+    var items = [];
+    try {
+      var raw = (await getJson("requests.json")).requests || [];
+      for (var i = 0; i < raw.length; i++) {
+        try { var d = await open(state.agent, raw[i].iv, raw[i].data); d.status = raw[i].status; d.reviewer = raw[i].reviewer; d.reviewed = raw[i].reviewed; items.push(d) } catch (e) {}
+      }
+    } catch (e) { $("reqcount").textContent = "OFFLINE"; return }
+    var order = { pending: 0, approved: 1, denied: 1 };
+    items.sort(function (a, b) { return order[a.status] - order[b.status] || b.created - a.created });
+    var waiting = items.filter(function (r) { return r.status === "pending" }).length;
+    $("reqcount").textContent = waiting + " PENDING · " + items.length + " TOTAL";
+    if (!items.length) { list.innerHTML = '<div class="empty">No requests yet.</div>'; return }
+    items.forEach(function (r) {
+      var card = document.createElement("div"); card.className = "req";
+      var row1 = document.createElement("div"); row1.className = "row1";
+      var b = document.createElement("b"); b.textContent = r.item;
+      var want = document.createElement("span"); want.textContent = "WANTS LEVEL " + r.want;
+      var st = document.createElement("span"); st.className = "st-" + r.status; st.textContent = r.status.toUpperCase() + (r.reviewer ? " · " + r.reviewer : "");
+      row1.appendChild(b); row1.appendChild(want); row1.appendChild(st);
+      var meta = document.createElement("div"); meta.className = "meta2";
+      meta.textContent = "From " + ((r.owner && r.owner.name) || "unassigned key") + " · key " + r.by + " (Level " + r.level + ") · " + new Date(r.created).toLocaleString();
+      var why = document.createElement("div"); why.className = "why"; why.textContent = r.reason;
+      card.appendChild(row1); card.appendChild(meta); card.appendChild(why);
+      if (r.status === "pending") {
+        var acts = document.createElement("div"); acts.className = "acts";
+        var yes = document.createElement("button"); yes.type = "button"; yes.className = "btn ok"; yes.textContent = "Approve";
+        var no = document.createElement("button"); no.type = "button"; no.className = "btn no"; no.textContent = "Deny";
+        var note = document.createElement("p"); note.className = "note";
+        yes.addEventListener("click", function () { decide(r.id, "approve", note, acts) });
+        no.addEventListener("click", function () { decide(r.id, "deny", note, acts) });
+        acts.appendChild(yes); acts.appendChild(no); acts.appendChild(note);
+        card.appendChild(acts);
+      }
+      list.appendChild(card);
+    });
+  }
+
+  async function decide(id, decision, note, acts) {
+    acts.querySelectorAll("button").forEach(function (b) { b.disabled = true });
+    var res = await transmit("review", state.agent, { by: state.id, req: id, decision: decision }, note);
+    if (!res) { acts.querySelectorAll("button").forEach(function (b) { b.disabled = false }); return }
+    if (res.ok === false && res.message) return msg(note, res.message, true);
+    msg(note, res.message || "Done.");
   }
 
   async function ping() {
@@ -285,31 +473,48 @@ var CONFIG = {
     } catch (e) {}
   }
 
-  async function transmit(type, secretLevel, inner, note) {
-    if (!CONFIG.endpoint) return msg(note, "Uploads aren't set up on this terminal yet.", true);
-    var k = state.secrets[secretLevel]; if (!k) return msg(note, "Your key can't do that.", true);
+  async function transmit(type, secret, inner, note) {
+    if (!CONFIG.endpoint) { msg(note, "Uploads aren't set up on this terminal yet.", true); return false }
+    var k = typeof secret === "number" ? state.secrets[secret] : secret;
+    if (!k) { msg(note, "Your key can't do that.", true); return false }
     msg(note, "Transmitting…");
     try {
       var sealed = await seal(k, inner);
       var r = await fetch(CONFIG.endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ v: 1, type: type, by: state.id, iv: sealed.iv, data: sealed.data }) });
       if (!r.ok) throw new Error(r.status);
-      return true;
+      return (await r.json().catch(function () { return {} })) || {};
     } catch (e) { msg(note, "Transmission failed. Try again.", true); return false }
   }
 
   $("gate").addEventListener("submit", function (e) { e.preventDefault(); login($("key").value, false) });
   $("logout").addEventListener("click", function () { try { sessionStorage.removeItem("hal") } catch (e) {} location.reload() });
   $("refresh").addEventListener("click", loadFiles);
-  document.querySelectorAll(".tabs button").forEach(function (b) { b.addEventListener("click", function () { tab(b.dataset.tab) }) });
+  document.querySelectorAll(".tabs button").forEach(function (b) { b.addEventListener("click", function () { tab(b.dataset.tab); if (b.dataset.tab === "review") loadRequests() }) });
+  $("reqrefresh").addEventListener("click", loadRequests);
+  $("addsec").addEventListener("click", function () { addSection("", "") });
+  $("nimg").addEventListener("change", listPicks);
 
   $("newform").addEventListener("submit", async function (e) {
     e.preventDefault();
     var note = $("newmsg");
-    var file = { item: $("nitem").value.trim(), cls: $("ncls").value, level: Number($("nlvl").value), title: $("ntitle").value.trim(), body: $("nbody").value.trim() };
-    if (!file.item || !file.body) return msg(note, "An item and contents are required.", true);
+    var sections = Array.prototype.map.call(document.querySelectorAll("#sections .sec"), function (w) {
+      return { h: w.querySelector("input").value.trim(), text: w.querySelector("textarea").value.trim() };
+    }).filter(function (s) { return s.text });
+    var file = { item: $("nitem").value.trim(), cls: $("ncls").value, level: Number($("nlvl").value), title: $("ntitle").value.trim(), sections: sections, images: [] };
+    if (!file.item || !sections.length) return msg(note, "An item and at least one filled section are required.", true);
+    var picked = Array.prototype.slice.call($("nimg").files, 0, 4);
+    try {
+      for (var i = 0; i < picked.length; i++) {
+        msg(note, "Preparing image " + (i + 1) + " of " + picked.length + "…");
+        var img = await shrink(picked[i]);
+        var cap = document.querySelector('#imgpicks input[data-i="' + i + '"]');
+        img.caption = cap ? cap.value.trim() : "";
+        file.images.push(img);
+      }
+    } catch (err) { return msg(note, "One of the images couldn't be read. Try a JPG or PNG.", true) }
     if (await transmit("file", CONFIG.writeLevel, { by: state.id, file: file }, note)) {
       msg(note, "Transmitted. " + file.item + " appears in a minute or two. Use Refresh.");
-      $("newform").reset(); $("nlvl").value = String(state.level);
+      $("newform").reset(); $("nlvl").value = String(state.level); resetSections();
     }
   });
 
