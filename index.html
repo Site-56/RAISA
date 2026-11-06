@@ -296,6 +296,11 @@ input, select, textarea { border-radius: 2px }
 .myreqs { padding-left: 0; padding-right: 0 }
 .subpreview { border: 0; border-left: 2px solid var(--line); padding: 4px 0 4px 16px }
 .back { display: none }
+.flist { list-style: none; margin: 0 0 10px; padding: 0; display: grid; gap: 2px; max-width: 88ch }
+.frow { all: unset; box-sizing: border-box; cursor: pointer; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 14px; width: 100%; padding: 6px 10px; border-left: 2px solid var(--line) }
+.frow:hover, .frow:focus-visible { border-left-color: var(--ink); background: var(--hover) }
+.frow .ft { color: var(--ink) }
+.frow .fm { color: var(--dim); font-size: 12px }
 @media (max-width: 760px) {
   .list { border-right: 0; border-bottom: 0 }
   .list ul { max-height: none }
@@ -827,8 +832,9 @@ var CONFIG = {
 
   // ---- who is behind a keycard id ----
   function keyInfo(id) { return state.keys.find(function (k) { return k.id === id }) }
-  function personFor(id) { return id ? state.files.find(function (f) { return f.key === id && catOf(f) === "Personnel" }) : null }
-  function whoText(id) { var p = personFor(id); return p ? p.item + " (" + id + ")" : "keycard " + id }
+  // a person's file, found by their current keycard or one they used before
+  function personFor(id) { return id ? state.files.find(function (f) { return catOf(f) === "Personnel" && (f.key === id || (f.pastKeys || []).indexOf(id) >= 0) }) : null }
+  function whoText(id) { if (id === "raisa") return "R.A.I.S.A. (automatic)"; var p = personFor(id); return p ? p.item + " (" + id + ")" : "keycard " + id }
   function canEdit(f) {
     if (!f || !f.id || f.pending || state.level < f.level) return false;
     if (state.agent || (f.by === state.id && state.level >= CONFIG.writeLevel)) return true;
@@ -1020,6 +1026,7 @@ var CONFIG = {
       await renderParts(body, sections[i].parts || [], ctx);
       if (!live()) return;
     }
+    if (f.id && catOf(f) === "Personnel" && live()) drawFolder(doc, f);
     if (f.id && catOf(f) === "Personnel" && live()) drawAssign(doc, f);
     var rest = images.filter(function (img, i) { return !ctx.used[img.n != null ? img.n : i + 1] && (img.src || state.secrets[img.level || f.level]) });
     if (rest.length) {
@@ -1035,7 +1042,14 @@ var CONFIG = {
   function drawFiledBy(doc, f) {
     var box = document.createElement("div"); box.className = "filedby";
     var day = function (ms) { return ms ? new Date(ms).toISOString().slice(0, 10) : "" };
-    if (f.by) { var a = document.createElement("span"); a.textContent = "Filed by " + whoText(f.by) + (f.created ? " on " + day(f.created) : f.added ? " on " + f.added : ""); box.appendChild(a) }
+    if (f.by) {
+      var a = document.createElement("span"), author = personFor(f.by);
+      a.appendChild(document.createTextNode("Filed by "));
+      if (author && author.id !== f.id) { var al = document.createElement("button"); al.type = "button"; al.className = "xref"; al.textContent = author.item; al.title = "Open their folder"; al.addEventListener("click", function () { openFile(author.id) }); a.appendChild(al); a.appendChild(document.createTextNode(" (" + f.by + ")")) }
+      else a.appendChild(document.createTextNode(whoText(f.by)));
+      a.appendChild(document.createTextNode(f.created ? " on " + day(f.created) : f.added ? " on " + f.added : ""));
+      box.appendChild(a);
+    }
     var edits = Array.isArray(f.edits) ? f.edits : [];
     if (edits.length) {
       var last = edits[edits.length - 1], b = document.createElement("span");
@@ -1047,6 +1061,7 @@ var CONFIG = {
       b.appendChild(tog); box.appendChild(b); box.appendChild(list);
     }
     if (box.childNodes.length) doc.appendChild(box);
+    if (catOf(f) === "Personnel" && f.discord) { var dl = document.createElement("div"); dl.className = "keyline"; dl.innerHTML = "Discord <b></b>"; dl.querySelector("b").textContent = "@" + f.discord; doc.appendChild(dl) }
     if (catOf(f) === "Personnel" && f.key) {
       var k = keyInfo(f.key), kl = document.createElement("div"); kl.className = "keyline";
       kl.innerHTML = "Keycard <b></b>";
@@ -1054,6 +1069,40 @@ var CONFIG = {
       kl.appendChild(document.createTextNode(k ? " · Level " + k.level + (k.agent ? " · RAISA agent" : "") + (k.expires ? " · expires " + k.expires : "") : " · not active (revoked or replaced)"));
       doc.appendChild(kl);
     }
+  }
+
+  // a personnel file is that person's folder: everything they filed, and files that mention them
+  function drawFolder(doc, person) {
+    var ids = [person.key].concat(person.pastKeys || []).filter(Boolean);
+    var box = document.createElement("section"); box.className = "box folder";
+    var h = document.createElement("h4"); h.textContent = "Folder"; box.appendChild(h);
+    var list = document.createElement("ul"); list.className = "flist"; box.appendChild(list);
+    var row = function (f, why) {
+      var li = document.createElement("li"), b = document.createElement("button"); b.type = "button"; b.className = "frow";
+      var t = document.createElement("span"); t.className = "ft"; t.textContent = f.item + (f.title ? " · " + f.title : "");
+      var m = document.createElement("span"); m.className = "fm"; m.textContent = catOf(f) + " · L" + f.level + " · " + why + (f.added ? " · " + f.added : "");
+      b.appendChild(t); b.appendChild(m); b.addEventListener("click", function () { openFile(f.id) });
+      li.appendChild(b); list.appendChild(li);
+    };
+    var others = state.files.filter(function (f) { return f.id !== person.id && !f.pending });
+    var filed = ids.length ? others.filter(function (f) { return ids.indexOf(f.by) >= 0 }) : [];
+    filed.sort(function (a, b) { return String(b.added).localeCompare(String(a.added)) }).forEach(function (f) { row(f, "filed by them") });
+    var empty = document.createElement("p"); empty.className = "note";
+    empty.textContent = filed.length ? "" : ids.length ? "Nothing filed by them yet." : "No keycard linked to this file, so files they wrote can't be found. Link one with Edit.";
+    if (empty.textContent) box.appendChild(empty);
+    var more = document.createElement("button"); more.type = "button"; more.className = "btn quiet"; more.textContent = "Find files that mention " + person.item;
+    more.addEventListener("click", async function () {
+      more.disabled = true; more.textContent = "Searching…";
+      await indexText();
+      var name = String(person.item || "").toLowerCase(), shown = filed.map(function (f) { return f.id });
+      var named = name.length >= 3 ? others.filter(function (f) { return shown.indexOf(f.id) < 0 && f.text && f.text.indexOf(name) >= 0 }) : [];
+      named.forEach(function (f) { row(f, "mentions them") });
+      more.remove();
+      if (!named.length) { var n0 = document.createElement("p"); n0.className = "note"; n0.textContent = "No other files you can read mention " + person.item + "."; box.appendChild(n0) }
+      else if (empty.textContent) empty.remove();
+    });
+    box.appendChild(more);
+    doc.appendChild(box);
   }
 
   function drawAssign(doc, f) {
