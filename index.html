@@ -227,6 +227,86 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .1em
 }
 @media (max-width: 560px) { .fig-left, .fig-right { float: none; margin: 4px 0 12px } .fig-s, .fig-m, .fig-l { width: 100% } }
 @media (prefers-reduced-motion: reduce) { .ln.cur::after { animation: none } }
+
+/* ---- clean pass: fewer boxes, one button style, capitals only for headings ---- */
+.btn, .tb { text-transform: none; letter-spacing: 0; font-size: 13px; border: 1px solid var(--line); color: var(--ink); background: transparent; padding: 4px 12px; border-radius: 2px }
+.tb { padding: 2px 8px; min-width: 30px }
+.btn:hover, .btn.quiet:hover, .tb:hover { background: transparent; color: var(--ink); border-color: var(--ink) }
+.btn.quiet { color: var(--dim) }
+.btn.no, .btn.no:hover { color: var(--red); background: transparent }
+.btn.no:hover { border-color: var(--red) }
+.btn.ok:hover { border-color: var(--safe); color: var(--safe) }
+#newsend, #regbtn, #grantbtn, #scanbtn, #reqsend { background: var(--ink); color: var(--bg); border-color: var(--ink) }
+#newsend:hover, #regbtn:hover, #grantbtn:hover, #scanbtn:hover, #reqsend:hover { background: #fff; color: var(--bg) }
+label { text-transform: none; letter-spacing: 0; font-size: 12px }
+input, select, textarea { border-radius: 2px }
+
+.raisa-h { border-bottom: 0; padding-bottom: 0; align-items: flex-start }
+.raisa-h .l1 { letter-spacing: .14em; font-size: 13px }
+.raisa-h .l2 { letter-spacing: 0; margin-top: 2px }
+.badge { border: 0; padding: 0; margin-left: 0; color: var(--ink) }
+.badge::before { content: " · "; color: var(--dim) }
+#logout { border-color: transparent; color: var(--dim); padding: 2px 0 }
+#logout:hover { color: var(--ink); border-color: transparent }
+
+.tabs { gap: 0 22px; border-bottom: 1px solid var(--line) }
+.tabs .btn { border: 0; border-radius: 0; padding: 8px 0; margin-bottom: -1px; color: var(--dim); font-size: 13px; border-bottom: 2px solid transparent }
+.tabs .btn::before, .tabs .btn::after { content: none }
+.tabs .btn:hover { color: var(--ink) }
+.tabs .btn[aria-selected="true"], .tabs .btn[aria-selected="true"]:hover { background: transparent; color: var(--ink); border-bottom-color: var(--ink) }
+.app { gap: 18px }
+.view { border: 0; background: transparent }
+
+.list { border-right: 1px solid var(--line) }
+.list .head { border-bottom: 0; padding: 0 16px 8px 0; letter-spacing: 0 }
+.list .head .btn { font-size: 12px; padding: 2px 10px }
+.catpick { border-bottom: 0; padding: 0 16px 12px 0 }
+.list li.cat { border-bottom: 0; padding: 18px 0 6px; color: var(--dim); letter-spacing: .14em }
+.list li.dept { padding: 8px 0 2px; text-transform: none; letter-spacing: 0; font-size: 12px }
+.list li.indent button { padding-left: 12px }
+.list li button { border-bottom: 0; padding: 6px 16px 6px 10px; border-left: 2px solid transparent }
+.list li button[aria-current="true"] { box-shadow: none; border-left-color: var(--ink); background: var(--hover) }
+.list .lv { font-size: 11px }
+.list ul { max-height: 70vh }
+.doc { padding: 0 0 28px 32px }
+.classbar { border: 0; border-bottom: 1px solid var(--line); padding: 0 0 8px; letter-spacing: .1em }
+.doc .meta { letter-spacing: 0; margin-top: 8px; align-items: center }
+.doc .meta .btn { font-size: 12px; padding: 1px 10px }
+.doc h2 { margin-top: 10px }
+.archive { display: block; font-size: 12px; margin-top: 6px }
+.box { border-top: 0; margin-top: 26px; padding-top: 0 }
+.box h4 { color: var(--dim); margin-bottom: 8px }
+.box .body { max-width: 88ch }
+.unred { border-bottom: 0; background: rgba(214, 162, 63, .12); padding: 0 2px; cursor: help }
+.xref { text-decoration-style: solid; text-decoration-thickness: 1px; text-decoration-color: var(--dim) }
+.xref:hover { text-decoration-color: var(--ink) }
+.filedby .tb { font-size: 11px; padding: 0 6px }
+.assign, .ksec { border-top: 1px solid var(--line) }
+.pendtag { border: 0; padding: 0; color: var(--amber) }
+.pendtag::before { content: "· " }
+
+.form { max-width: 980px; padding: 4px 0 26px }
+.sec { border: 0; border-top: 1px solid var(--line); padding: 14px 0 0 }
+.sec .top input { font-weight: 600 }
+.drop { border-radius: 2px }
+.dlist, .reqs, .klist { padding-left: 0; padding-right: 0 }
+.dreg, .grant, .grantrow, .ksec h3 { padding-left: 0; padding-right: 0 }
+.keyshow { margin-left: 0; margin-right: 0 }
+.dcard, .req { border: 0; border-top: 1px solid var(--line); padding: 14px 0 0 }
+.myreqs { padding-left: 0; padding-right: 0 }
+.subpreview { border: 0; border-left: 2px solid var(--line); padding: 4px 0 4px 16px }
+.back { display: none }
+@media (max-width: 760px) {
+  .list { border-right: 0; border-bottom: 0 }
+  .list ul { max-height: none }
+  .list .head, .catpick, .list li button { padding-right: 0 }
+  .doc { padding: 0 0 22px }
+  .files.reading .list { display: none }
+  .files:not(.reading) .doc { display: none }
+  .back { display: inline-block; margin-bottom: 14px }
+  .form { padding: 4px 0 22px }
+}
+@media (hover: none) { .btn:hover, .tb:hover { border-color: var(--line) } }
 </style>
 </head>
 <body>
@@ -711,8 +791,14 @@ var CONFIG = {
     }
     if (last < text.length) el.appendChild(document.createTextNode(text.slice(last)));
   }
+  // on a phone the list and the open file are separate screens
+  function reading(on) {
+    var files = document.querySelector(".files"); if (!files) return;
+    files.classList.toggle("reading", !!on);
+    if (on && matchMedia("(max-width: 760px)").matches) scrollTo(0, 0);
+  }
   function openFile(id) {
-    tab("files");
+    tab("files"); reading(true);
     if (!$("list").querySelector('[data-id="' + id + '"]')) { $("catfilter").value = ""; $("deptfilter").value = ""; $("search").value = ""; drawFilters(); drawList() }
     show(id);
   }
@@ -815,7 +901,7 @@ var CONFIG = {
         b.querySelector(".lv").textContent = "L" + f.level;
         b.querySelector(".ti").textContent = f.title || f.cls || c;
         if (f.pending) { var pt = document.createElement("span"); pt.className = "pendtag"; pt.textContent = "PENDING"; b.querySelector(".ti").appendChild(pt) }
-        b.addEventListener("click", function () { show(f.id) });
+        b.addEventListener("click", function () { reading(true); show(f.id) });
         li.appendChild(b); list.appendChild(li);
       });
     });
@@ -894,7 +980,7 @@ var CONFIG = {
     var c2 = document.createElement("span"); c2.textContent = (f.pending ? "Pending · " : "") + "Level " + f.level + " · Classified";
     cb.appendChild(c1); cb.appendChild(c2); doc.appendChild(cb);
     var meta = document.createElement("div"); meta.className = "meta";
-    [["LEVEL " + f.level], [f.id ? "FILE " + f.id : "PREVIEW"], [f.added ? "FILED " + f.added : ""]].forEach(function (t) { if (t[0]) { var s = document.createElement("span"); s.textContent = t[0]; meta.appendChild(s) } });
+    [[f.id ? "File " + f.id : "Preview"], [f.added ? "Filed " + f.added : ""]].forEach(function (t) { if (t[0]) { var s = document.createElement("span"); s.textContent = t[0]; meta.appendChild(s) } });
     if (canEdit(f)) { var eb = document.createElement("button"); eb.type = "button"; eb.className = "btn quiet"; eb.textContent = "Edit"; eb.addEventListener("click", function () { startEdit(f) }); meta.appendChild(eb) }
     var h2 = document.createElement("h2"); h2.textContent = f.item || "SCP-????";
     doc.appendChild(meta); doc.appendChild(h2);
@@ -990,6 +1076,9 @@ var CONFIG = {
     try { if (location.hash !== "#" + id) history.replaceState(null, "", "#" + id) } catch (e) {}
     document.querySelectorAll("#list button").forEach(function (b) { b.setAttribute("aria-current", String(b.dataset.id === id)) });
     var doc = $("doc"); doc.innerHTML = "";
+    var back = document.createElement("button"); back.type = "button"; back.className = "btn quiet back"; back.textContent = "← All files";
+    back.addEventListener("click", function () { reading(false); var cur = $("list").querySelector('[data-id="' + id + '"]'); if (cur) cur.scrollIntoView({ block: "center" }) });
+    doc.appendChild(back);
     var seq = state.seq = (state.seq || 0) + 1;
     var live = function () { return state.open === id && state.seq === seq };
     var pre = document.createElement("div"); pre.className = "pre"; doc.appendChild(pre);
@@ -1003,11 +1092,9 @@ var CONFIG = {
     if (!live()) return;
     pre.remove();
     var arch = document.createElement("div"); arch.className = "archive";
-    arch.innerHTML = "<b>DATA ARCHIVE</b><span></span><span></span>";
-    arch.children[1].textContent = "Location: Site-56, [DATA_REDACTED]";
-    arch.children[2].textContent = "Node: HALCYON · IP: " + "█".repeat(18);
+    arch.textContent = "Archive: Site-56, [DATA_REDACTED] · Node HALCYON · IP " + "█".repeat(12);
     await renderFile(doc, f, live);
-    if (live()) doc.insertBefore(arch, doc.querySelector(".box"));
+    if (live()) { var t3 = doc.querySelector("h3") || doc.querySelector("h2"); t3.parentNode.insertBefore(arch, t3.nextSibling) }
   }
 
   function tab(name) {
