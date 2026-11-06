@@ -3,191 +3,219 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Halcyon Terminal</title>
+<title>R.A.I.S.A. Site-56</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
 <style>
-/* layout: one locked terminal; login is all you see until a key opens the file list */
+/* plain terminal: dark gray ground, dark blue panels, forest green accent. one font, one line height */
 :root {
-  --bg: #020604;
-  --panel: #04100a;
-  --line: #0f4026;
-  --dim: #2b8f58;
-  --green: #45ff98;
-  --glow: rgba(69, 255, 152, .55);
-  --amber: #ffd24a;
-  --red: #ff5468;
-  --cyan: #4dfff0;
-  --display: "VT323", "Share Tech Mono", ui-monospace, monospace;
-  --mono: "Share Tech Mono", ui-monospace, Menlo, Consolas, monospace;
+  /* black archive: near-black ground, white ink, typewriter file text. colour only for object classes and errors */
+  --bg: #0b0b0c;
+  --panel: #111113;
+  --line: #2a2a2e;
+  --ink: #e6e6e6;
+  --dim: #8a8a8f;
+  --green: #e6e6e6;
+  --green-ink: #0b0b0c;
+  --hover: rgba(255, 255, 255, .05);
+  --amber: #d6a23f;
+  --red: #d9534f;
+  --cyan: #6ea8d8;
+  --safe: #6fb37a;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --doc: "Courier Prime", "Courier New", Courier, monospace;
+  --lh: 1.75;
   color-scheme: dark;
 }
 * { box-sizing: border-box }
 [hidden] { display: none !important }
 html, body { height: 100% }
-body { background: var(--bg); color: var(--green); font: 400 15px/1.6 var(--mono); text-shadow: 0 0 6px var(--glow);
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 14px/var(--lh) var(--mono);
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
-body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 50;
-  background: repeating-linear-gradient(0deg, rgba(0,0,0,.28) 0 1px, transparent 1px 3px), radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,.65) 100%) }
-::selection { background: var(--green); color: var(--bg) }
+::selection { background: var(--green); color: var(--green-ink) }
 :focus-visible { outline: 1px solid var(--green); outline-offset: 2px }
-button, input, select, textarea { font: inherit; color: inherit; text-shadow: inherit }
+button, input, select, textarea { font: inherit; color: inherit }
+a { color: var(--green) }
 
-.btn { appearance: none; background: transparent; border: 1px solid var(--green); padding: 8px 14px; cursor: pointer; letter-spacing: .12em; text-transform: uppercase; box-shadow: 0 0 10px -2px var(--glow) inset }
-.btn:hover { background: var(--green); color: var(--bg); text-shadow: none }
-.btn.quiet { border-color: var(--line); box-shadow: none; color: var(--dim) }
-.btn.quiet:hover { border-color: var(--green); color: var(--bg) }
-input, select, textarea { width: 100%; background: var(--panel); border: 1px solid var(--line); padding: 10px 12px; border-radius: 0; caret-color: var(--green) }
-input:focus, select:focus, textarea:focus { border-color: var(--green); outline: none; box-shadow: 0 0 12px -4px var(--glow) }
-textarea { min-height: 220px; resize: vertical; line-height: 1.6 }
-label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 6px }
+.btn { appearance: none; background: transparent; border: 1px solid var(--green); color: var(--green); padding: 5px 12px; cursor: pointer; letter-spacing: .08em; text-transform: uppercase; font-size: 12px }
+.btn:hover { background: var(--green); color: var(--green-ink) }
+.btn:disabled { opacity: .5; cursor: default }
+.btn.quiet { border-color: var(--line); color: var(--dim) }
+.btn.quiet:hover { border-color: var(--green); color: var(--green-ink); background: var(--green) }
+.btn.no { border-color: var(--red); color: var(--red) } .btn.no:hover { background: var(--red); color: var(--bg) }
+input, select, textarea { width: 100%; background: var(--panel); border: 1px solid var(--line); padding: 8px 10px; border-radius: 0; caret-color: var(--green) }
+input:focus, select:focus, textarea:focus { border-color: var(--green); outline: none }
+input, select { height: 36px }
+.cmdline input { height: auto }
+textarea { min-height: 200px; resize: vertical; line-height: var(--lh) }
+label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px }
 
-/* login */
-.login { min-height: 100%; display: grid; place-items: center; padding-block: 40px }
-.gate { width: 100%; max-width: 460px; border: 1px solid var(--line); background: var(--panel); padding: 30px 28px 26px; position: relative; box-shadow: 0 0 40px -18px var(--glow) }
-.gate::before, .gate::after { content: ""; position: absolute; width: 14px; height: 14px; border: 2px solid var(--green) }
-.gate::before { top: -2px; left: -2px; border-right: 0; border-bottom: 0 }
-.gate::after { bottom: -2px; right: -2px; border-left: 0; border-top: 0 }
-.hex { width: 64px; height: 64px; filter: drop-shadow(0 0 8px var(--glow)) }
-.gate h1 { font: 400 54px/.9 var(--display); letter-spacing: .06em; margin: 16px 0 4px }
-.gate .sub { color: var(--dim); letter-spacing: .2em; font-size: 12px; text-transform: uppercase }
-.prompt { margin-top: 28px; display: grid; gap: 10px }
-.keyrow { display: flex; gap: 8px }
-.keyrow input { min-width: 0; letter-spacing: .12em; text-transform: uppercase }
-.msg { min-height: 1.6em; font-size: 13px; color: var(--dim) }
-.msg.bad { color: var(--red); text-shadow: 0 0 6px rgba(255,84,104,.5) }
-.blink::after { content: "_"; animation: blink 1s steps(1) infinite }
+/* terminal: every line the same size; blank lines are one line tall */
+.login { min-height: 100% }
+.term { max-width: 780px; margin: 0 auto; padding-block: 40px 60px }
+.ln { white-space: pre-wrap; overflow-wrap: anywhere; min-height: calc(var(--lh) * 1em) }
+.ln.dim { color: var(--dim) } .ln.ok { color: var(--ink); font-weight: 600 } .ln.bad { color: var(--red) } .ln.warn { color: var(--amber) }
+.ln.cur::after { content: "_"; animation: blink 1s steps(1) infinite }
 @keyframes blink { 50% { opacity: 0 } }
+.pbar { color: var(--ink) } .ln.bad.pbar { color: var(--red) }
+.cmdline { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; min-height: calc(var(--lh) * 1em) }
+.cmdline .ps { white-space: nowrap }
+.cmdline input { flex: 1; min-width: 160px; background: transparent; border: 0; border-bottom: 1px solid var(--line); padding: 0 2px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink) }
+.cmdline input:focus { border-bottom-color: var(--green) }
+.skiphint { color: var(--dim); font-size: 12px; margin-top: calc(var(--lh) * 1em) }
+.msg { display: none }
 
 /* app */
-.app { max-width: 1100px; margin: 0 auto; padding-block: 18px 40px; display: grid; gap: 16px }
-.bar { display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: space-between; align-items: center; border: 1px solid var(--line); background: var(--panel); padding: 10px 14px }
-.bar .name { font: 400 30px/1 var(--display); letter-spacing: .08em }
-.bar .who { color: var(--dim); font-size: 13px; letter-spacing: .1em }
-.bar .who b { color: var(--green); font-weight: 400 }
-.tabs { display: flex; flex-wrap: wrap; gap: 6px }
-.tabs button[aria-selected="true"] { background: var(--green); color: var(--bg); text-shadow: none }
+.app { max-width: 1100px; margin: 0 auto; padding-block: 20px 40px; display: grid; gap: 14px }
+.raisa-h { display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 12px }
+.raisa-h .l1 { font-weight: 700; letter-spacing: .1em }
+.raisa-h .l2 { color: var(--dim); font-size: 12px; letter-spacing: .06em }
+.raisa-h .l2 b { color: var(--ink); font-weight: 600 }
+.badge { border: 1px solid var(--green); color: var(--green); padding: 0 6px; margin-left: 6px }
+.tabs { display: flex; flex-wrap: wrap; gap: 4px 16px }
+.tabs .btn { border: 0; padding: 2px 4px; color: var(--dim); font-size: 13px }
+.tabs .btn::before { content: "[ " } .tabs .btn::after { content: " ]" }
+.tabs .btn:hover { background: transparent; color: var(--green) }
+.tabs .btn[aria-selected="true"], .tabs .btn[aria-selected="true"]:hover { background: var(--green); color: var(--green-ink) }
 .view { border: 1px solid var(--line); background: var(--panel); min-height: 420px }
 
 .files { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); min-height: 420px }
 .list { border-right: 1px solid var(--line); display: flex; flex-direction: column; min-width: 0 }
-.list .head { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; border-bottom: 1px solid var(--line); color: var(--dim); font-size: 12px; letter-spacing: .14em }
-.list ul { list-style: none; margin: 0; padding: 0; overflow-y: auto; max-height: 560px }
-.list li button { all: unset; box-sizing: border-box; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 10px; width: 100%; padding: 10px 12px; border-bottom: 1px solid var(--line); cursor: pointer; text-shadow: 0 0 6px var(--glow) }
-.list li button:hover, .list li button[aria-current="true"] { background: rgba(69,255,152,.08) }
-.list li button[aria-current="true"] { box-shadow: 3px 0 0 var(--green) inset }
-.list .it { font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.list .head { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px 12px; border-bottom: 1px solid var(--line); color: var(--dim); font-size: 12px; letter-spacing: .08em }
+.list .head .btn { padding: 2px 8px; font-size: 11px }
+.catpick { padding: 8px 12px; border-bottom: 1px solid var(--line); display: grid; gap: 6px }
+.catpick input { padding: 5px 8px; font-size: 13px; height: 32px }
+.assign { border-top: 1px solid var(--line); margin-top: 18px; padding-top: 10px; display: grid; gap: 6px }
+.assign h4 { margin: 0; font-weight: 600; font-size: 12px; letter-spacing: .12em; text-transform: uppercase }
+.assign .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+.assign select { width: auto; min-width: 200px }
+.dlist { padding: 14px 18px 22px; display: grid; gap: 10px }
+.dcard { border: 1px solid var(--line); padding: 10px 12px; display: grid; gap: 6px }
+.dcard .nm { font-weight: 600 }
+.dcard .heads { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 12px; color: var(--dim) }
+.chip { border: 1px solid var(--line); padding: 0 4px 0 8px; display: inline-flex; gap: 6px; align-items: center; color: var(--ink) }
+.chip button { all: unset; cursor: pointer; color: var(--dim); padding: 0 4px } .chip button:hover { color: var(--red) }
+.dcard .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+.dcard input { width: 180px; height: 30px; padding: 3px 8px; text-transform: lowercase }
+.dreg { padding: 14px 18px 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+.dreg input { flex: 1; min-width: 180px }
+.catpick select { padding: 5px 8px; font-size: 13px }
+.list ul { list-style: none; margin: 0; padding: 0; overflow-y: auto; max-height: 600px }
+.list li.cat { padding: 10px 12px 4px; color: var(--ink); font-weight: 600; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; border-bottom: 1px solid var(--line) }
+.list li.dept { padding: 6px 12px 2px 24px; color: var(--dim); font-size: 11px; letter-spacing: .12em; text-transform: uppercase }
+.list li.indent button { padding-left: 24px }
+.deptreg { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 8px }
+.deptreg input { flex: 1; min-width: 160px }
+.list li button { all: unset; box-sizing: border-box; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 10px; width: 100%; padding: 8px 12px; border-bottom: 1px solid var(--line); cursor: pointer }
+.list li button:hover { background: var(--hover) }
+.list li button[aria-current="true"] { background: var(--hover); box-shadow: 3px 0 0 var(--green) inset }
+.list .it { overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
 .list .lv { color: var(--dim); font-size: 12px }
 .list .ti { grid-column: 1 / -1; color: var(--dim); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
-.empty { padding: 28px 16px; color: var(--dim); font-size: 13px }
+.empty { padding: 20px 14px; color: var(--dim); font-size: 13px }
 
-.doc { padding: 22px 26px 30px; min-width: 0 }
-.doc .meta { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; color: var(--dim); font-size: 13px; letter-spacing: .08em; border-bottom: 1px dashed var(--line); padding-bottom: 14px }
-.doc h2 { font: 400 46px/.95 var(--display); letter-spacing: .04em; margin: 16px 0 4px; overflow-wrap: anywhere }
-.doc h3 { font-size: 15px; font-weight: 400; color: var(--dim); margin: 0 0 18px; letter-spacing: .06em }
-.doc .body { white-space: pre-wrap; overflow-wrap: anywhere; max-width: 72ch }
-.tag { border: 1px solid currentColor; padding: 1px 8px; letter-spacing: .14em; text-transform: uppercase; font-size: 12px }
-.c-Safe { color: var(--green) } .c-Euclid { color: var(--amber) } .c-Keter { color: var(--red) } .c-Thaumiel { color: var(--cyan) } .c-Neutralized, .c-Explained { color: var(--dim) }
-.c-Euclid, .c-Keter, .c-Thaumiel { text-shadow: 0 0 6px currentColor }
-
-.form { padding: 22px 26px 28px; display: grid; gap: 16px; max-width: 760px }
-.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px }
-.grid2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 160px); gap: 14px }
-.form .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center }
-.note { color: var(--dim); font-size: 13px; margin: 0 }
-
-.badge { border: 1px solid var(--cyan); color: var(--cyan); padding: 0 6px; margin-left: 6px; text-shadow: 0 0 6px var(--cyan) }
-.box { border: 1px solid var(--line); margin-top: 18px; background: rgba(69,255,152,.02) }
-.box h4 { margin: 0; padding: 7px 12px; border-bottom: 1px solid var(--line); font-weight: 400; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--dim) }
-.box .body { padding: 12px 14px 14px }
-.red { color: var(--dim); letter-spacing: -.08em; cursor: help; text-shadow: none }
-.unred { border-bottom: 1px dashed var(--amber); cursor: help }
+.doc { padding: 20px 24px 28px; min-width: 0 }
+.pre { color: var(--dim) }
+.classbar { display: flex; flex-wrap: wrap; gap: 4px 14px; justify-content: space-between; border: 1px solid var(--line); padding: 4px 10px; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--dim) }
+.classbar b { font-weight: 500; color: var(--ink) }
+.classbar.c-Safe b { color: var(--safe) } .classbar.c-Euclid b { color: var(--amber) } .classbar.c-Keter b { color: var(--red) } .classbar.c-Thaumiel b { color: var(--cyan) }
+.doc .meta { display: flex; flex-wrap: wrap; gap: 4px 16px; color: var(--dim); font-size: 12px; letter-spacing: .06em; margin-top: 10px }
+.doc h2 { font-size: 26px; line-height: 1.2; font-weight: 700; margin: 12px 0 2px; overflow-wrap: anywhere }
+.doc h3 { font-size: 14px; font-weight: 400; color: var(--dim); margin: 0 }
+.archive { color: var(--dim); font-size: 12px; margin-top: 14px; display: grid }
+.archive b { color: var(--ink); font-weight: 600; letter-spacing: .1em }
+.box { border-top: 1px solid var(--line); margin-top: 18px; padding-top: 10px }
+.box h4 { margin: 0 0 6px; font-weight: 600; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink) }
+.box .body { white-space: pre-wrap; overflow-wrap: anywhere; max-width: 76ch; display: flow-root; font: 400 15px/1.7 var(--doc) }
+.rich strong { font-weight: 700 } .rich u { text-underline-offset: 3px } .rich s { opacity: .7 }
+.red { color: var(--ink); letter-spacing: -.08em; cursor: help }
+.unred { border-bottom: 1px dashed var(--dim); cursor: help }
 .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 18px }
-.gallery figure { margin: 0; border: 1px solid var(--line); background: #000 }
-.gallery img { display: block; width: 100%; max-height: 320px; object-fit: contain; filter: saturate(.85) }
-.gallery figcaption { padding: 6px 10px; font-size: 12px; color: var(--dim); border-top: 1px solid var(--line) }
-.gallery .wait { padding: 40px 10px; text-align: center; color: var(--dim); font-size: 12px }
-.rich strong { color: #b6ffd6 } .rich u { text-underline-offset: 3px } .rich s { opacity: .75 }
-.box .body { display: flow-root }
-.fig { margin: 4px 0 12px; border: 1px solid var(--line); background: #000; max-width: 100% }
+.gallery figure { margin: 0 }
+.fig { margin: 4px 0 12px; border: 1px solid var(--line); background: var(--bg); max-width: 100% }
 .fig img { display: block; width: 100%; height: auto }
-.fig figcaption { padding: 6px 10px; font-size: 12px; color: var(--dim); border-top: 1px solid var(--line) }
-.fig .wait { padding: 34px 10px; text-align: center; color: var(--dim); font-size: 12px }
-.fig .blocked { aspect-ratio: 4 / 3; display: grid; place-items: center; text-align: center; color: var(--dim); font-size: 12px; letter-spacing: .14em; background: repeating-linear-gradient(-45deg, #000 0 10px, #03110a 10px 20px) }
+.fig figcaption { padding: 4px 8px; font-size: 12px; color: var(--dim); border-top: 1px solid var(--line) }
+.fig .wait { padding: 30px 10px; text-align: center; color: var(--dim); font-size: 12px }
+.fig .blocked { aspect-ratio: 4 / 3; display: grid; place-items: center; text-align: center; color: var(--dim); font-size: 12px; letter-spacing: .1em; background: var(--bg) }
 .fig-left { float: left; margin-right: 16px } .fig-right { float: right; margin-left: 16px } .fig-center { margin-left: auto; margin-right: auto }
 .fig-s { width: 25% } .fig-m { width: 40% } .fig-l { width: 60% } .fig-full { width: 100% }
+
+.form { padding: 20px 24px 26px; display: grid; gap: 14px; max-width: 760px }
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px }
+.grid4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px }
+.grid2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 160px); gap: 12px }
+.form .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center }
+.note, .hint { color: var(--dim); font-size: 12px; margin: 0 }
+.note.bad { color: var(--red) }
+.hint code { color: var(--amber) }
+.picks { display: grid; gap: 8px }
 .sec { border: 1px solid var(--line); padding: 10px; display: grid; gap: 8px }
-.sec .tools { display: flex; flex-wrap: wrap; gap: 4px }
-.tb { appearance: none; background: transparent; border: 1px solid var(--line); color: var(--green); min-width: 30px; padding: 3px 8px; cursor: pointer; font: inherit; font-size: 13px; text-shadow: inherit }
-.tb:hover { border-color: var(--green) }
-.tb.red { color: var(--amber); border-color: rgba(255,210,74,.35) }
-.float { position: fixed; z-index: 60; display: flex; gap: 3px; padding: 4px; background: var(--bg); border: 1px solid var(--green); box-shadow: 0 0 18px -6px var(--glow) }
-.float .sep { width: 1px; background: var(--line); margin: 0 3px }
-.tray { display: grid; gap: 8px }
-.tile { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 10px; border: 1px solid var(--line); padding: 8px; align-items: start }
-.tile img { width: 72px; height: 72px; object-fit: cover; border: 1px solid var(--line) }
-.tile .opts { display: flex; flex-wrap: wrap; gap: 6px; align-items: center }
-.tile .opts select { width: auto; padding: 4px 6px }
-.tile .opts input { flex: 1; min-width: 140px; padding: 4px 8px }
-.tile .n { color: var(--amber); font-size: 13px; text-shadow: none }
-.drop { border: 1px dashed var(--line); padding: 10px 12px; color: var(--dim); font-size: 13px; text-align: center }
-.drop.over { border-color: var(--green); color: var(--green) }
-.preview.doc { border: 1px dashed var(--line); padding: 18px 20px 22px; max-width: none }
 .sec .top { display: flex; gap: 8px }
 .sec .top input { flex: 1; min-width: 0 }
+.sec .tools { display: flex; flex-wrap: wrap; gap: 4px }
 .sec textarea { min-height: 120px }
-.hint { color: var(--dim); font-size: 12px; margin: 0 }
-.hint code { color: var(--amber); text-shadow: none }
-.picks { display: grid; gap: 8px }
-.pick { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 13px }
-.pick span { color: var(--dim); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 220px }
-.pick input { flex: 1; min-width: 140px }
-.reqs { padding: 16px 20px 24px; display: grid; gap: 12px }
-.req { border: 1px solid var(--line); padding: 12px 14px; display: grid; gap: 6px }
-.req .row1 { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline }
-.req .row1 b { font: 400 26px/1 var(--display); letter-spacing: .04em; font-weight: 400 }
-.req .meta2 { color: var(--dim); font-size: 13px }
-.req .why { white-space: pre-wrap; overflow-wrap: anywhere }
-.req .acts { display: flex; gap: 8px; flex-wrap: wrap; align-items: center }
-.st-approved { color: var(--green) } .st-denied { color: var(--red) } .st-pending { color: var(--amber) }
-.btn.ok:hover { background: var(--green) } .btn.no { border-color: var(--red); color: var(--red) } .btn.no:hover { background: var(--red); color: var(--bg) }
+.tb { appearance: none; background: transparent; border: 1px solid var(--line); color: var(--ink); min-width: 28px; padding: 2px 7px; cursor: pointer; font: inherit; font-size: 12px }
+.tb:hover { border-color: var(--green) }
+.tb.red { color: var(--amber); letter-spacing: 0 }
+.float { position: fixed; z-index: 60; display: flex; gap: 3px; padding: 4px; background: var(--bg); border: 1px solid var(--green) }
+.float .sep { width: 1px; background: var(--line); margin: 0 3px }
+.tray { display: grid; gap: 8px }
+.tile { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 10px; border: 1px solid var(--line); padding: 8px; align-items: start }
+.tile img { width: 64px; height: 64px; object-fit: cover; border: 1px solid var(--line) }
+.tile .opts { display: flex; flex-wrap: wrap; gap: 6px; align-items: center }
+.tile .opts select { width: auto; padding: 3px 6px }
+.tile .opts input { flex: 1; min-width: 140px; padding: 3px 8px }
+.tile .n { color: var(--amber); font-size: 12px }
+.drop { border: 1px dashed var(--line); padding: 10px 12px; color: var(--dim); font-size: 13px; text-align: center }
+.drop.over { border-color: var(--green); color: var(--green) }
+.preview.doc { border: 1px dashed var(--line); max-width: none }
 
-@media (max-width: 560px) { .fig-left, .fig-right { float: none; margin: 4px 0 12px } .fig-s, .fig-m, .fig-l { width: 100% } }
+.reqs { padding: 14px 18px 22px; display: grid; gap: 10px }
+.req { border: 1px solid var(--line); padding: 10px 12px; display: grid; gap: 4px }
+.req .row1 { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline }
+.req .row1 b { font-weight: 700 }
+.req .meta2 { color: var(--dim); font-size: 12px }
+.req .why { white-space: pre-wrap; overflow-wrap: anywhere }
+.req .acts { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 4px }
+.st-approved { color: var(--safe) } .st-denied { color: var(--red) } .st-pending { color: var(--amber) }
+
+.closing { position: fixed; inset: 0; z-index: 70; background: var(--bg); overflow: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+
 @media (max-width: 760px) {
   .files { grid-template-columns: minmax(0, 1fr) }
   .list { border-right: 0; border-bottom: 1px solid var(--line) }
-  .list ul { max-height: 240px }
-  .grid3, .grid2 { grid-template-columns: minmax(0, 1fr) }
-  .doc, .form { padding: 18px 16px 24px }
+  .list ul { max-height: 260px }
+  .grid3, .grid4, .grid2 { grid-template-columns: minmax(0, 1fr) }
+  .doc, .form { padding: 16px 14px 22px }
 }
-@media (prefers-reduced-motion: reduce) { .blink::after { animation: none } }
+@media (max-width: 560px) { .fig-left, .fig-right { float: none; margin: 4px 0 12px } .fig-s, .fig-m, .fig-l { width: 100% } }
+@media (prefers-reduced-motion: reduce) { .ln.cur::after { animation: none } }
 </style>
-<style>body{margin:0}</style>
 </head>
 <body>
 
 
 <section class="login" id="login">
-  <form class="gate" id="gate" novalidate>
-    <svg class="hex" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 3 57 17.5v29L32 61 7 46.5v-29Z" fill="none" stroke="#45ff98" stroke-width="2.5"/><path d="M32 15 47 23.7v16.6L32 49 17 40.3V23.7Z" fill="none" stroke="#45ff98" stroke-width="1.5" opacity=".6"/><circle cx="32" cy="32" r="5" fill="#45ff98"/></svg>
-    <h1>HALCYON</h1>
-    <div class="sub">Site-56 · RAISA secure terminal</div>
-    <div class="prompt">
-      <label for="key">&gt; Access key</label>
-      <div class="keyrow">
-        <input id="key" placeholder="HAL-XXXX-XXXX-XXXX" autocomplete="off" spellcheck="false" autofocus>
-        <button class="btn" type="submit">Enter</button>
-      </div>
-      <div class="msg blink" id="msg" aria-live="polite">Awaiting key</div>
-    </div>
-  </form>
+  <div class="term" id="term" aria-live="polite">
+    <div id="boot"></div>
+    <form class="cmdline" id="gate" novalidate hidden>
+      <label class="ps" for="key" style="all:unset;white-space:nowrap">&gt; KEYCARD:</label>
+      <input id="key" placeholder="HAL-XXXX-XXXX-XXXX" autocomplete="off" spellcheck="false">
+      <button class="btn" type="button" id="scanbtn">Scan</button>
+    </form>
+    <div id="scan"></div>
+    <div class="msg" id="msg" hidden></div>
+    <div class="skiphint" id="skiphint">CLICK OR PRESS ANY KEY TO SKIP</div>
+  </div>
 </section>
 
 <section class="app" id="app" hidden>
-  <header class="bar">
-    <div class="name">HALCYON</div>
-    <div class="who" id="who"></div>
+  <header class="raisa-h">
+    <div>
+      <div class="l1">R.A.I.S.A. SECURE DATABASE</div>
+      <div class="l2">SITE-56 · HALCYON NODE · <span id="who"></span></div>
+    </div>
     <button class="btn quiet" type="button" id="logout">Log out</button>
   </header>
   <nav class="tabs" role="tablist">
@@ -195,36 +223,52 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .14e
     <button class="btn" role="tab" data-tab="new" aria-selected="false" id="newtab" hidden>New file</button>
     <button class="btn" role="tab" data-tab="request" aria-selected="false">Request</button>
     <button class="btn" role="tab" data-tab="review" aria-selected="false" id="reviewtab" hidden>Requests</button>
+    <button class="btn" role="tab" data-tab="depts" aria-selected="false" id="deptstab" hidden>Departments</button>
   </nav>
 
   <div class="view" data-view="files">
     <div class="files">
       <div class="list">
         <div class="head"><span id="filecount">FILES</span><button class="btn quiet" type="button" id="refresh" style="padding:3px 8px;font-size:11px">Refresh</button></div>
+        <div class="catpick">
+          <select id="catfilter" aria-label="Category"><option value="">All categories</option></select>
+          <select id="deptfilter" aria-label="Department" hidden><option value="">All departments</option></select>
+          <input id="search" type="search" placeholder="Search names and titles" autocomplete="off" aria-label="Search files">
+        </div>
         <ul id="list"></ul>
       </div>
-      <article class="doc" id="doc"><div class="empty">Select a file.</div></article>
+      <article class="doc" id="doc"><div class="empty">&gt; PLEASE SELECT A FILE_</div></article>
     </div>
   </div>
 
   <div class="view" data-view="new" hidden>
     <form class="form" id="newform" novalidate>
-      <div class="grid3">
-        <div><label for="nitem">Item</label><input id="nitem" placeholder="SCP-0000" autocomplete="off"></div>
-        <div><label for="ncls">Class</label><select id="ncls"><option>Safe</option><option>Euclid</option><option>Keter</option><option>Thaumiel</option><option>Neutralized</option><option>Explained</option></select></div>
+      <div class="grid4">
+        <div><label for="ncat">Category</label><select id="ncat"></select></div>
+        <div><label for="nitem">Name</label><input id="nitem" placeholder="SCP-0000" autocomplete="off"></div>
+        <div id="nclswrap"><label for="ncls">Class</label><select id="ncls"><option>Safe</option><option>Euclid</option><option>Keter</option><option>Thaumiel</option><option>Neutralized</option><option>Explained</option></select></div>
         <div><label for="nlvl">Level</label><select id="nlvl"></select></div>
+      </div>
+      <div id="ndeptwrap" hidden><label for="ndept">Department</label><select id="ndept"><option value="">Unassigned</option></select>
+        <div class="deptreg" id="deptreg" hidden><input id="newdept" placeholder="New department name" autocomplete="off" maxlength="40"><button class="btn quiet" type="button" id="adddept">Register department</button><p class="note" id="deptmsg">Only RAISA can register departments.</p></div>
       </div>
       <div><label for="ntitle">Title</label><input id="ntitle" placeholder="Short description" autocomplete="off"></div>
       <p class="hint">Select text for a formatting bar, or use Ctrl+B / I / U. Paste (Ctrl+V) or drag images straight into a section. They appear where your cursor is.</p>
       <div class="picks" id="sections"></div>
       <div class="row"><button class="btn quiet" type="button" id="addsec">+ Add section</button></div>
       <div><label>Images</label>
-        <div class="drop" id="drop">Drop images here, paste them into a section, or <label for="nimg" style="display:inline;color:var(--green);cursor:pointer;text-decoration:underline;letter-spacing:0;text-transform:none;font-size:13px">choose files</label><input id="nimg" type="file" accept="image/*" multiple hidden></div>
+        <div class="drop" id="drop">Drop images here, paste them into a section, or <label for="nimg" style="display:inline;color:var(--ink);cursor:pointer;text-decoration:underline;letter-spacing:0;text-transform:none;font-size:13px">choose files</label><input id="nimg" type="file" accept="image/*" multiple hidden></div>
         <div class="tray" id="tray" style="margin-top:8px"></div>
       </div>
-      <div class="row"><button class="btn" type="submit">Transmit</button><button class="btn quiet" type="button" id="previewbtn">Preview</button><p class="note" id="newmsg">Files appear for everyone with that level after a minute or two.</p></div>
+      <div class="row"><button class="btn" type="button" id="newsend">Transmit</button><button class="btn quiet" type="button" id="previewbtn">Preview</button><p class="note" id="newmsg">Files appear for everyone with that level after a minute or two.</p></div>
       <div class="preview doc" id="preview" hidden></div>
     </form>
+  </div>
+
+  <div class="view" data-view="depts" id="deptsview" hidden>
+    <div class="list" style="border-right:0"><div class="head"><span id="deptcount">DEPARTMENTS</span></div></div>
+    <div class="dreg"><input id="regname" placeholder="New department name" autocomplete="off" maxlength="40" aria-label="New department name"><button class="btn" type="button" id="regbtn">Register</button><p class="note" id="regmsg">Heads are set by keycard ID, the 8 characters after KEYCARD in someone's header.</p></div>
+    <div class="dlist" id="dlist"></div>
   </div>
 
   <div class="view" data-view="review" hidden>
@@ -239,7 +283,7 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .14e
         <div><label for="rlvl">Level needed</label><select id="rlvl"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option></select></div>
       </div>
       <div><label for="rwhy">Reason</label><textarea id="rwhy" style="min-height:120px" placeholder="Why you need access."></textarea></div>
-      <div class="row"><button class="btn" type="submit">Transmit</button><p class="note" id="reqmsg">RAISA reviews every request.</p></div>
+      <div class="row"><button class="btn" type="button" id="reqsend">Transmit</button><p class="note" id="reqmsg">RAISA reviews every request.</p></div>
     </form>
   </div>
 </section>
@@ -259,12 +303,57 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .14e
 <script>
 var CONFIG = {
   endpoint: "https://raisa-bot-production.up.railway.app/submit",
-  writeLevel: 3
+  writeLevel: 3,
+  // file categories. add more here; each can have its own starting sections
+  categories: [
+    { name: "Objects", sections: ["Special Containment Procedures", "Description", "Addendum"], item: "SCP-0000" },
+    { name: "Mobile Task Forces", sections: ["Overview", "Composition", "Notable Operations"], item: "MTF Epsilon-11" },
+    { name: "Groups of Interest", sections: ["Overview", "Known Activity", "Foundation Interest"], item: "GOI-0000" },
+    { name: "Personnel", sections: ["Profile", "Assignment", "Notes"], item: "Dr. Surname" },
+    { name: "Sites & Facilities", sections: ["Overview", "Location", "Notable Contents"], item: "Site-56" },
+    { name: "Incidents", sections: ["Summary", "Timeline", "Outcome"], item: "Incident 56-001" },
+    { name: "Protocols", sections: ["Purpose", "Procedure", "Authorisation"], item: "Protocol 56-A" },
+    { name: "Records", sections: ["Summary", "Details"], item: "Record 56-001" }
+  ]
 };
 
 (function () {
   var state = { key: null, id: null, level: 0, secrets: {}, agent: null, files: [], open: null, images: {} };
-  var DEFAULT_SECTIONS = ["Special Containment Procedures", "Description", "Behaviors"];
+  var CATS = CONFIG.categories || [{ name: "Objects", sections: ["Special Containment Procedures", "Description"], item: "SCP-0000" }];
+  // departments: { id, name, heads: [keycard ids] }. stored encrypted in departments.json, changed only through the bot
+  var DEPTS = [], LOCAL_DEPTS = {};
+  function deptNames() { return DEPTS.map(function (d) { return d.name }) }
+  function deptByName(n) { return DEPTS.find(function (d) { return d.name === n }) }
+  function myDepts() { return DEPTS.filter(function (d) { return d.heads.indexOf(state.id) >= 0 }) }
+  async function loadDepartments() {
+    var out = [];
+    try {
+      var raw = (await getJson("departments.json")).departments || [];
+      for (var i = 0; i < raw.length; i++) {
+        try { var d = await open(state.secrets[1], raw[i].iv, raw[i].data); if (d && d.name) out.push({ id: raw[i].id, name: String(d.name), heads: Array.isArray(d.heads) ? d.heads.map(String) : [] }) } catch (e) {}
+      }
+    } catch (e) {}
+    Object.keys(LOCAL_DEPTS).forEach(function (k) { var l = LOCAL_DEPTS[k], ex = out.find(function (d) { return d.id === l.id }); if (ex) { ex.heads = l.heads } else out.push(l) });
+    DEPTS = out.sort(function (a, b) { return a.name.localeCompare(b.name) });
+    drawDeptPicker(); drawWho(); drawFilters(); drawList();
+    if (!$("deptsview").hidden) drawDeptAdmin();
+  }
+  function drawDeptPicker() {
+    var sel = $("ndept"); if (!sel) return;
+    var keep = sel.value; sel.innerHTML = "";
+    sel.add(new Option("Unassigned", ""));
+    deptNames().forEach(function (n) { sel.add(new Option(n, n)) });
+    if (deptNames().indexOf(keep) >= 0) sel.value = keep;
+  }
+  function drawWho() {
+    var heads = myDepts().map(function (d) { return d.name });
+    $("who").innerHTML = "CLEARANCE LEVEL <b>" + state.level + "</b> · KEYCARD <b>" + state.id + "</b>" + (state.agent ? '<span class="badge">RAISA AGENT</span>' : "") + (heads.length ? '<span class="badge" id="headbadge"></span>' : "");
+    if (heads.length) $("headbadge").textContent = "HEAD · " + heads.join(", ").toUpperCase();
+    $("deptstab").hidden = !state.agent;
+  }
+  function catOf(f) { if (f.cat) return f.cat; return /^scp-/i.test(String(f.item || "")) ? "Objects" : "Records" }
+  function catInfo(name) { return CATS.find(function (c) { return c.name === name }) || { name: name, sections: ["Summary", "Details"], item: "" } }
+  var DEFAULT_SECTIONS = CATS[0].sections;
   var draft = { images: [], next: 1, focus: null };
   var MARKS = { b: ["**", "**"], i: ["*", "*"], u: ["__", "__"], s: ["~~", "~~"] };
   var INLINE = /\*\*([\s\S]+?)\*\*|__([\s\S]+?)__|~~([\s\S]+?)~~|\*([^*\n]+?)\*|\{\{\s*img\s*(\d+)\s*\}\}/;
@@ -273,46 +362,174 @@ var CONFIG = {
 
   function b64(bytes) { var s = ""; bytes = new Uint8Array(bytes); for (var i = 0; i < bytes.length; i++) s += String.fromCharCode(bytes[i]); return btoa(s) }
   function unb64(s) { var bin = atob(s), out = new Uint8Array(bin.length); for (var i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i); return out }
-  async function sha8(text) { var d = await crypto.subtle.digest("SHA-256", enc.encode(text)); return Array.prototype.map.call(new Uint8Array(d), function (b) { return b.toString(16).padStart(2, "0") }).join("").slice(0, 8) }
-  async function kek(key, salt) {
-    var base = await crypto.subtle.importKey("raw", enc.encode(key), "PBKDF2", false, ["deriveKey"]);
-    return crypto.subtle.deriveKey({ name: "PBKDF2", salt: unb64(salt), iterations: 200000, hash: "SHA-256" }, base, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
+  // built-in browser crypto first; if the page isn't treated as secure (some app viewers), fall back to forge
+  var ITER = CONFIG.iterations || 200000;
+  var hasSubtle = !!(window.crypto && crypto.subtle);
+  var forgeReady = null;
+  function needForge() {
+    if (!forgeReady) forgeReady = new Promise(function (res, rej) {
+      if (window.forge) return res(window.forge);
+      var sc = document.createElement("script"); sc.src = "https://cdnjs.cloudflare.com/ajax/libs/forge/1.3.1/forge.min.js";
+      sc.onload = function () { window.forge ? res(window.forge) : rej(new Error("crypto library missing")) };
+      sc.onerror = function () { forgeReady = null; rej(new Error("crypto library blocked")) };
+      document.head.appendChild(sc);
+    });
+    return forgeReady;
   }
-  function aes(raw) { return crypto.subtle.importKey("raw", unb64(raw), "AES-GCM", false, ["encrypt", "decrypt"]) }
-  async function openBytes(k, iv, data) { return crypto.subtle.decrypt({ name: "AES-GCM", iv: unb64(iv) }, k, unb64(data)) }
-  async function open(k, iv, data) { var p = await crypto.subtle.decrypt({ name: "AES-GCM", iv: unb64(iv) }, k, unb64(data)); return JSON.parse(dec.decode(p)) }
-  async function seal(k, value) { var iv = crypto.getRandomValues(new Uint8Array(12)); var c = await crypto.subtle.encrypt({ name: "AES-GCM", iv: iv }, k, enc.encode(JSON.stringify(value))); return { iv: b64(iv), data: b64(c) } }
+  function bin(bytes) { var s = ""; bytes = new Uint8Array(bytes); for (var i = 0; i < bytes.length; i++) s += String.fromCharCode(bytes[i]); return s }
+  function unbin(s) { var out = new Uint8Array(s.length); for (var i = 0; i < s.length; i++) out[i] = s.charCodeAt(i) & 255; return out }
+  async function sha8(text) {
+    if (hasSubtle) { try { var d = await crypto.subtle.digest("SHA-256", enc.encode(text)); return Array.prototype.map.call(new Uint8Array(d), function (b) { return b.toString(16).padStart(2, "0") }).join("").slice(0, 8) } catch (e) { hasSubtle = false } }
+    var f = await needForge(); var md = f.md.sha256.create(); md.update(text, "utf8"); return md.digest().toHex().slice(0, 8);
+  }
+  async function kek(key, salt) {
+    if (hasSubtle) {
+      try {
+        var base = await crypto.subtle.importKey("raw", enc.encode(key), "PBKDF2", false, ["deriveKey"]);
+        return await crypto.subtle.deriveKey({ name: "PBKDF2", salt: unb64(salt), iterations: ITER, hash: "SHA-256" }, base, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
+      } catch (e) { hasSubtle = false }
+    }
+    var f = await needForge();
+    var dk = await new Promise(function (res, rej) { f.pkcs5.pbkdf2(f.util.encodeUtf8(key), bin(unb64(salt)), ITER, 32, f.md.sha256.create(), function (err, k) { if (err) rej(err); else res(k) }) });
+    return { raw: dk };
+  }
+  async function aes(raw) {
+    if (hasSubtle) { try { return await crypto.subtle.importKey("raw", unb64(raw), "AES-GCM", false, ["encrypt", "decrypt"]) } catch (e) { hasSubtle = false } }
+    return { raw: bin(unb64(raw)) };
+  }
+  async function openBytes(k, iv, data) {
+    if (!(k && k.raw !== undefined)) return crypto.subtle.decrypt({ name: "AES-GCM", iv: unb64(iv) }, k, unb64(data));
+    var f = await needForge();
+    var all = bin(unb64(data)), tag = all.slice(-16), ct = all.slice(0, -16);
+    var d = f.cipher.createDecipher("AES-GCM", k.raw);
+    d.start({ iv: bin(unb64(iv)), tagLength: 128, tag: f.util.createBuffer(tag) });
+    d.update(f.util.createBuffer(ct));
+    if (!d.finish()) throw new Error("decrypt");
+    return unbin(d.output.getBytes()).buffer;
+  }
+  async function open(k, iv, data) { return JSON.parse(dec.decode(await openBytes(k, iv, data))) }
+  async function seal(k, value) {
+    var iv = crypto.getRandomValues(new Uint8Array(12));
+    if (!(k && k.raw !== undefined)) { var c = await crypto.subtle.encrypt({ name: "AES-GCM", iv: iv }, k, enc.encode(JSON.stringify(value))); return { iv: b64(iv), data: b64(c) } }
+    var f = await needForge();
+    var ci = f.cipher.createCipher("AES-GCM", k.raw);
+    ci.start({ iv: bin(iv), tagLength: 128 });
+    ci.update(f.util.createBuffer(f.util.encodeUtf8(JSON.stringify(value))));
+    ci.finish();
+    return { iv: b64(iv), data: btoa(ci.output.getBytes() + ci.mode.tag.getBytes()) };
+  }
   async function getJson(file) { var r = await fetch(file + "?t=" + Date.now(), { cache: "no-store" }); if (!r.ok) throw new Error(file); return r.json() }
 
   function msg(el, text, bad) { el.textContent = text; el.classList.toggle("bad", !!bad) }
 
-  async function login(key, quiet) {
-    key = key.trim().toUpperCase().replace(/\s+/g, "");
-    var m = $("msg");
-    if (!key) return msg(m, "Enter a key.", true);
-    m.classList.remove("blink"); msg(m, "Verifying…");
+  // ---- terminal typing ----
+  var reduce = false;
+  try { reduce = matchMedia("(prefers-reduced-motion: reduce)").matches } catch (e) {}
+  var fast = reduce;
+  function sleep(ms) { return new Promise(function (r) { setTimeout(r, fast ? 0 : ms) }) }
+  function line(box, text, cls) {
+    var d = document.createElement("div"); d.className = "ln" + (cls ? " " + cls : ""); d.textContent = text || "";
+    box.appendChild(d); return d;
+  }
+  async function type(box, text, cls, speed) {
+    var d = line(box, "", (cls ? cls + " " : "") + "cur");
+    if (fast) { d.textContent = text; d.classList.remove("cur"); return d }
+    var step = Math.max(1, Math.round(text.length / 60));
+    for (var i = 0; i < text.length; i += step) {
+      if (fast) break;
+      d.textContent = text.slice(0, i + step);
+      await new Promise(function (r) { setTimeout(r, speed || 14) });
+    }
+    d.textContent = text; d.classList.remove("cur"); return d;
+  }
+  function barText(p) { var n = Math.round(p / 5), dash = innerWidth < 640 ? 0 : 40; return "█".repeat(n) + "░".repeat(20 - n) + " " + p + "%" + (p < 100 && dash ? (p < 10 ? "  " : " ") + "-".repeat(dash) : "") }
+  function redact(s) { return String(s).replace(/[A-Za-z0-9]/g, "█") }
+  function skipper() { fast = true }
+  addEventListener("keydown", function (e) { if (!$("login").hidden && document.activeElement !== $("key")) skipper() });
+  addEventListener("pointerdown", function (e) { if (!$("login").hidden && !(e.target.closest && e.target.closest("#gate, #demokeys"))) skipper() });
+
+  async function boot() {
+    var box = $("boot");
+    await type(box, "> Welcome to the Records and Information Security Administration [R.A.I.S.A.] secure database.", "", 12);
+    line(box, "> Site-56 · Halcyon node. Unauthorised access is a Level 4 offence.", "dim");
+    line(box, "");
+    await sleep(250);
+    await type(box, "> [USER] PLEASE STATE YOUR CLEARANCE_LEVEL & INSERT YOUR KEYCARD IN THE DESIGNATED SCANNER:");
+    showGate();
+  }
+  function showGate() {
+    $("skiphint").hidden = true;
+    $("gate").hidden = false; $("key").disabled = false;
+    $("gate").querySelector("button").disabled = false;
+    try { $("key").focus({ preventScroll: true }) } catch (e) { $("key").focus() }
+  }
+  function lockGate() { $("key").disabled = true; $("gate").querySelector("button").disabled = true }
+
+  // checks the key and loads its clearances. returns "ok", "denied" or "offline"
+  async function verify(key) {
     try {
       var id = await sha8(key);
       var keys = (await getJson("keys.json")).keys || [];
       var entry = keys.find(function (k) { return k.id === id });
-      if (!entry) { m.classList.add("blink"); try { sessionStorage.removeItem("hal") } catch (e) {} return msg(m, quiet ? "Saved key no longer valid. Awaiting key" : "Access denied. Key not recognised.", true) }
+      if (!entry) { try { sessionStorage.removeItem("hal") } catch (e) {} return "denied" }
       var granted = await open(await kek(key, entry.salt), entry.iv, entry.data);
       state.key = key; state.id = id; state.secrets = {};
       state.agent = null;
       for (var l in granted) { if (l === "agent") state.agent = await aes(granted[l]); else state.secrets[l] = await aes(granted[l]) }
       state.level = Math.max.apply(null, Object.keys(state.secrets).map(Number));
       try { sessionStorage.setItem("hal", key) } catch (e) {}
-      enter();
-      ping();
-    } catch (e) {
-      m.classList.add("blink");
-      msg(m, "Terminal offline. Try again shortly.", true);
+      return "ok";
+    } catch (e) { state.why = e && e.message; return "offline" }
+  }
+
+  async function login(key, quiet) {
+    key = key.trim().toUpperCase().replace(/\s+/g, "-").replace(/-{2,}/g, "-");
+    var box = $("scan");
+    if (!key) { box.innerHTML = ""; line(box, "> NO KEYCARD DETECTED. PLEASE INSERT YOUR KEYCARD.", "bad"); return }
+    lockGate(); box.innerHTML = "";
+    var check = verify(key);
+    var result = null; check.then(function (r) { result = r });
+    if (quiet) {
+      $("skiphint").hidden = true;
+      await type($("boot"), "> RESUMING SESSION. RE-VERIFYING KEYCARD . . .", "dim", 8);
+    } else {
+      line(box, "", "gap");
+      await type(box, "> DETECTED_BIOMETRICS_ACCESS_");
+      await sleep(200);
+      await type(box, "> PLEASE WAIT. . .");
+      line(box, "", "gap");
     }
+    var steps = quiet ? [100] : [5, 20, 35, 55, 75, 100];
+    for (var i = 0; i < steps.length; i++) {
+      if (steps[i] === 100 || ((result === "denied" || result === "offline") && steps[i] >= 35)) {
+        await check;
+        if (result !== "ok") break;
+      }
+      line(box, "-> " + barText(steps[i]), "pbar");
+      await sleep(260);
+    }
+    if (result !== "ok") {
+      if (quiet) { $("boot").innerHTML = ""; fast = reduce; await boot(); line(box, "> SAVED KEYCARD NO LONGER VALID.", "warn"); return }
+      line(box, "-> " + barText(steps[Math.min(i, steps.length - 1)]).replace(/-+$/, "") + " ERROR", "bad pbar");
+      line(box, "");
+      line(box, result === "offline" ? "> CONNECTION TO R.A.I.S.A. LOST. TRY AGAIN SHORTLY." : "> ACCESS DENIED. KEYCARD NOT RECOGNISED. THIS ATTEMPT HAS BEEN LOGGED.", "bad");
+      if (result === "offline" && state.why) line(box, "  (" + state.why + ")", "dim");
+      showGate(); $("key").select();
+      return;
+    }
+    line(box, "");
+    line(box, "> ACCESS GRANTED.", "ok");
+    await type(box, "> Welcome " + redact(state.id.slice(0, 2)) + "-" + redact(state.id.slice(2, 3)) + ".");
+    line(box, "- ACCESS AUTHORIZED: LEVEL " + state.level + " CLEARANCE FILES", "ok");
+    if (state.agent) line(box, "- RAISA AGENT PRIVILEGES DETECTED", "warn");
+    await sleep(quiet ? 200 : 900);
+    enter();
+    ping();
   }
 
   function enter() {
     $("login").hidden = true; $("app").hidden = false;
-    $("who").innerHTML = "LEVEL <b>" + state.level + "</b> · KEY <b>" + state.id + "</b>" + (state.agent ? '<span class="badge">AGENT</span>' : "");
+    drawWho();
     $("reviewtab").hidden = !state.agent;
     resetSections();
     var canWrite = state.level >= CONFIG.writeLevel;
@@ -326,6 +543,7 @@ var CONFIG = {
 
   async function loadFiles() {
     $("filecount").textContent = "LOADING…";
+    loadDepartments();
     var out = [];
     try {
       var files = (await getJson("files.json")).files || [];
@@ -340,17 +558,67 @@ var CONFIG = {
     $("filecount").textContent = out.length + (out.length === 1 ? " FILE" : " FILES");
     var list = $("list"); list.innerHTML = "";
     if (!out.length) { list.innerHTML = '<li class="empty">No files at your level yet.</li>'; $("doc").innerHTML = '<div class="empty">Nothing to show.</div>'; return }
-    out.forEach(function (f) {
-      var li = document.createElement("li"), b = document.createElement("button");
-      b.type = "button"; b.dataset.id = f.id;
-      b.innerHTML = '<span class="it"></span><span class="lv"></span><span class="ti"></span>';
-      b.querySelector(".it").textContent = f.item;
-      b.querySelector(".lv").textContent = "L" + f.level;
-      b.querySelector(".ti").textContent = f.title || f.cls;
-      b.addEventListener("click", function () { show(f.id) });
-      li.appendChild(b); list.appendChild(li);
-    });
+    var pick = $("catfilter"), keep = pick.value, counts = {};
+    out.forEach(function (f) { var c = catOf(f); counts[c] = (counts[c] || 0) + 1 });
+    pick.innerHTML = ""; pick.add(new Option("All categories (" + out.length + ")", ""));
+    var names = CATS.map(function (c) { return c.name });
+    Object.keys(counts).forEach(function (c) { if (names.indexOf(c) < 0) names.push(c) });
+    names.forEach(function (c) { if (counts[c]) pick.add(new Option(c + " (" + counts[c] + ")", c)) });
+    pick.value = counts[keep] ? keep : "";
+    drawFilters();
+    drawList();
     show(state.open && out.some(function (f) { return f.id === state.open }) ? state.open : out[0].id);
+  }
+
+  function drawFilters() {
+    var df = $("deptfilter"), keep = df.value, people = state.files.filter(function (f) { return catOf(f) === "Personnel" });
+    df.hidden = $("catfilter").value !== "Personnel";
+    var counts = {}; people.forEach(function (f) { var d = f.dept || "Unassigned"; counts[d] = (counts[d] || 0) + 1 });
+    df.innerHTML = ""; df.add(new Option("All departments (" + people.length + ")", ""));
+    var names = deptNames().slice(); Object.keys(counts).forEach(function (d) { if (d !== "Unassigned" && names.indexOf(d) < 0) names.push(d) });
+    names.forEach(function (d) { df.add(new Option(d + " (" + (counts[d] || 0) + ")", d)) });
+    df.add(new Option("Unassigned (" + (counts.Unassigned || 0) + ")", "Unassigned"));
+    df.value = Array.prototype.some.call(df.options, function (o) { return o.value === keep }) ? keep : "";
+  }
+  function drawList() {
+    var list = $("list"), want = $("catfilter").value, wantDept = want === "Personnel" ? $("deptfilter").value : "", q = $("search").value.trim().toLowerCase(); list.innerHTML = "";
+    var match = function (f) {
+      if (wantDept && (f.dept || "Unassigned") !== wantDept) return false;
+      if (!q) return true;
+      return [f.item, f.title, f.dept, f.cls].some(function (t) { return t && String(t).toLowerCase().indexOf(q) >= 0 });
+    };
+    var shown = 0;
+    var names = CATS.map(function (c) { return c.name });
+    state.files.forEach(function (f) { var c = catOf(f); if (names.indexOf(c) < 0) names.push(c) });
+    names.forEach(function (c) {
+      if (want && want !== c) return;
+      var group = state.files.filter(function (f) { return catOf(f) === c && match(f) });
+      shown += group.length;
+      if (!group.length) return;
+      var h = document.createElement("li"); h.className = "cat"; h.textContent = c; list.appendChild(h);
+      var rows = group;
+      if (c === "Personnel") {
+        var depts = [];
+        group.forEach(function (f) { var d = f.dept || "Unassigned"; if (depts.indexOf(d) < 0) depts.push(d) });
+        depts.sort(function (a, b) { return a === "Unassigned" ? 1 : b === "Unassigned" ? -1 : a.localeCompare(b) });
+        rows = [];
+        depts.forEach(function (d) { rows.push({ heading: d }); group.forEach(function (f) { if ((f.dept || "Unassigned") === d) rows.push(f) }) });
+      }
+      rows.forEach(function (f) {
+        if (f.heading) { var dh = document.createElement("li"); dh.className = "dept"; dh.textContent = f.heading; list.appendChild(dh); return }
+        var li = document.createElement("li"), b = document.createElement("button");
+        if (c === "Personnel") li.className = "indent";
+        b.type = "button"; b.dataset.id = f.id;
+        b.setAttribute("aria-current", String(f.id === state.open));
+        b.innerHTML = '<span class="it"></span><span class="lv"></span><span class="ti"></span>';
+        b.querySelector(".it").textContent = f.item;
+        b.querySelector(".lv").textContent = "L" + f.level;
+        b.querySelector(".ti").textContent = f.title || f.cls || c;
+        b.addEventListener("click", function () { show(f.id) });
+        li.appendChild(b); list.appendChild(li);
+      });
+    });
+    if (!shown) list.innerHTML = '<li class="empty">No files match.</li>';
   }
 
   function rich(el, text, ctx) {
@@ -417,9 +685,14 @@ var CONFIG = {
   }
 
   async function renderFile(doc, f, live) {
+    var cat = catOf(f);
+    var cb = document.createElement("div"); cb.className = "classbar" + (f.cls ? " c-" + f.cls : "");
+    var c1 = document.createElement("span");
+    if (cat === "Objects") { c1.innerHTML = "Object class: <b></b>"; c1.querySelector("b").textContent = f.cls || "Pending" }
+    else { c1.innerHTML = "<b></b>"; c1.querySelector("b").textContent = cat + (cat === "Personnel" ? " · " + (f.dept || "Unassigned") : "") }
+    var c2 = document.createElement("span"); c2.textContent = "Level " + f.level + " · Classified";
+    cb.appendChild(c1); cb.appendChild(c2); doc.appendChild(cb);
     var meta = document.createElement("div"); meta.className = "meta";
-    var tag = document.createElement("span"); tag.className = "tag c-" + f.cls; tag.textContent = f.cls;
-    meta.appendChild(tag);
     [["LEVEL " + f.level], [f.id ? "FILE " + f.id : "PREVIEW"], [f.added ? "FILED " + f.added : ""]].forEach(function (t) { if (t[0]) { var s = document.createElement("span"); s.textContent = t[0]; meta.appendChild(s) } });
     var h2 = document.createElement("h2"); h2.textContent = f.item || "SCP-????";
     doc.appendChild(meta); doc.appendChild(h2);
@@ -435,6 +708,7 @@ var CONFIG = {
       await renderParts(body, sections[i].parts || [], ctx);
       if (!live()) return;
     }
+    if (f.id && catOf(f) === "Personnel" && live()) drawAssign(doc, f);
     var rest = images.filter(function (img, i) { return !ctx.used[img.n != null ? img.n : i + 1] && (img.src || state.secrets[img.level || f.level]) });
     if (rest.length) {
       var gal = document.createElement("div"); gal.className = "gallery"; doc.appendChild(gal);
@@ -446,12 +720,61 @@ var CONFIG = {
     }
   }
 
+  function drawAssign(doc, f) {
+    var mine = myDepts().map(function (d) { return d.name }), cur = f.dept || "", curDept = deptByName(cur);
+    if (!state.agent && !mine.length) return;
+    var box = document.createElement("section"); box.className = "assign";
+    var h = document.createElement("h4"); h.textContent = "Department assignment"; box.appendChild(h);
+    var note = document.createElement("p"); note.className = "note";
+    var options;
+    if (state.agent) options = [""].concat(deptNames());
+    else if (!cur || !curDept) options = mine;
+    else if (mine.indexOf(cur) >= 0) options = mine.concat([""]);
+    else options = null;
+    if (!options) { note.textContent = "In " + cur + ". Only RAISA or the head of " + cur + " can move this person."; box.appendChild(note); doc.appendChild(box); return }
+    var row = document.createElement("div"); row.className = "row";
+    var sel = document.createElement("select"); sel.setAttribute("aria-label", "Department");
+    options.forEach(function (n) { sel.add(new Option(n || "Unassigned", n)) });
+    sel.value = options.indexOf(cur) >= 0 ? cur : options[0];
+    var go = document.createElement("button"); go.type = "button"; go.className = "btn"; go.textContent = "Assign";
+    note.textContent = "Currently: " + (cur || "Unassigned") + ".";
+    go.addEventListener("click", async function () {
+      var to = sel.value;
+      if (to === cur) return msg(note, "Already " + (cur ? "in " + cur : "unassigned") + ".");
+      if (!CONFIG.endpoint && typeof DEMO !== "undefined") { f.dept = to; drawFilters(); drawList(); show(f.id); return }
+      go.disabled = true;
+      var res = await transmit("assign", 1, { by: state.id, file: f.id, dept: to }, note);
+      go.disabled = false;
+      if (!res) return;
+      if (res.ok === false) return msg(note, res.message || "Couldn't move them.", true);
+      f.dept = to; drawFilters(); drawList();
+      msg(note, res.message || "Done.");
+    });
+    row.appendChild(sel); row.appendChild(go); box.appendChild(row); box.appendChild(note);
+    doc.appendChild(box);
+  }
+
   async function show(id) {
     var f = state.files.find(function (x) { return x.id === id }); if (!f) return;
     state.open = id;
     document.querySelectorAll("#list button").forEach(function (b) { b.setAttribute("aria-current", String(b.dataset.id === id)) });
     var doc = $("doc"); doc.innerHTML = "";
-    await renderFile(doc, f, function () { return state.open === id });
+    var seq = state.seq = (state.seq || 0) + 1;
+    var live = function () { return state.open === id && state.seq === seq };
+    var pre = document.createElement("div"); pre.className = "pre"; doc.appendChild(pre);
+    var was = fast; fast = reduce;
+    await type(pre, "> SELECTED: " + (f.item || "SCP-????") + (f.title ? " “" + f.title.toUpperCase() + "”" : "") + " . . .", "", 8);
+    if (!live()) { fast = was; return }
+    var bar = line(pre, "", "pbar");
+    for (var p = 0; p <= 100; p += 25) { bar.textContent = "-> " + barText(p).replace(/-+$/, ""); await sleep(70); if (!live()) { fast = was; return } }
+    fast = was;
+    pre.remove();
+    var arch = document.createElement("div"); arch.className = "archive";
+    arch.innerHTML = "<b>DATA ARCHIVE</b><span></span><span></span>";
+    arch.children[1].textContent = "Location: Site-56, [DATA_REDACTED]";
+    arch.children[2].textContent = "Node: HALCYON · IP: " + "█".repeat(18);
+    await renderFile(doc, f, live);
+    if (live()) doc.insertBefore(arch, doc.querySelector(".box"));
   }
 
   function tab(name) {
@@ -592,9 +915,14 @@ var CONFIG = {
   }
 
   function resetSections() {
-    $("sections").innerHTML = ""; DEFAULT_SECTIONS.forEach(function (n) { addSection(n, "") });
-    draft.images = []; draft.next = 1; drawTray(); $("nimg").value = ""; $("preview").hidden = true;
+    var info = catInfo($("ncat").value || CATS[0].name);
+    $("sections").innerHTML = ""; info.sections.forEach(function (n) { addSection(n, "") });
+    $("nitem").placeholder = info.item || "Name";
+    $("nclswrap").hidden = info.name !== "Objects";
+    $("ndeptwrap").hidden = info.name !== "Personnel";
+    $("deptreg").hidden = !state.agent;
   }
+
 
   function shrink(file) {
     return new Promise(function (resolve, reject) {
@@ -618,7 +946,8 @@ var CONFIG = {
     var sections = Array.prototype.map.call(document.querySelectorAll("#sections .sec"), function (w) {
       return { h: w.querySelector("input").value.trim(), text: w.querySelector("textarea").value.trim() };
     }).filter(function (s) { return s.text });
-    return { item: $("nitem").value.trim(), cls: $("ncls").value, level: Number($("nlvl").value), title: $("ntitle").value.trim(), sections: sections };
+    var cat = $("ncat").value || CATS[0].name;
+    return { cat: cat, dept: cat === "Personnel" ? $("ndept").value : "", item: $("nitem").value.trim(), cls: cat === "Objects" ? $("ncls").value : "", level: Number($("nlvl").value), title: $("ntitle").value.trim(), sections: sections };
   }
 
   function localParts(text, level) {
@@ -712,11 +1041,96 @@ var CONFIG = {
   }
 
   $("gate").addEventListener("submit", function (e) { e.preventDefault(); login($("key").value, false) });
-  $("logout").addEventListener("click", function () { try { sessionStorage.removeItem("hal") } catch (e) {} location.reload() });
+  $("key").addEventListener("input", function () {
+    var el = $("key"), v = el.value;
+    if (!/\s|--/.test(v)) return;
+    var pos = el.selectionStart, before = v.slice(0, pos).replace(/\s/g, "-").replace(/-{2,}/g, "-");
+    el.value = (before + v.slice(pos).replace(/\s/g, "-")).replace(/-{2,}/g, "-");
+    try { el.setSelectionRange(before.length, before.length) } catch (e) {}
+  });
+  $("scanbtn").addEventListener("click", function () { login($("key").value, false) });
+  $("key").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); login($("key").value, false) } });
+  $("logout").addEventListener("click", async function () {
+    try { sessionStorage.removeItem("hal") } catch (e) {}
+    var cover = document.createElement("div"); cover.className = "closing";
+    var box = document.createElement("div"); box.className = "term"; cover.appendChild(box); document.body.appendChild(cover);
+    fast = reduce;
+    await type(box, "> THANK YOU FOR USING THE R.A.I.S.A. SECURE DATABASE.");
+    line(box, "", "gap");
+    await type(box, "> CLOSING FILE IN_");
+    line(box, "", "gap");
+    for (var n = 3; n >= 1; n--) { await type(box, "> " + n + ". . ."); await sleep(650) }
+    line(box, "", "gap");
+    await type(box, "> DATA LOST.", "bad");
+    await sleep(900);
+    location.reload();
+  });
   $("refresh").addEventListener("click", loadFiles);
-  document.querySelectorAll(".tabs button").forEach(function (b) { b.addEventListener("click", function () { tab(b.dataset.tab); if (b.dataset.tab === "review") loadRequests() }) });
+  $("catfilter").addEventListener("change", function () { $("deptfilter").value = ""; drawFilters(); drawList() });
+  $("deptfilter").addEventListener("change", drawList);
+  $("search").addEventListener("input", drawList);
+  document.querySelectorAll(".tabs button").forEach(function (b) { b.addEventListener("click", function () { tab(b.dataset.tab); if (b.dataset.tab === "review") loadRequests(); if (b.dataset.tab === "depts") drawDeptAdmin() }) });
   $("reqrefresh").addEventListener("click", loadRequests);
   $("addsec").addEventListener("click", function () { addSection("", "") });
+  CATS.forEach(function (c) { $("ncat").add(new Option(c.name, c.name)) });
+  async function registerDept(name, note, after) {
+    name = name.trim().replace(/\s+/g, " ").slice(0, 40);
+    if (!state.agent) return msg(note, "Only RAISA can register departments.", true);
+    if (!name) return msg(note, "Type a department name first.", true);
+    if (deptNames().some(function (d) { return d.toLowerCase() === name.toLowerCase() })) return msg(note, name + " is already registered.", true);
+    var addLocal = function () { var d = { id: "local" + Date.now().toString(16), name: name, heads: [] }; LOCAL_DEPTS[d.id] = d; DEPTS.push(d); DEPTS.sort(function (a, b) { return a.name.localeCompare(b.name) }); drawDeptPicker(); drawFilters(); drawDeptAdmin(); if (after) after(name) };
+    if (!CONFIG.endpoint && typeof DEMO !== "undefined") { addLocal(); return msg(note, "Demo: " + name + " added for this visit only.") }
+    var res = await transmit("department", state.agent, { by: state.id, name: name, heads: [] }, note);
+    if (!res) return;
+    if (res.ok === false) return msg(note, res.message || "Couldn't register it.", true);
+    addLocal(); msg(note, res.message || "Registered " + name + ".");
+  }
+  async function saveHeads(d, heads, note) {
+    if (!CONFIG.endpoint && typeof DEMO !== "undefined") { d.heads = heads; LOCAL_DEPTS[d.id] = d; drawWho(); drawDeptAdmin(); return }
+    var res = await transmit("department-heads", state.agent, { by: state.id, dept: d.id, heads: heads }, note);
+    if (!res) return;
+    if (res.ok === false) return msg(note, res.message || "Couldn't update heads.", true);
+    d.heads = heads; LOCAL_DEPTS[d.id] = d; drawWho(); drawDeptAdmin();
+    msg($("regmsg"), res.message || "Heads updated.");
+  }
+  function drawDeptAdmin() {
+    var box = $("dlist"); box.innerHTML = "";
+    var people = state.files.filter(function (f) { return catOf(f) === "Personnel" });
+    $("deptcount").textContent = DEPTS.length + (DEPTS.length === 1 ? " DEPARTMENT" : " DEPARTMENTS");
+    if (!DEPTS.length) { box.innerHTML = '<div class="empty">No departments yet. Register one above.</div>'; return }
+    DEPTS.forEach(function (d) {
+      var card = document.createElement("div"); card.className = "dcard";
+      var nm = document.createElement("div"); nm.className = "nm";
+      var count = people.filter(function (f) { return f.dept === d.name }).length;
+      nm.textContent = d.name + "  ·  " + count + (count === 1 ? " person" : " people");
+      var heads = document.createElement("div"); heads.className = "heads";
+      heads.appendChild(document.createTextNode(d.heads.length ? "Heads:" : "No head yet."));
+      d.heads.forEach(function (h) {
+        var chip = document.createElement("span"); chip.className = "chip"; chip.textContent = h;
+        var x = document.createElement("button"); x.type = "button"; x.textContent = "×"; x.title = "Remove " + h + " as head";
+        x.addEventListener("click", function () { saveHeads(d, d.heads.filter(function (y) { return y !== h }), note) });
+        chip.appendChild(x); heads.appendChild(chip);
+      });
+      var row = document.createElement("div"); row.className = "row";
+      var inp = document.createElement("input"); inp.placeholder = "keycard id"; inp.maxLength = 8; inp.setAttribute("aria-label", "Keycard ID for " + d.name);
+      var add = document.createElement("button"); add.type = "button"; add.className = "btn quiet"; add.textContent = "Add head";
+      var note = document.createElement("p"); note.className = "note";
+      add.addEventListener("click", function () {
+        var v = inp.value.trim().toLowerCase();
+        if (!/^[0-9a-f]{8}$/.test(v)) return msg(note, "Keycard IDs are 8 characters, like 0f47b821.", true);
+        if (d.heads.indexOf(v) >= 0) return msg(note, v + " is already a head.", true);
+        saveHeads(d, d.heads.concat([v]), note);
+      });
+      row.appendChild(inp); row.appendChild(add); row.appendChild(note);
+      card.appendChild(nm); card.appendChild(heads); card.appendChild(row); box.appendChild(card);
+    });
+  }
+  $("regbtn").addEventListener("click", function () { registerDept($("regname").value, $("regmsg"), function () { $("regname").value = "" }) });
+  $("adddept").addEventListener("click", function () { registerDept($("newdept").value, $("deptmsg"), function (name) { $("ndept").value = name; $("newdept").value = "" }) });
+  $("ncat").addEventListener("change", function () {
+    var filled = Array.prototype.some.call(document.querySelectorAll("#sections textarea"), function (t) { return t.value.trim() });
+    if (!filled) resetSections(); else { $("nitem").placeholder = catInfo($("ncat").value).item || "Name"; $("nclswrap").hidden = $("ncat").value !== "Objects"; $("ndeptwrap").hidden = $("ncat").value !== "Personnel" }
+  });
   $("nimg").addEventListener("change", function () { addImages($("nimg").files, draft.focus); $("nimg").value = "" });
   $("previewbtn").addEventListener("click", preview);
   document.querySelectorAll("#float .tb").forEach(function (b) {
@@ -730,8 +1144,8 @@ var CONFIG = {
   drop.addEventListener("dragleave", function () { drop.classList.remove("over") });
   drop.addEventListener("drop", function (e) { e.preventDefault(); drop.classList.remove("over"); addImages(e.dataTransfer.files, draft.focus) });
 
-  $("newform").addEventListener("submit", async function (e) {
-    e.preventDefault();
+  async function sendFile(e) {
+    if (e) e.preventDefault();
     var note = $("newmsg"), file = collect();
     if (!file.item || !file.sections.length) return msg(note, "An item and at least one filled section are required.", true);
     file.images = draft.images.map(function (i) { return { n: i.n, type: i.type, data: i.data, align: i.align, size: i.size, caption: i.caption.trim() } });
@@ -739,19 +1153,25 @@ var CONFIG = {
       msg(note, "Transmitted. " + file.item + " appears in a minute or two. Use Refresh.");
       $("newform").reset(); $("nlvl").value = String(state.level); resetSections();
     }
-  });
+  }
+  $("newform").addEventListener("submit", sendFile);
+  $("newsend").addEventListener("click", function () { sendFile() });
 
-  $("reqform").addEventListener("submit", async function (e) {
-    e.preventDefault();
+  async function sendRequest(e) {
+    if (e) e.preventDefault();
     var note = $("reqmsg");
     var item = $("ritem").value.trim(), why = $("rwhy").value.trim();
     if (!item || !why) return msg(note, "An item and a reason are required.", true);
     if (await transmit("request", 1, { by: state.id, item: item, level: $("rlvl").value, reason: why }, note)) {
       msg(note, "Request sent to RAISA."); $("reqform").reset();
     }
-  });
+  }
+  $("reqform").addEventListener("submit", sendRequest);
+  $("reqsend").addEventListener("click", function () { sendRequest() });
 
-  try { var saved = sessionStorage.getItem("hal"); if (saved) login(saved, true) } catch (e) {}
+  var saved = null;
+  try { saved = sessionStorage.getItem("hal") } catch (e) {}
+  if (saved) login(saved, true); else boot();
 })();
 </script>
 
