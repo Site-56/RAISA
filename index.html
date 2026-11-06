@@ -182,6 +182,37 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .1em
 
 .closing { position: fixed; inset: 0; z-index: 70; background: var(--bg); overflow: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
 
+.xref { all: unset; cursor: pointer; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px }
+.xref:hover { text-decoration-style: solid }
+.pendtag { border: 1px solid var(--amber); color: var(--amber); padding: 0 5px; font-size: 11px; letter-spacing: .08em; margin-left: 6px }
+.filedby { color: var(--dim); font-size: 12px; margin-top: 8px; display: grid; gap: 2px }
+.filedby .tb { margin-left: 6px; padding: 0 6px }
+.history { margin: 4px 0 0; padding-left: 18px; color: var(--dim); font-size: 12px }
+.keyline { margin-top: 8px; font-size: 12px; color: var(--dim) }
+.keyline b { color: var(--ink); font-weight: 600 }
+.doc .meta .btn { padding: 0 8px; font-size: 11px; margin-left: auto }
+.deep { display: flex; gap: 6px; align-items: center; font-size: 12px; color: var(--dim); text-transform: none; letter-spacing: 0; margin: 0 }
+.deep input { width: auto; height: auto }
+.editbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; border: 1px solid var(--amber); color: var(--amber); padding: 6px 10px; font-size: 12px; letter-spacing: .08em }
+.kept { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; border: 1px dashed var(--line); padding: 6px 8px; font-size: 12px; color: var(--dim) }
+.ksec { border-top: 1px solid var(--line); margin-top: 6px }
+.ksec h3 { margin: 0; padding: 12px 18px 0; font-size: 12px; letter-spacing: .12em; text-transform: uppercase }
+.grant { padding: 10px 18px 0; display: grid; grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr)) minmax(0, 1.4fr); gap: 8px; align-items: end }
+.grant label { margin-bottom: 2px }
+.grant .chk { display: flex; gap: 6px; align-items: center; height: 36px; text-transform: none; letter-spacing: 0; font-size: 13px; color: var(--ink) }
+.grant .chk input { width: auto; height: auto }
+.grantrow { padding: 8px 18px 0; display: flex; gap: 10px; flex-wrap: wrap; align-items: center }
+.keyshow { margin: 8px 18px 0; border: 1px solid var(--ink); padding: 10px 12px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center }
+.keyshow code { font: 600 16px/1.4 var(--mono); letter-spacing: .1em; user-select: all }
+.klist { padding: 10px 18px 22px; overflow-x: auto; max-width: 100% }
+#app, .view, .ksec, #deptsview { min-width: 0; max-width: 100% }
+.klist table { width: 100%; border-collapse: collapse; font-size: 12px; font-variant-numeric: tabular-nums }
+.klist th { text-align: left; color: var(--dim); font-weight: 500; letter-spacing: .08em; text-transform: uppercase; padding: 6px 8px; border-bottom: 1px solid var(--line) }
+.klist td { padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: middle }
+.klist .btn { padding: 0 8px; font-size: 11px }
+.myreqs { padding: 0 24px 24px; display: grid; gap: 8px; max-width: 760px }
+.myreqs h3 { margin: 6px 0 0; font-size: 12px; letter-spacing: .12em; text-transform: uppercase }
+@media (max-width: 760px) { .grant { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) } .myreqs { padding: 0 14px 20px } }
 @media (max-width: 760px) {
   .files { grid-template-columns: minmax(0, 1fr) }
   .list { border-right: 0; border-bottom: 1px solid var(--line) }
@@ -223,7 +254,7 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .1em
     <button class="btn" role="tab" data-tab="new" aria-selected="false" id="newtab" hidden>New file</button>
     <button class="btn" role="tab" data-tab="request" aria-selected="false">Request</button>
     <button class="btn" role="tab" data-tab="review" aria-selected="false" id="reviewtab" hidden>Requests</button>
-    <button class="btn" role="tab" data-tab="depts" aria-selected="false" id="deptstab" hidden>Departments</button>
+    <button class="btn" role="tab" data-tab="depts" aria-selected="false" id="deptstab" hidden>RAISA</button>
   </nav>
 
   <div class="view" data-view="files">
@@ -234,6 +265,7 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .1em
           <select id="catfilter" aria-label="Category"><option value="">All categories</option></select>
           <select id="deptfilter" aria-label="Department" hidden><option value="">All departments</option></select>
           <input id="search" type="search" placeholder="Search names and titles" autocomplete="off" aria-label="Search files">
+          <label class="deep" for="deep"><input type="checkbox" id="deep"> Also search inside files</label>
         </div>
         <ul id="list"></ul>
       </div>
@@ -243,6 +275,7 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .1em
 
   <div class="view" data-view="new" hidden>
     <form class="form" id="newform" novalidate>
+      <div class="editbar" id="editbar" hidden><span id="edittitle">EDITING</span><button class="btn quiet" type="button" id="canceledit">Cancel edit</button></div>
       <div class="grid4">
         <div><label for="ncat">Category</label><select id="ncat"></select></div>
         <div><label for="nitem">Name</label><input id="nitem" placeholder="SCP-0000" autocomplete="off"></div>
@@ -250,6 +283,7 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .1em
         <div><label for="nlvl">Level</label><select id="nlvl"></select></div>
       </div>
       <div id="ndeptwrap" hidden><label for="ndept">Department</label><select id="ndept"><option value="">Unassigned</option></select>
+        <label for="nkey" style="margin-top:10px">Linked keycard (optional)</label><input id="nkey" placeholder="8-character keycard ID, e.g. 0f47b821" autocomplete="off" maxlength="8">
         <div class="deptreg" id="deptreg" hidden><input id="newdept" placeholder="New department name" autocomplete="off" maxlength="40"><button class="btn quiet" type="button" id="adddept">Register department</button><p class="note" id="deptmsg">Only RAISA can register departments.</p></div>
       </div>
       <div><label for="ntitle">Title</label><input id="ntitle" placeholder="Short description" autocomplete="off"></div>
@@ -258,7 +292,8 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .1em
       <div class="row"><button class="btn quiet" type="button" id="addsec">+ Add section</button></div>
       <div><label>Images</label>
         <div class="drop" id="drop">Drop images here, paste them into a section, or <label for="nimg" style="display:inline;color:var(--ink);cursor:pointer;text-decoration:underline;letter-spacing:0;text-transform:none;font-size:13px">choose files</label><input id="nimg" type="file" accept="image/*" multiple hidden></div>
-        <div class="tray" id="tray" style="margin-top:8px"></div>
+              <div class="tray" id="tray" style="margin-top:8px"></div>
+        <div class="tray" id="kepttray" style="margin-top:8px"></div>
       </div>
       <div class="row"><button class="btn" type="button" id="newsend">Transmit</button><button class="btn quiet" type="button" id="previewbtn">Preview</button><p class="note" id="newmsg">Files appear for everyone with that level after a minute or two.</p></div>
       <div class="preview doc" id="preview" hidden></div>
@@ -269,6 +304,19 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .1em
     <div class="list" style="border-right:0"><div class="head"><span id="deptcount">DEPARTMENTS</span></div></div>
     <div class="dreg"><input id="regname" placeholder="New department name" autocomplete="off" maxlength="40" aria-label="New department name"><button class="btn" type="button" id="regbtn">Register</button><p class="note" id="regmsg">Heads are set by keycard ID, the 8 characters after KEYCARD in someone's header.</p></div>
     <div class="dlist" id="dlist"></div>
+    <div class="ksec">
+      <h3>Keycards</h3>
+      <div class="grant">
+        <div><label for="gname">Name</label><input id="gname" placeholder="Who it's for" autocomplete="off" maxlength="60"></div>
+        <div><label for="glevel">Level</label><select id="glevel"></select></div>
+        <div><label for="gdays">Days</label><input id="gdays" type="number" min="1" max="365" placeholder="Forever"></div>
+        <div><label class="chk" for="gagent"><input type="checkbox" id="gagent"> RAISA agent</label></div>
+        <div><label for="guid">Discord user ID (optional)</label><input id="guid" placeholder="DMs them the keycard" autocomplete="off" inputmode="numeric"></div>
+      </div>
+      <div class="grantrow"><button class="btn" type="button" id="grantbtn">Grant keycard</button><p class="note" id="grantmsg">Leave Days empty for a permanent keycard. Temporary ones turn themselves off.</p></div>
+      <div class="keyshow" id="keyshow" hidden><span>New keycard:</span><code id="newkey"></code><button class="btn quiet" type="button" id="copykey">Copy</button><span class="note">Shown once. Give it to them privately.</span></div>
+      <div class="klist" id="klist"></div>
+    </div>
   </div>
 
   <div class="view" data-view="review" hidden>
@@ -285,6 +333,7 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .1em
       <div><label for="rwhy">Reason</label><textarea id="rwhy" style="min-height:120px" placeholder="Why you need access."></textarea></div>
       <div class="row"><button class="btn" type="button" id="reqsend">Transmit</button><p class="note" id="reqmsg">RAISA reviews every request.</p></div>
     </form>
+    <div class="myreqs" id="myreqs"></div>
   </div>
 </section>
 
@@ -304,6 +353,7 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .1em
 var CONFIG = {
   endpoint: "https://raisa-bot-production.up.railway.app/submit",
   writeLevel: 3,
+  idleMinutes: 15, // locks the terminal after this many minutes without activity
   // file categories. add more here; each can have its own starting sections
   categories: [
     { name: "Objects", sections: ["Special Containment Procedures", "Description", "Addendum"], item: "SCP-0000" },
@@ -318,7 +368,7 @@ var CONFIG = {
 };
 
 (function () {
-  var state = { key: null, id: null, level: 0, secrets: {}, agent: null, files: [], open: null, images: {} };
+  var state = { key: null, id: null, level: 0, secrets: {}, agent: null, files: [], open: null, images: {}, pending: {}, keys: [], editing: null };
   var CATS = CONFIG.categories || [{ name: "Objects", sections: ["Special Containment Procedures", "Description"], item: "SCP-0000" }];
   // departments: { id, name, heads: [keycard ids] }. stored encrypted in departments.json, changed only through the bot
   var DEPTS = [], LOCAL_DEPTS = {};
@@ -472,6 +522,7 @@ var CONFIG = {
       var keys = (await getJson("keys.json")).keys || [];
       var entry = keys.find(function (k) { return k.id === id });
       if (!entry) { try { sessionStorage.removeItem("hal") } catch (e) {} return "denied" }
+      if (entry.expires && entry.expires < new Date().toISOString().slice(0, 10)) { try { sessionStorage.removeItem("hal") } catch (e) {} state.why = entry.expires; return "expired" }
       var granted = await open(await kek(key, entry.salt), entry.iv, entry.data);
       state.key = key; state.id = id; state.secrets = {};
       state.agent = null;
@@ -501,7 +552,7 @@ var CONFIG = {
     }
     var steps = quiet ? [100] : [5, 20, 35, 55, 75, 100];
     for (var i = 0; i < steps.length; i++) {
-      if (steps[i] === 100 || ((result === "denied" || result === "offline") && steps[i] >= 35)) {
+      if (steps[i] === 100 || ((result === "denied" || result === "offline" || result === "expired") && steps[i] >= 35)) {
         await check;
         if (result !== "ok") break;
       }
@@ -512,7 +563,7 @@ var CONFIG = {
       if (quiet) { $("boot").innerHTML = ""; fast = reduce; await boot(); line(box, "> SAVED KEYCARD NO LONGER VALID.", "warn"); return }
       line(box, "-> " + barText(steps[Math.min(i, steps.length - 1)]).replace(/-+$/, "") + " ERROR", "bad pbar");
       line(box, "");
-      line(box, result === "offline" ? "> CONNECTION TO R.A.I.S.A. LOST. TRY AGAIN SHORTLY." : "> ACCESS DENIED. KEYCARD NOT RECOGNISED. THIS ATTEMPT HAS BEEN LOGGED.", "bad");
+      line(box, result === "offline" ? "> CONNECTION TO R.A.I.S.A. LOST. TRY AGAIN SHORTLY." : result === "expired" ? "> ACCESS DENIED. THIS KEYCARD EXPIRED ON " + state.why + "." : "> ACCESS DENIED. KEYCARD NOT RECOGNISED. THIS ATTEMPT HAS BEEN LOGGED.", "bad");
       if (result === "offline" && state.why) line(box, "  (" + state.why + ")", "dim");
       showGate(); $("key").select();
       return;
@@ -539,6 +590,97 @@ var CONFIG = {
     sel.value = String(state.level);
     tab("files");
     loadFiles();
+    lastBump = 0; bump();
+  }
+
+  // ---- pending changes: shown straight away, replaced once GitHub has the real version ----
+  function mergePending(out) {
+    Object.keys(state.pending).forEach(function (id) {
+      var p = state.pending[id], cur = out.find(function (x) { return x.id === id });
+      var landed = p.kind === "new" ? !!cur : p.kind === "edit" ? !!(cur && cur.rev >= p.rev) : !!(cur && (cur.dept || "") === p.dept);
+      if (landed || Date.now() - p.at > 15 * 60000) { delete state.pending[id]; return }
+      if (p.kind === "assign") { if (cur) { cur.dept = p.dept; cur.pending = true } return }
+      p.file.pending = true;
+      if (cur) out[out.indexOf(cur)] = p.file; else out.push(p.file);
+    });
+    clearTimeout(state.poll);
+    if (Object.keys(state.pending).length) state.poll = setTimeout(function () { if (!$("app").hidden) loadFiles() }, 20000);
+  }
+  function addPending(id, p) { p.at = Date.now(); state.pending[id] = p; var out = state.files.filter(function (x) { return x.id !== id || p.kind === "assign" }); mergePending(out); state.files = out; buildXref(); drawFilters(); drawList(); }
+
+  // ---- file bodies are only downloaded when a file is opened ----
+  async function ensureBody(f) {
+    if (f.loaded) return true;
+    try {
+      var b = await getJson("files/" + f.id + ".json");
+      var d = await open(state.secrets[f.level], b.iv, b.data);
+      Object.keys(d).forEach(function (k) { if (k !== "id" && k !== "level") f[k] = d[k] });
+      f.loaded = true; return true;
+    } catch (e) { return false }
+  }
+  async function plainText(f) {
+    var out = [f.item, f.title, f.dept, f.cls];
+    for (var i = 0; i < (f.sections || []).length; i++) {
+      var sec = f.sections[i]; out.push(sec.h);
+      for (var j = 0; j < (sec.parts || []).length; j++) {
+        var p = sec.parts[j];
+        if (typeof p === "string") out.push(p);
+        else if (p.text != null) out.push(p.text);
+        else if (state.secrets[p.r]) { try { out.push(await open(state.secrets[p.r], p.iv, p.data)) } catch (e) {} }
+      }
+    }
+    return out.filter(Boolean).join(" ").toLowerCase();
+  }
+  async function indexText() {
+    if (state.indexing) return;
+    var todo = state.files.filter(function (f) { return f.text == null });
+    if (!todo.length) return;
+    state.indexing = true;
+    for (var i = 0; i < todo.length; i++) {
+      $("filecount").textContent = "SEARCHING " + (i + 1) + "/" + todo.length + "…";
+      if (await ensureBody(todo[i])) todo[i].text = await plainText(todo[i]); else todo[i].text = "";
+    }
+    state.indexing = false;
+    $("filecount").textContent = state.files.length + (state.files.length === 1 ? " FILE" : " FILES");
+    drawList();
+  }
+
+  // ---- links between files: any file name you can see becomes clickable ----
+  var XREF = null;
+  function buildXref() {
+    var items = state.files.map(function (f) { return String(f.item || "") }).filter(function (t) { return t.length >= 3 });
+    items.sort(function (a, b) { return b.length - a.length });
+    XREF = items.length ? new RegExp("(^|[^\\w-])(" + items.map(function (t) { return t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") }).join("|") + ")(?![\\w-])", "gi") : null;
+  }
+  function linkText(el, text) {
+    if (!XREF || !text) { el.appendChild(document.createTextNode(text)); return }
+    var last = 0, m; XREF.lastIndex = 0;
+    while ((m = XREF.exec(text))) {
+      var start = m.index + m[1].length, word = m[2];
+      var target = state.files.find(function (f) { return String(f.item).toLowerCase() === word.toLowerCase() });
+      if (!target || target.id === state.open) continue;
+      if (start > last) el.appendChild(document.createTextNode(text.slice(last, start)));
+      var a = document.createElement("button"); a.type = "button"; a.className = "xref"; a.textContent = word; a.title = "Open " + target.item;
+      (function (tid) { a.addEventListener("click", function () { openFile(tid) }) })(target.id);
+      el.appendChild(a);
+      last = start + word.length;
+    }
+    if (last < text.length) el.appendChild(document.createTextNode(text.slice(last)));
+  }
+  function openFile(id) {
+    tab("files");
+    if (!$("list").querySelector('[data-id="' + id + '"]')) { $("catfilter").value = ""; $("deptfilter").value = ""; $("search").value = ""; drawFilters(); drawList() }
+    show(id);
+  }
+
+  // ---- who is behind a keycard id ----
+  function keyInfo(id) { return state.keys.find(function (k) { return k.id === id }) }
+  function personFor(id) { return id ? state.files.find(function (f) { return f.key === id && catOf(f) === "Personnel" }) : null }
+  function whoText(id) { var p = personFor(id); return p ? p.item + " (" + id + ")" : "keycard " + id }
+  function canEdit(f) {
+    if (!f || !f.id || f.pending || state.level < f.level) return false;
+    if (state.agent || f.by === state.id) return true;
+    return catOf(f) === "Personnel" && !!f.dept && myDepts().some(function (d) { return d.name === f.dept });
   }
 
   async function loadFiles() {
@@ -550,12 +692,23 @@ var CONFIG = {
       for (var i = 0; i < files.length; i++) {
         var f = files[i], k = state.secrets[f.level];
         if (!k) continue;
-        try { var d = await open(k, f.iv, f.data); d.id = f.id; d.level = f.level; d.added = f.added; out.push(d) } catch (e) {}
+        try {
+          var d;
+          if (f.sumIv) { d = await open(k, f.sumIv, f.sumData); d.loaded = false; d.rev = Number(f.rev) || 1 }
+          else { d = await open(k, f.iv, f.data); d.loaded = true; d.rev = 0 }
+          d.id = f.id; d.level = f.level; d.added = f.added; d.editedDay = f.edited || "";
+          var prev = state.files.find(function (x) { return x.id === f.id && !x.pending });
+          if (prev && prev.loaded && !d.loaded && prev.rev === d.rev) ["sections", "images", "edits", "created", "text"].forEach(function (k2) { d[k2] = prev[k2] }), d.loaded = true;
+          out.push(d);
+        } catch (e) {}
       }
     } catch (e) { $("filecount").textContent = "OFFLINE"; return }
+    try { state.keys = (await getJson("keys.json")).keys || [] } catch (e) {}
+    mergePending(out);
     out.sort(function (a, b) { return String(a.item).localeCompare(String(b.item), undefined, { numeric: true }) });
     state.files = out;
-    $("filecount").textContent = out.length + (out.length === 1 ? " FILE" : " FILES");
+    buildXref();
+    $("filecount").textContent = out.length + (out.length === 1 ? " FILE" : " FILES") + (Object.keys(state.pending).length ? " · " + Object.keys(state.pending).length + " PENDING" : "");
     var list = $("list"); list.innerHTML = "";
     if (!out.length) { list.innerHTML = '<li class="empty">No files at your level yet.</li>'; $("doc").innerHTML = '<div class="empty">Nothing to show.</div>'; return }
     var pick = $("catfilter"), keep = pick.value, counts = {};
@@ -582,10 +735,13 @@ var CONFIG = {
   }
   function drawList() {
     var list = $("list"), want = $("catfilter").value, wantDept = want === "Personnel" ? $("deptfilter").value : "", q = $("search").value.trim().toLowerCase(); list.innerHTML = "";
+    var deep = $("deep").checked;
+    if (deep && q && state.files.some(function (f) { return f.text == null })) indexText();
     var match = function (f) {
       if (wantDept && (f.dept || "Unassigned") !== wantDept) return false;
       if (!q) return true;
-      return [f.item, f.title, f.dept, f.cls].some(function (t) { return t && String(t).toLowerCase().indexOf(q) >= 0 });
+      if ([f.item, f.title, f.dept, f.cls].some(function (t) { return t && String(t).toLowerCase().indexOf(q) >= 0 })) return true;
+      return deep && f.text != null && f.text.indexOf(q) >= 0;
     };
     var shown = 0;
     var names = CATS.map(function (c) { return c.name });
@@ -614,6 +770,7 @@ var CONFIG = {
         b.querySelector(".it").textContent = f.item;
         b.querySelector(".lv").textContent = "L" + f.level;
         b.querySelector(".ti").textContent = f.title || f.cls || c;
+        if (f.pending) { var pt = document.createElement("span"); pt.className = "pendtag"; pt.textContent = "PENDING"; b.querySelector(".ti").appendChild(pt) }
         b.addEventListener("click", function () { show(f.id) });
         li.appendChild(b); list.appendChild(li);
       });
@@ -624,8 +781,8 @@ var CONFIG = {
   function rich(el, text, ctx) {
     while (text) {
       var m = INLINE.exec(text);
-      if (!m) { el.appendChild(document.createTextNode(text)); return }
-      if (m.index) el.appendChild(document.createTextNode(text.slice(0, m.index)));
+      if (!m) { linkText(el, text); return }
+      if (m.index) linkText(el, text.slice(0, m.index));
       if (m[5]) { figure(el, Number(m[5]), ctx) }
       else {
         var tag = m[1] ? "strong" : m[2] ? "u" : m[3] ? "s" : "em";
@@ -690,13 +847,15 @@ var CONFIG = {
     var c1 = document.createElement("span");
     if (cat === "Objects") { c1.innerHTML = "Object class: <b></b>"; c1.querySelector("b").textContent = f.cls || "Pending" }
     else { c1.innerHTML = "<b></b>"; c1.querySelector("b").textContent = cat + (cat === "Personnel" ? " · " + (f.dept || "Unassigned") : "") }
-    var c2 = document.createElement("span"); c2.textContent = "Level " + f.level + " · Classified";
+    var c2 = document.createElement("span"); c2.textContent = (f.pending ? "Pending · " : "") + "Level " + f.level + " · Classified";
     cb.appendChild(c1); cb.appendChild(c2); doc.appendChild(cb);
     var meta = document.createElement("div"); meta.className = "meta";
     [["LEVEL " + f.level], [f.id ? "FILE " + f.id : "PREVIEW"], [f.added ? "FILED " + f.added : ""]].forEach(function (t) { if (t[0]) { var s = document.createElement("span"); s.textContent = t[0]; meta.appendChild(s) } });
+    if (canEdit(f)) { var eb = document.createElement("button"); eb.type = "button"; eb.className = "btn quiet"; eb.textContent = "Edit"; eb.addEventListener("click", function () { startEdit(f) }); meta.appendChild(eb) }
     var h2 = document.createElement("h2"); h2.textContent = f.item || "SCP-????";
     doc.appendChild(meta); doc.appendChild(h2);
     if (f.title) { var h3 = document.createElement("h3"); h3.textContent = f.title; doc.appendChild(h3) }
+    if (f.id) drawFiledBy(doc, f);
     var images = f.images || [];
     var ctx = { level: f.level, used: {}, find: function (n) { return images.find(function (x) { return x.n === n }) || (images[0] && images[0].n == null ? images[n - 1] : null) } };
     var sections = f.sections || [{ h: "", parts: [f.body || ""] }];
@@ -717,6 +876,30 @@ var CONFIG = {
         figure(holder, img.n != null ? img.n : images.indexOf(img) + 1, ctx);
         var fig = holder.firstChild; if (fig) { fig.className = "fig"; gal.appendChild(fig) }
       });
+    }
+  }
+
+  function drawFiledBy(doc, f) {
+    var box = document.createElement("div"); box.className = "filedby";
+    var day = function (ms) { return ms ? new Date(ms).toISOString().slice(0, 10) : "" };
+    if (f.by) { var a = document.createElement("span"); a.textContent = "Filed by " + whoText(f.by) + (f.created ? " on " + day(f.created) : f.added ? " on " + f.added : ""); box.appendChild(a) }
+    var edits = Array.isArray(f.edits) ? f.edits : [];
+    if (edits.length) {
+      var last = edits[edits.length - 1], b = document.createElement("span");
+      b.textContent = "Last changed by " + whoText(last.by) + " on " + day(last.at) + (last.note ? " (" + last.note + ")" : "");
+      var tog = document.createElement("button"); tog.type = "button"; tog.className = "tb"; tog.textContent = "History (" + edits.length + ")";
+      var list = document.createElement("ol"); list.className = "history"; list.hidden = true;
+      edits.slice().reverse().forEach(function (e) { var li = document.createElement("li"); li.textContent = day(e.at) + " · " + whoText(e.by) + " · " + (e.note || "edited"); list.appendChild(li) });
+      tog.addEventListener("click", function () { list.hidden = !list.hidden });
+      b.appendChild(tog); box.appendChild(b); box.appendChild(list);
+    }
+    if (box.childNodes.length) doc.appendChild(box);
+    if (catOf(f) === "Personnel" && f.key) {
+      var k = keyInfo(f.key), kl = document.createElement("div"); kl.className = "keyline";
+      kl.innerHTML = "Keycard <b></b>";
+      kl.querySelector("b").textContent = f.key;
+      kl.appendChild(document.createTextNode(k ? " · Level " + k.level + (k.agent ? " · RAISA agent" : "") + (k.expires ? " · expires " + k.expires : "") : " · not active (revoked or replaced)"));
+      doc.appendChild(kl);
     }
   }
 
@@ -747,7 +930,7 @@ var CONFIG = {
       go.disabled = false;
       if (!res) return;
       if (res.ok === false) return msg(note, res.message || "Couldn't move them.", true);
-      f.dept = to; drawFilters(); drawList();
+      f.dept = to; addPending(f.id, { kind: "assign", dept: to });
       msg(note, res.message || "Done.");
     });
     row.appendChild(sel); row.appendChild(go); box.appendChild(row); box.appendChild(note);
@@ -768,6 +951,8 @@ var CONFIG = {
     var bar = line(pre, "", "pbar");
     for (var p = 0; p <= 100; p += 25) { bar.textContent = "-> " + barText(p).replace(/-+$/, ""); await sleep(70); if (!live()) { fast = was; return } }
     fast = was;
+    if (!(await ensureBody(f))) { pre.innerHTML = ""; line(pre, "> FILE BODY UNAVAILABLE. IT MAY STILL BE SAVING. TRY REFRESH IN A MINUTE.", "bad"); return }
+    if (!live()) return;
     pre.remove();
     var arch = document.createElement("div"); arch.className = "archive";
     arch.innerHTML = "<b>DATA ARCHIVE</b><span></span><span></span>";
@@ -947,7 +1132,7 @@ var CONFIG = {
       return { h: w.querySelector("input").value.trim(), text: w.querySelector("textarea").value.trim() };
     }).filter(function (s) { return s.text });
     var cat = $("ncat").value || CATS[0].name;
-    return { cat: cat, dept: cat === "Personnel" ? $("ndept").value : "", item: $("nitem").value.trim(), cls: cat === "Objects" ? $("ncls").value : "", level: Number($("nlvl").value), title: $("ntitle").value.trim(), sections: sections };
+    return { cat: cat, dept: cat === "Personnel" ? $("ndept").value : "", key: cat === "Personnel" ? $("nkey").value.trim().toLowerCase() : "", item: $("nitem").value.trim(), cls: cat === "Objects" ? $("ncls").value : "", level: Number($("nlvl").value), title: $("ntitle").value.trim(), sections: sections };
   }
 
   function localParts(text, level) {
@@ -994,7 +1179,8 @@ var CONFIG = {
       var st = document.createElement("span"); st.className = "st-" + r.status; st.textContent = r.status.toUpperCase() + (r.reviewer ? " · " + r.reviewer : "");
       row1.appendChild(b); row1.appendChild(want); row1.appendChild(st);
       var meta = document.createElement("div"); meta.className = "meta2";
-      meta.textContent = "From " + ((r.owner && r.owner.name) || "unassigned key") + " · key " + r.by + " (Level " + r.level + ") · " + new Date(r.created).toLocaleString();
+      var person = personFor(r.by);
+      meta.textContent = "From " + ((r.owner && r.owner.name) || "unassigned key") + " · key " + r.by + " (Level " + r.level + ")" + (person ? " · personnel file: " + person.item : "") + " · " + new Date(r.created).toLocaleString();
       var why = document.createElement("div"); why.className = "why"; why.textContent = r.reason;
       card.appendChild(row1); card.appendChild(meta); card.appendChild(why);
       if (r.status === "pending") {
@@ -1050,11 +1236,14 @@ var CONFIG = {
   });
   $("scanbtn").addEventListener("click", function () { login($("key").value, false) });
   $("key").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); login($("key").value, false) } });
-  $("logout").addEventListener("click", async function () {
+  var closing = false;
+  async function closeSession(reason) {
+    if (closing) return; closing = true;
     try { sessionStorage.removeItem("hal") } catch (e) {}
     var cover = document.createElement("div"); cover.className = "closing";
     var box = document.createElement("div"); box.className = "term"; cover.appendChild(box); document.body.appendChild(cover);
     fast = reduce;
+    if (reason) { await type(box, reason, "warn"); line(box, "") }
     await type(box, "> THANK YOU FOR USING THE R.A.I.S.A. SECURE DATABASE.");
     line(box, "", "gap");
     await type(box, "> CLOSING FILE IN_");
@@ -1064,12 +1253,22 @@ var CONFIG = {
     await type(box, "> DATA LOST.", "bad");
     await sleep(900);
     location.reload();
-  });
+  }
+  $("logout").addEventListener("click", function () { closeSession() });
+  var idleTimer = null, lastBump = 0;
+  function bump() {
+    var now = Date.now(); if (now - lastBump < 3000) return; lastBump = now;
+    clearTimeout(idleTimer);
+    if ($("app").hidden) return;
+    idleTimer = setTimeout(function () { closeSession("> NO ACTIVITY FOR " + (CONFIG.idleMinutes || 15) + " MINUTES. LOCKING TERMINAL.") }, (CONFIG.idleMinutes || 15) * 60000);
+  }
+  ["pointerdown", "pointermove", "keydown", "scroll", "touchstart"].forEach(function (ev) { addEventListener(ev, bump, { passive: true, capture: true }) });
   $("refresh").addEventListener("click", loadFiles);
   $("catfilter").addEventListener("change", function () { $("deptfilter").value = ""; drawFilters(); drawList() });
   $("deptfilter").addEventListener("change", drawList);
   $("search").addEventListener("input", drawList);
-  document.querySelectorAll(".tabs button").forEach(function (b) { b.addEventListener("click", function () { tab(b.dataset.tab); if (b.dataset.tab === "review") loadRequests(); if (b.dataset.tab === "depts") drawDeptAdmin() }) });
+  $("deep").addEventListener("change", function () { $("search").placeholder = $("deep").checked ? "Search everything you can read" : "Search names and titles"; drawList() });
+  document.querySelectorAll(".tabs button").forEach(function (b) { b.addEventListener("click", function () { tab(b.dataset.tab); if (b.dataset.tab === "review") loadRequests(); if (b.dataset.tab === "depts") { drawDeptAdmin(); loadKeyOwners().then(drawKeys); drawKeys() } if (b.dataset.tab === "request") drawMyRequests(); if (b.dataset.tab === "new" && !state.editing) { $("editbar").hidden = true } }) });
   $("reqrefresh").addEventListener("click", loadRequests);
   $("addsec").addEventListener("click", function () { addSection("", "") });
   CATS.forEach(function (c) { $("ncat").add(new Option(c.name, c.name)) });
@@ -1125,6 +1324,61 @@ var CONFIG = {
       card.appendChild(nm); card.appendChild(heads); card.appendChild(row); box.appendChild(card);
     });
   }
+  function drawKeys() {
+    var box = $("klist"); box.innerHTML = "";
+    var sel = $("glevel"); if (!sel.options.length) for (var l = 1; l <= state.level; l++) sel.add(new Option("Level " + l, String(l)));
+    var rows = state.keys.slice().sort(function (a, b) { return b.level - a.level || String(a.granted).localeCompare(String(b.granted)) });
+    if (!rows.length) { box.innerHTML = '<div class="empty">No keycards.</div>'; return }
+    var t = document.createElement("table"), head = document.createElement("tr");
+    ["Keycard", "Level", "Holder", "Granted", "Expires", ""].forEach(function (h) { var th = document.createElement("th"); th.textContent = h; head.appendChild(th) });
+    t.appendChild(head);
+    rows.forEach(function (k) {
+      var tr = document.createElement("tr");
+      var owner = k._owner;
+      var person = personFor(k.id);
+      var cells = [k.id + (k.id === state.id ? " (you)" : ""), "L" + k.level + (k.agent ? " · agent" : ""), (owner || (person ? person.item : "")) || "—", k.granted || "", k.expires || "—"];
+      cells.forEach(function (c) { var td = document.createElement("td"); td.textContent = c; tr.appendChild(td) });
+      var act = document.createElement("td");
+      if (k.id !== state.id) {
+        var rv = document.createElement("button"); rv.type = "button"; rv.className = "btn no"; rv.textContent = "Revoke";
+        rv.addEventListener("click", async function () {
+          if (rv.dataset.sure !== "1") { rv.dataset.sure = "1"; rv.textContent = "Confirm revoke"; return }
+          rv.disabled = true;
+          if (!CONFIG.endpoint && typeof DEMO !== "undefined") { state.keys = state.keys.filter(function (x) { return x.id !== k.id }); drawKeys(); return msg($("grantmsg"), "Demo: " + k.id + " revoked for this visit only.") }
+          var res = await transmit("revoke-key", state.agent, { by: state.id, id: k.id }, $("grantmsg"));
+          rv.disabled = false;
+          if (!res) return;
+          if (res.ok === false) return msg($("grantmsg"), res.message || "Couldn't revoke it.", true);
+          state.keys = state.keys.filter(function (x) { return x.id !== k.id }); drawKeys(); msg($("grantmsg"), res.message || "Revoked.");
+        });
+        act.appendChild(rv);
+      }
+      tr.appendChild(act); t.appendChild(tr);
+    });
+    box.appendChild(t);
+  }
+  async function loadKeyOwners() {
+    if (!state.secrets[5]) return;
+    for (var i = 0; i < state.keys.length; i++) { var k = state.keys[i]; if (k.ownerIv && k._owner == null) { try { k._owner = (await open(state.secrets[5], k.ownerIv, k.ownerData)).name || "" } catch (e) { k._owner = "" } } }
+  }
+  $("grantbtn").addEventListener("click", async function () {
+    var note = $("grantmsg"), name = $("gname").value.trim(), days = Number($("gdays").value) || 0, uid = $("guid").value.trim();
+    if (!name) return msg(note, "Give the keycard a name.", true);
+    if (uid && !/^\d{15,22}$/.test(uid)) return msg(note, "Discord user IDs are 15 to 22 digits. Leave it empty to just show the keycard here.", true);
+    if (!CONFIG.endpoint && typeof DEMO !== "undefined") return msg(note, "Demo: keycards can't be made here. On the real site this makes one and shows it once.", true);
+    var res = await transmit("grant-key", state.agent, { by: state.id, name: name, level: Number($("glevel").value), agent: $("gagent").checked, days: days, uid: uid }, note);
+    if (!res) return;
+    if (res.ok === false) return msg(note, res.message || "Couldn't make it.", true);
+    msg(note, (res.message || "Keycard made.").replace(/`/g, ""));
+    if (res.key && !res.sent) { $("newkey").textContent = res.key; $("keyshow").hidden = false } else $("keyshow").hidden = true;
+    state.keys.push({ id: res.id, level: Number($("glevel").value), agent: $("gagent").checked, granted: new Date().toISOString().slice(0, 10), expires: res.expires || "", _owner: name + " (pending)" });
+    $("gname").value = ""; $("gdays").value = ""; $("guid").value = ""; $("gagent").checked = false; drawKeys();
+  });
+  $("copykey").addEventListener("click", function () {
+    var k = $("newkey").textContent;
+    try { navigator.clipboard.writeText(k).then(function () { $("copykey").textContent = "Copied" }, function () { selectKey() }) } catch (e) { selectKey() }
+  });
+  function selectKey() { var r = document.createRange(); r.selectNodeContents($("newkey")); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r) }
   $("regbtn").addEventListener("click", function () { registerDept($("regname").value, $("regmsg"), function () { $("regname").value = "" }) });
   $("adddept").addEventListener("click", function () { registerDept($("newdept").value, $("deptmsg"), function (name) { $("ndept").value = name; $("newdept").value = "" }) });
   $("ncat").addEventListener("change", function () {
@@ -1144,26 +1398,126 @@ var CONFIG = {
   drop.addEventListener("dragleave", function () { drop.classList.remove("over") });
   drop.addEventListener("drop", function (e) { e.preventDefault(); drop.classList.remove("over"); addImages(e.dataTransfer.files, draft.focus) });
 
+  function localFile(file, base) {
+    var f = { cat: file.cat, dept: file.dept, key: file.key, item: file.item, cls: file.cls, title: file.title, level: file.level, loaded: true };
+    f.sections = file.sections.map(function (s) { return { h: s.h, parts: localParts(s.text, file.level) } });
+    var kept = (base && base.images || []).filter(function (img) { return (draft.drop || []).indexOf(img.n) < 0 });
+    f.images = kept.concat(draft.images.map(function (i) { return { n: i.n, src: i.src, align: i.align, size: i.size, caption: i.caption } }));
+    f.by = base ? base.by : state.id; f.created = base ? base.created : Date.now(); f.added = base ? base.added : new Date().toISOString().slice(0, 10);
+    f.edits = base ? (base.edits || []).concat([{ by: state.id, at: Date.now() }]) : [];
+    return f;
+  }
   async function sendFile(e) {
     if (e) e.preventDefault();
     var note = $("newmsg"), file = collect();
-    if (!file.item || !file.sections.length) return msg(note, "An item and at least one filled section are required.", true);
+    if (!file.item || !file.sections.length) return msg(note, "A name and at least one filled section are required.", true);
+    if (file.key && !/^[0-9a-f]{8}$/.test(file.key)) return msg(note, "Linked keycard IDs are 8 characters, like 0f47b821.", true);
     file.images = draft.images.map(function (i) { return { n: i.n, type: i.type, data: i.data, align: i.align, size: i.size, caption: i.caption.trim() } });
-    if (await transmit("file", CONFIG.writeLevel, { by: state.id, file: file }, note)) {
-      msg(note, "Transmitted. " + file.item + " appears in a minute or two. Use Refresh.");
-      $("newform").reset(); $("nlvl").value = String(state.level); resetSections();
+    var editing = state.editing;
+    if (editing) file.dropImages = draft.drop || [];
+    var demo = !CONFIG.endpoint && typeof DEMO !== "undefined";
+    var res = demo ? { ok: true, id: editing ? editing.id : "demo" + Date.now().toString(16).slice(-4) } : await transmit(editing ? "edit" : "file", editing ? 1 : CONFIG.writeLevel, editing ? { by: state.id, id: editing.id, file: file } : { by: state.id, file: file }, note);
+    if (!res) return;
+    if (res.ok === false) return msg(note, res.message || "Couldn't save it.", true);
+    var local = localFile(file, editing ? editing.old : null);
+    local.id = res.id || (editing && editing.id);
+    if (local.id) {
+      local.rev = editing ? Math.max(2, (editing.old.rev || 1) + 1) : 1;
+      if (demo) { local.pending = false; var at = state.files.findIndex(function (x) { return x.id === local.id }); if (at >= 0) state.files[at] = local; else state.files.push(local); buildXref(); drawFilters(); drawList() }
+      else addPending(local.id, { kind: editing ? "edit" : "new", file: local, rev: local.rev });
     }
+    endEdit();
+    $("newform").reset(); $("nlvl").value = String(state.level); resetSections();
+    if (local.id) { tab("files"); openFile(local.id) }
+    msg(note, demo ? "Demo: saved for this visit only." : editing ? "Saved. Marked PENDING until everyone can see it." : "Transmitted. Marked PENDING until it's live for everyone.");
   }
+  async function startEdit(f) {
+    if (!canEdit(f)) return;
+    if (!(await ensureBody(f))) return;
+    var texts = [];
+    for (var i = 0; i < (f.sections || []).length; i++) {
+      var sec = f.sections[i], out = "";
+      for (var j = 0; j < (sec.parts || []).length; j++) {
+        var p = sec.parts[j];
+        if (typeof p === "string") { out += p; continue }
+        var t = p.text;
+        if (t == null) {
+          if (!state.secrets[p.r]) { alertEdit("This file has Level " + p.r + " text you can't read, so you can't edit it."); return }
+          try { t = await open(state.secrets[p.r], p.iv, p.data) } catch (e) { alertEdit("Part of this file couldn't be decrypted."); return }
+        }
+        out += "[[" + p.r + ": " + t + "]]";
+      }
+      texts.push({ h: sec.h, text: out });
+    }
+    state.editing = { id: f.id, old: f };
+    tab("new");
+    $("ncat").value = catOf(f); resetSections();
+    $("sections").innerHTML = ""; texts.forEach(function (t) { addSection(t.h, t.text) });
+    $("nitem").value = f.item || ""; $("ntitle").value = f.title || "";
+    if (f.cls) $("ncls").value = f.cls;
+    $("nlvl").value = String(f.level);
+    drawDeptPicker(); $("ndept").value = f.dept || ""; $("nkey").value = f.key || "";
+    $("ndept").disabled = !state.agent;
+    draft.images = []; draft.drop = []; draft.next = (f.images || []).reduce(function (m, img) { return Math.max(m, Number(img.n) || 0) }, 0) + 1;
+    drawTray(); drawKept(f);
+    $("editbar").hidden = false; $("edittitle").textContent = "EDITING " + (f.item || "") + " · FILE " + f.id;
+    $("newsend").textContent = "Save changes";
+    msg($("newmsg"), state.agent ? "" : "Only RAISA can change someone's department, so it's locked here.");
+  }
+  function alertEdit(text) { var n = document.createElement("p"); n.className = "note bad"; n.textContent = text; $("doc").insertBefore(n, $("doc").firstChild) }
+  function drawKept(f) {
+    var box = $("kepttray"); box.innerHTML = "";
+    (f && f.images || []).forEach(function (img) {
+      var row = document.createElement("div"); row.className = "kept";
+      var gone = (draft.drop || []).indexOf(img.n) >= 0;
+      row.appendChild(document.createTextNode("{{img " + img.n + "}} · existing image" + (img.caption ? " · " + img.caption : "") + (gone ? " · will be removed" : "")));
+      var b = document.createElement("button"); b.type = "button"; b.className = "tb"; b.textContent = gone ? "Keep" : "Remove";
+      b.addEventListener("click", function () {
+        if (gone) draft.drop = draft.drop.filter(function (n) { return n !== img.n });
+        else { draft.drop.push(img.n); document.querySelectorAll("#sections textarea").forEach(function (t) { t.value = t.value.split("{{img " + img.n + "}}").join("") }) }
+        drawKept(f);
+      });
+      row.appendChild(b); box.appendChild(row);
+    });
+  }
+  function endEdit() {
+    state.editing = null; draft.drop = []; draft.images = []; draft.next = 1;
+    $("editbar").hidden = true; $("newsend").textContent = "Transmit"; $("ndept").disabled = false; $("kepttray").innerHTML = ""; drawTray();
+  }
+  $("canceledit").addEventListener("click", function () { var id = state.editing && state.editing.id; endEdit(); $("newform").reset(); $("nlvl").value = String(state.level); resetSections(); if (id) openFile(id) });
   $("newform").addEventListener("submit", sendFile);
   $("newsend").addEventListener("click", function () { sendFile() });
+
+  function myRequests() { try { return JSON.parse(localStorage.getItem("hal-req-" + state.id) || "[]") } catch (e) { return [] } }
+  function saveMyRequests(list) { try { localStorage.setItem("hal-req-" + state.id, JSON.stringify(list)) } catch (e) {} }
+  async function drawMyRequests() {
+    var box = $("myreqs"), mine = myRequests(); box.innerHTML = "";
+    var h = document.createElement("h3"); h.textContent = "Your requests"; box.appendChild(h);
+    if (!mine.length) { var e0 = document.createElement("p"); e0.className = "note"; e0.textContent = "Requests you send from this device show up here with their status."; box.appendChild(e0); return }
+    var status = {};
+    try { ((await getJson("requests.json")).requests || []).forEach(function (r) { status[r.id] = r }) } catch (e) {}
+    mine.forEach(function (r) {
+      var st = status[r.id], word = st ? st.status : "sending";
+      var card = document.createElement("div"); card.className = "req";
+      var row1 = document.createElement("div"); row1.className = "row1";
+      var b = document.createElement("b"); b.textContent = r.item;
+      var want = document.createElement("span"); want.textContent = "LEVEL " + r.want;
+      var s = document.createElement("span"); s.className = "st-" + (st ? st.status : "pending"); s.textContent = word.toUpperCase() + (st && st.reviewed ? " · " + st.reviewed : "");
+      row1.appendChild(b); row1.appendChild(want); row1.appendChild(s);
+      var meta = document.createElement("div"); meta.className = "meta2"; meta.textContent = "Sent " + new Date(r.at).toLocaleString() + (word === "approved" ? " · your new keycard was sent to you by Discord DM" : "");
+      card.appendChild(row1); card.appendChild(meta); box.appendChild(card);
+    });
+  }
 
   async function sendRequest(e) {
     if (e) e.preventDefault();
     var note = $("reqmsg");
     var item = $("ritem").value.trim(), why = $("rwhy").value.trim();
     if (!item || !why) return msg(note, "An item and a reason are required.", true);
-    if (await transmit("request", 1, { by: state.id, item: item, level: $("rlvl").value, reason: why }, note)) {
-      msg(note, "Request sent to RAISA."); $("reqform").reset();
+    var res = await transmit("request", 1, { by: state.id, item: item, level: $("rlvl").value, reason: why }, note);
+    if (res) {
+      if (res.id) { var mine = myRequests(); mine.unshift({ id: res.id, item: item, want: Number($("rlvl").value), reason: why, at: Date.now() }); saveMyRequests(mine.slice(0, 30)) }
+      msg(note, "Request sent to RAISA."); $("reqform").reset(); drawMyRequests();
     }
   }
   $("reqform").addEventListener("submit", sendRequest);
