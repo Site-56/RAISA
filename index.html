@@ -449,7 +449,8 @@ var CONFIG = {
     { name: "Sites & Facilities", sections: ["Overview", "Location", "Notable Contents"], item: "Site-56" },
     { name: "Incidents", sections: ["Summary", "Timeline", "Outcome"], item: "Incident 56-001" },
     { name: "Protocols", sections: ["Purpose", "Procedure", "Authorisation"], item: "Protocol 56-A" },
-    { name: "Records", sections: ["Summary", "Details"], item: "Record 56-001" }
+    { name: "Records", sections: ["Summary", "Details"], item: "Record 56-001" },
+    { name: "Misc", sections: ["Details"], item: "Name" }
   ]
 };
 
@@ -842,19 +843,20 @@ var CONFIG = {
     $("filecount").textContent = out.length + (out.length === 1 ? " FILE" : " FILES") + (Object.keys(state.pending).length ? " · " + Object.keys(state.pending).length + " PENDING" : "");
     var list = $("list"); list.innerHTML = "";
     if (!out.length) { list.innerHTML = '<li class="empty">No files at your level yet.</li>'; $("doc").innerHTML = '<div class="empty">Nothing to show.</div>'; return }
-    var pick = $("catfilter"), keep = pick.value, counts = {};
-    out.forEach(function (f) { var c = catOf(f); counts[c] = (counts[c] || 0) + 1 });
-    pick.innerHTML = ""; pick.add(new Option("All categories (" + out.length + ")", ""));
-    var names = CATS.map(function (c) { return c.name });
-    Object.keys(counts).forEach(function (c) { if (names.indexOf(c) < 0) names.push(c) });
-    names.forEach(function (c) { if (counts[c]) pick.add(new Option(c + " (" + counts[c] + ")", c)) });
-    pick.value = counts[keep] ? keep : "";
     drawFilters();
     drawList();
     show(state.open && out.some(function (f) { return f.id === state.open }) ? state.open : out[0].id);
   }
 
   function drawFilters() {
+    // categories, in the order they're listed in CONFIG, with Misc last
+    var pick = $("catfilter"), keepCat = pick.value, cc = {};
+    state.files.forEach(function (f) { var c = catOf(f); cc[c] = (cc[c] || 0) + 1 });
+    pick.innerHTML = ""; pick.add(new Option("All categories (" + state.files.length + ")", ""));
+    var cnames = CATS.map(function (c) { return c.name });
+    Object.keys(cc).forEach(function (c) { if (cnames.indexOf(c) < 0) cnames.splice(Math.max(0, cnames.indexOf("Misc")), 0, c) });
+    cnames.forEach(function (c) { if (cc[c]) pick.add(new Option(c + " (" + cc[c] + ")", c)) });
+    pick.value = cc[keepCat] ? keepCat : "";
     var df = $("deptfilter"), keep = df.value, people = state.files.filter(function (f) { return catOf(f) === "Personnel" });
     df.hidden = $("catfilter").value !== "Personnel";
     var counts = {}; people.forEach(function (f) { var d = f.dept || "Unassigned"; counts[d] = (counts[d] || 0) + 1 });
@@ -876,7 +878,7 @@ var CONFIG = {
     };
     var shown = 0;
     var names = CATS.map(function (c) { return c.name });
-    state.files.forEach(function (f) { var c = catOf(f); if (names.indexOf(c) < 0) names.push(c) });
+    state.files.forEach(function (f) { var c = catOf(f); if (names.indexOf(c) < 0) names.splice(Math.max(0, names.indexOf("Misc")), 0, c) });
     names.forEach(function (c) {
       if (want && want !== c) return;
       var group = state.files.filter(function (f) { return catOf(f) === c && match(f) });
