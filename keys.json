@@ -1,3 +1,15 @@
 {
-  "keys": []
+  "keys": [
+    {
+      "id": "c318c806",
+      "level": 5,
+      "salt": "OD9sYitQN/cS12JbVaHCgg==",
+      "iv": "h5YxPfT4NAew0zwD",
+      "data": "a7Kp53/etZiBoiwH/9Ty6uzm/D94se5hexijCkJg8DOdpefINubeGV6OFROKUrS+cJfAcmiji7UiEHm5TX0ioj4xnxsTo5HvexObXp3noBI3TQR9qAd8QnRsmdjif5l+/s6mJy38iR2afEA3oqGVMdu+PZlhSfr2MdtUHZFX7uBia50HPaDzkYmezrU1DU5msGLf8l5e63TRbnU+niVy5DcP2Yx1G3y0X1L4JfBFwb8Fy7acUqa67IayAbetkQJFUc+eZjJXSul2Y6V2HfxYo9yqmGOFrFzLxmNyuMz0e9W2a37SHyr3lQHXmb0Zp7MdiWzqBFiTXXwPF2XrDprk+61WpJlAeGby8igIniiYC/wmR1cAFNOsBf6nWQUGdjWJasYR4dEW4A8e/XkgyD6J7ZlT3ar/JzeKfRX4oE09qCZpPnMZrwlL",
+      "granted": "2026-11-06",
+      "agent": true,
+      "ownerIv": "dPUYJv5SN+9HKMBT",
+      "ownerData": "KZTs45/0GsXksgFZhWawtVT7lhNrR/Ma82yrmcfPOUcBHOX2gS4ixZ8+IcL/xug/Q03X8s6jXmtuS/6zgnaT6Ez8TH+pmjTjCz1ShRPL81JOaec="
+    }
+  ]
 }
