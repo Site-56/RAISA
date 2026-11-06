@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>R.A.I.S.A. Site-56</title>
+<title>Site-56 Archive</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
@@ -329,17 +329,17 @@ input, select, textarea { border-radius: 2px }
 <section class="app" id="app" hidden>
   <header class="raisa-h">
     <div>
-      <div class="l1">R.A.I.S.A. SECURE DATABASE</div>
-      <div class="l2">SITE-56 · HALCYON NODE · <span id="who"></span></div>
+      <div class="l1">SITE-56 ARCHIVE</div>
+      <div class="l2">MAINTAINED BY R.A.I.S.A. · <span id="who"></span></div>
     </div>
     <button class="btn quiet" type="button" id="logout">Log out</button>
   </header>
   <nav class="tabs" role="tablist">
     <button class="btn" role="tab" data-tab="files" aria-selected="true">Files</button>
     <button class="btn" role="tab" data-tab="new" aria-selected="false" id="newtab" hidden>New file</button>
-    <button class="btn" role="tab" data-tab="request" aria-selected="false">Request</button>
-    <button class="btn" role="tab" data-tab="review" aria-selected="false" id="reviewtab" hidden>Requests</button>
-    <button class="btn" role="tab" data-tab="depts" aria-selected="false" id="deptstab" hidden>RAISA</button>
+    <button class="btn" role="tab" data-tab="request" aria-selected="false">Request access</button>
+    <button class="btn" role="tab" data-tab="review" aria-selected="false" id="reviewtab" hidden>Review</button>
+    <button class="btn" role="tab" data-tab="depts" aria-selected="false" id="deptstab" hidden>Admin</button>
   </nav>
 
   <div class="view" data-view="files">
@@ -398,7 +398,7 @@ input, select, textarea { border-radius: 2px }
         <div><label class="chk" for="gagent"><input type="checkbox" id="gagent"> RAISA agent</label></div>
         <div><label for="guid">Discord user ID (optional)</label><input id="guid" placeholder="DMs them the keycard" autocomplete="off" inputmode="numeric"></div>
       </div>
-      <div class="grantrow"><button class="btn" type="button" id="grantbtn">Grant keycard</button><p class="note" id="grantmsg">Leave Days empty for a permanent keycard. Temporary ones turn themselves off.</p></div>
+      <div class="grantrow"><button class="btn" type="button" id="grantbtn">Grant keycard</button><p class="note" id="grantmsg">Leave Days empty for a permanent keycard. Temporary ones turn themselves off. For whole teams, link their Discord role with /rolekeys instead.</p></div>
       <div class="keyshow" id="keyshow" hidden><span>New keycard:</span><code id="newkey"></code><button class="btn quiet" type="button" id="copykey">Copy</button><span class="note">Shown once. Give it to them privately.</span></div>
       <div class="klist" id="klist"></div>
     </div>
@@ -606,8 +606,9 @@ var CONFIG = {
 
   async function boot() {
     var box = $("boot");
-    await type(box, "> Welcome to the Records and Information Security Administration [R.A.I.S.A.] secure database.", "", 12);
-    line(box, "> Site-56 · Halcyon node. Unauthorised access is a Level 4 offence.", "dim");
+    await type(box, "> Welcome to the Site-56 Archive.", "", 12);
+    line(box, "> Containment records, task force logs and incident reports for all Site-56 personnel. Maintained by the Records and Information Security Administration [R.A.I.S.A.].", "dim");
+    line(box, "> Unauthorised access is a Level 4 offence.", "dim");
     line(box, "");
     await sleep(250);
     await type(box, "> [USER] PLEASE STATE YOUR CLEARANCE_LEVEL & INSERT YOUR KEYCARD IN THE DESIGNATED SCANNER:");
@@ -671,7 +672,7 @@ var CONFIG = {
       if (quiet) { $("boot").innerHTML = ""; fast = reduce; await boot(); line(box, "> SAVED KEYCARD NO LONGER VALID.", "warn"); return }
       line(box, "-> " + barText(steps[Math.min(i, steps.length - 1)]).replace(/-+$/, "") + " ERROR", "bad pbar");
       line(box, "");
-      line(box, result === "offline" ? "> CONNECTION TO R.A.I.S.A. LOST. TRY AGAIN SHORTLY." : result === "expired" ? "> ACCESS DENIED. THIS KEYCARD EXPIRED ON " + state.why + "." : "> ACCESS DENIED. KEYCARD NOT RECOGNISED. THIS ATTEMPT HAS BEEN LOGGED.", "bad");
+      line(box, result === "offline" ? "> CONNECTION TO THE ARCHIVE LOST. TRY AGAIN SHORTLY." : result === "expired" ? "> ACCESS DENIED. THIS KEYCARD EXPIRED ON " + state.why + "." : "> ACCESS DENIED. KEYCARD NOT RECOGNISED. THIS ATTEMPT HAS BEEN LOGGED.", "bad");
       if (result === "offline" && state.why) line(box, "  (" + state.why + ")", "dim");
       if (result === "denied" && CONFIG.endpoint) { try { fetch(CONFIG.endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ v: 1, type: "failed" }), keepalive: true }).catch(function () {}) } catch (e) {} }
       showGate(); $("key").select();
@@ -1400,7 +1401,7 @@ var CONFIG = {
     var box = document.createElement("div"); box.className = "term"; cover.appendChild(box); document.body.appendChild(cover);
     fast = reduce;
     if (reason) { await type(box, reason, "warn"); line(box, "") }
-    await type(box, "> THANK YOU FOR USING THE R.A.I.S.A. SECURE DATABASE.");
+    await type(box, "> THANK YOU FOR USING THE SITE-56 ARCHIVE.");
     line(box, "", "gap");
     await type(box, "> CLOSING FILE IN_");
     line(box, "", "gap");
@@ -1549,7 +1550,7 @@ var CONFIG = {
   }
   async function loadKeyOwners() {
     if (!state.secrets[5]) return;
-    for (var i = 0; i < state.keys.length; i++) { var k = state.keys[i]; if (k.ownerIv && k._owner == null) { try { k._owner = (await open(state.secrets[5], k.ownerIv, k.ownerData)).name || "" } catch (e) { k._owner = "" } } }
+    for (var i = 0; i < state.keys.length; i++) { var k = state.keys[i]; if (k.ownerIv && k._owner == null) { try { var ow = await open(state.secrets[5], k.ownerIv, k.ownerData); k._owner = (ow.name || "") + (ow.auto ? " (from role)" : "") } catch (e) { k._owner = "" } } }
   }
   $("grantbtn").addEventListener("click", async function () {
     var note = $("grantmsg"), name = $("gname").value.trim(), days = Number($("gdays").value) || 0, uid = $("guid").value.trim();
