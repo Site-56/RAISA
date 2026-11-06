@@ -1,12 +1,6 @@
 {
   "note": "Discord roles that hand out Site-56 Archive keycards, department folders and ranks. Change these with /role in Discord or the config menu.",
   "roles": [],
-  "departments": [
-    {
-      "dept": "1780d94f",
-      "role": "1568299522206077110",
-      "name": "REAL alpha-1"
-    }
-  ],
+  "departments": [],
   "ranks": []
 }
