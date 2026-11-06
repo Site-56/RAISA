@@ -28,7 +28,7 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             node scripts/update-data.js
-            git add -A keys.json files.json requests.json $(ls departments.json 2>/dev/null)
+            git add -A keys.json files.json requests.json $(ls -d departments.json files 2>/dev/null)
             git commit -m "$DATA_ACTION" || exit 0
             if git push origin HEAD:main; then exit 0; fi
             echo "Someone else saved first, trying again ($attempt)"
