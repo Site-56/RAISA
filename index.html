@@ -268,6 +268,16 @@ input, select, textarea { border-radius: 2px }
 .list li button[aria-current="true"] { box-shadow: none; border-left-color: var(--ink); background: var(--hover) }
 .list .lv { font-size: 11px }
 .list ul { max-height: 70vh }
+/* folding categories */
+.list li.cat, .list li.dept { padding-left: 0; padding-right: 0 }
+.list .fold { all: unset; box-sizing: border-box; display: flex; align-items: center; gap: 8px; width: 100%; padding: 2px 16px 2px 0; cursor: pointer; font: inherit; color: inherit; letter-spacing: inherit; text-transform: inherit }
+.list .fold:hover { color: var(--ink) }
+.list .fold:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px }
+.list .fold .chev { width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); margin: 0 3px 3px 2px; transition: transform .15s; flex: none }
+.list .fold[aria-expanded="false"] .chev { transform: rotate(-45deg); margin-bottom: 0 }
+.list .fold .fl { flex: 1; min-width: 0 }
+.list .fold .fc { font-size: 11px; letter-spacing: 0; color: var(--dim); font-weight: 400 }
+.list li.dept .fold { padding-left: 10px }
 .doc { padding: 0 0 28px 32px }
 .classbar { border: 0; border-bottom: 1px solid var(--line); padding: 0 0 8px; letter-spacing: .1em }
 .doc .meta { letter-spacing: 0; margin-top: 8px; align-items: center }
@@ -892,6 +902,27 @@ var CONFIG = {
     df.add(new Option("Unassigned (" + (counts.Unassigned || 0) + ")", "Unassigned"));
     df.value = Array.prototype.some.call(df.options, function (o) { return o.value === keep }) ? keep : "";
   }
+  var FOLD_KEY = "site56-folded";
+  var foldedSet = (function () { try { return JSON.parse(localStorage.getItem(FOLD_KEY) || "[]") } catch (e) { return [] } })();
+  function isFolded(name) { return foldedSet.indexOf(name) >= 0 }
+  function setFolded(name, on) {
+    foldedSet = foldedSet.filter(function (n) { return n !== name });
+    if (on) foldedSet.push(name);
+    try { localStorage.setItem(FOLD_KEY, JSON.stringify(foldedSet)) } catch (e) {}
+  }
+  function foldButton(key, label, count, folded) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "fold";
+    b.setAttribute("aria-expanded", String(!folded));
+    b.innerHTML = '<span class="chev" aria-hidden="true"></span><span class="fl"></span><span class="fc"></span>';
+    b.querySelector(".fl").textContent = label;
+    b.querySelector(".fc").textContent = count;
+    b.title = folded ? "Show these files" : "Hide these files";
+    b.addEventListener("click", function () { setFolded(key, !isFolded(key)); drawList(); var again = document.querySelector('.list .fold[data-key="' + key.replace(/"/g, "") + '"]'); if (again) again.focus() });
+    b.dataset.key = key.replace(/"/g, "");
+    return b;
+  }
+
   function drawList() {
     var list = $("list"), want = $("catfilter").value, wantDept = want === "Personnel" ? $("deptfilter").value : "", q = $("search").value.trim().toLowerCase(); list.innerHTML = "";
     var deep = $("deep").checked;
@@ -910,7 +941,11 @@ var CONFIG = {
       var group = state.files.filter(function (f) { return catOf(f) === c && match(f) });
       shown += group.length;
       if (!group.length) return;
-      var h = document.createElement("li"); h.className = "cat"; h.textContent = c; list.appendChild(h);
+      // folding: click a heading to hide its files. remembered on this device. a search opens everything
+      var folded = !q && isFolded(c);
+      var h = document.createElement("li"); h.className = "cat"; list.appendChild(h);
+      h.appendChild(foldButton(c, c, group.length, folded));
+      if (folded) return;
       var rows = group;
       if (c === "Personnel") {
         var depts = [];
@@ -919,8 +954,15 @@ var CONFIG = {
         rows = [];
         depts.forEach(function (d) { rows.push({ heading: d }); group.forEach(function (f) { if ((f.dept || "Unassigned") === d) rows.push(f) }) });
       }
+      var deptFolded = false;
       rows.forEach(function (f) {
-        if (f.heading) { var dh = document.createElement("li"); dh.className = "dept"; dh.textContent = f.heading; list.appendChild(dh); return }
+        if (f.heading) {
+          deptFolded = !q && isFolded("Personnel/" + f.heading);
+          var dh = document.createElement("li"); dh.className = "dept"; list.appendChild(dh);
+          dh.appendChild(foldButton("Personnel/" + f.heading, f.heading, group.filter(function (g) { return (g.dept || "Unassigned") === f.heading }).length, deptFolded));
+          return;
+        }
+        if (deptFolded) return;
         var li = document.createElement("li"), b = document.createElement("button");
         if (c === "Personnel") li.className = "indent";
         b.type = "button"; b.dataset.id = f.id;
