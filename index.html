@@ -213,6 +213,8 @@ label { display: block; color: var(--dim); font-size: 12px; letter-spacing: .1em
 .klist th { text-align: left; color: var(--dim); font-weight: 500; letter-spacing: .08em; text-transform: uppercase; padding: 6px 8px; border-bottom: 1px solid var(--line) }
 .klist td { padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: middle }
 .klist .btn { padding: 0 8px; font-size: 11px }
+.req > .btn.quiet { justify-self: start; width: auto }
+.subpreview { border: 1px dashed var(--line); padding: 14px 16px; margin-top: 8px; max-height: 70vh; overflow: auto }
 .myreqs { padding: 0 24px 24px; display: grid; gap: 8px; max-width: 760px }
 .myreqs h3 { margin: 6px 0 0; font-size: 12px; letter-spacing: .12em; text-transform: uppercase }
 @media (max-width: 760px) { .grant { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) } .myreqs { padding: 0 14px 20px } }
@@ -455,6 +457,18 @@ var CONFIG = {
     var dk = await new Promise(function (res, rej) { f.pkcs5.pbkdf2(f.util.encodeUtf8(key), bin(unb64(salt)), ITER, 32, f.md.sha256.create(), function (err, k) { if (err) rej(err); else res(k) }) });
     return { raw: dk };
   }
+  async function agentFrom(raw5) {
+    var bytes = unb64(raw5);
+    if (hasSubtle) {
+      try {
+        var hk = await crypto.subtle.importKey("raw", bytes, { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
+        return await aes(b64(await crypto.subtle.sign("HMAC", hk, enc.encode("halcyon-agent"))));
+      } catch (e) { hasSubtle = false }
+    }
+    var f = await needForge(), h = f.hmac.create();
+    h.start("sha256", bin(bytes)); h.update("halcyon-agent");
+    return { raw: h.digest().getBytes() };
+  }
   async function aes(raw) {
     if (hasSubtle) { try { return await crypto.subtle.importKey("raw", unb64(raw), "AES-GCM", false, ["encrypt", "decrypt"]) } catch (e) { hasSubtle = false } }
     return { raw: bin(unb64(raw)) };
@@ -540,6 +554,8 @@ var CONFIG = {
       state.agent = null;
       for (var l in granted) { if (l === "agent") state.agent = await aes(granted[l]); else state.secrets[l] = await aes(granted[l]) }
       state.level = Math.max.apply(null, Object.keys(state.secrets).map(Number));
+      // level 5 and 6 are RAISA agents automatically: the agent code is worked out from the level 5 code
+      if (!state.agent && state.level >= 5 && granted[5]) state.agent = await agentFrom(granted[5]);
       try { sessionStorage.setItem("hal", key) } catch (e) {}
       return "ok";
     } catch (e) { state.why = e && e.message; return "offline" }
@@ -599,7 +615,11 @@ var CONFIG = {
     $("r6btn").hidden = state.level < 6;
     resetSections();
     var canWrite = state.level >= CONFIG.writeLevel;
-    $("newtab").hidden = !canWrite;
+    // below the write level (but at least level 2) files go to RAISA for review first
+    $("newtab").hidden = state.level < 2;
+    $("newtab").textContent = canWrite ? "New file" : "Submit file";
+    $("newsend").textContent = canWrite ? "Transmit" : "Send for review";
+    msg($("newmsg"), canWrite ? "Files appear for everyone with that level after a minute or two." : "RAISA reads every file from Level " + state.level + " keycards before it goes up. You'll see the result under Request.");
     var sel = $("nlvl"); sel.innerHTML = "";
     for (var l = 1; l <= state.level; l++) { var o = document.createElement("option"); o.textContent = l; sel.appendChild(o) }
     sel.value = String(state.level);
@@ -703,7 +723,7 @@ var CONFIG = {
   function whoText(id) { var p = personFor(id); return p ? p.item + " (" + id + ")" : "keycard " + id }
   function canEdit(f) {
     if (!f || !f.id || f.pending || state.level < f.level) return false;
-    if (state.agent || f.by === state.id) return true;
+    if (state.agent || (f.by === state.id && state.level >= CONFIG.writeLevel)) return true;
     return catOf(f) === "Personnel" && !!f.dept && myDepts().some(function (d) { return d.name === f.dept });
   }
 
@@ -1202,15 +1222,32 @@ var CONFIG = {
     items.forEach(function (r) {
       var card = document.createElement("div"); card.className = "req";
       var row1 = document.createElement("div"); row1.className = "row1";
-      var b = document.createElement("b"); b.textContent = r.item;
-      var want = document.createElement("span"); want.textContent = "WANTS LEVEL " + r.want;
+      var b = document.createElement("b"); b.textContent = (r.kind === "file" ? "FILE SUBMISSION · " : "") + r.item;
+      var want = document.createElement("span"); want.textContent = r.kind === "file" ? (r.cat || "Objects").toUpperCase() + " · LEVEL " + r.fileLevel : "WANTS LEVEL " + r.want;
       var st = document.createElement("span"); st.className = "st-" + r.status; st.textContent = r.status.toUpperCase() + (r.reviewer ? " · " + r.reviewer : "");
       row1.appendChild(b); row1.appendChild(want); row1.appendChild(st);
       var meta = document.createElement("div"); meta.className = "meta2";
       var person = personFor(r.by);
       meta.textContent = "From " + ((r.owner && r.owner.name) || "unassigned key") + " · key " + r.by + " (Level " + r.level + ")" + (person ? " · personnel file: " + person.item : "") + " · " + new Date(r.created).toLocaleString();
-      var why = document.createElement("div"); why.className = "why"; why.textContent = r.reason;
+      var why = document.createElement("div"); why.className = "why";
+      why.textContent = r.kind === "file" ? (r.title ? r.title + ". " : "") + "Sections: " + (r.sections || []).filter(Boolean).join(", ") + (r.images ? ". " + r.images + (r.images === 1 ? " image" : " images") : "") + "." : r.reason;
       card.appendChild(row1); card.appendChild(meta); card.appendChild(why);
+      if (r.kind === "file" && r.status === "pending") {
+        var pv = document.createElement("button"); pv.type = "button"; pv.className = "btn quiet"; pv.textContent = "Read it";
+        var box = document.createElement("article"); box.className = "doc subpreview"; box.hidden = true;
+        pv.addEventListener("click", async function () {
+          if (!box.hidden) { box.hidden = true; pv.textContent = "Read it"; return }
+          box.hidden = false; pv.textContent = "Hide"; box.innerHTML = '<div class="empty">Loading…</div>';
+          try {
+            var sub = await getJson("submissions/" + r.id + ".json");
+            var d = await open(state.agent, sub.iv, sub.data);
+            var f = d.file; f.level = d.level; f.loaded = true; f.preview = true;
+            box.innerHTML = ""; await renderFile(box, f, function () { return !box.hidden });
+            box.querySelectorAll(".assign, .filedby, .meta .btn").forEach(function (x) { x.remove() });
+          } catch (e) { box.innerHTML = '<div class="empty">Couldn\'t open it. It may still be uploading, try again in a minute.</div>' }
+        });
+        card.appendChild(pv); card.appendChild(box);
+      }
       if (r.status === "pending") {
         var acts = document.createElement("div"); acts.className = "acts";
         var yes = document.createElement("button"); yes.type = "button"; yes.className = "btn ok"; yes.textContent = "Approve";
@@ -1485,6 +1522,15 @@ var CONFIG = {
     var editing = state.editing;
     if (editing) file.dropImages = draft.drop || [];
     var demo = !CONFIG.endpoint && typeof DEMO !== "undefined";
+    if (!editing && state.level < CONFIG.writeLevel) {
+      if (demo) return msg(note, "Demo: on the real site this goes to RAISA for review, and you'd see it under Request.");
+      var sub = await transmit("file-request", 1, { by: state.id, file: file }, note);
+      if (!sub) return;
+      if (sub.ok === false) return msg(note, sub.message || "Couldn't send it.", true);
+      if (sub.id) { var mineR = myRequests(); mineR.unshift({ id: sub.id, kind: "file", item: file.item, want: file.level, at: Date.now() }); saveMyRequests(mineR.slice(0, 30)) }
+      $("newform").reset(); $("nlvl").value = String(state.level); resetSections();
+      return msg(note, "Sent to RAISA for review. Check Request, Your requests, to see when it's approved.");
+    }
     var res = demo ? { ok: true, id: editing ? editing.id : "demo" + Date.now().toString(16).slice(-4) } : await transmit(editing ? "edit" : "file", editing ? 1 : CONFIG.writeLevel, editing ? { by: state.id, id: editing.id, file: file } : { by: state.id, file: file }, note);
     if (!res) return;
     if (res.ok === false) return msg(note, res.message || "Couldn't save it.", true);
@@ -1551,7 +1597,7 @@ var CONFIG = {
   }
   function endEdit() {
     state.editing = null; draft.drop = []; draft.images = []; draft.next = 1;
-    $("editbar").hidden = true; $("newsend").textContent = "Transmit"; $("ndept").disabled = false; $("kepttray").innerHTML = ""; drawTray();
+    $("editbar").hidden = true; $("newsend").textContent = state.level >= CONFIG.writeLevel ? "Transmit" : "Send for review"; $("ndept").disabled = false; $("kepttray").innerHTML = ""; drawTray();
   }
   $("canceledit").addEventListener("click", function () { var id = state.editing && state.editing.id; endEdit(); $("newform").reset(); $("nlvl").value = String(state.level); resetSections(); if (id) openFile(id) });
   $("newform").addEventListener("submit", sendFile);
@@ -1569,11 +1615,11 @@ var CONFIG = {
       var st = status[r.id], word = st ? st.status : "sending";
       var card = document.createElement("div"); card.className = "req";
       var row1 = document.createElement("div"); row1.className = "row1";
-      var b = document.createElement("b"); b.textContent = r.item;
-      var want = document.createElement("span"); want.textContent = "LEVEL " + r.want;
+      var b = document.createElement("b"); b.textContent = r.kind === "file" ? "File: " + r.item : r.item;
+      var want = document.createElement("span"); want.textContent = r.kind === "file" ? "LEVEL " + r.want + " FILE" : "LEVEL " + r.want;
       var s = document.createElement("span"); s.className = "st-" + (st ? st.status : "pending"); s.textContent = word.toUpperCase() + (st && st.reviewed ? " · " + st.reviewed : "");
       row1.appendChild(b); row1.appendChild(want); row1.appendChild(s);
-      var meta = document.createElement("div"); meta.className = "meta2"; meta.textContent = "Sent " + new Date(r.at).toLocaleString() + (word === "approved" ? " · your new keycard was sent to you by Discord DM" : "");
+      var meta = document.createElement("div"); meta.className = "meta2"; meta.textContent = "Sent " + new Date(r.at).toLocaleString() + (word === "approved" ? (r.kind === "file" ? " · it's on the database now" : " · your new keycard was sent to you by Discord DM") : "");
       card.appendChild(row1); card.appendChild(meta); box.appendChild(card);
     });
   }
