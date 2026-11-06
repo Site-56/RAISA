@@ -268,6 +268,27 @@ input, select, textarea { border-radius: 2px }
 .list li button[aria-current="true"] { box-shadow: none; border-left-color: var(--ink); background: var(--hover) }
 .list .lv { font-size: 11px }
 .list ul { max-height: 70vh }
+/* departments on the Admin tab: one line each, open one to edit it */
+.dlist { gap: 0; grid-template-columns: minmax(0, 1fr) }
+details.dcard { min-width: 0 }
+details.dcard { border: 0; border-top: 1px solid var(--line); padding: 0; display: block }
+details.dcard:last-child { border-bottom: 1px solid var(--line) }
+details.dcard summary { list-style: none; display: flex; align-items: baseline; gap: 10px; padding: 9px 0; cursor: pointer }
+details.dcard summary::-webkit-details-marker { display: none }
+details.dcard summary:hover .nm, details.dcard[open] summary .nm { color: var(--ink) }
+details.dcard summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px }
+details.dcard .chev { width: 6px; height: 6px; border-right: 1.5px solid var(--dim); border-bottom: 1.5px solid var(--dim); transform: rotate(-45deg); flex: none; align-self: center; transition: transform .15s }
+details.dcard[open] .chev { transform: rotate(45deg) }
+details.dcard .nm { flex: 1; min-width: 0; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+details.dcard .meta { color: var(--dim); font-size: 12px; white-space: nowrap }
+details.dcard .dbody { display: grid; gap: 8px; padding: 0 0 14px 16px }
+details.dcard .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+details.dcard .row .btn.no { margin-left: auto }
+details.dcard .heads { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 12px; color: var(--dim) }
+details.dcard input { width: 140px; height: 30px; padding: 3px 8px; text-transform: lowercase }
+details.dcard select { width: auto; height: 30px; padding: 0 8px }
+.dfind { display: block; width: 100%; max-width: 360px; margin: 12px 0 0 }
+@media (max-width: 560px) { details.dcard summary { flex-wrap: wrap; row-gap: 2px } details.dcard .nm { white-space: normal } details.dcard .meta { flex-basis: 100%; padding-left: 16px; font-size: 11px } details.dcard .row .btn.no { margin-left: 0 } }
 /* folding categories */
 .list li.cat, .list li.dept { padding-left: 0; padding-right: 0 }
 .list .fold { all: unset; box-sizing: border-box; display: flex; align-items: center; gap: 8px; width: 100%; padding: 2px 16px 2px 0; cursor: pointer; font: inherit; color: inherit; letter-spacing: inherit; text-transform: inherit }
@@ -403,6 +424,7 @@ input, select, textarea { border-radius: 2px }
   <div class="view" data-view="depts" id="deptsview" hidden>
     <div class="list" style="border-right:0"><div class="head"><span id="deptcount">DEPARTMENTS</span></div></div>
     <div class="dreg"><input id="regname" placeholder="New department name" autocomplete="off" maxlength="40" aria-label="New department name"><select id="reglevel" aria-label="Lowest level that can see it"></select><button class="btn" type="button" id="regbtn">Register</button><p class="note" id="regmsg">Heads are set by keycard ID, the 8 characters after KEYCARD in someone's header.</p></div>
+    <input class="dfind" id="dfind" type="search" placeholder="Find a department or head" autocomplete="off" aria-label="Find a department" hidden>
     <div class="dlist" id="dlist"></div>
     <div class="ksec">
       <h3>Keycards</h3>
@@ -1596,50 +1618,65 @@ var CONFIG = {
     if (res.ok === false) return msg(note, res.message || "Couldn't delete it.", true);
     gone(); msg($("regmsg"), res.message || d.name + " deleted.");
   }
+  // departments as one line each. click one to open its heads, visibility and delete. a search box appears once there are a few
+  var openDept = null;
   function drawDeptAdmin() {
     var box = $("dlist"); box.innerHTML = "";
     var rl = $("reglevel"); if (rl && rl.options.length !== state.level) { rl.innerHTML = ""; for (var l = 1; l <= state.level; l++) rl.add(new Option(l === 1 ? "Visible to everyone" : "Level " + l + " and up", String(l))) }
     var people = state.files.filter(function (f) { return catOf(f) === "Personnel" });
     $("deptcount").textContent = DEPTS.length + (DEPTS.length === 1 ? " DEPARTMENT" : " DEPARTMENTS");
+    var find = $("dfind"); find.hidden = DEPTS.length < 7;
     if (!DEPTS.length) { box.innerHTML = '<div class="empty">No departments yet. Register one above.</div>'; return }
-    DEPTS.forEach(function (d) {
-      var card = document.createElement("div"); card.className = "dcard";
-      var nm = document.createElement("div"); nm.className = "nm";
+    var q = find.hidden ? "" : find.value.trim().toLowerCase();
+    var headName = function (h) { var p = personFor(h); return p ? p.item : h };
+    var shown = DEPTS.slice().sort(function (a, b) { return a.name.localeCompare(b.name) }).filter(function (d) {
+      return !q || d.name.toLowerCase().indexOf(q) >= 0 || d.heads.some(function (h) { return headName(h).toLowerCase().indexOf(q) >= 0 });
+    });
+    if (!shown.length) { box.innerHTML = '<div class="empty">No department matches.</div>'; return }
+    shown.forEach(function (d) {
       var count = people.filter(function (f) { return f.dept === d.name }).length;
-      nm.textContent = d.name + "  ·  " + count + (count === 1 ? " person" : " people");
-      var lvTag = document.createElement("span"); lvTag.className = "lvl"; lvTag.textContent = (d.level || 1) > 1 ? "Level " + d.level + " and up can see it" : "Everyone can see it"; nm.appendChild(lvTag);
+      var card = document.createElement("details"); card.className = "dcard"; card.open = openDept === d.id;
+      card.addEventListener("toggle", function () {
+        if (card.open) { openDept = d.id; Array.prototype.forEach.call(box.querySelectorAll("details.dcard"), function (o) { if (o !== card) o.open = false }) }
+        else if (openDept === d.id) openDept = null;
+      });
+      var sum = document.createElement("summary");
+      sum.innerHTML = '<span class="chev" aria-hidden="true"></span><span class="nm"></span><span class="meta"></span>';
+      sum.querySelector(".nm").textContent = d.name;
+      sum.querySelector(".meta").textContent = count + (count === 1 ? " person" : " people") + "  ·  " + ((d.level || 1) > 1 ? "L" + d.level + "+" : "all") + "  ·  " + (d.heads.length ? d.heads.length + (d.heads.length === 1 ? " head" : " heads") : "no head");
+      card.appendChild(sum);
+      var body = document.createElement("div"); body.className = "dbody";
+      var note = document.createElement("p"); note.className = "note";
       var heads = document.createElement("div"); heads.className = "heads";
-      heads.appendChild(document.createTextNode(d.heads.length ? "Heads:" : "No head yet."));
+      heads.appendChild(document.createTextNode(d.heads.length ? "Heads" : "No head yet."));
       d.heads.forEach(function (h) {
-        var chip = document.createElement("span"); chip.className = "chip"; chip.textContent = h;
-        var x = document.createElement("button"); x.type = "button"; x.textContent = "×"; x.title = "Remove " + h + " as head";
+        var chip = document.createElement("span"); chip.className = "chip"; chip.textContent = headName(h); chip.title = "Keycard " + h;
+        var x = document.createElement("button"); x.type = "button"; x.textContent = "×"; x.title = "Remove " + headName(h) + " as head";
         x.addEventListener("click", function () { saveHeads(d, d.heads.filter(function (y) { return y !== h }), note) });
         chip.appendChild(x); heads.appendChild(chip);
       });
       var row = document.createElement("div"); row.className = "row";
       var inp = document.createElement("input"); inp.placeholder = "keycard id"; inp.maxLength = 8; inp.setAttribute("aria-label", "Keycard ID for " + d.name);
       var add = document.createElement("button"); add.type = "button"; add.className = "btn quiet"; add.textContent = "Add head";
-      var note = document.createElement("p"); note.className = "note";
       add.addEventListener("click", function () {
         var v = inp.value.trim().toLowerCase();
         if (!/^[0-9a-f]{8}$/.test(v)) return msg(note, "Keycard IDs are 8 characters, like 0f47b821.", true);
         if (d.heads.indexOf(v) >= 0) return msg(note, v + " is already a head.", true);
         saveHeads(d, d.heads.concat([v]), note);
       });
-      row.appendChild(inp); row.appendChild(add);
-      var row2 = document.createElement("div"); row2.className = "row";
+      inp.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); add.click() } });
       var lsel = document.createElement("select"); lsel.setAttribute("aria-label", "Who can see " + d.name);
       for (var l = 1; l <= state.level; l++) lsel.add(new Option(l === 1 ? "Visible to everyone" : "Level " + l + " and up", String(l)));
       lsel.value = String(d.level || 1);
-      var setl = document.createElement("button"); setl.type = "button"; setl.className = "btn quiet"; setl.textContent = "Set visibility";
-      setl.addEventListener("click", function () { setDeptLevel(d, Number(lsel.value), note) });
+      lsel.addEventListener("change", function () { if (Number(lsel.value) !== (d.level || 1)) setDeptLevel(d, Number(lsel.value), note) });
       var del = document.createElement("button"); del.type = "button"; del.className = "btn no"; del.textContent = "Delete";
       del.addEventListener("click", function () {
         if (del.dataset.sure !== "1") { del.dataset.sure = "1"; del.textContent = "Confirm delete"; msg(note, count ? count + (count === 1 ? " person" : " people") + " in it will become Unassigned." : "Nobody is in it."); return }
         deleteDept(d, note);
       });
-      row2.appendChild(lsel); row2.appendChild(setl); row2.appendChild(del);
-      card.appendChild(nm); card.appendChild(heads); card.appendChild(row); card.appendChild(row2); card.appendChild(note); box.appendChild(card);
+      row.appendChild(inp); row.appendChild(add); row.appendChild(lsel); row.appendChild(del);
+      body.appendChild(heads); body.appendChild(row); body.appendChild(note);
+      card.appendChild(body); box.appendChild(card);
     });
   }
   function drawKeys() {
@@ -1697,6 +1734,7 @@ var CONFIG = {
     try { navigator.clipboard.writeText(k).then(function () { $("copykey").textContent = "Copied" }, function () { selectKey() }) } catch (e) { selectKey() }
   });
   function selectKey() { var r = document.createRange(); r.selectNodeContents($("newkey")); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r) }
+  $("dfind").addEventListener("input", drawDeptAdmin);
   $("regbtn").addEventListener("click", function () { registerDept($("regname").value, $("regmsg"), function () { $("regname").value = "" }, $("reglevel").value) });
   $("nlvl").addEventListener("change", function () { $("deptmsg").classList.remove("bad"); drawDeptPicker() });
   $("adddept").addEventListener("click", function () { registerDept($("newdept").value, $("deptmsg"), function (name) { $("ndept").value = name; $("newdept").value = "" }) });
