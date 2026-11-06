@@ -1,47 +1,7 @@
 {
-  "note": "Discord roles that hand out Site-56 Archive keycards, department folders and ranks. Change these with /rolekeys, /dept role and /dept ranks in Discord.",
-  "roles": [
-    {
-      "role": "1568264691719995422",
-      "name": "『☠』𝐄𝐏𝐒𝐈𝐋𝐎𝐍-𝟏𝟏 | Nine-Tailed Fox",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568264748720459787",
-      "name": "『⚖』𝐎𝐌𝐄𝐆𝐀-𝟏 | Law's Left Hand",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568264645217620109",
-      "name": "『✦』𝐀𝐋𝐏𝐇𝐀-𝟏 | Red Right Hand",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568264797789757581",
-      "name": "『▣』𝐆𝐀𝐌𝐌𝐀-𝟏 | Final Archive",
-      "level": 5,
-      "agent": false
-    }
-  ],
+  "note": "Discord roles that hand out Site-56 Archive keycards, department folders and ranks. Change these with /role in Discord or the config menu.",
+  "roles": [],
   "departments": [
-    {
-      "dept": "ee48dfec",
-      "role": "1568264748720459787",
-      "name": "『⚖』𝐎𝐌𝐄𝐆𝐀-𝟏 | Law's Left Hand"
-    },
-    {
-      "dept": "32539dde",
-      "role": "1568264797789757581",
-      "name": "『▣』𝐆𝐀𝐌𝐌𝐀-𝟏 | Final Archive"
-    },
-    {
-      "dept": "f543acf0",
-      "role": "1568264691719995422",
-      "name": "『☠』𝐄𝐏𝐒𝐈𝐋𝐎𝐍-𝟏𝟏 | Nine-Tailed Fox"
-    },
     {
       "dept": "1780d94f",
       "role": "1568299522206077110",
