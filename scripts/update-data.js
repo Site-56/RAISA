@@ -20,6 +20,31 @@ function writeBody(fid, e) { fs.mkdirSync("files", { recursive: true }); fs.writ
 function id(s) { s = String(s || "").toLowerCase(); if (!hex8.test(s)) throw new Error("bad id"); return s; }
 
 const e = payload.entry || {};
+function addFileEntry(data, e) {
+  let entry;
+  if (e.bodyIv) {
+    entry = { id: id(e.id), level: level(e.level), sumIv: blob(e.sumIv, "sumIv"), sumData: blob(e.sumData, "sumData"), body: 1, rev: 1, added: today() };
+    if (data.files.some((f) => f.id === entry.id)) throw new Error("file id already exists");
+    writeBody(entry.id, e);
+  } else {
+    entry = { id: id(e.id), level: level(e.level), iv: blob(e.iv, "iv"), data: blob(e.data, "data"), added: today() };
+    if (data.files.some((f) => f.id === entry.id)) throw new Error("file id already exists");
+  }
+  data.files.push(entry);
+}
+function updateFileEntry(data, e) {
+  const f = data.files.find((x) => x.id === id(e.id));
+  if (!f) throw new Error("no such file");
+  f.level = level(e.level);
+  if (e.bodyIv) {
+    writeBody(f.id, e);
+    f.sumIv = blob(e.sumIv, "sumIv"); f.sumData = blob(e.sumData, "sumData");
+    delete f.iv; delete f.data;
+    f.body = 1; f.rev = (Number(f.rev) || 1) + 1; f.edited = today();
+  } else {
+    f.iv = blob(e.iv, "iv"); f.data = blob(e.data, "data");
+  }
+}
 function keyEntry(e) {
   const entry = { id: id(e.id), level: level(e.level), salt: blob(e.salt, "salt"), iv: blob(e.iv, "iv"), data: blob(e.data, "data"), granted: today() };
   if (e.agent === true) entry.agent = true;
@@ -58,16 +83,13 @@ if (action === "grant-key") {
   save("keys.json", data);
 } else if (action === "add-file") {
   const data = load("files.json", "files");
-  let entry;
-  if (e.bodyIv) {
-    entry = { id: id(e.id), level: level(e.level), sumIv: blob(e.sumIv, "sumIv"), sumData: blob(e.sumData, "sumData"), body: 1, rev: 1, added: today() };
-    if (data.files.some((f) => f.id === entry.id)) throw new Error("file id already exists");
-    writeBody(entry.id, e);
-  } else {
-    entry = { id: id(e.id), level: level(e.level), iv: blob(e.iv, "iv"), data: blob(e.data, "data"), added: today() };
-    if (data.files.some((f) => f.id === entry.id)) throw new Error("file id already exists");
-  }
-  data.files.push(entry);
+  addFileEntry(data, e);
+  save("files.json", data);
+} else if (action === "files-batch") {
+  // many personnel files at once, from the department role sync
+  const data = load("files.json", "files");
+  for (const x of (payload.add || []).slice(0, 50)) if (!data.files.some((f) => f.id === String(x.id).toLowerCase())) addFileEntry(data, x);
+  for (const x of (payload.update || []).slice(0, 50)) updateFileEntry(data, x);
   save("files.json", data);
 } else if (action === "delete-file") {
   const data = load("files.json", "files");
@@ -110,17 +132,7 @@ if (action === "grant-key") {
   save("departments.json", data);
 } else if (action === "update-file") {
   const data = load("files.json", "files");
-  const f = data.files.find((x) => x.id === id(e.id));
-  if (!f) throw new Error("no such file");
-  f.level = level(e.level);
-  if (e.bodyIv) {
-    writeBody(f.id, e);
-    f.sumIv = blob(e.sumIv, "sumIv"); f.sumData = blob(e.sumData, "sumData");
-    delete f.iv; delete f.data;
-    f.body = 1; f.rev = (Number(f.rev) || 1) + 1; f.edited = today();
-  } else {
-    f.iv = blob(e.iv, "iv"); f.data = blob(e.data, "data");
-  }
+  updateFileEntry(data, e);
   save("files.json", data);
 } else if (action === "remove-department") {
   const data = load("departments.json", "departments");
