@@ -1,18 +1,6 @@
 {
   "keys": [
     {
-      "id": "2594c3e5",
-      "level": 5,
-      "salt": "lOSrboD50yGTEqjxT5xJxg==",
-      "iv": "ri//CysuIVCWVAb6",
-      "data": "uz7aXNH5CJ3bVvc2BWrmx7COdNb9peZMkMPYgOKVxo3vx+XAROoImqbA4W+NvpYyBcRPKN6AtY0yJQ85VqiVd+F4hKxAWgMR8MWMvO20CSmrh0HZnmtFbOAna77wt5JK76hUDJADZ5DMN+JzUHb/A5F/7SN/4KXsENLkGN3R5TUBbE7caKV1EI6+OJh+mu0l3JCC5YxEdHrnAWtJab2Qye4H040BwOfatMzzmc+oxHvkkTvyF0ord4XgPnXgFTCJPMO7BYSb/oQWldj/2fXEDl+9xddWOUjl3k0vJlSFa1VAAi97OmouLeG67rnJp8tRdswdrBDBrgPOhXd2EsVWwIIMoZOePlZLM8kyTqEoReoXPw0LpbIS1kj3FGsoTQPTY03F01pbkKUhIbQ8ycc/9E04x8F3gVy+QkaXGmtpQdYfqiykceOt",
-      "granted": "2026-11-06",
-      "agent": true,
-      "expires": "2026-11-07",
-      "ownerIv": "XRgAWOEFiIYrAHuU",
-      "ownerData": "yBHX55qey34KsFjc4as4p9B/CMwZlFYRm5k9EjacG0z22CSUX6sgepBLET6hLo9CaLqg+vlZaEP/2B5MrvlTmuKvn/Tj6GT0vIT/03o="
-    },
-    {
       "id": "34b04854",
       "level": 6,
       "salt": "DPhA1goBMNp8Hbcodchlfg==",
