@@ -1,3 +1,11 @@
 {
-  "departments": []
+  "departments": [
+    {
+      "id": "98045d05",
+      "level": 6,
+      "iv": "r6mFWLhykLpJ/CRY",
+      "data": "eLvTLxOTrFEIn6+9pr9AQqiKybJBWxjTz9pbETYr7sKA8Sd2mtG0lZxT8zxOSVCiLsPTJrcGIfZFa0cLojMibbYVZGsv+R4sp3qcOzSKDLut",
+      "added": "2026-11-06"
+    }
+  ]
 }
