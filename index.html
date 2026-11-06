@@ -671,6 +671,8 @@ var CONFIG = {
       state.agent = null;
       for (var l in granted) { if (l === "agent") state.agent = await aes(granted[l]); else state.secrets[l] = await aes(granted[l]) }
       state.level = Math.max.apply(null, Object.keys(state.secrets).map(Number));
+      // an Uploader role in a department server lets this keycard add some categories without review
+      state.upload = Array.isArray(entry.upload) ? entry.upload : [];
       // level 5 and 6 are RAISA agents automatically: the agent code is worked out from the level 5 code
       if (!state.agent && state.level >= 5 && granted[5]) state.agent = await agentFrom(granted[5]);
       try { sessionStorage.setItem("hal", key) } catch (e) {}
@@ -732,14 +734,14 @@ var CONFIG = {
     $("r6btn").hidden = state.level < 6;
     resetSections();
     var canWrite = state.level >= CONFIG.writeLevel;
-    // below the write level (but at least level 2) files go to RAISA for review first
-    $("newtab").hidden = state.level < 2;
-    $("newtab").textContent = canWrite ? "New file" : "Submit file";
-    $("newsend").textContent = canWrite ? "Transmit" : "Send for review";
-    msg($("newmsg"), canWrite ? "Files appear for everyone with that level after a minute or two." : "RAISA reads every file from Level " + state.level + " keycards before it goes up. You'll see the result under Request.");
+    // below the write level (but at least level 2) files go to RAISA for review first, unless an Uploader role covers the category
+    $("newtab").hidden = state.level < 2 && !state.upload.length;
+    $("newtab").textContent = canWrite || state.upload.length ? "New file" : "Submit file";
+    if (!canWrite && state.level < 2 && state.upload.length) $("ncat").value = state.upload[0];
     var sel = $("nlvl"); sel.innerHTML = "";
     for (var l = 1; l <= state.level; l++) { var o = document.createElement("option"); o.textContent = l; sel.appendChild(o) }
     sel.value = String(state.level);
+    writeMode();
     tab("files");
     var wanted = location.hash;
     loadFiles().then(function () { followHash(wanted) });
@@ -847,7 +849,7 @@ var CONFIG = {
   function whoText(id) { if (id === "raisa") return "R.A.I.S.A. (automatic)"; var p = personFor(id); return p ? p.item + " (" + id + ")" : "keycard " + id }
   function canEdit(f) {
     if (!f || !f.id || f.pending || state.level < f.level) return false;
-    if (state.agent || (f.by === state.id && state.level >= CONFIG.writeLevel)) return true;
+    if (state.agent || (f.by === state.id && (state.level >= CONFIG.writeLevel || (state.upload || []).indexOf(catOf(f)) >= 0))) return true;
     return catOf(f) === "Personnel" && !!f.dept && myDepts().some(function (d) { return d.name === f.dept });
   }
 
@@ -1348,6 +1350,17 @@ var CONFIG = {
     $("sections").appendChild(wrapEl);
   }
 
+  // whether this keycard can add a file of this category straight away, or it goes to RAISA first
+  function direct(cat) { return state.level >= CONFIG.writeLevel || (state.upload || []).indexOf(cat) >= 0 }
+  function writeMode() {
+    if (state.editing || !state.id) return;
+    var cat = $("ncat").value || CATS[0].name, ok = direct(cat), send = $("newsend");
+    send.disabled = !ok && state.level < 2;
+    send.textContent = ok ? "Transmit" : "Send for review";
+    if (ok) msg($("newmsg"), state.level >= CONFIG.writeLevel ? "Files appear for everyone with that level after a minute or two." : "Your keycard can add " + cat + " files directly. They appear in a minute or two.");
+    else if (state.level < 2) msg($("newmsg"), "Your keycard can only add " + state.upload.join(", ") + " files.", true);
+    else msg($("newmsg"), "RAISA reads every file from Level " + state.level + " keycards before it goes up" + (state.upload.length ? " (" + state.upload.join(", ") + " files go up straight away)" : "") + ". You'll see the result under Request.");
+  }
   function resetSections() {
     var info = catInfo($("ncat").value || CATS[0].name);
     $("sections").innerHTML = ""; info.sections.forEach(function (n) { addSection(n, "") });
@@ -1355,6 +1368,7 @@ var CONFIG = {
     $("nclswrap").hidden = info.name !== "Objects";
     $("ndeptwrap").hidden = info.name !== "Personnel";
     $("deptreg").hidden = !state.agent;
+    writeMode();
   }
 
 
@@ -1688,7 +1702,7 @@ var CONFIG = {
   $("adddept").addEventListener("click", function () { registerDept($("newdept").value, $("deptmsg"), function (name) { $("ndept").value = name; $("newdept").value = "" }) });
   $("ncat").addEventListener("change", function () {
     var filled = Array.prototype.some.call(document.querySelectorAll("#sections textarea"), function (t) { return t.value.trim() });
-    if (!filled) resetSections(); else { $("nitem").placeholder = catInfo($("ncat").value).item || "Name"; $("nclswrap").hidden = $("ncat").value !== "Objects"; $("ndeptwrap").hidden = $("ncat").value !== "Personnel" }
+    if (!filled) resetSections(); else { $("nitem").placeholder = catInfo($("ncat").value).item || "Name"; $("nclswrap").hidden = $("ncat").value !== "Objects"; $("ndeptwrap").hidden = $("ncat").value !== "Personnel"; writeMode() }
   });
   $("nimg").addEventListener("change", function () { addImages($("nimg").files, draft.focus); $("nimg").value = "" });
   $("previewbtn").addEventListener("click", preview);
@@ -1723,7 +1737,7 @@ var CONFIG = {
     var editing = state.editing;
     if (editing) file.dropImages = draft.drop || [];
     var demo = !CONFIG.endpoint && typeof DEMO !== "undefined";
-    if (!editing && state.level < CONFIG.writeLevel) {
+    if (!editing && !direct(file.cat)) {
       if (demo) return msg(note, "Demo: on the real site this goes to RAISA for review, and you'd see it under Request.");
       var sub = await transmit("file-request", 1, { by: state.id, file: file }, note);
       if (!sub) return;
@@ -1732,7 +1746,7 @@ var CONFIG = {
       $("newform").reset(); $("nlvl").value = String(state.level); resetSections();
       return msg(note, "Sent to RAISA for review. Check Request, Your requests, to see when it's approved.");
     }
-    var res = demo ? { ok: true, id: editing ? editing.id : "demo" + Date.now().toString(16).slice(-4) } : await transmit(editing ? "edit" : "file", editing ? 1 : CONFIG.writeLevel, editing ? { by: state.id, id: editing.id, file: file } : { by: state.id, file: file }, note);
+    var res = demo ? { ok: true, id: editing ? editing.id : "demo" + Date.now().toString(16).slice(-4) } : await transmit(editing ? "edit" : "file", editing ? 1 : state.level >= CONFIG.writeLevel ? CONFIG.writeLevel : state.level, editing ? { by: state.id, id: editing.id, file: file } : { by: state.id, file: file }, note);
     if (!res) return;
     if (res.ok === false) return msg(note, res.message || "Couldn't save it.", true);
     var local = localFile(file, editing ? editing.old : null);
@@ -1777,7 +1791,7 @@ var CONFIG = {
     draft.images = []; draft.drop = []; draft.next = (f.images || []).reduce(function (m, img) { return Math.max(m, Number(img.n) || 0) }, 0) + 1;
     drawTray(); drawKept(f);
     $("editbar").hidden = false; $("edittitle").textContent = "EDITING " + (f.item || "") + " · FILE " + f.id;
-    $("newsend").textContent = "Save changes";
+    $("newsend").textContent = "Save changes"; $("newsend").disabled = false;
     msg($("newmsg"), state.agent ? "" : "Only RAISA can change someone's department, so it's locked here.");
   }
   function alertEdit(text) { var n = document.createElement("p"); n.className = "note bad"; n.textContent = text; $("doc").insertBefore(n, $("doc").firstChild) }
@@ -1798,7 +1812,7 @@ var CONFIG = {
   }
   function endEdit() {
     state.editing = null; draft.drop = []; draft.images = []; draft.next = 1;
-    $("editbar").hidden = true; $("newsend").textContent = state.level >= CONFIG.writeLevel ? "Transmit" : "Send for review"; $("ndept").disabled = false; $("kepttray").innerHTML = ""; drawTray();
+    $("editbar").hidden = true; writeMode(); $("ndept").disabled = false; $("kepttray").innerHTML = ""; drawTray();
   }
   $("canceledit").addEventListener("click", function () { var id = state.editing && state.editing.id; endEdit(); $("newform").reset(); $("nlvl").value = String(state.level); resetSections(); if (id) openFile(id) });
   $("newform").addEventListener("submit", sendFile);

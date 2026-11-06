@@ -45,10 +45,17 @@ function updateFileEntry(data, e) {
     f.iv = blob(e.iv, "iv"); f.data = blob(e.data, "data");
   }
 }
+// categories a keycard can add files to without review (from an Uploader role). only plain category names
+function uploadList(v) {
+  if (!Array.isArray(v)) return [];
+  return [...new Set(v.map(String).filter((c) => /^[A-Za-z][A-Za-z &-]{0,39}$/.test(c)))].slice(0, 12);
+}
 function keyEntry(e) {
   const entry = { id: id(e.id), level: level(e.level), salt: blob(e.salt, "salt"), iv: blob(e.iv, "iv"), data: blob(e.data, "data"), granted: today() };
   if (e.agent === true) entry.agent = true;
   if (e.expires) entry.expires = date(e.expires);
+  const up = uploadList(e.upload);
+  if (up.length) entry.upload = up;
   if (e.ownerIv || e.ownerData) { entry.ownerIv = blob(e.ownerIv, "ownerIv"); entry.ownerData = blob(e.ownerData, "ownerData"); }
   return entry;
 }
@@ -75,11 +82,13 @@ if (action === "grant-key") {
   if (data.keys.length === before) throw new Error("no such key");
   save("keys.json", data);
 } else if (action === "update-key") {
-  // only the expiry date can change here. a new level needs a new key
+  // only the expiry date and upload categories can change here. a new level needs a new key.
+  // a field that isn't sent is left alone
   const data = load("keys.json", "keys");
   const key = data.keys.find((k) => k.id === id(payload.id));
   if (!key) throw new Error("no such key");
-  if (payload.expires) key.expires = date(payload.expires); else delete key.expires;
+  if ("expires" in payload) { if (payload.expires) key.expires = date(payload.expires); else delete key.expires; }
+  if ("upload" in payload) { const up = uploadList(payload.upload); if (up.length) key.upload = up; else delete key.upload; }
   save("keys.json", data);
 } else if (action === "add-file") {
   const data = load("files.json", "files");
