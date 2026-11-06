@@ -2,7 +2,7 @@ name: Update Halcyon data
 
 on:
   repository_dispatch:
-    types: [grant-key, revoke-key, add-file, delete-file, add-request, update-request]
+    types: [grant-key, revoke-key, add-file, delete-file, add-request, update-request, add-department, update-department, remove-department, update-file]
 
 permissions:
   contents: write
@@ -28,7 +28,7 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             node scripts/update-data.js
-            git add -A keys.json files.json requests.json
+            git add -A keys.json files.json requests.json $(ls departments.json 2>/dev/null)
             git commit -m "$DATA_ACTION" || exit 0
             if git push origin HEAD:main; then exit 0; fi
             echo "Someone else saved first, trying again ($attempt)"
