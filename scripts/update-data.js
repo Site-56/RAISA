@@ -81,7 +81,8 @@ if (action === "grant-key") {
   save("requests.json", data);
 } else if (action === "add-department") {
   const data = load("departments.json", "departments");
-  const entry = { id: id(e.id), iv: blob(e.iv, "iv"), data: blob(e.data, "data"), added: today() };
+  // level is which clearance can see the department exists at all
+  const entry = { id: id(e.id), level: e.level ? level(e.level) : 1, iv: blob(e.iv, "iv"), data: blob(e.data, "data"), added: today() };
   if (data.departments.some((d) => d.id === entry.id)) throw new Error("department id already exists");
   data.departments.push(entry);
   data.departments = data.departments.slice(-100);
@@ -91,6 +92,7 @@ if (action === "grant-key") {
   const d = data.departments.find((x) => x.id === id(e.id));
   if (!d) throw new Error("no such department");
   d.iv = blob(e.iv, "iv"); d.data = blob(e.data, "data");
+  d.level = e.level ? level(e.level) : (d.level || 1);
   save("departments.json", data);
 } else if (action === "update-file") {
   const data = load("files.json", "files");
