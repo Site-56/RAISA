@@ -438,6 +438,9 @@ input, select, textarea { border-radius: 2px }
 <script>
 var CONFIG = {
   endpoint: "https://raisa-bot-production.up.railway.app/submit",
+  // keys and files are read straight from the newest commit in the repo, so new ones show up as soon as
+  // the bot saves them instead of waiting for GitHub Pages. if that ever fails, the site uses the published copy
+  data: "https://raw.githubusercontent.com/Site-56/RAISA/",
   writeLevel: 3,
   idleMinutes: 15, // locks the terminal after this many minutes without activity
   // file categories. add more here; each can have its own starting sections
@@ -575,7 +578,23 @@ var CONFIG = {
     ci.finish();
     return { iv: b64(iv), data: btoa(ci.output.getBytes() + ci.mode.tag.getBytes()) };
   }
-  async function getJson(file) { var r = await fetch(file + "?t=" + Date.now(), { cache: "no-store" }); if (!r.ok) throw new Error(file); return r.json() }
+  async function getJson(file) { var r = await fetchData(file, "?t=" + Date.now(), "no-store"); if (!r.ok) throw new Error(file); return r.json() }
+  var head = { sha: null, at: 0, pending: null };
+  function newestCommit() {
+    if (!CONFIG.data || !CONFIG.endpoint) return Promise.resolve(null);
+    if (head.sha && Date.now() - head.at < 4000) return Promise.resolve(head.sha);
+    if (head.pending) return head.pending;
+    head.pending = fetch(CONFIG.endpoint.replace(/\/submit$/, "/head"), { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null })
+      .then(function (j) { head.pending = null; if (j && /^[0-9a-f]{40}$/.test(j.sha)) { head.sha = j.sha; head.at = Date.now(); return j.sha } return null })
+      .catch(function () { head.pending = null; return null });
+    return head.pending;
+  }
+  async function fetchData(file, query, cache) {
+    var sha = await newestCommit();
+    if (sha) { try { var r = await fetch(CONFIG.data + sha + "/" + file, { cache: "force-cache" }); if (r.ok || r.status === 404) return r } catch (e) {} }
+    return fetch(file + query, { cache: cache });
+  }
 
   function msg(el, text, bad) { el.textContent = text; el.classList.toggle("bad", !!bad) }
 
@@ -947,7 +966,7 @@ var CONFIG = {
   async function loadImage(fig, holder, img, level) {
     try {
       if (!state.images[img.img]) {
-        var r = await fetch("images/" + img.img + ".json", { cache: "force-cache" });
+        var r = await fetchData("images/" + img.img + ".json", "", "force-cache");
         if (!r.ok) throw new Error();
         var j = await r.json();
         var bytes = await openBytes(state.secrets[level], j.iv, j.data);
