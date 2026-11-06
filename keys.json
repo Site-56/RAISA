@@ -19,6 +19,17 @@
       "granted": "2026-11-06",
       "ownerIv": "lMhpLvu0O3A4YCFb",
       "ownerData": "cZC3iCP9+lJKR/Hga4I+DijB8/ysa77d8UIBs95U7IBzCWWYU4uzLMy1HudZfde1HgVjgp+upgczgQOfpJxx08AGU/rHTcdI6XfWjYM="
+    },
+    {
+      "id": "5d7058b8",
+      "level": 6,
+      "salt": "9ASMp9Z2sOc3pnGvkwxJRA==",
+      "iv": "F6fC3wQmEqcuSrMo",
+      "data": "nYPQqpnLuyLti2Ug+s59kFfeexlNT8e8FrSxNH501awJy67NhEohzxaoaXL5Mla1bEPWPSUo3yxPxuHrzZbgsVJylWxK2ac6ZKQ4GGgoXrzZ3LHX2e9342HnvWmXByQs2vQ/58BljF1fq1bTn1I5s3G+/Of5aVdGWQF8HorLRM59wtwG5rf3Ge8z7y4aiptmqIzP91YkPX5rFMnaaj6o+F0azieWE1cP5cdZUIVuFDo2x3jA8bW+Tlo9eEiorOb1l3MCRP8O5Q09XkOiQsVQOuq3WBALVlSJoCkoGTr8aOiPBDMzSzi65i32bMucjboZNZX/YY8u6hkgarBrIidsr7NuFbJWpWT6uLpWAlcTk9VbYC/Ci2zP30q/+LFEKAWSWJEomQCGsoMV/Y9kzvWI6kapxYrUZzja5atxteSe8JJPdIQ=",
+      "granted": "2026-11-06",
+      "expires": "2026-11-13",
+      "ownerIv": "gIqFx+jq+I5dYs+1",
+      "ownerData": "MtVYlORM3hIbtPQIKHlM1iXrT0MtG2DDvAWq/uRLzjpZBVPA+P5LG7qkXqvJkk1vba+3vrTlrG7LKITptZJgCLV8GlT4mK98K3UUn0P3jVA1yawt"
     }
   ]
 }
