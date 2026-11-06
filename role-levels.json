@@ -1,5 +1,5 @@
 {
-  "note": "Discord roles that hand out Site-56 Archive keycards and department folders. Change these with /rolekeys and /dept role in Discord.",
+  "note": "Discord roles that hand out Site-56 Archive keycards, department folders and ranks. Change these with /rolekeys, /dept role and /dept ranks in Discord.",
   "roles": [
     {
       "role": "1568264691719995422",
@@ -44,8 +44,9 @@
     },
     {
       "dept": "1780d94f",
-      "role": "1568264645217620109",
-      "name": "『✦』𝐀𝐋𝐏𝐇𝐀-𝟏 | Red Right Hand"
+      "role": "1568299522206077110",
+      "name": "REAL alpha-1"
     }
-  ]
+  ],
+  "ranks": []
 }
