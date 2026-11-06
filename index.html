@@ -565,6 +565,7 @@ var CONFIG = {
       line(box, "");
       line(box, result === "offline" ? "> CONNECTION TO R.A.I.S.A. LOST. TRY AGAIN SHORTLY." : result === "expired" ? "> ACCESS DENIED. THIS KEYCARD EXPIRED ON " + state.why + "." : "> ACCESS DENIED. KEYCARD NOT RECOGNISED. THIS ATTEMPT HAS BEEN LOGGED.", "bad");
       if (result === "offline" && state.why) line(box, "  (" + state.why + ")", "dim");
+      if (result === "denied" && CONFIG.endpoint) { try { fetch(CONFIG.endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ v: 1, type: "failed" }), keepalive: true }).catch(function () {}) } catch (e) {} }
       showGate(); $("key").select();
       return;
     }
@@ -589,9 +590,18 @@ var CONFIG = {
     for (var l = 1; l <= state.level; l++) { var o = document.createElement("option"); o.textContent = l; sel.appendChild(o) }
     sel.value = String(state.level);
     tab("files");
-    loadFiles();
+    var wanted = location.hash;
+    loadFiles().then(function () { followHash(wanted) });
     lastBump = 0; bump();
   }
+  // links from Discord: #<file id> opens that file, #requests opens the review tab
+  function followHash(from) {
+    var h = (typeof from === "string" ? from : location.hash).replace(/^#/, "").toLowerCase();
+    if (!h || $("app").hidden) return;
+    if (h === "requests" && state.agent) { tab("review"); loadRequests(); return }
+    if (/^[0-9a-f]{8}$/.test(h) && h !== state.open && state.files.some(function (f) { return f.id === h })) openFile(h);
+  }
+  addEventListener("hashchange", followHash);
 
   // ---- pending changes: shown straight away, replaced once GitHub has the real version ----
   function mergePending(out) {
@@ -940,6 +950,7 @@ var CONFIG = {
   async function show(id) {
     var f = state.files.find(function (x) { return x.id === id }); if (!f) return;
     state.open = id;
+    try { if (location.hash !== "#" + id) history.replaceState(null, "", "#" + id) } catch (e) {}
     document.querySelectorAll("#list button").forEach(function (b) { b.setAttribute("aria-current", String(b.dataset.id === id)) });
     var doc = $("doc"); doc.innerHTML = "";
     var seq = state.seq = (state.seq || 0) + 1;
