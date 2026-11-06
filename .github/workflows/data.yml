@@ -2,7 +2,7 @@ name: Update Halcyon data
 
 on:
   repository_dispatch:
-    types: [grant-key, revoke-key, update-key, add-file, delete-file, add-request, update-request, add-department, update-department, remove-department, update-file]
+    types: [grant-key, grant-keys, revoke-key, revoke-keys, update-key, add-file, delete-file, add-request, update-request, add-department, update-department, remove-department, update-file]
 
 permissions:
   contents: write
