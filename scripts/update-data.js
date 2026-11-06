@@ -35,6 +35,13 @@ if (action === "grant-key") {
   data.keys = data.keys.filter((k) => k.id !== id(payload.id));
   if (data.keys.length === before) throw new Error("no such key");
   save("keys.json", data);
+} else if (action === "update-key") {
+  // only the expiry date can change here. a new level needs a new key
+  const data = load("keys.json", "keys");
+  const key = data.keys.find((k) => k.id === id(payload.id));
+  if (!key) throw new Error("no such key");
+  if (payload.expires) key.expires = date(payload.expires); else delete key.expires;
+  save("keys.json", data);
 } else if (action === "add-file") {
   const data = load("files.json", "files");
   let entry;
