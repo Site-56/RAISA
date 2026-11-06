@@ -59,6 +59,32 @@ if (action === "grant-key") {
   req.reviewed = today();
   req.reviewer = String(payload.reviewer || "").slice(0, 100);
   save("requests.json", data);
+} else if (action === "add-department") {
+  const data = load("departments.json", "departments");
+  const entry = { id: id(e.id), iv: blob(e.iv, "iv"), data: blob(e.data, "data"), added: today() };
+  if (data.departments.some((d) => d.id === entry.id)) throw new Error("department id already exists");
+  data.departments.push(entry);
+  data.departments = data.departments.slice(-100);
+  save("departments.json", data);
+} else if (action === "update-department") {
+  const data = load("departments.json", "departments");
+  const d = data.departments.find((x) => x.id === id(e.id));
+  if (!d) throw new Error("no such department");
+  d.iv = blob(e.iv, "iv"); d.data = blob(e.data, "data");
+  save("departments.json", data);
+} else if (action === "update-file") {
+  const data = load("files.json", "files");
+  const f = data.files.find((x) => x.id === id(e.id));
+  if (!f) throw new Error("no such file");
+  if (level(e.level) !== f.level) throw new Error("level mismatch");
+  f.iv = blob(e.iv, "iv"); f.data = blob(e.data, "data");
+  save("files.json", data);
+} else if (action === "remove-department") {
+  const data = load("departments.json", "departments");
+  const before = data.departments.length;
+  data.departments = data.departments.filter((d) => d.id !== id(payload.id));
+  if (data.departments.length === before) throw new Error("no such department");
+  save("departments.json", data);
 } else {
   throw new Error("unknown action " + action);
 }
