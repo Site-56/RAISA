@@ -33,11 +33,6 @@
       "name": "『⚖』𝐎𝐌𝐄𝐆𝐀-𝟏 | Law's Left Hand"
     },
     {
-      "dept": "1780d94f",
-      "role": "1568264645217620109",
-      "name": "『✦』𝐀𝐋𝐏𝐇𝐀-𝟏 | Red Right Hand"
-    },
-    {
       "dept": "32539dde",
       "role": "1568264797789757581",
       "name": "『▣』𝐆𝐀𝐌𝐌𝐀-𝟏 | Final Archive"
@@ -46,6 +41,11 @@
       "dept": "f543acf0",
       "role": "1568264691719995422",
       "name": "『☠』𝐄𝐏𝐒𝐈𝐋𝐎𝐍-𝟏𝟏 | Nine-Tailed Fox"
+    },
+    {
+      "dept": "1780d94f",
+      "role": "1568264645217620109",
+      "name": "『✦』𝐀𝐋𝐏𝐇𝐀-𝟏 | Red Right Hand"
     }
   ]
 }
