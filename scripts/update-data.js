@@ -12,7 +12,7 @@ function load(file, field) {
   return data;
 }
 function save(file, data) { fs.writeFileSync(file, JSON.stringify(data, null, 2) + "\n"); }
-function level(n) { n = Number(n); if (!Number.isInteger(n) || n < 1 || n > 5) throw new Error("bad level"); return n; }
+function level(n) { n = Number(n); if (!Number.isInteger(n) || n < 1 || n > 6) throw new Error("bad level"); return n; }
 function blob(s, name) { if (typeof s !== "string" || !b64.test(s) || s.length > 200000) throw new Error("bad " + name); return s; }
 function date(s) { s = String(s || ""); if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) throw new Error("bad date"); return s; }
 // new-format files keep their body in files/<id>.json and only a small encrypted summary in files.json
