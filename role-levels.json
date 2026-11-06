@@ -1,6 +1,16 @@
 {
-  "note": "Discord roles that hand out Site-56 Archive keycards, department folders and ranks. Change these with /role in Discord or the config menu.",
+  "note": "Discord roles that hand out Site-56 Archive keycards, department folders and ranks, from every server. Change these with the config menu (/menu in department servers).",
   "roles": [],
   "departments": [],
-  "ranks": []
+  "ranks": [],
+  "servers": [
+    {
+      "guild": "1568313151676747817",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {}
+    }
+  ]
 }
