@@ -20,14 +20,28 @@ function writeBody(fid, e) { fs.mkdirSync("files", { recursive: true }); fs.writ
 function id(s) { s = String(s || "").toLowerCase(); if (!hex8.test(s)) throw new Error("bad id"); return s; }
 
 const e = payload.entry || {};
-if (action === "grant-key") {
-  const data = load("keys.json", "keys");
+function keyEntry(e) {
   const entry = { id: id(e.id), level: level(e.level), salt: blob(e.salt, "salt"), iv: blob(e.iv, "iv"), data: blob(e.data, "data"), granted: today() };
   if (e.agent === true) entry.agent = true;
   if (e.expires) entry.expires = date(e.expires);
   if (e.ownerIv || e.ownerData) { entry.ownerIv = blob(e.ownerIv, "ownerIv"); entry.ownerData = blob(e.ownerData, "ownerData"); }
+  return entry;
+}
+if (action === "grant-key") {
+  const data = load("keys.json", "keys");
+  const entry = keyEntry(e);
   if (data.keys.some((k) => k.id === entry.id)) throw new Error("key id already exists");
   data.keys.push(entry);
+  save("keys.json", data);
+} else if (action === "grant-keys") {
+  // many at once, from the role sync
+  const data = load("keys.json", "keys");
+  for (const raw of (payload.entries || []).slice(0, 50)) { const entry = keyEntry(raw); if (!data.keys.some((k) => k.id === entry.id)) data.keys.push(entry); }
+  save("keys.json", data);
+} else if (action === "revoke-keys") {
+  const data = load("keys.json", "keys");
+  const ids = new Set((payload.ids || []).slice(0, 200).map(id));
+  data.keys = data.keys.filter((k) => !ids.has(k.id));
   save("keys.json", data);
 } else if (action === "revoke-key") {
   const data = load("keys.json", "keys");
