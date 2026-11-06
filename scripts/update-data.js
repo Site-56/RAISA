@@ -14,6 +14,9 @@ function load(file, field) {
 function save(file, data) { fs.writeFileSync(file, JSON.stringify(data, null, 2) + "\n"); }
 function level(n) { n = Number(n); if (!Number.isInteger(n) || n < 1 || n > 5) throw new Error("bad level"); return n; }
 function blob(s, name) { if (typeof s !== "string" || !b64.test(s) || s.length > 200000) throw new Error("bad " + name); return s; }
+function date(s) { s = String(s || ""); if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) throw new Error("bad date"); return s; }
+// new-format files keep their body in files/<id>.json and only a small encrypted summary in files.json
+function writeBody(fid, e) { fs.mkdirSync("files", { recursive: true }); fs.writeFileSync("files/" + fid + ".json", JSON.stringify({ iv: blob(e.bodyIv, "bodyIv"), data: blob(e.bodyData, "bodyData") }) + "\n"); }
 function id(s) { s = String(s || "").toLowerCase(); if (!hex8.test(s)) throw new Error("bad id"); return s; }
 
 const e = payload.entry || {};
@@ -21,6 +24,7 @@ if (action === "grant-key") {
   const data = load("keys.json", "keys");
   const entry = { id: id(e.id), level: level(e.level), salt: blob(e.salt, "salt"), iv: blob(e.iv, "iv"), data: blob(e.data, "data"), granted: today() };
   if (e.agent === true) entry.agent = true;
+  if (e.expires) entry.expires = date(e.expires);
   if (e.ownerIv || e.ownerData) { entry.ownerIv = blob(e.ownerIv, "ownerIv"); entry.ownerData = blob(e.ownerData, "ownerData"); }
   if (data.keys.some((k) => k.id === entry.id)) throw new Error("key id already exists");
   data.keys.push(entry);
@@ -33,15 +37,24 @@ if (action === "grant-key") {
   save("keys.json", data);
 } else if (action === "add-file") {
   const data = load("files.json", "files");
-  const entry = { id: id(e.id), level: level(e.level), iv: blob(e.iv, "iv"), data: blob(e.data, "data"), added: today() };
-  if (data.files.some((f) => f.id === entry.id)) throw new Error("file id already exists");
+  let entry;
+  if (e.bodyIv) {
+    entry = { id: id(e.id), level: level(e.level), sumIv: blob(e.sumIv, "sumIv"), sumData: blob(e.sumData, "sumData"), body: 1, rev: 1, added: today() };
+    if (data.files.some((f) => f.id === entry.id)) throw new Error("file id already exists");
+    writeBody(entry.id, e);
+  } else {
+    entry = { id: id(e.id), level: level(e.level), iv: blob(e.iv, "iv"), data: blob(e.data, "data"), added: today() };
+    if (data.files.some((f) => f.id === entry.id)) throw new Error("file id already exists");
+  }
   data.files.push(entry);
   save("files.json", data);
 } else if (action === "delete-file") {
   const data = load("files.json", "files");
   const before = data.files.length;
-  data.files = data.files.filter((f) => f.id !== id(payload.id));
+  const fid = id(payload.id);
+  data.files = data.files.filter((f) => f.id !== fid);
   if (data.files.length === before) throw new Error("no such file");
+  if (fs.existsSync("files/" + fid + ".json")) fs.unlinkSync("files/" + fid + ".json");
   save("files.json", data);
 } else if (action === "add-request") {
   const data = load("requests.json", "requests");
@@ -76,8 +89,15 @@ if (action === "grant-key") {
   const data = load("files.json", "files");
   const f = data.files.find((x) => x.id === id(e.id));
   if (!f) throw new Error("no such file");
-  if (level(e.level) !== f.level) throw new Error("level mismatch");
-  f.iv = blob(e.iv, "iv"); f.data = blob(e.data, "data");
+  f.level = level(e.level);
+  if (e.bodyIv) {
+    writeBody(f.id, e);
+    f.sumIv = blob(e.sumIv, "sumIv"); f.sumData = blob(e.sumData, "sumData");
+    delete f.iv; delete f.data;
+    f.body = 1; f.rev = (Number(f.rev) || 1) + 1; f.edited = today();
+  } else {
+    f.iv = blob(e.iv, "iv"); f.data = blob(e.data, "data");
+  }
   save("files.json", data);
 } else if (action === "remove-department") {
   const data = load("departments.json", "departments");
