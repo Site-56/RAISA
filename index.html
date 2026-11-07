@@ -268,6 +268,10 @@ input, select, textarea { border-radius: 2px }
 .list li button[aria-current="true"] { box-shadow: none; border-left-color: var(--ink); background: var(--hover) }
 .list .lv { font-size: 11px }
 .list ul { max-height: 70vh }
+.meta .btn.del { color: var(--red) }
+.meta .btn.del[data-sure="1"] { border-color: currentColor }
+.meta .btn + .btn.del { margin-left: 8px }
+.delnote:empty { display: none }
 /* departments on the Admin tab: one line each, open one to edit it */
 .dlist { gap: 0; grid-template-columns: minmax(0, 1fr) }
 details.dcard { min-width: 0 }
@@ -875,6 +879,31 @@ var CONFIG = {
     return catOf(f) === "Personnel" && !!f.dept && myDepts().some(function (d) { return d.name === f.dept });
   }
 
+  // RAISA agents can delete any file they can read. the person who filed it can delete it if they could add it directly
+  function canDelete(f) {
+    if (!f || !f.id || f.pending || state.level < f.level) return false;
+    return state.agent || (f.by === state.id && (state.level >= CONFIG.writeLevel || (state.upload || []).indexOf(catOf(f)) >= 0));
+  }
+  async function deleteFile(f, btn, note) {
+    if (btn.dataset.sure !== "1") {
+      btn.dataset.sure = "1"; btn.textContent = "Confirm delete";
+      msg(note, "This removes " + (f.item || "the file") + " for everyone. It can't be undone." + (catOf(f) === "Personnel" && f.uid ? " If they still have a department role, their folder comes back on the next role sync." : ""), true);
+      return;
+    }
+    btn.disabled = true;
+    var r = await transmit("delete", 1, { id: f.id }, note);
+    btn.disabled = false;
+    if (!r) return;
+    if (r.ok === false) { msg(note, r.message || "Couldn't delete it.", true); return }
+    state.gone = state.gone || {}; state.gone[f.id] = 1;
+    state.files = state.files.filter(function (x) { return x.id !== f.id });
+    state.open = null;
+    try { history.replaceState(null, "", location.pathname + location.search) } catch (e) {}
+    buildXref(); drawList();
+    $("doc").innerHTML = '<div class="empty">&gt; FILE DELETED_</div>';
+    reading(false);
+  }
+
   async function loadFiles() {
     $("filecount").textContent = "LOADING…";
     loadDepartments();
@@ -897,6 +926,8 @@ var CONFIG = {
     } catch (e) { $("filecount").textContent = "OFFLINE"; return }
     try { state.keys = (await getJson("keys.json")).keys || [] } catch (e) {}
     mergePending(out);
+    // files deleted from this page stay hidden while the deletion is still saving
+    out = out.filter(function (f) { return !(state.gone || {})[f.id] });
     out.sort(function (a, b) { return String(a.item).localeCompare(String(b.item), undefined, { numeric: true }) });
     state.files = out;
     buildXref();
@@ -1077,8 +1108,15 @@ var CONFIG = {
     var meta = document.createElement("div"); meta.className = "meta";
     [[f.id ? "File " + f.id : "Preview"], [f.added ? "Filed " + f.added : ""]].forEach(function (t) { if (t[0]) { var s = document.createElement("span"); s.textContent = t[0]; meta.appendChild(s) } });
     if (canEdit(f)) { var eb = document.createElement("button"); eb.type = "button"; eb.className = "btn quiet"; eb.textContent = "Edit"; eb.addEventListener("click", function () { startEdit(f) }); meta.appendChild(eb) }
+    var delNote = null;
+    if (canDelete(f)) {
+      var db = document.createElement("button"); db.type = "button"; db.className = "btn quiet del"; db.textContent = "Delete";
+      delNote = document.createElement("p"); delNote.className = "note delnote";
+      db.addEventListener("click", function () { deleteFile(f, db, delNote) });
+      meta.appendChild(db);
+    }
     var h2 = document.createElement("h2"); h2.textContent = f.item || "SCP-????";
-    doc.appendChild(meta); doc.appendChild(h2);
+    doc.appendChild(meta); if (delNote) doc.appendChild(delNote); doc.appendChild(h2);
     if (f.title) { var h3 = document.createElement("h3"); h3.textContent = f.title; doc.appendChild(h3) }
     if (f.id) drawFiledBy(doc, f);
     var images = f.images || [];
