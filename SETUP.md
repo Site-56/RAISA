@@ -202,7 +202,7 @@ RAISA manages departments in the Admin tab on the site, with Departments in the 
 - Agents can only see and manage departments up to their own level. Level 6 departments can only be made or changed by the Administrator.
 - Departments made before this update count as visible to everyone.
 
-## Level 6 (Office of the Administrator)
+## Level 6
 
 Level 6 can only be granted, renewed or revoked by the Administrator's Discord account, from Discord or from the site. Agents can't touch it, and requests can't ask for it.
 

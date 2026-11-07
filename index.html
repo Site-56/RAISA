@@ -537,7 +537,7 @@ var CONFIG = {
   }
   function drawWho() {
     var heads = myDepts().map(function (d) { return d.name });
-    $("who").innerHTML = "CLEARANCE LEVEL <b>" + state.level + "</b> · KEYCARD <b>" + state.id + "</b>" + (state.level >= 6 ? '<span class="badge">OFFICE OF THE ADMINISTRATOR</span>' : "") + (state.agent ? '<span class="badge">RAISA AGENT</span>' : "") + (heads.length ? '<span class="badge" id="headbadge"></span>' : "");
+    $("who").innerHTML = "CLEARANCE LEVEL <b>" + state.level + "</b> · KEYCARD <b>" + state.id + "</b>" + (state.agent ? '<span class="badge">RAISA AGENT</span>' : "") + (heads.length ? '<span class="badge" id="headbadge"></span>' : "");
     if (heads.length) $("headbadge").textContent = "HEAD · " + heads.join(", ").toUpperCase();
     $("deptstab").hidden = !state.agent;
   }
@@ -746,7 +746,6 @@ var CONFIG = {
     line(box, "> ACCESS GRANTED.", "ok");
     await type(box, "> Welcome " + redact(state.id.slice(0, 2)) + "-" + redact(state.id.slice(2, 3)) + ".");
     line(box, "- ACCESS AUTHORIZED: LEVEL " + state.level + " CLEARANCE FILES", "ok");
-    if (state.level >= 6) line(box, "- OFFICE OF THE ADMINISTRATOR", "warn");
     if (state.agent) line(box, "- RAISA AGENT PRIVILEGES DETECTED", "warn");
     await sleep(quiet ? 200 : 900);
     enter();
