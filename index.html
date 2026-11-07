@@ -891,7 +891,7 @@ var CONFIG = {
       return;
     }
     btn.disabled = true;
-    var r = await transmit("delete", 1, { id: f.id }, note);
+    var r = await transmit("delete", 1, { by: state.id, id: f.id }, note);
     btn.disabled = false;
     if (!r) return;
     if (r.ok === false) { msg(note, r.message || "Couldn't delete it.", true); return }
