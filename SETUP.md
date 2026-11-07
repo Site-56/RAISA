@@ -1,4 +1,6 @@
-# Site-56 Archive setup (GitHub + Railway)
+# HalcyonOS setup (GitHub + Railway)
+
+HalcyonOS is the Site-56 Archive terminal: the website, plus the Discord bot that hands out keycards and runs the config menu.
 
 How it fits together:
 - **The site** is hosted on GitHub Pages. Every file is stored there encrypted, so without a key the site shows only the login screen.

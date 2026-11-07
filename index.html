@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Site-56 Archive</title>
+<title>HalcyonOS · Site-56 Archive</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
@@ -369,8 +369,8 @@ details.dcard select { width: auto; height: 30px; padding: 0 8px }
 <section class="app" id="app" hidden>
   <header class="raisa-h">
     <div>
-      <div class="l1">SITE-56 ARCHIVE</div>
-      <div class="l2">MAINTAINED BY R.A.I.S.A. · <span id="who"></span></div>
+      <div class="l1">HALCYON OS</div>
+      <div class="l2">SITE-56 ARCHIVE · MAINTAINED BY R.A.I.S.A. · <span id="who"></span></div>
     </div>
     <button class="btn quiet" type="button" id="logout">Log out</button>
   </header>
@@ -668,8 +668,8 @@ var CONFIG = {
 
   async function boot() {
     var box = $("boot");
-    await type(box, "> Welcome to the Site-56 Archive.", "", 12);
-    line(box, "> Containment records, task force logs and incident reports for all Site-56 personnel. Maintained by the Records and Information Security Administration [R.A.I.S.A.].", "dim");
+    await type(box, "> HALCYON OS · Site-56 Archive", "", 12);
+    line(box, "> Containment records, task force logs and incident reports for all Site-56 personnel: research, security, medical, task forces and command. Maintained by the Records and Information Security Administration [R.A.I.S.A.].", "dim");
     line(box, "> Unauthorised access is a Level 4 offence.", "dim");
     line(box, "");
     await sleep(250);
@@ -1587,7 +1587,7 @@ var CONFIG = {
     var box = document.createElement("div"); box.className = "term"; cover.appendChild(box); document.body.appendChild(cover);
     fast = reduce;
     if (reason) { await type(box, reason, "warn"); line(box, "") }
-    await type(box, "> THANK YOU FOR USING THE SITE-56 ARCHIVE.");
+    await type(box, "> THANK YOU FOR USING HALCYON OS.");
     line(box, "", "gap");
     await type(box, "> CLOSING FILE IN_");
     line(box, "", "gap");
