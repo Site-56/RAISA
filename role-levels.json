@@ -80,30 +80,6 @@
       "agent": false
     },
     {
-      "role": "1568789395903873114",
-      "name": "[RAISA] Records Assistant",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568789399066378360",
-      "name": "[SD] Director of Research",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568789399850717256",
-      "name": "[SD] Deputy Director of Research",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568789400890900501",
-      "name": "[SD] Chief Researcher",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1568789402006855760",
       "name": "[SD] Senior Researcher",
       "level": 3,
@@ -1407,18 +1383,6 @@
     },
     {
       "role": "1568789331915579465"
-    },
-    {
-      "role": "1568789395903873114"
-    },
-    {
-      "role": "1568789399066378360"
-    },
-    {
-      "role": "1568789399850717256"
-    },
-    {
-      "role": "1568789400890900501"
     },
     {
       "role": "1568789402006855760"
