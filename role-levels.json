@@ -588,6 +588,102 @@
       "name": "[Γ-1] Gamma-1 Candidate",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1568785231891275887",
+      "name": "[ID] Intelligence Director",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1568785232734195733",
+      "name": "[ID] Deputy Intelligence Director",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1568785234126962788",
+      "name": "[ID] Chief Intelligence Officer",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1568785235888308304",
+      "name": "[ID] Senior Intelligence Officer",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785236882358322",
+      "name": "[ID] Intelligence Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785237968691210",
+      "name": "[ID] Intelligence Analyst",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785238740434977",
+      "name": "[ID] Field Agent",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785240259043349",
+      "name": "[ID] Junior Agent",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1568785241475121247",
+      "name": "[ID] Intelligence Recruit",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1568785244994146385",
+      "name": "[ISD] ISD Director",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1568785245975617657",
+      "name": "[ISD] Deputy ISD Director",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785247175311541",
+      "name": "[ISD] Chief Security Investigator",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785248081158275",
+      "name": "[ISD] Senior Investigator",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785249096171541",
+      "name": "[ISD] Investigator",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785249742360692",
+      "name": "[ISD] ISD Operative",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785250862239807",
+      "name": "[ISD] ISD Recruit",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -891,6 +987,54 @@
     },
     {
       "role": "1568785219371409518"
+    },
+    {
+      "role": "1568785231891275887"
+    },
+    {
+      "role": "1568785232734195733"
+    },
+    {
+      "role": "1568785234126962788"
+    },
+    {
+      "role": "1568785235888308304"
+    },
+    {
+      "role": "1568785236882358322"
+    },
+    {
+      "role": "1568785237968691210"
+    },
+    {
+      "role": "1568785238740434977"
+    },
+    {
+      "role": "1568785240259043349"
+    },
+    {
+      "role": "1568785241475121247"
+    },
+    {
+      "role": "1568785244994146385"
+    },
+    {
+      "role": "1568785245975617657"
+    },
+    {
+      "role": "1568785247175311541"
+    },
+    {
+      "role": "1568785248081158275"
+    },
+    {
+      "role": "1568785249096171541"
+    },
+    {
+      "role": "1568785249742360692"
+    },
+    {
+      "role": "1568785250862239807"
     }
   ],
   "servers": [
@@ -1091,6 +1235,36 @@
         "rank:Gamma-1 Junior Operative": "1568785216791777360",
         "rank:Gamma-1 Candidate": "1568785219371409518",
         "cat:Gamma-1 · Final Archive": "1568785221015445544"
+      }
+    },
+    {
+      "guild": "1568316002217893928",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "div:Intelligence Department": "1568785231098679439",
+        "rank:Intelligence Director": "1568785231891275887",
+        "rank:Deputy Intelligence Director": "1568785232734195733",
+        "rank:Chief Intelligence Officer": "1568785234126962788",
+        "rank:Senior Intelligence Officer": "1568785235888308304",
+        "rank:Intelligence Officer": "1568785236882358322",
+        "rank:Intelligence Analyst": "1568785237968691210",
+        "rank:Field Agent": "1568785238740434977",
+        "rank:Junior Agent": "1568785240259043349",
+        "rank:Intelligence Recruit": "1568785241475121247",
+        "cat:Intelligence Department": "1568785242817569010",
+        "div:Internal Security Department": "1568785243870199911",
+        "rank:ISD Director": "1568785244994146385",
+        "rank:Deputy ISD Director": "1568785245975617657",
+        "rank:Chief Security Investigator": "1568785247175311541",
+        "rank:Senior Investigator": "1568785248081158275",
+        "rank:Investigator": "1568785249096171541",
+        "rank:ISD Operative": "1568785249742360692",
+        "rank:ISD Recruit": "1568785250862239807",
+        "cat:Internal Security Department": "1568785252032454759"
       }
     }
   ]
