@@ -80,36 +80,6 @@
       "agent": false
     },
     {
-      "role": "1568789402006855760",
-      "name": "[SD] Senior Researcher",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568789402975735908",
-      "name": "[SD] Researcher",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568789403713671322",
-      "name": "[SD] Junior Researcher",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568789404355526679",
-      "name": "[SD] Laboratory Supervisor",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568789406381375618",
-      "name": "[SD] Laboratory Technician",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1568789407303995483",
       "name": "[SD] Research Assistant",
       "level": 1,
@@ -1383,21 +1353,6 @@
     },
     {
       "role": "1568789331915579465"
-    },
-    {
-      "role": "1568789402006855760"
-    },
-    {
-      "role": "1568789402975735908"
-    },
-    {
-      "role": "1568789403713671322"
-    },
-    {
-      "role": "1568789404355526679"
-    },
-    {
-      "role": "1568789406381375618"
     },
     {
       "role": "1568789407303995483"
