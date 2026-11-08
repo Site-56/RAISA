@@ -80,36 +80,6 @@
       "agent": false
     },
     {
-      "role": "1568789356842459136",
-      "name": "[PO] Head of Personnel Operations",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568789357723127888",
-      "name": "[PO] Senior Personnel Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568789358801195068",
-      "name": "[PO] Personnel Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568789359585398920",
-      "name": "[PO] Junior Personnel Agent",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568789362433597520",
-      "name": "[TA] Head of Training Administration",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1568789363402473663",
       "name": "[TA] Senior Training Agent",
       "level": 2,
@@ -1551,21 +1521,6 @@
     },
     {
       "role": "1568789331915579465"
-    },
-    {
-      "role": "1568789356842459136"
-    },
-    {
-      "role": "1568789357723127888"
-    },
-    {
-      "role": "1568789358801195068"
-    },
-    {
-      "role": "1568789359585398920"
-    },
-    {
-      "role": "1568789362433597520"
     },
     {
       "role": "1568789363402473663"
