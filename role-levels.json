@@ -80,36 +80,6 @@
       "agent": false
     },
     {
-      "role": "1568789444264198306",
-      "name": "[Ω-1] Omega-1 Squad Leader",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568789446675927111",
-      "name": "[Ω-1] Omega-1 Senior Operative",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568789448190197790",
-      "name": "[Ω-1] Omega-1 Operative",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568789448957759598",
-      "name": "[Ω-1] Omega-1 Junior Operative",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568789450019053709",
-      "name": "[Ω-1] Omega-1 Candidate",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1568789453860901007",
       "name": "[Γ-1] Gamma-1 Commander",
       "level": 4,
@@ -1209,21 +1179,6 @@
     },
     {
       "role": "1568789331915579465"
-    },
-    {
-      "role": "1568789444264198306"
-    },
-    {
-      "role": "1568789446675927111"
-    },
-    {
-      "role": "1568789448190197790"
-    },
-    {
-      "role": "1568789448957759598"
-    },
-    {
-      "role": "1568789450019053709"
     },
     {
       "role": "1568789453860901007"
