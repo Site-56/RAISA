@@ -80,24 +80,6 @@
       "agent": false
     },
     {
-      "role": "1568789473469399121",
-      "name": "[ID] Junior Agent",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568789474232631438",
-      "name": "[ID] Intelligence Recruit",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568789478141726780",
-      "name": "[ISD] ISD Director",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1568789479051890792",
       "name": "[ISD] Deputy ISD Director",
       "level": 3,
@@ -1089,15 +1071,6 @@
     },
     {
       "role": "1568789331915579465"
-    },
-    {
-      "role": "1568789473469399121"
-    },
-    {
-      "role": "1568789474232631438"
-    },
-    {
-      "role": "1568789478141726780"
     },
     {
       "role": "1568789479051890792"
