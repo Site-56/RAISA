@@ -726,6 +726,168 @@
       "name": "[ISD] ISD Recruit",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1569026854562693170",
+      "name": "[SEC] Security Director",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1569026855204425835",
+      "name": "[SEC] Deputy Security Director",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1569026856601002064",
+      "name": "[SEC] Chief of Security",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1569026857599504385",
+      "name": "[SEC] Security Captain",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1569026858970783888",
+      "name": "[SEC] Security Lieutenant",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1569026860170350702",
+      "name": "[SEC] Security Sergeant",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1569026861298876428",
+      "name": "[SEC] Senior Security Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1569026862703841491",
+      "name": "[SEC] Security Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1569026864683556967",
+      "name": "[SEC] Junior Security Officer",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1569026865585455197",
+      "name": "[SEC] Security Recruit",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1569026868965806183",
+      "name": "[ESD] ESD Director",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1569026870148599850",
+      "name": "[ESD] Deputy ESD Director",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1569026870979207278",
+      "name": "[ESD] ESD Chief Operations Officer",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1569026871801421965",
+      "name": "[ESD] Senior ESD Operations Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1569026873583992832",
+      "name": "[ESD] ESD Operations Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1569026874330321017",
+      "name": "[ESD] Security Agent",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1569026876809285796",
+      "name": "[TRD] Tactical Commander",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1569026877396492481",
+      "name": "[TRD] Deputy Tactical Commander",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1569026878633803808",
+      "name": "[TRD] Tactical Squad Leader",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1569026879413813331",
+      "name": "[TRD] Senior Tactical Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1569026880445620295",
+      "name": "[TRD] Tactical Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1569026881443991573",
+      "name": "[TRD] Tactical Recruit",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1569026884434534491",
+      "name": "[CPD] Chief Protection Officer",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1569026885252546702",
+      "name": "[CPD] Deputy Chief Protection Officer",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1569026885835292847",
+      "name": "[CPD] Protection Team Leader",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1569026886963564737",
+      "name": "[CPD] Senior Protection Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1569026887282589740",
+      "name": "[CPD] Protection Officer",
+      "level": 2,
+      "agent": false
     }
   ],
   "departments": [],
@@ -1098,6 +1260,87 @@
     },
     {
       "role": "1569025624776122540"
+    },
+    {
+      "role": "1569026854562693170"
+    },
+    {
+      "role": "1569026855204425835"
+    },
+    {
+      "role": "1569026856601002064"
+    },
+    {
+      "role": "1569026857599504385"
+    },
+    {
+      "role": "1569026858970783888"
+    },
+    {
+      "role": "1569026860170350702"
+    },
+    {
+      "role": "1569026861298876428"
+    },
+    {
+      "role": "1569026862703841491"
+    },
+    {
+      "role": "1569026864683556967"
+    },
+    {
+      "role": "1569026865585455197"
+    },
+    {
+      "role": "1569026868965806183"
+    },
+    {
+      "role": "1569026870148599850"
+    },
+    {
+      "role": "1569026870979207278"
+    },
+    {
+      "role": "1569026871801421965"
+    },
+    {
+      "role": "1569026873583992832"
+    },
+    {
+      "role": "1569026874330321017"
+    },
+    {
+      "role": "1569026876809285796"
+    },
+    {
+      "role": "1569026877396492481"
+    },
+    {
+      "role": "1569026878633803808"
+    },
+    {
+      "role": "1569026879413813331"
+    },
+    {
+      "role": "1569026880445620295"
+    },
+    {
+      "role": "1569026881443991573"
+    },
+    {
+      "role": "1569026884434534491"
+    },
+    {
+      "role": "1569026885252546702"
+    },
+    {
+      "role": "1569026885835292847"
+    },
+    {
+      "role": "1569026886963564737"
+    },
+    {
+      "role": "1569026887282589740"
     }
   ],
   "servers": [
@@ -1427,6 +1670,51 @@
         "cat:Internal Security Department": "1568785252032454759",
         "cat:Intelligence Agency": "1568785242817569010",
         "div:Intelligence Agency": "1568785231098679439"
+      }
+    },
+    {
+      "guild": "1569023176510414976",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "div:Security Department": "1569026853400744018",
+        "rank:Security Director": "1569026854562693170",
+        "rank:Deputy Security Director": "1569026855204425835",
+        "rank:Chief of Security": "1569026856601002064",
+        "rank:Security Captain": "1569026857599504385",
+        "rank:Security Lieutenant": "1569026858970783888",
+        "rank:Security Sergeant": "1569026860170350702",
+        "rank:Senior Security Officer": "1569026861298876428",
+        "rank:Security Officer": "1569026862703841491",
+        "rank:Junior Security Officer": "1569026864683556967",
+        "rank:Security Recruit": "1569026865585455197",
+        "cat:Security Department": "1569026866910728364",
+        "div:External Security Division": "1569026867954982913",
+        "rank:ESD Director": "1569026868965806183",
+        "rank:Deputy ESD Director": "1569026870148599850",
+        "rank:ESD Chief Operations Officer": "1569026870979207278",
+        "rank:Senior ESD Operations Officer": "1569026871801421965",
+        "rank:ESD Operations Officer": "1569026873583992832",
+        "rank:Security Agent": "1569026874330321017",
+        "cat:External Security Division": "1569026875034964018",
+        "div:Tactical Response Division": "1569026875903311922",
+        "rank:Tactical Commander": "1569026876809285796",
+        "rank:Deputy Tactical Commander": "1569026877396492481",
+        "rank:Tactical Squad Leader": "1569026878633803808",
+        "rank:Senior Tactical Officer": "1569026879413813331",
+        "rank:Tactical Officer": "1569026880445620295",
+        "rank:Tactical Recruit": "1569026881443991573",
+        "cat:Tactical Response Division": "1569026882656018664",
+        "div:Close Protection Division": "1569026883499200522",
+        "rank:Chief Protection Officer": "1569026884434534491",
+        "rank:Deputy Chief Protection Officer": "1569026885252546702",
+        "rank:Protection Team Leader": "1569026885835292847",
+        "rank:Senior Protection Officer": "1569026886963564737",
+        "rank:Protection Officer": "1569026887282589740",
+        "cat:Close Protection Division": "1569026888888881152"
       }
     }
   ]
