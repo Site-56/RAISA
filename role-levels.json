@@ -80,42 +80,6 @@
       "agent": false
     },
     {
-      "role": "1568789412387749903",
-      "name": "[MTF] MTF Commander",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568789413725736960",
-      "name": "[MTF] Deputy MTF Commander",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568789414791094303",
-      "name": "[MTF] MTF Operations Commander",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568789417882025994",
-      "name": "[MTF] Company Commander",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568789418721017876",
-      "name": "[MTF] Platoon Leader",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568789419681386567",
-      "name": "[MTF] Squad Leader",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1568789420717510828",
       "name": "[MTF] Senior Operative",
       "level": 2,
@@ -1335,24 +1299,6 @@
     },
     {
       "role": "1568789331915579465"
-    },
-    {
-      "role": "1568789412387749903"
-    },
-    {
-      "role": "1568789413725736960"
-    },
-    {
-      "role": "1568789414791094303"
-    },
-    {
-      "role": "1568789417882025994"
-    },
-    {
-      "role": "1568789418721017876"
-    },
-    {
-      "role": "1568789419681386567"
     },
     {
       "role": "1568789420717510828"
