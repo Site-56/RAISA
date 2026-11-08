@@ -80,30 +80,6 @@
       "agent": false
     },
     {
-      "role": "1568789431328968825",
-      "name": "[TO] Tactical Operations Commander",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568789432679661629",
-      "name": "[TO] Tactical Coordinator",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568789433812123658",
-      "name": "[TO] Tactical Operations Supervisor",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568789434584010832",
-      "name": "[TO] Tactical Operations Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1568789440502169741",
       "name": "[Ω-1] Omega-1 Commander",
       "level": 4,
@@ -1251,18 +1227,6 @@
     },
     {
       "role": "1568789331915579465"
-    },
-    {
-      "role": "1568789431328968825"
-    },
-    {
-      "role": "1568789432679661629"
-    },
-    {
-      "role": "1568789433812123658"
-    },
-    {
-      "role": "1568789434584010832"
     },
     {
       "role": "1568789440502169741"
