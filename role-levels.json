@@ -2,66 +2,6 @@
   "note": "Discord roles that hand out HalcyonOS keycards, department folders and ranks, from every server. Change these with the config menu (/menu in department servers).",
   "roles": [
     {
-      "role": "1568785028366733442",
-      "name": "[O5] O5-1 · Overseer Prime",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785029516234833",
-      "name": "[O5] O5-2",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785030304764145",
-      "name": "[O5] O5-3",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785031420444714",
-      "name": "[O5] O5-4",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785032355516436",
-      "name": "[O5] O5-5",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785033194504232",
-      "name": "[O5] O5-6",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785033919995954",
-      "name": "[O5] O5-7",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785035069497385",
-      "name": "[O5] O5-8",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785036130385941",
-      "name": "[O5] O5-9",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785037950717983",
-      "name": "[O5] O5-10",
-      "level": 5,
-      "agent": false
-    },
-    {
       "role": "1568785055600349234",
       "name": "[EC] Ethics Committee Vice-Chairman",
       "level": 5,
@@ -666,6 +606,66 @@
       "name": "[ISD] ISD Recruit",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1568785028366733442",
+      "name": "[O5] O5-1 · Overseer Prime",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785029516234833",
+      "name": "[O5] O5-2",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785030304764145",
+      "name": "[O5] O5-3",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785031420444714",
+      "name": "[O5] O5-4",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785032355516436",
+      "name": "[O5] O5-5",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785033194504232",
+      "name": "[O5] O5-6",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785033919995954",
+      "name": "[O5] O5-7",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785035069497385",
+      "name": "[O5] O5-8",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785036130385941",
+      "name": "[O5] O5-9",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785037950717983",
+      "name": "[O5] O5-10",
+      "level": 5,
+      "agent": false
     }
   ],
   "departments": [],
@@ -1021,28 +1021,6 @@
       "made": {}
     },
     {
-      "guild": "1560866758607372312",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "div:O5 Council": "1568785027351707819",
-        "rank:O5-1 · Overseer Prime": "1568785028366733442",
-        "rank:O5-2": "1568785029516234833",
-        "rank:O5-3": "1568785030304764145",
-        "rank:O5-4": "1568785031420444714",
-        "rank:O5-5": "1568785032355516436",
-        "rank:O5-6": "1568785033194504232",
-        "rank:O5-7": "1568785033919995954",
-        "rank:O5-8": "1568785035069497385",
-        "rank:O5-9": "1568785036130385941",
-        "rank:O5-10": "1568785037950717983",
-        "cat:O5 Council": "1568785042786885802"
-      }
-    },
-    {
       "guild": "1568312640235896886",
       "director": "",
       "uploader": "",
@@ -1235,6 +1213,28 @@
         "rank:ISD Operative": "1568785249742360692",
         "rank:ISD Recruit": "1568785250862239807",
         "cat:Internal Security Department": "1568785252032454759"
+      }
+    },
+    {
+      "guild": "1560866758607372312",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "div:O5 Council": "1568785027351707819",
+        "rank:O5-1 · Overseer Prime": "1568785028366733442",
+        "rank:O5-2": "1568785029516234833",
+        "rank:O5-3": "1568785030304764145",
+        "rank:O5-4": "1568785031420444714",
+        "rank:O5-5": "1568785032355516436",
+        "rank:O5-6": "1568785033194504232",
+        "rank:O5-7": "1568785033919995954",
+        "rank:O5-8": "1568785035069497385",
+        "rank:O5-9": "1568785036130385941",
+        "rank:O5-10": "1568785037950717983",
+        "cat:O5 Council": "1568785042786885802"
       }
     }
   ]
