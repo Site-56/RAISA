@@ -80,42 +80,6 @@
       "agent": false
     },
     {
-      "role": "1568789479051890792",
-      "name": "[ISD] Deputy ISD Director",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568789479895077014",
-      "name": "[ISD] Chief Security Investigator",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568789480716894331",
-      "name": "[ISD] Senior Investigator",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568789481568337931",
-      "name": "[ISD] Investigator",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568789482768044093",
-      "name": "[ISD] ISD Operative",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568789483162173482",
-      "name": "[ISD] ISD Recruit",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1568785055600349234",
       "name": "[EC] Ethics Committee Vice-Chairman",
       "level": 5,
@@ -1071,24 +1035,6 @@
     },
     {
       "role": "1568789331915579465"
-    },
-    {
-      "role": "1568789479051890792"
-    },
-    {
-      "role": "1568789479895077014"
-    },
-    {
-      "role": "1568789480716894331"
-    },
-    {
-      "role": "1568789481568337931"
-    },
-    {
-      "role": "1568789482768044093"
-    },
-    {
-      "role": "1568789483162173482"
     }
   ],
   "servers": [
