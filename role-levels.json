@@ -80,30 +80,6 @@
       "agent": false
     },
     {
-      "role": "1568789376778117200",
-      "name": "[EA] Head of External Affairs",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568789378065506385",
-      "name": "[EA] Senior External Affairs Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568789378854031501",
-      "name": "[EA] External Affairs Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568789379584098419",
-      "name": "[EA] Junior External Affairs Agent",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1568789384952549396",
       "name": "[RAISA] RAISA Co-Director",
       "level": 5,
@@ -1473,18 +1449,6 @@
     },
     {
       "role": "1568789331915579465"
-    },
-    {
-      "role": "1568789376778117200"
-    },
-    {
-      "role": "1568789378065506385"
-    },
-    {
-      "role": "1568789378854031501"
-    },
-    {
-      "role": "1568789379584098419"
     },
     {
       "role": "1568789383690199103"
