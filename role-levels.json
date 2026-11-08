@@ -80,24 +80,6 @@
       "agent": false
     },
     {
-      "role": "1568789347048755300",
-      "name": "[AD] Site Director",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568789348139147345",
-      "name": "[AD] Site Co-Director",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568789349670191215",
-      "name": "[AD] Site Management",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1568789350676693144",
       "name": "[AD] Site Supervision",
       "level": 4,
@@ -1587,15 +1569,6 @@
     },
     {
       "role": "1568789331915579465"
-    },
-    {
-      "role": "1568789347048755300"
-    },
-    {
-      "role": "1568789348139147345"
-    },
-    {
-      "role": "1568789349670191215"
     },
     {
       "role": "1568789350676693144"
