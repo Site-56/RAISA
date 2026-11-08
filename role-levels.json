@@ -80,30 +80,6 @@
       "agent": false
     },
     {
-      "role": "1568789339125711029",
-      "name": "[EC] Ethics Commissioner",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568789339931017318",
-      "name": "[EC] Junior Ethics Commissioner",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568789340845248543",
-      "name": "[EC] Ethics Investigator",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568789341742825503",
-      "name": "[EC] Ethics Auditor",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1568789342598733884",
       "name": "[EC] Ethics Associate",
       "level": 2,
@@ -1623,18 +1599,6 @@
     },
     {
       "role": "1568789331915579465"
-    },
-    {
-      "role": "1568789339125711029"
-    },
-    {
-      "role": "1568789339931017318"
-    },
-    {
-      "role": "1568789340845248543"
-    },
-    {
-      "role": "1568789341742825503"
     },
     {
       "role": "1568789342598733884"
