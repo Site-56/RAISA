@@ -62,60 +62,6 @@
       "agent": false
     },
     {
-      "role": "1568785055600349234",
-      "name": "[EC] Ethics Committee Vice-Chairman",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785056447598724",
-      "name": "[EC] Chief Ethics Commissioner",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785057504694275",
-      "name": "[EC] Senior Ethics Commissioner",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785058847006790",
-      "name": "[EC] Ethics Commissioner",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785060302426284",
-      "name": "[EC] Junior Ethics Commissioner",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785061203943485",
-      "name": "[EC] Ethics Investigator",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785061774495788",
-      "name": "[EC] Ethics Auditor",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785062655164661",
-      "name": "[EC] Ethics Associate",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785063972184164",
-      "name": "[EC] Ethics Trainee",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1568785076949483531",
       "name": "[AO] Site Director",
       "level": 5,
@@ -666,6 +612,60 @@
       "name": "[ISD] ISD Recruit",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1568785055600349234",
+      "name": "[EC] Ethics Committee Vice-Chairman",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785056447598724",
+      "name": "[EC] Chief Ethics Commissioner",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1568785057504694275",
+      "name": "[EC] Senior Ethics Commissioner",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785058847006790",
+      "name": "[EC] Ethics Commissioner",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785060302426284",
+      "name": "[EC] Junior Ethics Commissioner",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785061203943485",
+      "name": "[EC] Ethics Investigator",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785061774495788",
+      "name": "[EC] Ethics Auditor",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785062655164661",
+      "name": "[EC] Ethics Associate",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785063972184164",
+      "name": "[EC] Ethics Trainee",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -1133,28 +1133,6 @@
       }
     },
     {
-      "guild": "1568312640235896886",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "div:Ethics Committee": "1568785053578829916",
-        "rank:Ethics Committee Chairman": "1568785054199578758",
-        "rank:Ethics Committee Vice-Chairman": "1568785055600349234",
-        "rank:Chief Ethics Commissioner": "1568785056447598724",
-        "rank:Senior Ethics Commissioner": "1568785057504694275",
-        "rank:Ethics Commissioner": "1568785058847006790",
-        "rank:Junior Ethics Commissioner": "1568785060302426284",
-        "rank:Ethics Investigator": "1568785061203943485",
-        "rank:Ethics Auditor": "1568785061774495788",
-        "rank:Ethics Associate": "1568785062655164661",
-        "rank:Ethics Trainee": "1568785063972184164",
-        "cat:Ethics Committee": "1568785064840405153"
-      }
-    },
-    {
       "guild": "1568312896834769007",
       "director": "",
       "uploader": "",
@@ -1325,6 +1303,28 @@
         "rank:ISD Operative": "1568785249742360692",
         "rank:ISD Recruit": "1568785250862239807",
         "cat:Internal Security Department": "1568785252032454759"
+      }
+    },
+    {
+      "guild": "1568312640235896886",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "div:Ethics Committee": "1568785053578829916",
+        "rank:Ethics Committee Chairman": "1568785054199578758",
+        "rank:Ethics Committee Vice-Chairman": "1568785055600349234",
+        "rank:Chief Ethics Commissioner": "1568785056447598724",
+        "rank:Senior Ethics Commissioner": "1568785057504694275",
+        "rank:Ethics Commissioner": "1568785058847006790",
+        "rank:Junior Ethics Commissioner": "1568785060302426284",
+        "rank:Ethics Investigator": "1568785061203943485",
+        "rank:Ethics Auditor": "1568785061774495788",
+        "rank:Ethics Associate": "1568785062655164661",
+        "rank:Ethics Trainee": "1568785063972184164",
+        "cat:Ethics Committee": "1568785064840405153"
       }
     }
   ]
