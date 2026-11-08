@@ -80,42 +80,6 @@
       "agent": false
     },
     {
-      "role": "1568789465969721565",
-      "name": "[ID] Intelligence Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568789466976616600",
-      "name": "[ID] Deputy Intelligence Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568789467781668987",
-      "name": "[ID] Chief Intelligence Officer",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568789469140754584",
-      "name": "[ID] Senior Intelligence Officer",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568789470319222844",
-      "name": "[ID] Intelligence Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568789471032254586",
-      "name": "[ID] Intelligence Analyst",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1568789472571560026",
       "name": "[ID] Field Agent",
       "level": 2,
@@ -1131,24 +1095,6 @@
     },
     {
       "role": "1568789331915579465"
-    },
-    {
-      "role": "1568789465969721565"
-    },
-    {
-      "role": "1568789466976616600"
-    },
-    {
-      "role": "1568789467781668987"
-    },
-    {
-      "role": "1568789469140754584"
-    },
-    {
-      "role": "1568789470319222844"
-    },
-    {
-      "role": "1568789471032254586"
     },
     {
       "role": "1568789472571560026"
