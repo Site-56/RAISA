@@ -62,66 +62,6 @@
       "agent": false
     },
     {
-      "role": "1568785123908919439",
-      "name": "[SD] Director of Research",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785125242576996",
-      "name": "[SD] Deputy Director of Research",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785125871714336",
-      "name": "[SD] Chief Researcher",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785126828155002",
-      "name": "[SD] Senior Researcher",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785129449725982",
-      "name": "[SD] Laboratory Supervisor",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785127541055581",
-      "name": "[SD] Researcher",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785128623181934",
-      "name": "[SD] Junior Researcher",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785130485448754",
-      "name": "[SD] Laboratory Technician",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785131328508005",
-      "name": "[SD] Research Assistant",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568785132180078743",
-      "name": "[SD] Research Trainee",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1568785146746904596",
       "name": "[RAISA] RAISA Co-Director",
       "level": 5,
@@ -666,6 +606,66 @@
       "name": "[EA] Junior External Affairs Agent",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1568785123908919439",
+      "name": "[SD] Director of Research",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785125242576996",
+      "name": "[SD] Deputy Director of Research",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1568785125871714336",
+      "name": "[SD] Chief Researcher",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1568785126828155002",
+      "name": "[SD] Senior Researcher",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785129449725982",
+      "name": "[SD] Laboratory Supervisor",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785127541055581",
+      "name": "[SD] Researcher",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785128623181934",
+      "name": "[SD] Junior Researcher",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785130485448754",
+      "name": "[SD] Laboratory Technician",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785131328508005",
+      "name": "[SD] Research Assistant",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1568785132180078743",
+      "name": "[SD] Research Trainee",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -1133,30 +1133,6 @@
       }
     },
     {
-      "guild": "1568313414298640588",
-      "director": "",
-      "uploader": "",
-      "uploads": [
-        "Objects"
-      ],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "div:Scientific Department": "1568785123489615952",
-        "rank:Director of Research": "1568785123908919439",
-        "rank:Deputy Director of Research": "1568785125242576996",
-        "rank:Chief Researcher": "1568785125871714336",
-        "rank:Senior Researcher": "1568785126828155002",
-        "rank:Researcher": "1568785127541055581",
-        "rank:Junior Researcher": "1568785128623181934",
-        "rank:Laboratory Supervisor": "1568785129449725982",
-        "rank:Laboratory Technician": "1568785130485448754",
-        "rank:Research Assistant": "1568785131328508005",
-        "rank:Research Trainee": "1568785132180078743",
-        "cat:Scientific Department": "1568785133652418560"
-      }
-    },
-    {
       "guild": "1568313673024274593",
       "director": "",
       "uploader": "",
@@ -1325,6 +1301,30 @@
         "cat:Corporate Affairs": "1568785112303272109",
         "cat:Administrative Office": "1568785082502742057",
         "rank:Site Administration Board": "1568785078333739138"
+      }
+    },
+    {
+      "guild": "1568313414298640588",
+      "director": "",
+      "uploader": "",
+      "uploads": [
+        "Objects"
+      ],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "div:Scientific Department": "1568785123489615952",
+        "rank:Director of Research": "1568785123908919439",
+        "rank:Deputy Director of Research": "1568785125242576996",
+        "rank:Chief Researcher": "1568785125871714336",
+        "rank:Senior Researcher": "1568785126828155002",
+        "rank:Researcher": "1568785127541055581",
+        "rank:Junior Researcher": "1568785128623181934",
+        "rank:Laboratory Supervisor": "1568785129449725982",
+        "rank:Laboratory Technician": "1568785130485448754",
+        "rank:Research Assistant": "1568785131328508005",
+        "rank:Research Trainee": "1568785132180078743",
+        "cat:Scientific Department": "1568785133652418560"
       }
     }
   ]
