@@ -2,66 +2,6 @@
   "note": "Discord roles that hand out HalcyonOS keycards, department folders and ranks, from every server. Change these with the config menu (/menu in department servers).",
   "roles": [
     {
-      "role": "1568785028366733442",
-      "name": "[O5] O5-1 · Overseer Prime",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785029516234833",
-      "name": "[O5] O5-2",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785030304764145",
-      "name": "[O5] O5-3",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785031420444714",
-      "name": "[O5] O5-4",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785032355516436",
-      "name": "[O5] O5-5",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785033194504232",
-      "name": "[O5] O5-6",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785033919995954",
-      "name": "[O5] O5-7",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785035069497385",
-      "name": "[O5] O5-8",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785036130385941",
-      "name": "[O5] O5-9",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785037950717983",
-      "name": "[O5] O5-10",
-      "level": 5,
-      "agent": false
-    },
-    {
       "role": "1568785055600349234",
       "name": "[EC] Ethics Committee Vice-Chairman",
       "level": 5,
@@ -666,6 +606,66 @@
       "name": "[ISD] ISD Recruit",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1568785028366733442",
+      "name": "[O5] O5-1 · Overseer Prime",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785029516234833",
+      "name": "[O5] O5-2",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785030304764145",
+      "name": "[O5] O5-3",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785031420444714",
+      "name": "[O5] O5-4",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785032355516436",
+      "name": "[O5] O5-5",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785033194504232",
+      "name": "[O5] O5-6",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785033919995954",
+      "name": "[O5] O5-7",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785035069497385",
+      "name": "[O5] O5-8",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785036130385941",
+      "name": "[O5] O5-9",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785037950717983",
+      "name": "[O5] O5-10",
+      "level": 5,
+      "agent": false
     }
   ],
   "departments": [],
@@ -1021,28 +1021,6 @@
       "made": {}
     },
     {
-      "guild": "1560866758607372312",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "div:O5 Council": "1568785027351707819",
-        "rank:O5-1 · Overseer Prime": "1568785028366733442",
-        "rank:O5-2": "1568785029516234833",
-        "rank:O5-3": "1568785030304764145",
-        "rank:O5-4": "1568785031420444714",
-        "rank:O5-5": "1568785032355516436",
-        "rank:O5-6": "1568785033194504232",
-        "rank:O5-7": "1568785033919995954",
-        "rank:O5-8": "1568785035069497385",
-        "rank:O5-9": "1568785036130385941",
-        "rank:O5-10": "1568785037950717983",
-        "cat:O5 Council": "1568785042786885802"
-      }
-    },
-    {
       "guild": "1568312640235896886",
       "director": "",
       "uploader": "",
@@ -1235,6 +1213,119 @@
         "rank:ISD Operative": "1568785249742360692",
         "rank:ISD Recruit": "1568785250862239807",
         "cat:Internal Security Department": "1568785252032454759"
+      }
+    },
+    {
+      "guild": "1560866758607372312",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "div:O5 Council": "1568785027351707819",
+        "rank:O5-1 · Overseer Prime": "1568785028366733442",
+        "rank:O5-2": "1568785029516234833",
+        "rank:O5-3": "1568785030304764145",
+        "rank:O5-4": "1568785031420444714",
+        "rank:O5-5": "1568785032355516436",
+        "rank:O5-6": "1568785033194504232",
+        "rank:O5-7": "1568785033919995954",
+        "rank:O5-8": "1568785035069497385",
+        "rank:O5-9": "1568785036130385941",
+        "rank:O5-10": "1568785037950717983",
+        "cat:O5 Council": "1568785042786885802",
+        "div:Senior Management": "1568846746027565106",
+        "staff:Site Director": "1568846746862231598",
+        "staff:Staff Team Overseer": "1568846748137562137",
+        "cat:Senior Management": "1568846748720562299",
+        "div:Discord Moderation Team": "1568846749978595418",
+        "staff:Discord Moderation Director": "1568846750784168087",
+        "staff:Deputy Discord Moderation Director": "1568846751601922139",
+        "staff:Head Discord Moderator": "1568846752554160148",
+        "staff:Senior Discord Moderator": "1568846753405599784",
+        "staff:Official Discord Moderator": "1568846754651054150",
+        "staff:Junior Discord Moderator": "1568846755569733632",
+        "staff:Trial Discord Moderator": "1568846756391813140",
+        "cat:Discord Moderation Team": "1568846757369225216",
+        "div:Server Hosting Team": "1568846758396698675",
+        "staff:Server Hosting Director": "1568846759667441748",
+        "staff:Deputy Server Hosting Director": "1568846770644058112",
+        "staff:Head Server Supervisor": "1568846771377938594",
+        "staff:Senior Server Host": "1568846772430966884",
+        "staff:Official Server Host": "1568846773676417084",
+        "staff:Junior Server Host": "1568846774532046860",
+        "staff:Trial Server Host": "1568846775815774358",
+        "cat:Server Hosting Team": "1568846776750968927",
+        "div:Game Moderation Team": "1568846778227363864",
+        "staff:Game Moderation Director": "1568846779334791248",
+        "staff:Deputy Game Moderation Director": "1568846780336967802",
+        "staff:Head Game Moderator": "1568846781603647632",
+        "staff:Senior Game Moderator": "1568846782954479727",
+        "staff:Game Moderation Advisor": "1568846783675629591",
+        "staff:Official Game Moderator": "1568846785168801883",
+        "staff:Junior Game Moderator": "1568846786255392940",
+        "staff:Trial Game Moderator": "1568846787631124480",
+        "cat:Game Moderation Team": "1568846789002535053",
+        "div:Faction Hub Staff": "1568846790168551515",
+        "staff:Faction Hub Director": "1568846790671728707",
+        "staff:Faction Hub Deputy Director": "1568846792295190538",
+        "staff:Head Faction Staff": "1568846793163407461",
+        "staff:Senior Faction Staff": "1568846794065182743",
+        "staff:Official Faction Staff": "1568846795466088548",
+        "staff:Trial Faction Staff": "1568846796204281939",
+        "cat:Faction Hub Staff": "1568846798167220345",
+        "div:Morphing Team": "1568846799286837278",
+        "staff:Head Morpher": "1568846800750772306",
+        "staff:Morpher": "1568846801380053014",
+        "staff:Junior Morpher": "1568846802881618050",
+        "sep:Morphing Team:1": "1568846804248698972",
+        "staff:Morph Creator": "1568846805238816879",
+        "cat:Morphing Team": "1568846806459351139",
+        "div:Writing Team": "1568846807537287339",
+        "staff:Head Lore Writer": "1568846808715759777",
+        "staff:Lore Writer": "1568846809898426498",
+        "staff:Junior Lore Writer": "1568846811282546699",
+        "staff:Head Document Writer": "1568846812163604661",
+        "staff:Document Writer": "1568846815883690075",
+        "staff:Junior Document Writer": "1568846816768692335",
+        "cat:Writing Team": "1568846817615941696",
+        "div:Music/SFX": "1568846818849325147",
+        "staff:Senior Music Artist": "1568846821063655424",
+        "staff:Music Artist": "1568846831566463062",
+        "staff:Junior Music Artist": "1568846833155973192",
+        "staff:Senior Sound Developer": "1568846834187898992",
+        "staff:Sound Developer": "1568846835018375342",
+        "cat:Music/SFX": "1568846836297638059",
+        "div:Art": "1568846837144879185",
+        "staff:Lead Artist": "1568846838247723129",
+        "staff:Artist": "1568846839434838127",
+        "staff:Junior Artist": "1568846841817075752",
+        "cat:Art": "1568846842727235704",
+        "div:Anomalous Acting Department": "1568846843880931429",
+        "staff:Acting Director": "1568846844723994724",
+        "staff:Acting Assistant Director": "1568846845591949322",
+        "staff:Acting Supervisor": "1568846846128824321",
+        "staff:Acting Coordinator": "1568846847294963842",
+        "staff:Lead Actor": "1568846847974572066",
+        "staff:Elite Actor": "1568846848985272422",
+        "staff:Veteran Actor": "1568846849966612601",
+        "staff:Experienced Anomalous Actor": "1568846850772041798",
+        "staff:Senior Anomalous Actor": "1568846851623485500",
+        "staff:Official Anomalous Actor": "1568846852747694197",
+        "staff:Junior Anomalous Actor": "1568846854358040656",
+        "staff:Trial Anomalous Actor": "1568846855389843558",
+        "cat:Anomalous Acting Department": "1568846856786550839",
+        "div:Building Team": "1568846860594974760",
+        "staff:Lead Builder": "1568846861740277937",
+        "staff:Builder": "1568846862813888560",
+        "staff:Junior Builder": "1568846864131039343",
+        "cat:Building Team": "1568846865099792415",
+        "div:Supporter": "1568846866349686906",
+        "staff:Tier 1 Supporter ($10/mo)": "1568846867180028005",
+        "staff:Tier 2 Supporter ($6/mo)": "1568846868249714839",
+        "staff:Tier 3 Supporter ($3/mo)": "1568846869117796482",
+        "cat:Supporters": "1568846869944074364"
       }
     }
   ]
