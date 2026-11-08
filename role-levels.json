@@ -2,144 +2,6 @@
   "note": "Discord roles that hand out HalcyonOS keycards, department folders and ranks, from every server. Change these with the config menu (/menu in department servers).",
   "roles": [
     {
-      "role": "1568785076949483531",
-      "name": "[AO] Site Director",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785078333739138",
-      "name": "[AO] Site Administration Board",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785079541702727",
-      "name": "[AO] Site Management",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785080715837450",
-      "name": "[AO] Site Supervision",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785081416552481",
-      "name": "[AO] Site Staff",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785084297912423",
-      "name": "[PB] Personnel Bureau Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785085652533338",
-      "name": "[PO] Head of Personnel Operations",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785087015690369",
-      "name": "[PO] Senior Personnel Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785088597069957",
-      "name": "[PO] Personnel Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785089557434440",
-      "name": "[PO] Junior Personnel Agent",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568785091679748107",
-      "name": "[TA] Head of Training Administration",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785092657287332",
-      "name": "[TA] Senior Training Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785094100123799",
-      "name": "[TA] Training Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785095286984714",
-      "name": "[TA] Junior Training Agent",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568785099908976660",
-      "name": "[CA] Corporate Affairs Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785100798431262",
-      "name": "[IA] Head of Internal Affairs",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785101943218227",
-      "name": "[IA] Senior Internal Affairs Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785103692365834",
-      "name": "[IA] Internal Affairs Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785104472641687",
-      "name": "[IA] Junior Internal Affairs Agent",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568785106431119400",
-      "name": "[EA] Head of External Affairs",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785107475632168",
-      "name": "[EA] Senior External Affairs Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785109891686538",
-      "name": "[EA] External Affairs Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785110692667454",
-      "name": "[EA] Junior External Affairs Agent",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1568785123908919439",
       "name": "[SD] Director of Research",
       "level": 5,
@@ -666,6 +528,144 @@
       "name": "[EC] Ethics Trainee",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1568785076949483531",
+      "name": "[AO] Site Director",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785078333739138",
+      "name": "[AO] Site Administration Board",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785079541702727",
+      "name": "[AO] Site Management",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1568785080715837450",
+      "name": "[AO] Site Supervision",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1568785081416552481",
+      "name": "[AO] Site Staff",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1568785084297912423",
+      "name": "[PB] Personnel Bureau Director",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1568785085652533338",
+      "name": "[PO] Head of Personnel Operations",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785087015690369",
+      "name": "[PO] Senior Personnel Agent",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785088597069957",
+      "name": "[PO] Personnel Agent",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785089557434440",
+      "name": "[PO] Junior Personnel Agent",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1568785091679748107",
+      "name": "[TA] Head of Training Administration",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785092657287332",
+      "name": "[TA] Senior Training Agent",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785094100123799",
+      "name": "[TA] Training Agent",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785095286984714",
+      "name": "[TA] Junior Training Agent",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1568785099908976660",
+      "name": "[CA] Corporate Affairs Director",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1568785100798431262",
+      "name": "[IA] Head of Internal Affairs",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785101943218227",
+      "name": "[IA] Senior Internal Affairs Agent",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785103692365834",
+      "name": "[IA] Internal Affairs Agent",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785104472641687",
+      "name": "[IA] Junior Internal Affairs Agent",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1568785106431119400",
+      "name": "[EA] Head of External Affairs",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785107475632168",
+      "name": "[EA] Senior External Affairs Agent",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785109891686538",
+      "name": "[EA] External Affairs Agent",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785110692667454",
+      "name": "[EA] Junior External Affairs Agent",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -1021,49 +1021,6 @@
       "made": {}
     },
     {
-      "guild": "1568312896834769007",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "div:Site Command": "1568785075451985951",
-        "rank:Site Director": "1568785076949483531",
-        "rank:Site Management": "1568785079541702727",
-        "rank:Site Supervision": "1568785080715837450",
-        "rank:Site Staff": "1568785081416552481",
-        "div:Personnel Bureau": "1568785083895128084",
-        "rank:Personnel Bureau Director": "1568785084297912423",
-        "rank:Head of Personnel Operations": "1568785085652533338",
-        "rank:Senior Personnel Agent": "1568785087015690369",
-        "rank:Personnel Agent": "1568785088597069957",
-        "rank:Junior Personnel Agent": "1568785089557434440",
-        "cat:Personnel Operations": "1568785091050741780",
-        "rank:Head of Training Administration": "1568785091679748107",
-        "rank:Senior Training Agent": "1568785092657287332",
-        "rank:Training Agent": "1568785094100123799",
-        "rank:Junior Training Agent": "1568785095286984714",
-        "cat:Training Administration": "1568785096247476244",
-        "cat:Personnel Bureau": "1568785097388204104",
-        "div:Corporate Affairs": "1568785099124646050",
-        "rank:Corporate Affairs Director": "1568785099908976660",
-        "rank:Head of Internal Affairs": "1568785100798431262",
-        "rank:Senior Internal Affairs Agent": "1568785101943218227",
-        "rank:Internal Affairs Agent": "1568785103692365834",
-        "rank:Junior Internal Affairs Agent": "1568785104472641687",
-        "cat:Internal Affairs": "1568785105403641886",
-        "rank:Head of External Affairs": "1568785106431119400",
-        "rank:Senior External Affairs Agent": "1568785107475632168",
-        "rank:External Affairs Agent": "1568785109891686538",
-        "rank:Junior External Affairs Agent": "1568785110692667454",
-        "cat:External Affairs": "1568785111858684044",
-        "cat:Corporate Affairs": "1568785112303272109",
-        "cat:Administrative Office": "1568785082502742057",
-        "rank:Site Administration Board": "1568785078333739138"
-      }
-    },
-    {
       "guild": "1568313414298640588",
       "director": "",
       "uploader": "",
@@ -1326,6 +1283,49 @@
         "rank:Ethics Associate": "1568785062655164661",
         "rank:Ethics Trainee": "1568785063972184164",
         "cat:Ethics Committee": "1568785064840405153"
+      }
+    },
+    {
+      "guild": "1568312896834769007",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "div:Site Command": "1568785075451985951",
+        "rank:Site Director": "1568785076949483531",
+        "rank:Site Management": "1568785079541702727",
+        "rank:Site Supervision": "1568785080715837450",
+        "rank:Site Staff": "1568785081416552481",
+        "div:Personnel Bureau": "1568785083895128084",
+        "rank:Personnel Bureau Director": "1568785084297912423",
+        "rank:Head of Personnel Operations": "1568785085652533338",
+        "rank:Senior Personnel Agent": "1568785087015690369",
+        "rank:Personnel Agent": "1568785088597069957",
+        "rank:Junior Personnel Agent": "1568785089557434440",
+        "cat:Personnel Operations": "1568785091050741780",
+        "rank:Head of Training Administration": "1568785091679748107",
+        "rank:Senior Training Agent": "1568785092657287332",
+        "rank:Training Agent": "1568785094100123799",
+        "rank:Junior Training Agent": "1568785095286984714",
+        "cat:Training Administration": "1568785096247476244",
+        "cat:Personnel Bureau": "1568785097388204104",
+        "div:Corporate Affairs": "1568785099124646050",
+        "rank:Corporate Affairs Director": "1568785099908976660",
+        "rank:Head of Internal Affairs": "1568785100798431262",
+        "rank:Senior Internal Affairs Agent": "1568785101943218227",
+        "rank:Internal Affairs Agent": "1568785103692365834",
+        "rank:Junior Internal Affairs Agent": "1568785104472641687",
+        "cat:Internal Affairs": "1568785105403641886",
+        "rank:Head of External Affairs": "1568785106431119400",
+        "rank:Senior External Affairs Agent": "1568785107475632168",
+        "rank:External Affairs Agent": "1568785109891686538",
+        "rank:Junior External Affairs Agent": "1568785110692667454",
+        "cat:External Affairs": "1568785111858684044",
+        "cat:Corporate Affairs": "1568785112303272109",
+        "cat:Administrative Office": "1568785082502742057",
+        "rank:Site Administration Board": "1568785078333739138"
       }
     }
   ]
