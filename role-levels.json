@@ -80,24 +80,6 @@
       "agent": false
     },
     {
-      "role": "1568789336126783629",
-      "name": "[EC] Ethics Committee Vice-Chairman",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568789336562868296",
-      "name": "[EC] Chief Ethics Commissioner",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568789337531748506",
-      "name": "[EC] Senior Ethics Commissioner",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1568789339125711029",
       "name": "[EC] Ethics Commissioner",
       "level": 3,
@@ -1641,18 +1623,6 @@
     },
     {
       "role": "1568789331915579465"
-    },
-    {
-      "role": "1568789334595866627"
-    },
-    {
-      "role": "1568789336126783629"
-    },
-    {
-      "role": "1568789336562868296"
-    },
-    {
-      "role": "1568789337531748506"
     },
     {
       "role": "1568789339125711029"
