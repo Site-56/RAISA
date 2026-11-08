@@ -80,30 +80,6 @@
       "agent": false
     },
     {
-      "role": "1568789420717510828",
-      "name": "[MTF] Senior Operative",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568789421271154772",
-      "name": "[MTF] Operative",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568789422588035173",
-      "name": "[MTF] Junior Operative",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568789423674490992",
-      "name": "[MTF] Recruit",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1568789426287415439",
       "name": "[TO] Tactical Operations Director",
       "level": 4,
@@ -1299,18 +1275,6 @@
     },
     {
       "role": "1568789331915579465"
-    },
-    {
-      "role": "1568789420717510828"
-    },
-    {
-      "role": "1568789421271154772"
-    },
-    {
-      "role": "1568789422588035173"
-    },
-    {
-      "role": "1568789423674490992"
     },
     {
       "role": "1568789426287415439"
