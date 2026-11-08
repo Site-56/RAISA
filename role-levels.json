@@ -80,24 +80,6 @@
       "agent": false
     },
     {
-      "role": "1568789407303995483",
-      "name": "[SD] Research Assistant",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568789408335929504",
-      "name": "[SD] Research Trainee",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568789411393708132",
-      "name": "[MTF] MTF Command Director",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1568789412387749903",
       "name": "[MTF] MTF Commander",
       "level": 4,
@@ -1353,15 +1335,6 @@
     },
     {
       "role": "1568789331915579465"
-    },
-    {
-      "role": "1568789407303995483"
-    },
-    {
-      "role": "1568789408335929504"
-    },
-    {
-      "role": "1568789411393708132"
     },
     {
       "role": "1568789412387749903"
