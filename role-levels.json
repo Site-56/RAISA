@@ -80,18 +80,6 @@
       "agent": false
     },
     {
-      "role": "1568789342598733884",
-      "name": "[EC] Ethics Associate",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568789343437590659",
-      "name": "[EC] Ethics Trainee",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1568789347048755300",
       "name": "[AD] Site Director",
       "level": 5,
@@ -1599,12 +1587,6 @@
     },
     {
       "role": "1568789331915579465"
-    },
-    {
-      "role": "1568789342598733884"
-    },
-    {
-      "role": "1568789343437590659"
     },
     {
       "role": "1568789347048755300"
