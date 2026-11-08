@@ -80,24 +80,6 @@
       "agent": false
     },
     {
-      "role": "1568789350676693144",
-      "name": "[AD] Site Supervision",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568789351876272238",
-      "name": "[AD] Site Staff",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568789355680632935",
-      "name": "[PB] Personnel Bureau Director",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1568789356842459136",
       "name": "[PO] Head of Personnel Operations",
       "level": 3,
@@ -1569,15 +1551,6 @@
     },
     {
       "role": "1568789331915579465"
-    },
-    {
-      "role": "1568789350676693144"
-    },
-    {
-      "role": "1568789351876272238"
-    },
-    {
-      "role": "1568789355680632935"
     },
     {
       "role": "1568789356842459136"
