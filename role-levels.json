@@ -2,216 +2,6 @@
   "note": "Discord roles that hand out HalcyonOS keycards, department folders and ranks, from every server. Change these with the config menu (/menu in department servers).",
   "roles": [
     {
-      "role": "1568785168418869282",
-      "name": "[MTF] MTF Command Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785169681350818",
-      "name": "[MTF] MTF Commander",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785170683920476",
-      "name": "[MTF] Deputy MTF Commander",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785171497484440",
-      "name": "[MTF] MTF Operations Commander",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785173175205898",
-      "name": "[MTF] Company Commander",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785174026518688",
-      "name": "[MTF] Platoon Leader",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785174873899121",
-      "name": "[MTF] Squad Leader",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785176689901609",
-      "name": "[MTF] Senior Operative",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785178019635273",
-      "name": "[MTF] Operative",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785179626176669",
-      "name": "[MTF] Junior Operative",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568785180695461908",
-      "name": "[MTF] Recruit",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568785183434350738",
-      "name": "[TO] Tactical Operations Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785184936034374",
-      "name": "[TO] Deputy Tactical Operations Director",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785186022494299",
-      "name": "[TO] Tactical Chief of Operations",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785186907496548",
-      "name": "[TO] Senior Tactical Operations Commander",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785188245344367",
-      "name": "[TO] Tactical Operations Commander",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785189319086162",
-      "name": "[TO] Tactical Coordinator",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785190111809538",
-      "name": "[TO] Tactical Operations Supervisor",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785191672086579",
-      "name": "[TO] Tactical Operations Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785198085181491",
-      "name": "[Ω-1] Omega-1 Commander",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785199708377110",
-      "name": "[Ω-1] Omega-1 Deputy Commander",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785201000095794",
-      "name": "[Ω-1] Omega-1 Operations Commander",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785201994146023",
-      "name": "[Ω-1] Omega-1 Squad Leader",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785202854101017",
-      "name": "[Ω-1] Omega-1 Senior Operative",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785203931914343",
-      "name": "[Ω-1] Omega-1 Operative",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785205102247997",
-      "name": "[Ω-1] Omega-1 Junior Operative",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568785205626671145",
-      "name": "[Ω-1] Omega-1 Candidate",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568785210462437537",
-      "name": "[Γ-1] Gamma-1 Commander",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785211356090388",
-      "name": "[Γ-1] Gamma-1 Deputy Commander",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785212664455259",
-      "name": "[Γ-1] Gamma-1 Operations Commander",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785213478281349",
-      "name": "[Γ-1] Gamma-1 Squad Leader",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785214396702804",
-      "name": "[Γ-1] Gamma-1 Senior Operative",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785215474634764",
-      "name": "[Γ-1] Gamma-1 Operative",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785216791777360",
-      "name": "[Γ-1] Gamma-1 Junior Operative",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568785219371409518",
-      "name": "[Γ-1] Gamma-1 Candidate",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1568785231891275887",
       "name": "[ID] Intelligence Director",
       "level": 4,
@@ -1290,6 +1080,216 @@
       "name": "[RAISA] Records Assistant",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1568785168418869282",
+      "name": "[MTF] MTF Command Director",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1568785169681350818",
+      "name": "[MTF] MTF Commander",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1568785170683920476",
+      "name": "[MTF] Deputy MTF Commander",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785171497484440",
+      "name": "[MTF] MTF Operations Commander",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785173175205898",
+      "name": "[MTF] Company Commander",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785174026518688",
+      "name": "[MTF] Platoon Leader",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785174873899121",
+      "name": "[MTF] Squad Leader",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785176689901609",
+      "name": "[MTF] Senior Operative",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785178019635273",
+      "name": "[MTF] Operative",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785179626176669",
+      "name": "[MTF] Junior Operative",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1568785180695461908",
+      "name": "[MTF] Recruit",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1568785183434350738",
+      "name": "[TO] Tactical Operations Director",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1568785184936034374",
+      "name": "[TO] Deputy Tactical Operations Director",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785186022494299",
+      "name": "[TO] Tactical Chief of Operations",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785186907496548",
+      "name": "[TO] Senior Tactical Operations Commander",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785188245344367",
+      "name": "[TO] Tactical Operations Commander",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785189319086162",
+      "name": "[TO] Tactical Coordinator",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785190111809538",
+      "name": "[TO] Tactical Operations Supervisor",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785191672086579",
+      "name": "[TO] Tactical Operations Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785198085181491",
+      "name": "[Ω-1] Omega-1 Commander",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1568785199708377110",
+      "name": "[Ω-1] Omega-1 Deputy Commander",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785201000095794",
+      "name": "[Ω-1] Omega-1 Operations Commander",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785201994146023",
+      "name": "[Ω-1] Omega-1 Squad Leader",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785202854101017",
+      "name": "[Ω-1] Omega-1 Senior Operative",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785203931914343",
+      "name": "[Ω-1] Omega-1 Operative",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785205102247997",
+      "name": "[Ω-1] Omega-1 Junior Operative",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1568785205626671145",
+      "name": "[Ω-1] Omega-1 Candidate",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1568785210462437537",
+      "name": "[Γ-1] Gamma-1 Commander",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1568785211356090388",
+      "name": "[Γ-1] Gamma-1 Deputy Commander",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785212664455259",
+      "name": "[Γ-1] Gamma-1 Operations Commander",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785213478281349",
+      "name": "[Γ-1] Gamma-1 Squad Leader",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785214396702804",
+      "name": "[Γ-1] Gamma-1 Senior Operative",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785215474634764",
+      "name": "[Γ-1] Gamma-1 Operative",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785216791777360",
+      "name": "[Γ-1] Gamma-1 Junior Operative",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1568785219371409518",
+      "name": "[Γ-1] Gamma-1 Candidate",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -1963,61 +1963,6 @@
       "made": {}
     },
     {
-      "guild": "1568315022214692927",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "div:Mobile Task Force Command": "1568785167252979814",
-        "rank:MTF Command Director": "1568785168418869282",
-        "rank:MTF Commander": "1568785169681350818",
-        "rank:Deputy MTF Commander": "1568785170683920476",
-        "rank:MTF Operations Commander": "1568785171497484440",
-        "rank:Company Commander": "1568785173175205898",
-        "rank:Platoon Leader": "1568785174026518688",
-        "rank:Squad Leader": "1568785174873899121",
-        "rank:Senior Operative": "1568785176689901609",
-        "rank:Operative": "1568785178019635273",
-        "rank:Junior Operative": "1568785179626176669",
-        "rank:Recruit": "1568785180695461908",
-        "cat:Mobile Task Force Command": "1568785181551100016",
-        "div:Tactical Operations": "1568785182767587438",
-        "rank:Tactical Operations Director": "1568785183434350738",
-        "rank:Deputy Tactical Operations Director": "1568785184936034374",
-        "rank:Tactical Chief of Operations": "1568785186022494299",
-        "rank:Senior Tactical Operations Commander": "1568785186907496548",
-        "rank:Tactical Operations Commander": "1568785188245344367",
-        "rank:Tactical Coordinator": "1568785189319086162",
-        "rank:Tactical Operations Supervisor": "1568785190111809538",
-        "rank:Tactical Operations Officer": "1568785191672086579",
-        "cat:Tactical Operations": "1568785193400147988",
-        "div:Divisions": "1568785194696179803",
-        "unit:Alpha-1 · Red Right Hand": "1568785195870461963",
-        "div:Omega-1 · Law's Left Hand": "1568785197279879259",
-        "rank:Omega-1 Commander": "1568785198085181491",
-        "rank:Omega-1 Deputy Commander": "1568785199708377110",
-        "rank:Omega-1 Operations Commander": "1568785201000095794",
-        "rank:Omega-1 Squad Leader": "1568785201994146023",
-        "rank:Omega-1 Senior Operative": "1568785202854101017",
-        "rank:Omega-1 Operative": "1568785203931914343",
-        "rank:Omega-1 Junior Operative": "1568785205102247997",
-        "rank:Omega-1 Candidate": "1568785205626671145",
-        "cat:Omega-1 · Law's Left Hand": "1568785207321174036",
-        "div:Gamma-1 · Final Archive": "1568785209334177905",
-        "rank:Gamma-1 Commander": "1568785210462437537",
-        "rank:Gamma-1 Deputy Commander": "1568785211356090388",
-        "rank:Gamma-1 Operations Commander": "1568785212664455259",
-        "rank:Gamma-1 Squad Leader": "1568785213478281349",
-        "rank:Gamma-1 Senior Operative": "1568785214396702804",
-        "rank:Gamma-1 Operative": "1568785215474634764",
-        "rank:Gamma-1 Junior Operative": "1568785216791777360",
-        "rank:Gamma-1 Candidate": "1568785219371409518",
-        "cat:Gamma-1 · Final Archive": "1568785221015445544"
-      }
-    },
-    {
       "guild": "1568316002217893928",
       "director": "",
       "uploader": "",
@@ -2313,6 +2258,61 @@
         "rank:Junior Archivist": "1568785153315184671",
         "rank:Records Assistant": "1568785154262962248",
         "cat:Records and Information Security Administration": "1568785155865321472"
+      }
+    },
+    {
+      "guild": "1568315022214692927",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "div:Mobile Task Force Command": "1568785167252979814",
+        "rank:MTF Command Director": "1568785168418869282",
+        "rank:MTF Commander": "1568785169681350818",
+        "rank:Deputy MTF Commander": "1568785170683920476",
+        "rank:MTF Operations Commander": "1568785171497484440",
+        "rank:Company Commander": "1568785173175205898",
+        "rank:Platoon Leader": "1568785174026518688",
+        "rank:Squad Leader": "1568785174873899121",
+        "rank:Senior Operative": "1568785176689901609",
+        "rank:Operative": "1568785178019635273",
+        "rank:Junior Operative": "1568785179626176669",
+        "rank:Recruit": "1568785180695461908",
+        "cat:Mobile Task Force Command": "1568785181551100016",
+        "div:Tactical Operations": "1568785182767587438",
+        "rank:Tactical Operations Director": "1568785183434350738",
+        "rank:Deputy Tactical Operations Director": "1568785184936034374",
+        "rank:Tactical Chief of Operations": "1568785186022494299",
+        "rank:Senior Tactical Operations Commander": "1568785186907496548",
+        "rank:Tactical Operations Commander": "1568785188245344367",
+        "rank:Tactical Coordinator": "1568785189319086162",
+        "rank:Tactical Operations Supervisor": "1568785190111809538",
+        "rank:Tactical Operations Officer": "1568785191672086579",
+        "cat:Tactical Operations": "1568785193400147988",
+        "div:Divisions": "1568785194696179803",
+        "unit:Alpha-1 · Red Right Hand": "1568785195870461963",
+        "div:Omega-1 · Law's Left Hand": "1568785197279879259",
+        "rank:Omega-1 Commander": "1568785198085181491",
+        "rank:Omega-1 Deputy Commander": "1568785199708377110",
+        "rank:Omega-1 Operations Commander": "1568785201000095794",
+        "rank:Omega-1 Squad Leader": "1568785201994146023",
+        "rank:Omega-1 Senior Operative": "1568785202854101017",
+        "rank:Omega-1 Operative": "1568785203931914343",
+        "rank:Omega-1 Junior Operative": "1568785205102247997",
+        "rank:Omega-1 Candidate": "1568785205626671145",
+        "cat:Omega-1 · Law's Left Hand": "1568785207321174036",
+        "div:Gamma-1 · Final Archive": "1568785209334177905",
+        "rank:Gamma-1 Commander": "1568785210462437537",
+        "rank:Gamma-1 Deputy Commander": "1568785211356090388",
+        "rank:Gamma-1 Operations Commander": "1568785212664455259",
+        "rank:Gamma-1 Squad Leader": "1568785213478281349",
+        "rank:Gamma-1 Senior Operative": "1568785214396702804",
+        "rank:Gamma-1 Operative": "1568785215474634764",
+        "rank:Gamma-1 Junior Operative": "1568785216791777360",
+        "rank:Gamma-1 Candidate": "1568785219371409518",
+        "cat:Gamma-1 · Final Archive": "1568785221015445544"
       }
     }
   ]
