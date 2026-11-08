@@ -2,84 +2,6 @@
   "note": "Discord roles that hand out HalcyonOS keycards, department folders and ranks, from every server. Change these with the config menu (/menu in department servers).",
   "roles": [
     {
-      "role": "1568785028366733442",
-      "name": "[O5] O5-1 · Overseer Prime",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785029516234833",
-      "name": "[O5] O5-2",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785030304764145",
-      "name": "[O5] O5-3",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785031420444714",
-      "name": "[O5] O5-4",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785032355516436",
-      "name": "[O5] O5-5",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785033194504232",
-      "name": "[O5] O5-6",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785033919995954",
-      "name": "[O5] O5-7",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785035069497385",
-      "name": "[O5] O5-8",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785036130385941",
-      "name": "[O5] O5-9",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785037950717983",
-      "name": "[O5] O5-10",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568789329914892380",
-      "name": "[O5] O5-11",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568789331261259788",
-      "name": "[O5] O5-12",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568789331915579465",
-      "name": "[O5] O5-13",
-      "level": 5,
-      "agent": false
-    },
-    {
       "role": "1568785055600349234",
       "name": "[EC] Ethics Committee Vice-Chairman",
       "level": 5,
@@ -684,6 +606,66 @@
       "name": "[ISD] ISD Recruit",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1568785028366733442",
+      "name": "[O5] O5-1 · Overseer Prime",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785029516234833",
+      "name": "[O5] O5-2",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785030304764145",
+      "name": "[O5] O5-3",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785031420444714",
+      "name": "[O5] O5-4",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785032355516436",
+      "name": "[O5] O5-5",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785033194504232",
+      "name": "[O5] O5-6",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785033919995954",
+      "name": "[O5] O5-7",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785035069497385",
+      "name": "[O5] O5-8",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785036130385941",
+      "name": "[O5] O5-9",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1568785037950717983",
+      "name": "[O5] O5-10",
+      "level": 5,
+      "agent": false
     }
   ],
   "departments": [],
@@ -1026,15 +1008,6 @@
     },
     {
       "role": "1568785250862239807"
-    },
-    {
-      "role": "1568789329914892380"
-    },
-    {
-      "role": "1568789331261259788"
-    },
-    {
-      "role": "1568789331915579465"
     }
   ],
   "servers": [
@@ -1046,164 +1019,6 @@
       "depts": [],
       "autoHeads": {},
       "made": {}
-    },
-    {
-      "guild": "1560866758607372312",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "div:O5 Council": "1568785027351707819",
-        "rank:O5-1 · Overseer Prime": "1568785028366733442",
-        "rank:O5-2": "1568785029516234833",
-        "rank:O5-3": "1568785030304764145",
-        "rank:O5-4": "1568785031420444714",
-        "rank:O5-5": "1568785032355516436",
-        "rank:O5-6": "1568785033194504232",
-        "rank:O5-7": "1568785033919995954",
-        "rank:O5-8": "1568785035069497385",
-        "rank:O5-9": "1568785036130385941",
-        "rank:O5-10": "1568785037950717983",
-        "rank:O5-11": "1568789329914892380",
-        "rank:O5-12": "1568789331261259788",
-        "rank:O5-13": "1568789331915579465",
-        "cat:O5 Council": "1568785042786885802",
-        "div:Ethics Committee": "1568789333668921346",
-        "rank:Ethics Committee Chairman": "1568789334595866627",
-        "rank:Ethics Committee Vice-Chairman": "1568789336126783629",
-        "rank:Chief Ethics Commissioner": "1568789336562868296",
-        "rank:Senior Ethics Commissioner": "1568789337531748506",
-        "rank:Ethics Commissioner": "1568789339125711029",
-        "rank:Junior Ethics Commissioner": "1568789339931017318",
-        "rank:Ethics Investigator": "1568789340845248543",
-        "rank:Ethics Auditor": "1568789341742825503",
-        "rank:Ethics Associate": "1568789342598733884",
-        "rank:Ethics Trainee": "1568789343437590659",
-        "cat:Ethics Committee": "1568789344230178997",
-        "div:Site Command": "1568789345400393750",
-        "rank:Site Director": "1568789347048755300",
-        "rank:Site Co-Director": "1568789348139147345",
-        "rank:Site Management": "1568789349670191215",
-        "rank:Site Supervision": "1568789350676693144",
-        "rank:Site Staff": "1568789351876272238",
-        "cat:Administrative Department": "1568789353159729202",
-        "div:Personnel Bureau": "1568789354330198037",
-        "rank:Personnel Bureau Director": "1568789355680632935",
-        "rank:Head of Personnel Operations": "1568789356842459136",
-        "rank:Senior Personnel Agent": "1568789357723127888",
-        "rank:Personnel Agent": "1568789358801195068",
-        "rank:Junior Personnel Agent": "1568789359585398920",
-        "cat:Personnel Operations": "1568789361313579128",
-        "rank:Head of Training Administration": "1568789362433597520",
-        "rank:Senior Training Agent": "1568789363402473663",
-        "rank:Training Agent": "1568789364073439426",
-        "rank:Junior Training Agent": "1568789365407092746",
-        "cat:Training Administration": "1568789366371782676",
-        "cat:Personnel Bureau": "1568789367248523326",
-        "div:Corporate Affairs": "1568789368263544912",
-        "rank:Corporate Affairs Director": "1568789369232560248",
-        "rank:Head of Internal Affairs": "1568789370197115087",
-        "rank:Senior Internal Affairs Agent": "1568789371606401085",
-        "rank:Internal Affairs Agent": "1568789373334589511",
-        "rank:Junior Internal Affairs Agent": "1568789374424981654",
-        "cat:Internal Affairs": "1568789375695724545",
-        "rank:Head of External Affairs": "1568789376778117200",
-        "rank:Senior External Affairs Agent": "1568789378065506385",
-        "rank:External Affairs Agent": "1568789378854031501",
-        "rank:Junior External Affairs Agent": "1568789379584098419",
-        "cat:External Affairs": "1568789380657840208",
-        "cat:Corporate Affairs": "1568789381576130711",
-        "div:Records and Information Security Administration": "1568789382738087936",
-        "rank:RAISA Director": "1568789383690199103",
-        "rank:RAISA Co-Director": "1568789384952549396",
-        "rank:Chief Archivist": "1568789385707655168",
-        "rank:Senior Records Administrator": "1568789386617950292",
-        "rank:Records Administrator": "1568789388094341261",
-        "rank:Information Security Officer": "1568789389147119768",
-        "rank:Archivist": "1568789393949458593",
-        "rank:Junior Archivist": "1568789394620555416",
-        "rank:Records Assistant": "1568789395903873114",
-        "cat:Records and Information Security Administration": "1568789396814307461",
-        "div:Scientific Department": "1568789398143635638",
-        "rank:Director of Research": "1568789399066378360",
-        "rank:Deputy Director of Research": "1568789399850717256",
-        "rank:Chief Researcher": "1568789400890900501",
-        "rank:Senior Researcher": "1568789402006855760",
-        "rank:Researcher": "1568789402975735908",
-        "rank:Junior Researcher": "1568789403713671322",
-        "rank:Laboratory Supervisor": "1568789404355526679",
-        "rank:Laboratory Technician": "1568789406381375618",
-        "rank:Research Assistant": "1568789407303995483",
-        "rank:Research Trainee": "1568789408335929504",
-        "cat:Scientific Department": "1568789409363656896",
-        "div:Mobile Task Force Command": "1568789410093207735",
-        "rank:MTF Command Director": "1568789411393708132",
-        "rank:MTF Commander": "1568789412387749903",
-        "rank:Deputy MTF Commander": "1568789413725736960",
-        "rank:MTF Operations Commander": "1568789414791094303",
-        "rank:Company Commander": "1568789417882025994",
-        "rank:Platoon Leader": "1568789418721017876",
-        "rank:Squad Leader": "1568789419681386567",
-        "rank:Senior Operative": "1568789420717510828",
-        "rank:Operative": "1568789421271154772",
-        "rank:Junior Operative": "1568789422588035173",
-        "rank:Recruit": "1568789423674490992",
-        "cat:Mobile Task Force Command": "1568789424714555492",
-        "div:Tactical Operations": "1568789425729704089",
-        "rank:Tactical Operations Director": "1568789426287415439",
-        "rank:Deputy Tactical Operations Director": "1568789427461820476",
-        "rank:Tactical Chief of Operations": "1568789428384698440",
-        "rank:Senior Tactical Operations Commander": "1568789429521227808",
-        "rank:Tactical Operations Commander": "1568789431328968825",
-        "rank:Tactical Coordinator": "1568789432679661629",
-        "rank:Tactical Operations Supervisor": "1568789433812123658",
-        "rank:Tactical Operations Officer": "1568789434584010832",
-        "cat:Tactical Operations": "1568789435812946101",
-        "div:Divisions": "1568789437121306756",
-        "unit:Alpha-1 · Red Right Hand": "1568789437998174349",
-        "div:Omega-1 · Law's Left Hand": "1568789438996283514",
-        "rank:Omega-1 Commander": "1568789440502169741",
-        "rank:Omega-1 Deputy Commander": "1568789441386909757",
-        "rank:Omega-1 Operations Commander": "1568789443152973936",
-        "rank:Omega-1 Squad Leader": "1568789444264198306",
-        "rank:Omega-1 Senior Operative": "1568789446675927111",
-        "rank:Omega-1 Operative": "1568789448190197790",
-        "rank:Omega-1 Junior Operative": "1568789448957759598",
-        "rank:Omega-1 Candidate": "1568789450019053709",
-        "cat:Omega-1 · Law's Left Hand": "1568789450941669388",
-        "div:Gamma-1 · Final Archive": "1568789452199829525",
-        "rank:Gamma-1 Commander": "1568789453860901007",
-        "rank:Gamma-1 Deputy Commander": "1568789454989168722",
-        "rank:Gamma-1 Operations Commander": "1568789456033415250",
-        "rank:Gamma-1 Squad Leader": "1568789456989720757",
-        "rank:Gamma-1 Senior Operative": "1568789457895690261",
-        "rank:Gamma-1 Operative": "1568789458684219462",
-        "rank:Gamma-1 Junior Operative": "1568789459602776174",
-        "rank:Gamma-1 Candidate": "1568789460508999832",
-        "cat:Gamma-1 · Final Archive": "1568789462757023885",
-        "div:Intelligence Department": "1568789465135317042",
-        "rank:Intelligence Director": "1568789465969721565",
-        "rank:Deputy Intelligence Director": "1568789466976616600",
-        "rank:Chief Intelligence Officer": "1568789467781668987",
-        "rank:Senior Intelligence Officer": "1568789469140754584",
-        "rank:Intelligence Officer": "1568789470319222844",
-        "rank:Intelligence Analyst": "1568789471032254586",
-        "rank:Field Agent": "1568789472571560026",
-        "rank:Junior Agent": "1568789473469399121",
-        "rank:Intelligence Recruit": "1568789474232631438",
-        "cat:Intelligence Department": "1568789475494989887",
-        "div:Internal Security Department": "1568789477403525160",
-        "rank:ISD Director": "1568789478141726780",
-        "rank:Deputy ISD Director": "1568789479051890792",
-        "rank:Chief Security Investigator": "1568789479895077014",
-        "rank:Senior Investigator": "1568789480716894331",
-        "rank:Investigator": "1568789481568337931",
-        "rank:ISD Operative": "1568789482768044093",
-        "rank:ISD Recruit": "1568789483162173482",
-        "cat:Internal Security Department": "1568789484303294605"
-      }
     },
     {
       "guild": "1568312640235896886",
@@ -1398,6 +1213,28 @@
         "rank:ISD Operative": "1568785249742360692",
         "rank:ISD Recruit": "1568785250862239807",
         "cat:Internal Security Department": "1568785252032454759"
+      }
+    },
+    {
+      "guild": "1560866758607372312",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "div:O5 Council": "1568785027351707819",
+        "rank:O5-1 · Overseer Prime": "1568785028366733442",
+        "rank:O5-2": "1568785029516234833",
+        "rank:O5-3": "1568785030304764145",
+        "rank:O5-4": "1568785031420444714",
+        "rank:O5-5": "1568785032355516436",
+        "rank:O5-6": "1568785033194504232",
+        "rank:O5-7": "1568785033919995954",
+        "rank:O5-8": "1568785035069497385",
+        "rank:O5-9": "1568785036130385941",
+        "rank:O5-10": "1568785037950717983",
+        "cat:O5 Council": "1568785042786885802"
       }
     }
   ]
