@@ -80,30 +80,6 @@
       "agent": false
     },
     {
-      "role": "1568789453860901007",
-      "name": "[Γ-1] Gamma-1 Commander",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568789454989168722",
-      "name": "[Γ-1] Gamma-1 Deputy Commander",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568789456033415250",
-      "name": "[Γ-1] Gamma-1 Operations Commander",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568789456989720757",
-      "name": "[Γ-1] Gamma-1 Squad Leader",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1568789457895690261",
       "name": "[Γ-1] Gamma-1 Senior Operative",
       "level": 2,
@@ -1179,18 +1155,6 @@
     },
     {
       "role": "1568789331915579465"
-    },
-    {
-      "role": "1568789453860901007"
-    },
-    {
-      "role": "1568789454989168722"
-    },
-    {
-      "role": "1568789456033415250"
-    },
-    {
-      "role": "1568789456989720757"
     },
     {
       "role": "1568789457895690261"
