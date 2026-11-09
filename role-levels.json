@@ -1068,6 +1068,72 @@
       "name": "[SEC] Security Recruit",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1569446556829229058",
+      "name": "[MD] Chief Medical Director",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1569446558045306943",
+      "name": "[MD] Deputy Medical Director",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1569446559064662147",
+      "name": "[MD] Chief Medical Officer",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1569446559706386654",
+      "name": "[MD] Senior Physician",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1569446560973197442",
+      "name": "[MD] Medical Supervisor",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1569446572138307635",
+      "name": "[MD] Physician",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1569446573077823598",
+      "name": "[MD] Junior Physician",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1569446573828477083",
+      "name": "[MD] Medical Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1569446574851887175",
+      "name": "[MD] Nurse",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1569446575472640142",
+      "name": "[MD] Medical Assistant",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1569446576101924906",
+      "name": "[MD] Medical Trainee",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -1611,6 +1677,39 @@
     },
     {
       "role": "1569026949375074475"
+    },
+    {
+      "role": "1569446556829229058"
+    },
+    {
+      "role": "1569446558045306943"
+    },
+    {
+      "role": "1569446559064662147"
+    },
+    {
+      "role": "1569446559706386654"
+    },
+    {
+      "role": "1569446560973197442"
+    },
+    {
+      "role": "1569446572138307635"
+    },
+    {
+      "role": "1569446573077823598"
+    },
+    {
+      "role": "1569446573828477083"
+    },
+    {
+      "role": "1569446574851887175"
+    },
+    {
+      "role": "1569446575472640142"
+    },
+    {
+      "role": "1569446576101924906"
     }
   ],
   "servers": [
@@ -2031,6 +2130,29 @@
         "rank:Senior Protection Officer": "1569026886963564737",
         "rank:Protection Officer": "1569026887282589740",
         "cat:Close Protection Division": "1569026888888881152"
+      }
+    },
+    {
+      "guild": "1569161702627610757",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "div:Medical Department": "1569446555444969673",
+        "rank:Chief Medical Director": "1569446556829229058",
+        "rank:Deputy Medical Director": "1569446558045306943",
+        "rank:Chief Medical Officer": "1569446559064662147",
+        "rank:Senior Physician": "1569446559706386654",
+        "rank:Medical Supervisor": "1569446560973197442",
+        "rank:Physician": "1569446572138307635",
+        "rank:Junior Physician": "1569446573077823598",
+        "rank:Medical Officer": "1569446573828477083",
+        "rank:Nurse": "1569446574851887175",
+        "rank:Medical Assistant": "1569446575472640142",
+        "rank:Medical Trainee": "1569446576101924906",
+        "cat:Medical Department": "1569446577905606826"
       }
     }
   ]
