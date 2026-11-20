@@ -654,48 +654,6 @@
       "name": "[ITT] IT Technician",
       "level": 1,
       "agent": false
-    },
-    {
-      "role": "1573398938671779941",
-      "name": "[ECVC] Ethics Committee Vice-Chair",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1573398940026671226",
-      "name": "[ECM] Ethics Committee Member",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573398941272252618",
-      "name": "[SEL] Senior Ethics Liaison",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573398942455173314",
-      "name": "[EL] Ethics Liaison",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573398943541502125",
-      "name": "[EI] Ethics Investigator",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573398944841597038",
-      "name": "[EAU] Ethics Auditor",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573398946255216682",
-      "name": "[EAS] Ethics Associate",
-      "level": 1,
-      "agent": false
     }
   ],
   "departments": [],
@@ -1210,48 +1168,6 @@
       }
     },
     {
-      "guild": "1568312896834769007",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "x:Server Administrator": "1573395165983412376",
-        "x:Server Moderator": "1573395167212347643",
-        "div:Site Command": "1573395168097210368",
-        "rank:Site Director": "1573395169167020232",
-        "rank:Deputy Site Director": "1573395170232111205",
-        "rank:Assistant Site Director": "1573395171817562122",
-        "rank:Site Administrator": "1573395173461729391",
-        "rank:Senior Administrative Officer": "1573395175701749941",
-        "rank:Administrative Officer": "1573395177781854281",
-        "rank:Administrative Assistant": "1573395180466475038",
-        "cat:Administrative Office": "1573395182584336565",
-        "div:Personnel Bureau": "1573395184614506583",
-        "rank:Head of Personnel": "1573395186552279100",
-        "rank:Senior Personnel Officer": "1573395190750773369",
-        "rank:Personnel Officer": "1573395192994726009",
-        "rank:Personnel Assistant": "1573395194647412810",
-        "cat:Personnel Bureau": "1573395196924919949",
-        "div:External Affairs": "1573395199118278744",
-        "rank:Head of External Affairs": "1573395201056186395",
-        "rank:Senior External Affairs Officer": "1573395203090415777",
-        "rank:External Affairs Officer": "1573395204810215627",
-        "rank:External Affairs Assistant": "1573395207838507140",
-        "cat:External Affairs": "1573395210443030588",
-        "xdiv:Server": "1573395212405833859",
-        "x:Verified": "1573395214712963112",
-        "x:Bots": "1573395217929740328",
-        "xdiv:Pings": "1573395220194922518",
-        "x:Announcement Ping": "1573395222526693488",
-        "x:Event Ping": "1573395224590422157",
-        "x:Training Ping": "1573395226679054557",
-        "x:Poll Ping": "1573395228327415870",
-        "x:Site Meeting Ping": "1573395230286159872"
-      }
-    },
-    {
       "guild": "1568313414298640588",
       "director": "",
       "uploader": "",
@@ -1527,6 +1443,48 @@
         "cat:Ethics Committee": "1573398948234666116",
         "xdiv:Server": "1573398949836882061",
         "xdiv:Pings": "1573398951095177367"
+      }
+    },
+    {
+      "guild": "1568312896834769007",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "x:Server Administrator": "1573395165983412376",
+        "x:Server Moderator": "1573395167212347643",
+        "div:Site Command": "1573395168097210368",
+        "rank:Site Director": "1573395169167020232",
+        "rank:Deputy Site Director": "1573395170232111205",
+        "rank:Assistant Site Director": "1573395171817562122",
+        "rank:Site Administrator": "1573395173461729391",
+        "rank:Senior Administrative Officer": "1573395175701749941",
+        "rank:Administrative Officer": "1573395177781854281",
+        "rank:Administrative Assistant": "1573395180466475038",
+        "cat:Administrative Office": "1573395182584336565",
+        "div:Personnel Bureau": "1573395184614506583",
+        "rank:Head of Personnel": "1573395186552279100",
+        "rank:Senior Personnel Officer": "1573395190750773369",
+        "rank:Personnel Officer": "1573395192994726009",
+        "rank:Personnel Assistant": "1573395194647412810",
+        "cat:Personnel Bureau": "1573395196924919949",
+        "div:External Affairs": "1573395199118278744",
+        "rank:Head of External Affairs": "1573395201056186395",
+        "rank:Senior External Affairs Officer": "1573395203090415777",
+        "rank:External Affairs Officer": "1573395204810215627",
+        "rank:External Affairs Assistant": "1573395207838507140",
+        "cat:External Affairs": "1573395210443030588",
+        "xdiv:Server": "1573395212405833859",
+        "x:Verified": "1573395214712963112",
+        "x:Bots": "1573395217929740328",
+        "xdiv:Pings": "1573395220194922518",
+        "x:Announcement Ping": "1573395222526693488",
+        "x:Event Ping": "1573395224590422157",
+        "x:Training Ping": "1573395226679054557",
+        "x:Poll Ping": "1573395228327415870",
+        "x:Site Meeting Ping": "1573395230286159872"
       }
     }
   ]
