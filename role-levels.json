@@ -110,18 +110,6 @@
       "agent": false
     },
     {
-      "role": "1573380707382730894",
-      "name": "[SD] Assistant Scientific Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573380709547253861",
-      "name": "[SD] Lead Researcher",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573380719709786164",
       "name": "[CON] Head of Containment",
       "level": 4,
@@ -768,12 +756,6 @@
     },
     {
       "role": "1569446576101924906"
-    },
-    {
-      "role": "1573380707382730894"
-    },
-    {
-      "role": "1573380709547253861"
     },
     {
       "role": "1573380719709786164"
