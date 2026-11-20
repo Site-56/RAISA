@@ -356,26 +356,8 @@
       "agent": false
     },
     {
-      "role": "1569026920291500055",
-      "name": "[LOG] Warehouse Supervisor",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1569026921126305997",
       "name": "[LOG] Logistics Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1569026922480934953",
-      "name": "[LOG] Supply Manager",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1569026923655331841",
-      "name": "[LOG] Transportation Coordinator",
       "level": 2,
       "agent": false
     },
@@ -989,16 +971,7 @@
       "role": "1569026919830134844"
     },
     {
-      "role": "1569026920291500055"
-    },
-    {
       "role": "1569026921126305997"
-    },
-    {
-      "role": "1569026922480934953"
-    },
-    {
-      "role": "1569026923655331841"
     },
     {
       "role": "1569026926293819404"
