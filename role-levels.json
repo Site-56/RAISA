@@ -152,18 +152,6 @@
       "agent": false
     },
     {
-      "role": "1573399339722739885",
-      "name": "[LR] Lead Researcher",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573399344042737748",
-      "name": "[RA] Research Assistant",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573399484635943023",
       "name": "[DTFC] Director of Task Force Command",
       "level": 4,
@@ -510,12 +498,6 @@
     },
     {
       "role": "1573399184630096023"
-    },
-    {
-      "role": "1573399339722739885"
-    },
-    {
-      "role": "1573399344042737748"
     },
     {
       "role": "1573399430068043827"
