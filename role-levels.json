@@ -134,12 +134,6 @@
       "agent": false
     },
     {
-      "role": "1573395203090415777",
-      "name": "[SEAO] Senior External Affairs Officer",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573395204810215627",
       "name": "[EAO] External Affairs Officer",
       "level": 2,
@@ -636,9 +630,6 @@
     },
     {
       "role": "1573395194647412810"
-    },
-    {
-      "role": "1573395203090415777"
     },
     {
       "role": "1573395204810215627"
