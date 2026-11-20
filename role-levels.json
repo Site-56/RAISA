@@ -74,33 +74,9 @@
       "agent": false
     },
     {
-      "role": "1573380878191558738",
-      "name": "[ISD] ISD Candidate",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1573380883984031795",
-      "name": "[IA] Intelligence Supervisor",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573380885837779176",
-      "name": "[IA] Senior Field Agent",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573380891898544219",
       "name": "[IA] Junior Field Agent",
       "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1573380867940814961",
-      "name": "[ISD] Supervisory Agent",
-      "level": 3,
       "agent": false
     },
     {
@@ -780,9 +756,6 @@
     },
     {
       "role": "1573381221767979141"
-    },
-    {
-      "role": "1573380867940814961"
     },
     {
       "role": "1573380975033847908"
