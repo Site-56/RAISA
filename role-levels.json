@@ -62,12 +62,6 @@
       "agent": false
     },
     {
-      "role": "1573399781328289855",
-      "name": "[STRO] Senior Tactical Response Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1573399782322471095",
       "name": "[TRO] Tactical Response Officer",
       "level": 2,
@@ -750,9 +744,6 @@
     },
     {
       "role": "1573399184630096023"
-    },
-    {
-      "role": "1573399781328289855"
     },
     {
       "role": "1573399782322471095"
