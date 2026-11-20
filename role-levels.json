@@ -456,24 +456,6 @@
       "name": "[ITT] IT Technician",
       "level": 1,
       "agent": false
-    },
-    {
-      "role": "1573398943541502125",
-      "name": "[EI] Ethics Investigator",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573398944841597038",
-      "name": "[EAU] Ethics Auditor",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573398946255216682",
-      "name": "[EAS] Ethics Associate",
-      "level": 1,
-      "agent": false
     }
   ],
   "departments": [],
@@ -507,15 +489,6 @@
     },
     {
       "role": "1568785037950717983"
-    },
-    {
-      "role": "1573398943541502125"
-    },
-    {
-      "role": "1573398944841597038"
-    },
-    {
-      "role": "1573398946255216682"
     },
     {
       "role": "1573399150006112406"
