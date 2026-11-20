@@ -362,24 +362,6 @@
       "agent": false
     },
     {
-      "role": "1573401936458162266",
-      "name": "[SS] Security Sergeant",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573401937385365626",
-      "name": "[SSO] Senior Security Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573401938878533744",
-      "name": "[SO] Security Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1573401939708743680",
       "name": "[SCD] Security Cadet",
       "level": 1,
