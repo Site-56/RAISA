@@ -62,12 +62,6 @@
       "agent": false
     },
     {
-      "role": "1573398633867386973",
-      "name": "[SL] Security Lieutenant",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573398635314417714",
       "name": "[SS] Security Sergeant",
       "level": 2,
@@ -615,9 +609,6 @@
     },
     {
       "role": "1573396103808950324"
-    },
-    {
-      "role": "1573398633867386973"
     },
     {
       "role": "1573398635314417714"
