@@ -62,18 +62,6 @@
       "agent": false
     },
     {
-      "role": "1573399782322471095",
-      "name": "[TRO] Tactical Response Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573399783303811173",
-      "name": "[TRR] Tactical Response Recruit",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573401647722274946",
       "name": "[ECVC] Ethics Committee Vice-Chair",
       "level": 5,
@@ -744,12 +732,6 @@
     },
     {
       "role": "1573399184630096023"
-    },
-    {
-      "role": "1573399782322471095"
-    },
-    {
-      "role": "1573399783303811173"
     },
     {
       "role": "1573399855655813314"
