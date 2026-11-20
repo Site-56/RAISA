@@ -74,24 +74,6 @@
       "agent": false
     },
     {
-      "role": "1568785092657287332",
-      "name": "[TA] Senior Training Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785094100123799",
-      "name": "[TA] Training Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785095286984714",
-      "name": "[TA] Junior Training Agent",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1568785099908976660",
       "name": "[CA] Corporate Affairs Director",
       "level": 4,
@@ -1116,15 +1098,6 @@
     },
     {
       "role": "1568785078333739138"
-    },
-    {
-      "role": "1568785092657287332"
-    },
-    {
-      "role": "1568785094100123799"
-    },
-    {
-      "role": "1568785095286984714"
     },
     {
       "role": "1568785099908976660"
