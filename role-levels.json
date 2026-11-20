@@ -62,12 +62,6 @@
       "agent": false
     },
     {
-      "role": "1573380867244564604",
-      "name": "[ISD] Deputy Director of Internal Security",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1573380869043916993",
       "name": "[ISD] Supervisory Agent",
       "level": 3,
@@ -110,26 +104,8 @@
       "agent": false
     },
     {
-      "role": "1573380865541542091",
-      "name": "[ISD] Director of Internal Security",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573380866409889863",
-      "name": "[ISD] Deputy Director of Internal Security",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1573380867940814961",
       "name": "[ISD] Supervisory Agent",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573380871023493252",
-      "name": "[ISD] Senior ISD Agent",
       "level": 3,
       "agent": false
     },
@@ -146,20 +122,8 @@
       "agent": false
     },
     {
-      "role": "1573380877159759962",
-      "name": "[ISD] ISD Candidate",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573380879064244244",
       "name": "[IA] Director of Intelligence",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573380881962246369",
-      "name": "[IA] Deputy Director of Intelligence",
       "level": 4,
       "agent": false
     },
@@ -172,12 +136,6 @@
     {
       "role": "1573380884910973121",
       "name": "[IA] Senior Field Agent",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573380887419027518",
-      "name": "[IA] Senior Analyst",
       "level": 3,
       "agent": false
     },
@@ -875,16 +833,7 @@
       "role": "1573381221767979141"
     },
     {
-      "role": "1573380865541542091"
-    },
-    {
-      "role": "1573380866409889863"
-    },
-    {
       "role": "1573380867940814961"
-    },
-    {
-      "role": "1573380871023493252"
     },
     {
       "role": "1573380873406120026"
@@ -893,22 +842,13 @@
       "role": "1573380874819477518"
     },
     {
-      "role": "1573380877159759962"
-    },
-    {
       "role": "1573380879064244244"
-    },
-    {
-      "role": "1573380881962246369"
     },
     {
       "role": "1573380882918809603"
     },
     {
       "role": "1573380884910973121"
-    },
-    {
-      "role": "1573380887419027518"
     },
     {
       "role": "1573380890137075742"
