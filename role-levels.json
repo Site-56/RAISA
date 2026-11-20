@@ -62,18 +62,6 @@
       "agent": false
     },
     {
-      "role": "1573381197847986257",
-      "name": "[ELD] Lead Engineer",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573381213480157274",
-      "name": "[LOG] Head of Logistics",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1573381221767979141",
       "name": "[IT] Head of IT",
       "level": 4,
@@ -573,12 +561,6 @@
     },
     {
       "role": "1568785037950717983"
-    },
-    {
-      "role": "1573381197847986257"
-    },
-    {
-      "role": "1573381213480157274"
     },
     {
       "role": "1573381221767979141"
