@@ -522,6 +522,60 @@
       "name": "[RT] Records Trainee",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1573399719412236501",
+      "name": "[DS] Director of Security",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573399720326594751",
+      "name": "[DDS] Deputy Director of Security",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573399721454600242",
+      "name": "[ADS] Assistant Director of Security",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573399722767548589",
+      "name": "[SCP] Security Captain",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573399724789207151",
+      "name": "[SL] Security Lieutenant",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573401936458162266",
+      "name": "[SS] Security Sergeant",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573401937385365626",
+      "name": "[SSO] Senior Security Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573401938878533744",
+      "name": "[SO] Security Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573401939708743680",
+      "name": "[SCD] Security Cadet",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -600,12 +654,6 @@
     },
     {
       "role": "1573399184630096023"
-    },
-    {
-      "role": "1573399491485245450"
-    },
-    {
-      "role": "1573399492776956037"
     },
     {
       "role": "1573399719412236501"
@@ -807,6 +855,18 @@
     },
     {
       "role": "1573401862961373385"
+    },
+    {
+      "role": "1573401936458162266"
+    },
+    {
+      "role": "1573401937385365626"
+    },
+    {
+      "role": "1573401938878533744"
+    },
+    {
+      "role": "1573401939708743680"
     }
   ],
   "servers": [
@@ -1002,38 +1062,6 @@
       }
     },
     {
-      "guild": "1569023176510414976",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "x:Server Administrator": "1573395772165333022",
-        "x:Server Moderator": "1573395772890947777",
-        "x:Verified": "1573395788162400356",
-        "x:Bots": "1573395788678037536",
-        "x:Announcement Ping": "1573395790968393858",
-        "x:Event Ping": "1573395791878430860",
-        "x:Training Ping": "1573395792952299550",
-        "x:Poll Ping": "1573395793669267771",
-        "x:Patrol Ping": "1573395795460235304",
-        "div:Security Department": "1573399718170464318",
-        "rank:Director of Security": "1573399719412236501",
-        "rank:Deputy Director of Security": "1573399720326594751",
-        "rank:Assistant Director of Security": "1573399721454600242",
-        "rank:Security Captain": "1573399722767548589",
-        "rank:Security Lieutenant": "1573399724789207151",
-        "rank:Security Sergeant": "1573398635314417714",
-        "rank:Senior Security Officer": "1573398636455395358",
-        "rank:Security Officer": "1573398637566894140",
-        "rank:Security Cadet": "1573398638112276493",
-        "cat:Security Department": "1573399725607227534",
-        "xdiv:Server": "1573399726357749865",
-        "xdiv:Pings": "1573399727721156679"
-      }
-    },
-    {
       "guild": "1573377671654801469",
       "director": "",
       "uploader": "",
@@ -1212,38 +1240,6 @@
       }
     },
     {
-      "guild": "1568313673024274593",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "x:Server Administrator": "1573395473153265665",
-        "x:Server Moderator": "1573395474440921168",
-        "x:Verified": "1573395488026394628",
-        "x:Bots": "1573395491692089386",
-        "x:Announcement Ping": "1573395496154693642",
-        "x:Event Ping": "1573395497912238122",
-        "x:Training Ping": "1573395499933900872",
-        "x:Poll Ping": "1573395502152552622",
-        "x:Archive Ping": "1573395504497164302",
-        "div:Records and Information Security Administration": "1573401851796136026",
-        "rank:RAISA Director": "1573401852610089023",
-        "rank:Deputy RAISA Director": "1573401853838753975",
-        "rank:Assistant RAISA Director": "1573401854858108928",
-        "rank:Records Supervisor": "1573401855554224149",
-        "rank:Senior Records Officer": "1573401856518918266",
-        "rank:Records Officer": "1573401857299321054",
-        "rank:Archivist": "1573401858502824177",
-        "rank:Junior Records Officer": "1573401861753667706",
-        "rank:Records Trainee": "1573401862961373385",
-        "cat:Records and Information Security Administration": "1573401863951483041",
-        "xdiv:Server": "1573401864559403133",
-        "xdiv:Pings": "1573401865712967690"
-      }
-    },
-    {
       "guild": "1568313414298640588",
       "director": "",
       "uploader": "",
@@ -1281,6 +1277,70 @@
         "cat:Containment Division": "1573401774709145691",
         "xdiv:Server": "1573401775749468300",
         "xdiv:Pings": "1573401776776937483"
+      }
+    },
+    {
+      "guild": "1568313673024274593",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "x:Server Administrator": "1573395473153265665",
+        "x:Server Moderator": "1573395474440921168",
+        "x:Verified": "1573395488026394628",
+        "x:Bots": "1573395491692089386",
+        "x:Announcement Ping": "1573395496154693642",
+        "x:Event Ping": "1573395497912238122",
+        "x:Training Ping": "1573395499933900872",
+        "x:Poll Ping": "1573395502152552622",
+        "x:Archive Ping": "1573395504497164302",
+        "div:Records and Information Security Administration": "1573401851796136026",
+        "rank:RAISA Director": "1573401852610089023",
+        "rank:Deputy RAISA Director": "1573401853838753975",
+        "rank:Assistant RAISA Director": "1573401854858108928",
+        "rank:Records Supervisor": "1573401855554224149",
+        "rank:Senior Records Officer": "1573401856518918266",
+        "rank:Records Officer": "1573401857299321054",
+        "rank:Archivist": "1573401858502824177",
+        "rank:Junior Records Officer": "1573401861753667706",
+        "rank:Records Trainee": "1573401862961373385",
+        "cat:Records and Information Security Administration": "1573401863951483041",
+        "xdiv:Server": "1573401864559403133",
+        "xdiv:Pings": "1573401865712967690"
+      }
+    },
+    {
+      "guild": "1569023176510414976",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "x:Server Administrator": "1573395772165333022",
+        "x:Server Moderator": "1573395772890947777",
+        "x:Verified": "1573395788162400356",
+        "x:Bots": "1573395788678037536",
+        "x:Announcement Ping": "1573395790968393858",
+        "x:Event Ping": "1573395791878430860",
+        "x:Training Ping": "1573395792952299550",
+        "x:Poll Ping": "1573395793669267771",
+        "x:Patrol Ping": "1573395795460235304",
+        "div:Security Department": "1573399718170464318",
+        "rank:Director of Security": "1573399719412236501",
+        "rank:Deputy Director of Security": "1573399720326594751",
+        "rank:Assistant Director of Security": "1573399721454600242",
+        "rank:Security Captain": "1573399722767548589",
+        "rank:Security Lieutenant": "1573399724789207151",
+        "rank:Security Sergeant": "1573401936458162266",
+        "rank:Senior Security Officer": "1573401937385365626",
+        "rank:Security Officer": "1573401938878533744",
+        "rank:Security Cadet": "1573401939708743680",
+        "cat:Security Department": "1573399725607227534",
+        "xdiv:Server": "1573399726357749865",
+        "xdiv:Pings": "1573399727721156679"
       }
     }
   ]
