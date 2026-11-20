@@ -380,27 +380,9 @@
       "agent": false
     },
     {
-      "role": "1569026945918836858",
-      "name": "[IT] Cybersecurity Specialist",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1569026947302826105",
       "name": "[IT] IT Technician",
       "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1569026948468838442",
-      "name": "[IT] Junior Technician",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1569026949375074475",
-      "name": "[IT] IT Trainee",
-      "level": 1,
       "agent": false
     },
     {
@@ -953,16 +935,7 @@
       "role": "1569026944211746996"
     },
     {
-      "role": "1569026945918836858"
-    },
-    {
       "role": "1569026947302826105"
-    },
-    {
-      "role": "1569026948468838442"
-    },
-    {
-      "role": "1569026949375074475"
     },
     {
       "role": "1569446559064662147"
