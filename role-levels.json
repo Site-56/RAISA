@@ -68,21 +68,9 @@
       "agent": false
     },
     {
-      "role": "1573396069994467409",
-      "name": "[TEC] Technician",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1573396081172021248",
       "name": "[HL] Head of Logistics",
       "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573396085806862336",
-      "name": "[LO] Logistics Officer",
-      "level": 2,
       "agent": false
     },
     {
@@ -95,12 +83,6 @@
       "role": "1573396100130410667",
       "name": "[SA] Systems Administrator",
       "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573396103808950324",
-      "name": "[ITT] IT Technician",
-      "level": 1,
       "agent": false
     },
     {
@@ -440,22 +422,13 @@
       "role": "1573396059093336235"
     },
     {
-      "role": "1573396069994467409"
-    },
-    {
       "role": "1573396081172021248"
-    },
-    {
-      "role": "1573396085806862336"
     },
     {
       "role": "1573396095751688353"
     },
     {
       "role": "1573396100130410667"
-    },
-    {
-      "role": "1573396103808950324"
     },
     {
       "role": "1573398937401032835"
