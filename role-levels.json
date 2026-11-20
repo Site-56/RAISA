@@ -116,12 +116,6 @@
       "agent": false
     },
     {
-      "role": "1573395192994726009",
-      "name": "[PO] Personnel Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1573395477439979711",
       "name": "[DRD] Deputy RAISA Director",
       "level": 5,
@@ -603,9 +597,6 @@
     },
     {
       "role": "1568785037950717983"
-    },
-    {
-      "role": "1573395192994726009"
     },
     {
       "role": "1573395334892093470"
