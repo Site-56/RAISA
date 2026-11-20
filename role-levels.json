@@ -116,42 +116,6 @@
       "agent": false
     },
     {
-      "role": "1573395549774684370",
-      "name": "[DTFC] Director of Task Force Command",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573395550642901095",
-      "name": "[DDTFC] Deputy Director of Task Force Command",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573395551465119808",
-      "name": "[TFOO] Task Force Operations Officer",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573395552735854645",
-      "name": "[TFL] Task Force Liaison",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573395554262843532",
-      "name": "[TFCO] Task Force Coordinator",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573395555134996672",
-      "name": "[TFCA] Task Force Command Assistant",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573395916390531262",
       "name": "[CMO] Chief Medical Officer",
       "level": 4,
@@ -639,24 +603,6 @@
     },
     {
       "role": "1568785037950717983"
-    },
-    {
-      "role": "1573395549774684370"
-    },
-    {
-      "role": "1573395550642901095"
-    },
-    {
-      "role": "1573395551465119808"
-    },
-    {
-      "role": "1573395552735854645"
-    },
-    {
-      "role": "1573395554262843532"
-    },
-    {
-      "role": "1573395555134996672"
     },
     {
       "role": "1573395685707882658"
