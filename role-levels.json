@@ -398,12 +398,6 @@
       "agent": false
     },
     {
-      "role": "1573395349505048628",
-      "name": "[RA] Research Assistant",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573395359957516441",
       "name": "[CSU] Containment Supervisor",
       "level": 3,
@@ -636,9 +630,6 @@
     },
     {
       "role": "1573395342739636348"
-    },
-    {
-      "role": "1573395349505048628"
     },
     {
       "role": "1573395359957516441"
