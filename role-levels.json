@@ -80,60 +80,6 @@
       "agent": false
     },
     {
-      "role": "1573395916390531262",
-      "name": "[MD] Chief Medical Officer",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573395917493506148",
-      "name": "[MD] Deputy Chief Medical Officer",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573395918466588834",
-      "name": "[MD] Attending Physician",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573395919854903356",
-      "name": "[MD] Head Nurse",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573395920995754076",
-      "name": "[MD] Physician",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573395922476335245",
-      "name": "[MD] Nurse",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573395923579576320",
-      "name": "[MD] Paramedic",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573395924552654968",
-      "name": "[MD] Medical Resident",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1573395925705949200",
-      "name": "[MD] Medical Trainee",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573396059093336235",
       "name": "[ELD] Director of Engineering",
       "level": 4,
@@ -714,6 +660,60 @@
       "name": "[TRR] Tactical Response Recruit",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1573395916390531262",
+      "name": "[CMO] Chief Medical Officer",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573395917493506148",
+      "name": "[DCMO] Deputy Chief Medical Officer",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573395918466588834",
+      "name": "[AP] Attending Physician",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573395919854903356",
+      "name": "[HN] Head Nurse",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573395920995754076",
+      "name": "[PHY] Physician",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573395922476335245",
+      "name": "[NUR] Nurse",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573395923579576320",
+      "name": "[PAR] Paramedic",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573395924552654968",
+      "name": "[MR] Medical Resident",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1573395925705949200",
+      "name": "[MT] Medical Trainee",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -1196,38 +1196,6 @@
       }
     },
     {
-      "guild": "1569161702627610757",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "x:Server Administrator": "1573395912938491947",
-        "x:Server Moderator": "1573395914364817430",
-        "div:Medical Department": "1573395915358863551",
-        "rank:Chief Medical Officer": "1573395916390531262",
-        "rank:Deputy Chief Medical Officer": "1573395917493506148",
-        "rank:Attending Physician": "1573395918466588834",
-        "rank:Head Nurse": "1573395919854903356",
-        "rank:Physician": "1573395920995754076",
-        "rank:Nurse": "1573395922476335245",
-        "rank:Paramedic": "1573395923579576320",
-        "rank:Medical Resident": "1573395924552654968",
-        "rank:Medical Trainee": "1573395925705949200",
-        "cat:Medical Department": "1573395926897262762",
-        "xdiv:Server": "1573395927912419588",
-        "x:Verified": "1573395931074924646",
-        "x:Bots": "1573395932333088809",
-        "xdiv:Pings": "1573395933327261933",
-        "x:Announcement Ping": "1573395934602076392",
-        "x:Event Ping": "1573395935453515799",
-        "x:Training Ping": "1573395936858611882",
-        "x:Poll Ping": "1573395937651327025",
-        "x:Emergency Ping": "1573395939819786321"
-      }
-    },
-    {
       "guild": "1569024245047107684",
       "director": "",
       "uploader": "",
@@ -1545,6 +1513,38 @@
         "x:Training Ping": "1573395857322025041",
         "x:Poll Ping": "1573395858370592932",
         "x:Deployment Ping": "1573395860157366442"
+      }
+    },
+    {
+      "guild": "1569161702627610757",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "x:Server Administrator": "1573395912938491947",
+        "x:Server Moderator": "1573395914364817430",
+        "div:Medical Department": "1573395915358863551",
+        "rank:Chief Medical Officer": "1573395916390531262",
+        "rank:Deputy Chief Medical Officer": "1573395917493506148",
+        "rank:Attending Physician": "1573395918466588834",
+        "rank:Head Nurse": "1573395919854903356",
+        "rank:Physician": "1573395920995754076",
+        "rank:Nurse": "1573395922476335245",
+        "rank:Paramedic": "1573395923579576320",
+        "rank:Medical Resident": "1573395924552654968",
+        "rank:Medical Trainee": "1573395925705949200",
+        "cat:Medical Department": "1573395926897262762",
+        "xdiv:Server": "1573395927912419588",
+        "x:Verified": "1573395931074924646",
+        "x:Bots": "1573395932333088809",
+        "xdiv:Pings": "1573395933327261933",
+        "x:Announcement Ping": "1573395934602076392",
+        "x:Event Ping": "1573395935453515799",
+        "x:Training Ping": "1573395936858611882",
+        "x:Poll Ping": "1573395937651327025",
+        "x:Emergency Ping": "1573395939819786321"
       }
     }
   ]
