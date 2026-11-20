@@ -362,12 +362,6 @@
       "agent": false
     },
     {
-      "role": "1573400080105480207",
-      "name": "[DDE] Deputy Director of Engineering",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1573400081842053301",
       "name": "[LE] Lead Engineer",
       "level": 3,
@@ -398,24 +392,6 @@
       "agent": false
     },
     {
-      "role": "1573400088620044501",
-      "name": "[ET] Engineering Trainee",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1573400091816099901",
-      "name": "[HL] Head of Logistics",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573400093019611379",
-      "name": "[SLO] Senior Logistics Officer",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573400094290739220",
       "name": "[LO] Logistics Officer",
       "level": 2,
@@ -443,12 +419,6 @@
       "role": "1573400100783263947",
       "name": "[SA] Systems Administrator",
       "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573400102008262817",
-      "name": "[ITT] IT Technician",
-      "level": 1,
       "agent": false
     },
     {
@@ -737,9 +707,6 @@
       "role": "1573400079136465026"
     },
     {
-      "role": "1573400080105480207"
-    },
-    {
       "role": "1573400081842053301"
     },
     {
@@ -755,15 +722,6 @@
       "role": "1573400086615167131"
     },
     {
-      "role": "1573400088620044501"
-    },
-    {
-      "role": "1573400091816099901"
-    },
-    {
-      "role": "1573400093019611379"
-    },
-    {
       "role": "1573400094290739220"
     },
     {
@@ -777,9 +735,6 @@
     },
     {
       "role": "1573400100783263947"
-    },
-    {
-      "role": "1573400102008262817"
     },
     {
       "role": "1573401646392803438"
