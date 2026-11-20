@@ -402,6 +402,60 @@
       "name": "[TRR] Tactical Response Recruit",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1573399855655813314",
+      "name": "[CMO] Chief Medical Officer",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573399857262235748",
+      "name": "[DCMO] Deputy Chief Medical Officer",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573399858566537226",
+      "name": "[AP] Attending Physician",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573399859623370893",
+      "name": "[HN] Head Nurse",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573399860693176380",
+      "name": "[PHY] Physician",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573399862387540271",
+      "name": "[NUR] Nurse",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573399863624728727",
+      "name": "[PAR] Paramedic",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573399864438558752",
+      "name": "[MR] Medical Resident",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1573399865629605944",
+      "name": "[MT] Medical Trainee",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -672,6 +726,33 @@
     },
     {
       "role": "1573399783303811173"
+    },
+    {
+      "role": "1573399855655813314"
+    },
+    {
+      "role": "1573399857262235748"
+    },
+    {
+      "role": "1573399858566537226"
+    },
+    {
+      "role": "1573399859623370893"
+    },
+    {
+      "role": "1573399860693176380"
+    },
+    {
+      "role": "1573399862387540271"
+    },
+    {
+      "role": "1573399863624728727"
+    },
+    {
+      "role": "1573399864438558752"
+    },
+    {
+      "role": "1573399865629605944"
     }
   ],
   "servers": [
@@ -794,38 +875,6 @@
         "staff:Tier 1 Supporter ($10/mo)": "1568846867180028005",
         "staff:Tier 2 Supporter ($6/mo)": "1568846868249714839",
         "staff:Tier 3 Supporter ($3/mo)": "1568846869117796482"
-      }
-    },
-    {
-      "guild": "1569161702627610757",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "x:Server Administrator": "1573395912938491947",
-        "x:Server Moderator": "1573395914364817430",
-        "div:Medical Department": "1573395915358863551",
-        "rank:Chief Medical Officer": "1573395916390531262",
-        "rank:Deputy Chief Medical Officer": "1573395917493506148",
-        "rank:Attending Physician": "1573395918466588834",
-        "rank:Head Nurse": "1573395919854903356",
-        "rank:Physician": "1573395920995754076",
-        "rank:Nurse": "1573395922476335245",
-        "rank:Paramedic": "1573395923579576320",
-        "rank:Medical Resident": "1573395924552654968",
-        "rank:Medical Trainee": "1573395925705949200",
-        "cat:Medical Department": "1573395926897262762",
-        "xdiv:Server": "1573395927912419588",
-        "x:Verified": "1573395931074924646",
-        "x:Bots": "1573395932333088809",
-        "xdiv:Pings": "1573395933327261933",
-        "x:Announcement Ping": "1573395934602076392",
-        "x:Event Ping": "1573395935453515799",
-        "x:Training Ping": "1573395936858611882",
-        "x:Poll Ping": "1573395937651327025",
-        "x:Emergency Ping": "1573395939819786321"
       }
     },
     {
@@ -1146,6 +1195,38 @@
         "cat:Tactical Response Department": "1573399784277024779",
         "xdiv:Server": "1573399785249964073",
         "xdiv:Pings": "1573399786428567743"
+      }
+    },
+    {
+      "guild": "1569161702627610757",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "x:Server Administrator": "1573395912938491947",
+        "x:Server Moderator": "1573395914364817430",
+        "x:Verified": "1573395931074924646",
+        "x:Bots": "1573395932333088809",
+        "x:Announcement Ping": "1573395934602076392",
+        "x:Event Ping": "1573395935453515799",
+        "x:Training Ping": "1573395936858611882",
+        "x:Poll Ping": "1573395937651327025",
+        "x:Emergency Ping": "1573395939819786321",
+        "div:Medical Department": "1573399854749847803",
+        "rank:Chief Medical Officer": "1573399855655813314",
+        "rank:Deputy Chief Medical Officer": "1573399857262235748",
+        "rank:Attending Physician": "1573399858566537226",
+        "rank:Head Nurse": "1573399859623370893",
+        "rank:Physician": "1573399860693176380",
+        "rank:Nurse": "1573399862387540271",
+        "rank:Paramedic": "1573399863624728727",
+        "rank:Medical Resident": "1573399864438558752",
+        "rank:Medical Trainee": "1573399865629605944",
+        "cat:Medical Department": "1573399866833506326",
+        "xdiv:Server": "1573399867701600347",
+        "xdiv:Pings": "1573399868972474521"
       }
     }
   ]
