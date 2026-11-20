@@ -74,30 +74,6 @@
       "agent": false
     },
     {
-      "role": "1568785099908976660",
-      "name": "[CA] Corporate Affairs Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785100798431262",
-      "name": "[IA] Head of Internal Affairs",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785101943218227",
-      "name": "[IA] Senior Internal Affairs Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785103692365834",
-      "name": "[IA] Internal Affairs Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1568785104472641687",
       "name": "[IA] Junior Internal Affairs Agent",
       "level": 1,
@@ -1098,18 +1074,6 @@
     },
     {
       "role": "1568785078333739138"
-    },
-    {
-      "role": "1568785099908976660"
-    },
-    {
-      "role": "1568785100798431262"
-    },
-    {
-      "role": "1568785101943218227"
-    },
-    {
-      "role": "1568785103692365834"
     },
     {
       "role": "1568785104472641687"
