@@ -1338,45 +1338,6 @@
     },
     {
       "role": "1573380719709786164"
-    },
-    {
-      "role": "1573380865541542091"
-    },
-    {
-      "role": "1573380867244564604"
-    },
-    {
-      "role": "1573380869043916993"
-    },
-    {
-      "role": "1573380871023493252"
-    },
-    {
-      "role": "1573380873406120026"
-    },
-    {
-      "role": "1573380875817590875"
-    },
-    {
-      "role": "1573380878191558738"
-    },
-    {
-      "role": "1573380880091840542"
-    },
-    {
-      "role": "1573380881962246369"
-    },
-    {
-      "role": "1573380883984031795"
-    },
-    {
-      "role": "1573380885837779176"
-    },
-    {
-      "role": "1573380887419027518"
-    },
-    {
-      "role": "1573380891898544219"
     }
   ],
   "servers": [
@@ -1621,6 +1582,36 @@
       }
     },
     {
+      "guild": "1568316002217893928",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "rank:Intelligence Director": "1568785231891275887",
+        "rank:Deputy Intelligence Director": "1568785232734195733",
+        "rank:Chief Intelligence Officer": "1568785234126962788",
+        "rank:Senior Intelligence Officer": "1568785235888308304",
+        "rank:Intelligence Officer": "1568785236882358322",
+        "rank:Intelligence Analyst": "1568785237968691210",
+        "rank:Field Agent": "1568785238740434977",
+        "rank:Junior Agent": "1568785240259043349",
+        "rank:Intelligence Recruit": "1568785241475121247",
+        "div:Internal Security Department": "1568785243870199911",
+        "rank:ISD Director": "1568785244994146385",
+        "rank:Deputy ISD Director": "1568785245975617657",
+        "rank:Chief Security Investigator": "1568785247175311541",
+        "rank:Senior Investigator": "1568785248081158275",
+        "rank:Investigator": "1568785249096171541",
+        "rank:ISD Operative": "1568785249742360692",
+        "rank:ISD Recruit": "1568785250862239807",
+        "cat:Internal Security Department": "1568785252032454759",
+        "cat:Intelligence Agency": "1568785242817569010",
+        "div:Intelligence Agency": "1568785231098679439"
+      }
+    },
+    {
       "guild": "1569023176510414976",
       "director": "",
       "uploader": "",
@@ -1781,36 +1772,6 @@
         "div:Containment Division": "1573380717432414403",
         "rank:Head of Containment": "1573380719709786164",
         "cat:Containment Division": "1573380727628890224"
-      }
-    },
-    {
-      "guild": "1568316002217893928",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "rank:Intelligence Analyst": "1568785237968691210",
-        "rank:Field Agent": "1568785238740434977",
-        "rank:Intelligence Recruit": "1568785241475121247",
-        "div:Internal Security Department": "1568785243870199911",
-        "cat:Internal Security Department": "1568785252032454759",
-        "cat:Intelligence Agency": "1568785242817569010",
-        "div:Intelligence Agency": "1568785231098679439",
-        "rank:Director of Internal Security": "1573380865541542091",
-        "rank:Deputy Director of Internal Security": "1573380867244564604",
-        "rank:Supervisory Agent": "1573380869043916993",
-        "rank:Senior ISD Agent": "1573380871023493252",
-        "rank:ISD Agent": "1573380873406120026",
-        "rank:Junior ISD Agent": "1573380875817590875",
-        "rank:ISD Candidate": "1573380878191558738",
-        "rank:Director of Intelligence": "1573380880091840542",
-        "rank:Deputy Director of Intelligence": "1573380881962246369",
-        "rank:Intelligence Supervisor": "1573380883984031795",
-        "rank:Senior Field Agent": "1573380885837779176",
-        "rank:Senior Analyst": "1573380887419027518",
-        "rank:Junior Field Agent": "1573380891898544219"
       }
     }
   ]
