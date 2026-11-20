@@ -152,44 +152,14 @@
       "agent": false
     },
     {
-      "role": "1573399339118628987",
-      "name": "[ASD] Assistant Scientific Director",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1573399339722739885",
       "name": "[LR] Lead Researcher",
       "level": 3,
       "agent": false
     },
     {
-      "role": "1573399343606538454",
-      "name": "[JR] Junior Researcher",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573399344042737748",
       "name": "[RA] Research Assistant",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1573399347863748708",
-      "name": "[HC] Head of Containment",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573399351886356593",
-      "name": "[CSP] Containment Specialist",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573399352913821697",
-      "name": "[CT] Containment Technician",
       "level": 1,
       "agent": false
     },
@@ -542,25 +512,10 @@
       "role": "1573399184630096023"
     },
     {
-      "role": "1573399339118628987"
-    },
-    {
       "role": "1573399339722739885"
     },
     {
-      "role": "1573399343606538454"
-    },
-    {
       "role": "1573399344042737748"
-    },
-    {
-      "role": "1573399347863748708"
-    },
-    {
-      "role": "1573399351886356593"
-    },
-    {
-      "role": "1573399352913821697"
     },
     {
       "role": "1573399430068043827"
