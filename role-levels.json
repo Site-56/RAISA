@@ -74,27 +74,9 @@
       "agent": false
     },
     {
-      "role": "1568785151436132382",
-      "name": "[RAISA] Information Security Officer",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1568785152363208805",
       "name": "[RAISA] Archivist",
       "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785153315184671",
-      "name": "[RAISA] Junior Archivist",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785154262962248",
-      "name": "[RAISA] Records Assistant",
-      "level": 1,
       "agent": false
     },
     {
@@ -995,16 +977,7 @@
       "role": "1568785145484411092"
     },
     {
-      "role": "1568785151436132382"
-    },
-    {
       "role": "1568785152363208805"
-    },
-    {
-      "role": "1568785153315184671"
-    },
-    {
-      "role": "1568785154262962248"
     },
     {
       "role": "1568785168418869282"
