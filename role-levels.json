@@ -290,30 +290,6 @@
       "agent": false
     },
     {
-      "role": "1568785231891275887",
-      "name": "[IA] Intelligence Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785232734195733",
-      "name": "[IA] Deputy Intelligence Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785234126962788",
-      "name": "[IA] Chief Intelligence Officer",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785235888308304",
-      "name": "[IA] Senior Intelligence Officer",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1568785236882358322",
       "name": "[IA] Intelligence Officer",
       "level": 2,
@@ -1083,18 +1059,6 @@
     },
     {
       "role": "1568785219371409518"
-    },
-    {
-      "role": "1568785231891275887"
-    },
-    {
-      "role": "1568785232734195733"
-    },
-    {
-      "role": "1568785234126962788"
-    },
-    {
-      "role": "1568785235888308304"
     },
     {
       "role": "1568785236882358322"
