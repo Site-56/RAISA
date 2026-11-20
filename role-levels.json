@@ -362,36 +362,6 @@
       "agent": false
     },
     {
-      "role": "1573399719412236501",
-      "name": "[DS] Director of Security",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573399720326594751",
-      "name": "[DDS] Deputy Director of Security",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573399721454600242",
-      "name": "[ADS] Assistant Director of Security",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573399722767548589",
-      "name": "[SCP] Security Captain",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573399724789207151",
-      "name": "[SL] Security Lieutenant",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573401936458162266",
       "name": "[SS] Security Sergeant",
       "level": 2,
@@ -774,21 +744,6 @@
     },
     {
       "role": "1573399184630096023"
-    },
-    {
-      "role": "1573399719412236501"
-    },
-    {
-      "role": "1573399720326594751"
-    },
-    {
-      "role": "1573399721454600242"
-    },
-    {
-      "role": "1573399722767548589"
-    },
-    {
-      "role": "1573399724789207151"
     },
     {
       "role": "1573399776748118227"
