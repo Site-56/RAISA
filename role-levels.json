@@ -164,48 +164,6 @@
       "agent": false
     },
     {
-      "role": "1573381148724174939",
-      "name": "[TRD] Tactical Response Commander",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573381149726736474",
-      "name": "[TRD] Deputy Tactical Response Commander",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573381150842556620",
-      "name": "[TRD] Tactical Captain",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573381152222482492",
-      "name": "[TRD] Tactical Team Leader",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573381153350750278",
-      "name": "[TRD] Senior Tactical Response Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573381153916846203",
-      "name": "[TRD] Tactical Response Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573381155103842304",
-      "name": "[TRD] Tactical Response Recruit",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573381194425434263",
       "name": "[ELD] Director of Engineering",
       "level": 4,
@@ -744,6 +702,48 @@
       "name": "[SEC] Security Cadet",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1573381148724174939",
+      "name": "[TRD] Tactical Response Commander",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573381149726736474",
+      "name": "[TRD] Deputy Tactical Response Commander",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573381150842556620",
+      "name": "[TRD] Tactical Captain",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573381152222482492",
+      "name": "[TRD] Tactical Team Leader",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573381153350750278",
+      "name": "[TRD] Senior Tactical Response Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573381153916846203",
+      "name": "[TRD] Tactical Response Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573381155103842304",
+      "name": "[TRD] Tactical Response Recruit",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -1247,25 +1247,6 @@
       }
     },
     {
-      "guild": "1573377671654801469",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "div:Tactical Response Department": "1573381147856081046",
-        "rank:Tactical Response Commander": "1573381148724174939",
-        "rank:Deputy Tactical Response Commander": "1573381149726736474",
-        "rank:Tactical Captain": "1573381150842556620",
-        "rank:Tactical Team Leader": "1573381152222482492",
-        "rank:Senior Tactical Response Officer": "1573381153350750278",
-        "rank:Tactical Response Officer": "1573381153916846203",
-        "rank:Tactical Response Recruit": "1573381155103842304",
-        "cat:Tactical Response Department": "1573381155967860962"
-      }
-    },
-    {
       "guild": "1569024245047107684",
       "director": "",
       "uploader": "",
@@ -1465,6 +1446,25 @@
         "rank:Deputy Director of Security": "1573380976174825493",
         "rank:Assistant Director of Security": "1573380977089060986",
         "rank:Security Cadet": "1573380983116398654"
+      }
+    },
+    {
+      "guild": "1573377671654801469",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "div:Tactical Response Department": "1573381147856081046",
+        "rank:Tactical Response Commander": "1573381148724174939",
+        "rank:Deputy Tactical Response Commander": "1573381149726736474",
+        "rank:Tactical Captain": "1573381150842556620",
+        "rank:Tactical Team Leader": "1573381152222482492",
+        "rank:Senior Tactical Response Officer": "1573381153350750278",
+        "rank:Tactical Response Officer": "1573381153916846203",
+        "rank:Tactical Response Recruit": "1573381155103842304",
+        "cat:Tactical Response Department": "1573381155967860962"
       }
     }
   ]
