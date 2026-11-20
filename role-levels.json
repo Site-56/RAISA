@@ -86,24 +86,6 @@
       "agent": false
     },
     {
-      "role": "1569026919830134844",
-      "name": "[LOG] Senior Logistics Officer",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1569026921126305997",
-      "name": "[LOG] Logistics Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1569026926293819404",
-      "name": "[LOG] Logistics Assistant",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573381221767979141",
       "name": "[IT] Head of IT",
       "level": 4,
@@ -621,15 +603,6 @@
     },
     {
       "role": "1568785037950717983"
-    },
-    {
-      "role": "1569026919830134844"
-    },
-    {
-      "role": "1569026921126305997"
-    },
-    {
-      "role": "1569026926293819404"
     },
     {
       "role": "1569026943267901652"
