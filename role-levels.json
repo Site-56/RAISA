@@ -308,24 +308,6 @@
       "agent": false
     },
     {
-      "role": "1568785245975617657",
-      "name": "[ISD] Deputy ISD Director",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785247175311541",
-      "name": "[ISD] Chief Security Investigator",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785248081158275",
-      "name": "[ISD] Senior Investigator",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1568785249096171541",
       "name": "[ISD] Investigator",
       "level": 2,
@@ -1050,15 +1032,6 @@
     },
     {
       "role": "1568785241475121247"
-    },
-    {
-      "role": "1568785245975617657"
-    },
-    {
-      "role": "1568785247175311541"
-    },
-    {
-      "role": "1568785248081158275"
     },
     {
       "role": "1568785249096171541"
