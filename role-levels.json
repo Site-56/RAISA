@@ -660,6 +660,60 @@
       "name": "[EAS] Ethics Associate",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1573398621347520613",
+      "name": "[DS] Director of Security",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573398631011065906",
+      "name": "[DDS] Deputy Director of Security",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573398631703249058",
+      "name": "[ADS] Assistant Director of Security",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573398632940699738",
+      "name": "[SCP] Security Captain",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573398633867386973",
+      "name": "[SL] Security Lieutenant",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573398635314417714",
+      "name": "[SS] Security Sergeant",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573398636455395358",
+      "name": "[SSO] Senior Security Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573398637566894140",
+      "name": "[SO] Security Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573398638112276493",
+      "name": "[SCD] Security Cadet",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -990,6 +1044,33 @@
     },
     {
       "role": "1573398603072929812"
+    },
+    {
+      "role": "1573398621347520613"
+    },
+    {
+      "role": "1573398631011065906"
+    },
+    {
+      "role": "1573398631703249058"
+    },
+    {
+      "role": "1573398632940699738"
+    },
+    {
+      "role": "1573398633867386973"
+    },
+    {
+      "role": "1573398635314417714"
+    },
+    {
+      "role": "1573398636455395358"
+    },
+    {
+      "role": "1573398637566894140"
+    },
+    {
+      "role": "1573398638112276493"
     }
   ],
   "servers": [
@@ -1112,27 +1193,6 @@
         "staff:Tier 1 Supporter ($10/mo)": "1568846867180028005",
         "staff:Tier 2 Supporter ($6/mo)": "1568846868249714839",
         "staff:Tier 3 Supporter ($3/mo)": "1568846869117796482"
-      }
-    },
-    {
-      "guild": "1569023176510414976",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "div:Security Department": "1569026853400744018",
-        "rank:Security Captain": "1569026857599504385",
-        "rank:Security Lieutenant": "1569026858970783888",
-        "rank:Security Sergeant": "1569026860170350702",
-        "rank:Senior Security Officer": "1569026861298876428",
-        "rank:Security Officer": "1569026862703841491",
-        "cat:Security Department": "1569026866910728364",
-        "rank:Director of Security": "1573380975033847908",
-        "rank:Deputy Director of Security": "1573380976174825493",
-        "rank:Assistant Director of Security": "1573380977089060986",
-        "rank:Security Cadet": "1573380983116398654"
       }
     },
     {
@@ -1453,6 +1513,38 @@
         "x:Training Ping": "1573395065382899802",
         "x:Poll Ping": "1573395067480051842",
         "x:Hearing Ping": "1573395069761749043"
+      }
+    },
+    {
+      "guild": "1569023176510414976",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "div:Security Department": "1573395774455283752",
+        "rank:Security Captain": "1573398632940699738",
+        "rank:Security Lieutenant": "1573398633867386973",
+        "rank:Security Sergeant": "1573398635314417714",
+        "rank:Senior Security Officer": "1573398636455395358",
+        "rank:Security Officer": "1573398637566894140",
+        "cat:Security Department": "1573395785956200580",
+        "rank:Director of Security": "1573398621347520613",
+        "rank:Deputy Director of Security": "1573398631011065906",
+        "rank:Assistant Director of Security": "1573398631703249058",
+        "rank:Security Cadet": "1573398638112276493",
+        "x:Server Administrator": "1573395772165333022",
+        "x:Server Moderator": "1573395772890947777",
+        "xdiv:Server": "1573395787101114439",
+        "x:Verified": "1573395788162400356",
+        "x:Bots": "1573395788678037536",
+        "xdiv:Pings": "1573395790057963640",
+        "x:Announcement Ping": "1573395790968393858",
+        "x:Event Ping": "1573395791878430860",
+        "x:Training Ping": "1573395792952299550",
+        "x:Poll Ping": "1573395793669267771",
+        "x:Patrol Ping": "1573395795460235304"
       }
     }
   ]
