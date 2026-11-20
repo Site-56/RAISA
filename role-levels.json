@@ -62,18 +62,6 @@
       "agent": false
     },
     {
-      "role": "1568785076949483531",
-      "name": "[AO] Site Director",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785106431119400",
-      "name": "[EA] Head of External Affairs",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1568785152363208805",
       "name": "[RAISA] Archivist",
       "level": 2,
@@ -726,6 +714,96 @@
       "name": "[IT] IT Technician",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1568785076949483531",
+      "name": "[AO] Site Director",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1573380554949271676",
+      "name": "[AO] Deputy Site Director",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1573380556572463114",
+      "name": "[AO] Assistant Site Director",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573380557445009479",
+      "name": "[AO] Site Administrator",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573380558342455406",
+      "name": "[AO] Senior Administrative Officer",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573380559130992873",
+      "name": "[AO] Administrative Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573380560049545326",
+      "name": "[AO] Administrative Assistant",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1573380561966211184",
+      "name": "[PB] Head of Personnel",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573380562800877588",
+      "name": "[PB] Senior Personnel Officer",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573380563786797248",
+      "name": "[PB] Personnel Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573380564571004928",
+      "name": "[PB] Personnel Assistant",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1568785106431119400",
+      "name": "[EA] Head of External Affairs",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573380567980970076",
+      "name": "[EA] Senior External Affairs Officer",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573380568941461535",
+      "name": "[EA] External Affairs Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573380569788710943",
+      "name": "[EA] External Affairs Assistant",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -1059,6 +1137,45 @@
     },
     {
       "role": "1573381221767979141"
+    },
+    {
+      "role": "1573380554949271676"
+    },
+    {
+      "role": "1573380556572463114"
+    },
+    {
+      "role": "1573380557445009479"
+    },
+    {
+      "role": "1573380558342455406"
+    },
+    {
+      "role": "1573380559130992873"
+    },
+    {
+      "role": "1573380560049545326"
+    },
+    {
+      "role": "1573380561966211184"
+    },
+    {
+      "role": "1573380562800877588"
+    },
+    {
+      "role": "1573380563786797248"
+    },
+    {
+      "role": "1573380564571004928"
+    },
+    {
+      "role": "1573380567980970076"
+    },
+    {
+      "role": "1573380568941461535"
+    },
+    {
+      "role": "1573380569788710943"
     }
   ],
   "servers": [
@@ -1181,49 +1298,6 @@
         "staff:Tier 1 Supporter ($10/mo)": "1568846867180028005",
         "staff:Tier 2 Supporter ($6/mo)": "1568846868249714839",
         "staff:Tier 3 Supporter ($3/mo)": "1568846869117796482"
-      }
-    },
-    {
-      "guild": "1568312896834769007",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "div:Site Command": "1568785075451985951",
-        "rank:Site Director": "1568785076949483531",
-        "rank:Site Management": "1568785079541702727",
-        "rank:Site Supervision": "1568785080715837450",
-        "rank:Site Staff": "1568785081416552481",
-        "div:Personnel Bureau": "1568785083895128084",
-        "rank:Personnel Bureau Director": "1568785084297912423",
-        "rank:Head of Personnel Operations": "1568785085652533338",
-        "rank:Senior Personnel Agent": "1568785087015690369",
-        "rank:Personnel Agent": "1568785088597069957",
-        "rank:Junior Personnel Agent": "1568785089557434440",
-        "cat:Personnel Operations": "1568785091050741780",
-        "rank:Head of Training Administration": "1568785091679748107",
-        "rank:Senior Training Agent": "1568785092657287332",
-        "rank:Training Agent": "1568785094100123799",
-        "rank:Junior Training Agent": "1568785095286984714",
-        "cat:Training Administration": "1568785096247476244",
-        "cat:Personnel Bureau": "1568785097388204104",
-        "div:Corporate Affairs": "1568785099124646050",
-        "rank:Corporate Affairs Director": "1568785099908976660",
-        "rank:Head of Internal Affairs": "1568785100798431262",
-        "rank:Senior Internal Affairs Agent": "1568785101943218227",
-        "rank:Internal Affairs Agent": "1568785103692365834",
-        "rank:Junior Internal Affairs Agent": "1568785104472641687",
-        "cat:Internal Affairs": "1568785105403641886",
-        "rank:Head of External Affairs": "1568785106431119400",
-        "rank:Senior External Affairs Agent": "1568785107475632168",
-        "rank:External Affairs Agent": "1568785109891686538",
-        "rank:Junior External Affairs Agent": "1568785110692667454",
-        "cat:External Affairs": "1568785111858684044",
-        "cat:Corporate Affairs": "1568785112303272109",
-        "cat:Administrative Office": "1568785082502742057",
-        "rank:Site Administration Board": "1568785078333739138"
       }
     },
     {
@@ -1496,6 +1570,37 @@
         "rank:Head of Logistics": "1573381213480157274",
         "cat:Logistics": "1573381220509945867",
         "rank:Head of IT": "1573381221767979141"
+      }
+    },
+    {
+      "guild": "1568312896834769007",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "div:Site Command": "1568785075451985951",
+        "rank:Site Director": "1568785076949483531",
+        "div:Personnel Bureau": "1568785083895128084",
+        "cat:Personnel Bureau": "1568785097388204104",
+        "rank:Head of External Affairs": "1568785106431119400",
+        "cat:External Affairs": "1568785111858684044",
+        "cat:Administrative Office": "1568785082502742057",
+        "rank:Deputy Site Director": "1573380554949271676",
+        "rank:Assistant Site Director": "1573380556572463114",
+        "rank:Site Administrator": "1573380557445009479",
+        "rank:Senior Administrative Officer": "1573380558342455406",
+        "rank:Administrative Officer": "1573380559130992873",
+        "rank:Administrative Assistant": "1573380560049545326",
+        "rank:Head of Personnel": "1573380561966211184",
+        "rank:Senior Personnel Officer": "1573380562800877588",
+        "rank:Personnel Officer": "1573380563786797248",
+        "rank:Personnel Assistant": "1573380564571004928",
+        "div:External Affairs": "1573380566244532334",
+        "rank:Senior External Affairs Officer": "1573380567980970076",
+        "rank:External Affairs Officer": "1573380568941461535",
+        "rank:External Affairs Assistant": "1573380569788710943"
       }
     }
   ]
