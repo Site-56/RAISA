@@ -320,12 +320,6 @@
       "agent": false
     },
     {
-      "role": "1569026880445620295",
-      "name": "[TRD] Tactical Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1569026881443991573",
       "name": "[TRD] Tactical Recruit",
       "level": 1,
@@ -1029,9 +1023,6 @@
     },
     {
       "role": "1569026862703841491"
-    },
-    {
-      "role": "1569026880445620295"
     },
     {
       "role": "1569026881443991573"
