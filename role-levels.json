@@ -62,12 +62,6 @@
       "agent": false
     },
     {
-      "role": "1569446559064662147",
-      "name": "[MD] Chief Medical Officer",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1573381149172957236",
       "name": "[MD] Deputy Chief Medical Officer",
       "level": 4,
@@ -86,18 +80,6 @@
       "agent": false
     },
     {
-      "role": "1569446572138307635",
-      "name": "[MD] Physician",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1569446574851887175",
-      "name": "[MD] Nurse",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1573381156026589346",
       "name": "[MD] Paramedic",
       "level": 2,
@@ -106,12 +88,6 @@
     {
       "role": "1573381156626243728",
       "name": "[MD] Medical Resident",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1569446576101924906",
-      "name": "[MD] Medical Trainee",
       "level": 1,
       "agent": false
     },
@@ -684,18 +660,6 @@
     },
     {
       "role": "1569026947302826105"
-    },
-    {
-      "role": "1569446559064662147"
-    },
-    {
-      "role": "1569446572138307635"
-    },
-    {
-      "role": "1569446574851887175"
-    },
-    {
-      "role": "1569446576101924906"
     },
     {
       "role": "1573381149172957236"
