@@ -158,18 +158,6 @@
       "agent": false
     },
     {
-      "role": "1573395186552279100",
-      "name": "[HP] Head of Personnel",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573395190750773369",
-      "name": "[SPO] Senior Personnel Officer",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573395192994726009",
       "name": "[PO] Personnel Officer",
       "level": 2,
@@ -182,12 +170,6 @@
       "agent": false
     },
     {
-      "role": "1573395201056186395",
-      "name": "[HEA] Head of External Affairs",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1573395203090415777",
       "name": "[SEAO] Senior External Affairs Officer",
       "level": 3,
@@ -197,12 +179,6 @@
       "role": "1573395204810215627",
       "name": "[EAO] External Affairs Officer",
       "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573395207838507140",
-      "name": "[EAA] External Affairs Assistant",
-      "level": 1,
       "agent": false
     },
     {
@@ -710,28 +686,16 @@
       "role": "1573395180466475038"
     },
     {
-      "role": "1573395186552279100"
-    },
-    {
-      "role": "1573395190750773369"
-    },
-    {
       "role": "1573395192994726009"
     },
     {
       "role": "1573395194647412810"
     },
     {
-      "role": "1573395201056186395"
-    },
-    {
       "role": "1573395203090415777"
     },
     {
       "role": "1573395204810215627"
-    },
-    {
-      "role": "1573395207838507140"
     },
     {
       "role": "1573395334892093470"
