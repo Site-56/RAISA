@@ -116,18 +116,6 @@
       "agent": false
     },
     {
-      "role": "1573395480417935491",
-      "name": "[SRO] Senior Records Officer",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573395482598711336",
-      "name": "[ARC] Archivist",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1573395549774684370",
       "name": "[DTFC] Director of Task Force Command",
       "level": 4,
@@ -653,12 +641,6 @@
       "role": "1568785037950717983"
     },
     {
-      "role": "1573395480417935491"
-    },
-    {
-      "role": "1573395482598711336"
-    },
-    {
       "role": "1573395549774684370"
     },
     {
@@ -954,6 +936,33 @@
     },
     {
       "role": "1573399352913821697"
+    },
+    {
+      "role": "1573399430068043827"
+    },
+    {
+      "role": "1573399431582318612"
+    },
+    {
+      "role": "1573399432567718010"
+    },
+    {
+      "role": "1573399434308493512"
+    },
+    {
+      "role": "1573399436594253874"
+    },
+    {
+      "role": "1573399439706562733"
+    },
+    {
+      "role": "1573399440373452897"
+    },
+    {
+      "role": "1573399442768273530"
+    },
+    {
+      "role": "1573399444630671581"
     }
   ],
   "servers": [
@@ -1246,38 +1255,6 @@
       }
     },
     {
-      "guild": "1568313673024274593",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "x:Server Administrator": "1573395473153265665",
-        "x:Server Moderator": "1573395474440921168",
-        "div:Records and Information Security Administration": "1573395475367993374",
-        "rank:RAISA Director": "1573395476437409922",
-        "rank:Deputy RAISA Director": "1573395477439979711",
-        "rank:Assistant RAISA Director": "1573395478090092635",
-        "rank:Records Supervisor": "1573395479419560177",
-        "rank:Senior Records Officer": "1573395480417935491",
-        "rank:Records Officer": "1573395481474900068",
-        "rank:Archivist": "1573395482598711336",
-        "rank:Junior Records Officer": "1573395483529846817",
-        "rank:Records Trainee": "1573395485153042543",
-        "cat:Records and Information Security Administration": "1573395485706944635",
-        "xdiv:Server": "1573395486998659122",
-        "x:Verified": "1573395488026394628",
-        "x:Bots": "1573395491692089386",
-        "xdiv:Pings": "1573395494015602800",
-        "x:Announcement Ping": "1573395496154693642",
-        "x:Event Ping": "1573395497912238122",
-        "x:Training Ping": "1573395499933900872",
-        "x:Poll Ping": "1573395502152552622",
-        "x:Archive Ping": "1573395504497164302"
-      }
-    },
-    {
       "guild": "1568312896834769007",
       "director": "",
       "uploader": "",
@@ -1428,6 +1405,38 @@
         "x:Training Ping": "1573395857322025041",
         "x:Poll Ping": "1573395858370592932",
         "x:Deployment Ping": "1573395860157366442"
+      }
+    },
+    {
+      "guild": "1568313673024274593",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "x:Server Administrator": "1573395473153265665",
+        "x:Server Moderator": "1573395474440921168",
+        "x:Verified": "1573395488026394628",
+        "x:Bots": "1573395491692089386",
+        "x:Announcement Ping": "1573395496154693642",
+        "x:Event Ping": "1573395497912238122",
+        "x:Training Ping": "1573395499933900872",
+        "x:Poll Ping": "1573395502152552622",
+        "x:Archive Ping": "1573395504497164302",
+        "div:Records and Information Security Administration": "1573399428989984778",
+        "rank:RAISA Director": "1573399430068043827",
+        "rank:Deputy RAISA Director": "1573399431582318612",
+        "rank:Assistant RAISA Director": "1573399432567718010",
+        "rank:Records Supervisor": "1573399434308493512",
+        "rank:Senior Records Officer": "1573399436594253874",
+        "rank:Records Officer": "1573399439706562733",
+        "rank:Archivist": "1573399440373452897",
+        "rank:Junior Records Officer": "1573399442768273530",
+        "rank:Records Trainee": "1573399444630671581",
+        "cat:Records and Information Security Administration": "1573399445385773078",
+        "xdiv:Server": "1573399446346141786",
+        "xdiv:Pings": "1573399450871795832"
       }
     }
   ]
