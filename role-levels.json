@@ -684,6 +684,42 @@
       "name": "[RAISA] Records Trainee",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1573395549774684370",
+      "name": "[TFC] Director of Task Force Command",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573395550642901095",
+      "name": "[TFC] Deputy Director of Task Force Command",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573395551465119808",
+      "name": "[TFC] Task Force Operations Officer",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573395552735854645",
+      "name": "[TFC] Task Force Liaison",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573395554262843532",
+      "name": "[TFC] Task Force Coordinator",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573395555134996672",
+      "name": "[TFC] Task Force Command Assistant",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -999,6 +1035,24 @@
     },
     {
       "role": "1573395485153042543"
+    },
+    {
+      "role": "1573395549774684370"
+    },
+    {
+      "role": "1573395550642901095"
+    },
+    {
+      "role": "1573395551465119808"
+    },
+    {
+      "role": "1573395552735854645"
+    },
+    {
+      "role": "1573395554262843532"
+    },
+    {
+      "role": "1573395555134996672"
     }
   ],
   "servers": [
@@ -1141,24 +1195,6 @@
         "rank:Ethics Committee Member": "1573380492462391407",
         "rank:Senior Ethics Liaison": "1573380493888458803",
         "rank:Ethics Liaison": "1573380506249068706"
-      }
-    },
-    {
-      "guild": "1568315022214692927",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "div:Task Force Command": "1573390283633336420",
-        "rank:Director of Task Force Command": "1573390284102967428",
-        "rank:Deputy Director of Task Force Command": "1573390286531330150",
-        "rank:Task Force Operations Officer": "1573390287621857360",
-        "rank:Task Force Liaison": "1573390288381026479",
-        "rank:Task Force Coordinator": "1573390290079842417",
-        "rank:Task Force Command Assistant": "1573390291455574068",
-        "cat:Task Force Command": "1573390292684378214"
       }
     },
     {
@@ -1396,6 +1432,35 @@
         "x:Training Ping": "1573395499933900872",
         "x:Poll Ping": "1573395502152552622",
         "x:Archive Ping": "1573395504497164302"
+      }
+    },
+    {
+      "guild": "1568315022214692927",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "x:Server Administrator": "1573395536482926744",
+        "x:Server Moderator": "1573395537863118931",
+        "div:Task Force Command": "1573395548252409887",
+        "rank:Director of Task Force Command": "1573395549774684370",
+        "rank:Deputy Director of Task Force Command": "1573395550642901095",
+        "rank:Task Force Operations Officer": "1573395551465119808",
+        "rank:Task Force Liaison": "1573395552735854645",
+        "rank:Task Force Coordinator": "1573395554262843532",
+        "rank:Task Force Command Assistant": "1573395555134996672",
+        "cat:Task Force Command": "1573395556380975125",
+        "xdiv:Server": "1573395557353922661",
+        "x:Verified": "1573395558356230275",
+        "x:Bots": "1573395559941935114",
+        "xdiv:Pings": "1573395561011482936",
+        "x:Announcement Ping": "1573395561959268382",
+        "x:Event Ping": "1573395562919759914",
+        "x:Training Ping": "1573395565104988170",
+        "x:Poll Ping": "1573395566266945630",
+        "x:Deployment Ping": "1573395568376680609"
       }
     }
   ]
