@@ -116,24 +116,6 @@
       "agent": false
     },
     {
-      "role": "1573395477439979711",
-      "name": "[DRD] Deputy RAISA Director",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1573395478090092635",
-      "name": "[ARD] Assistant RAISA Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573395479419560177",
-      "name": "[RS] Records Supervisor",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573395480417935491",
       "name": "[SRO] Senior Records Officer",
       "level": 3,
@@ -669,15 +651,6 @@
     },
     {
       "role": "1568785037950717983"
-    },
-    {
-      "role": "1573395477439979711"
-    },
-    {
-      "role": "1573395478090092635"
-    },
-    {
-      "role": "1573395479419560177"
     },
     {
       "role": "1573395480417935491"
