@@ -62,60 +62,6 @@
       "agent": false
     },
     {
-      "role": "1573402137189294202",
-      "name": "[DS] Director of Security",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573402138661490800",
-      "name": "[DDS] Deputy Director of Security",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573402139378720953",
-      "name": "[ADS] Assistant Director of Security",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573402140683149455",
-      "name": "[SCP] Security Captain",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573402141693837489",
-      "name": "[SL] Security Lieutenant",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573402143086350469",
-      "name": "[SS] Security Sergeant",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573402143883526214",
-      "name": "[SSO] Senior Security Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573402144667598992",
-      "name": "[SO] Security Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573402145322176596",
-      "name": "[SCD] Security Cadet",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573402287735316550",
       "name": "[CMO] Chief Medical Officer",
       "level": 4,
@@ -654,6 +600,60 @@
       "name": "[IR] Intelligence Recruit",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1573402137189294202",
+      "name": "[DS] Director of Security",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573402138661490800",
+      "name": "[DDS] Deputy Director of Security",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573402139378720953",
+      "name": "[ADS] Assistant Director of Security",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573402140683149455",
+      "name": "[SCP] Security Captain",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573402141693837489",
+      "name": "[SL] Security Lieutenant",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573402143086350469",
+      "name": "[SS] Security Sergeant",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573402143883526214",
+      "name": "[SSO] Senior Security Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573402144667598992",
+      "name": "[SO] Security Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573402145322176596",
+      "name": "[SCD] Security Cadet",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -1145,38 +1145,6 @@
       }
     },
     {
-      "guild": "1569023176510414976",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "x:Server Administrator": "1573395772165333022",
-        "x:Server Moderator": "1573395772890947777",
-        "x:Verified": "1573395788162400356",
-        "x:Bots": "1573395788678037536",
-        "x:Announcement Ping": "1573395790968393858",
-        "x:Event Ping": "1573395791878430860",
-        "x:Training Ping": "1573395792952299550",
-        "x:Poll Ping": "1573395793669267771",
-        "x:Patrol Ping": "1573395795460235304",
-        "div:Security Department": "1573402136350425339",
-        "rank:Director of Security": "1573402137189294202",
-        "rank:Deputy Director of Security": "1573402138661490800",
-        "rank:Assistant Director of Security": "1573402139378720953",
-        "rank:Security Captain": "1573402140683149455",
-        "rank:Security Lieutenant": "1573402141693837489",
-        "rank:Security Sergeant": "1573402143086350469",
-        "rank:Senior Security Officer": "1573402143883526214",
-        "rank:Security Officer": "1573402144667598992",
-        "rank:Security Cadet": "1573402145322176596",
-        "cat:Security Department": "1573402146823733299",
-        "xdiv:Server": "1573402148170104882",
-        "xdiv:Pings": "1573402149147381901"
-      }
-    },
-    {
       "guild": "1569161702627610757",
       "director": "",
       "uploader": "",
@@ -1464,6 +1432,38 @@
         "cat:Intelligence Agency": "1573402065689124874",
         "xdiv:Server": "1573402066875981866",
         "xdiv:Pings": "1573402067492405291"
+      }
+    },
+    {
+      "guild": "1569023176510414976",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "x:Server Administrator": "1573395772165333022",
+        "x:Server Moderator": "1573395772890947777",
+        "x:Verified": "1573395788162400356",
+        "x:Bots": "1573395788678037536",
+        "x:Announcement Ping": "1573395790968393858",
+        "x:Event Ping": "1573395791878430860",
+        "x:Training Ping": "1573395792952299550",
+        "x:Poll Ping": "1573395793669267771",
+        "x:Patrol Ping": "1573395795460235304",
+        "div:Security Department": "1573402136350425339",
+        "rank:Director of Security": "1573402137189294202",
+        "rank:Deputy Director of Security": "1573402138661490800",
+        "rank:Assistant Director of Security": "1573402139378720953",
+        "rank:Security Captain": "1573402140683149455",
+        "rank:Security Lieutenant": "1573402141693837489",
+        "rank:Security Sergeant": "1573402143086350469",
+        "rank:Senior Security Officer": "1573402143883526214",
+        "rank:Security Officer": "1573402144667598992",
+        "rank:Security Cadet": "1573402145322176596",
+        "cat:Security Department": "1573402146823733299",
+        "xdiv:Server": "1573402148170104882",
+        "xdiv:Pings": "1573402149147381901"
       }
     }
   ]
