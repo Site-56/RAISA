@@ -356,12 +356,6 @@
       "agent": false
     },
     {
-      "role": "1569026874330321017",
-      "name": "[ESD] Security Agent",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1569026857599504385",
       "name": "[SEC] Security Captain",
       "level": 3,
@@ -1059,9 +1053,6 @@
     },
     {
       "role": "1569026862703841491"
-    },
-    {
-      "role": "1569026874330321017"
     },
     {
       "role": "1569026876809285796"
