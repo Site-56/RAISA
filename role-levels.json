@@ -62,42 +62,6 @@
       "agent": false
     },
     {
-      "role": "1573401939297833113",
-      "name": "[DTFC] Director of Task Force Command",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573401940404998226",
-      "name": "[DDTFC] Deputy Director of Task Force Command",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573401941479002172",
-      "name": "[TFOO] Task Force Operations Officer",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573401942225330278",
-      "name": "[TFL] Task Force Liaison",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573401944108695592",
-      "name": "[TFCO] Task Force Coordinator",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573401945916309565",
-      "name": "[TFCA] Task Force Command Assistant",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573402046860754984",
       "name": "[DIS] Director of Internal Security",
       "level": 4,
@@ -654,6 +618,42 @@
       "name": "[RT] Records Trainee",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1573401939297833113",
+      "name": "[DTFC] Director of Task Force Command",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573401940404998226",
+      "name": "[DDTFC] Deputy Director of Task Force Command",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573401941479002172",
+      "name": "[TFOO] Task Force Operations Officer",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573401942225330278",
+      "name": "[TFL] Task Force Liaison",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573401944108695592",
+      "name": "[TFCO] Task Force Coordinator",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573401945916309565",
+      "name": "[TFCA] Task Force Command Assistant",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -1145,35 +1145,6 @@
       }
     },
     {
-      "guild": "1568315022214692927",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "x:Server Administrator": "1573395536482926744",
-        "x:Server Moderator": "1573395537863118931",
-        "x:Verified": "1573395558356230275",
-        "x:Bots": "1573395559941935114",
-        "x:Announcement Ping": "1573395561959268382",
-        "x:Event Ping": "1573395562919759914",
-        "x:Training Ping": "1573395565104988170",
-        "x:Poll Ping": "1573395566266945630",
-        "x:Deployment Ping": "1573395568376680609",
-        "div:Task Force Command": "1573401938207440917",
-        "rank:Director of Task Force Command": "1573401939297833113",
-        "rank:Deputy Director of Task Force Command": "1573401940404998226",
-        "rank:Task Force Operations Officer": "1573401941479002172",
-        "rank:Task Force Liaison": "1573401942225330278",
-        "rank:Task Force Coordinator": "1573401944108695592",
-        "rank:Task Force Command Assistant": "1573401945916309565",
-        "cat:Task Force Command": "1573401946956759213",
-        "xdiv:Server": "1573401948114395278",
-        "xdiv:Pings": "1573401949217366106"
-      }
-    },
-    {
       "guild": "1568316002217893928",
       "director": "",
       "uploader": "",
@@ -1464,6 +1435,35 @@
         "cat:Records and Information Security Administration": "1573401863951483041",
         "xdiv:Server": "1573401864559403133",
         "xdiv:Pings": "1573401865712967690"
+      }
+    },
+    {
+      "guild": "1568315022214692927",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "x:Server Administrator": "1573395536482926744",
+        "x:Server Moderator": "1573395537863118931",
+        "x:Verified": "1573395558356230275",
+        "x:Bots": "1573395559941935114",
+        "x:Announcement Ping": "1573395561959268382",
+        "x:Event Ping": "1573395562919759914",
+        "x:Training Ping": "1573395565104988170",
+        "x:Poll Ping": "1573395566266945630",
+        "x:Deployment Ping": "1573395568376680609",
+        "div:Task Force Command": "1573401938207440917",
+        "rank:Director of Task Force Command": "1573401939297833113",
+        "rank:Deputy Director of Task Force Command": "1573401940404998226",
+        "rank:Task Force Operations Officer": "1573401941479002172",
+        "rank:Task Force Liaison": "1573401942225330278",
+        "rank:Task Force Coordinator": "1573401944108695592",
+        "rank:Task Force Command Assistant": "1573401945916309565",
+        "cat:Task Force Command": "1573401946956759213",
+        "xdiv:Server": "1573401948114395278",
+        "xdiv:Pings": "1573401949217366106"
       }
     }
   ]
