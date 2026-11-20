@@ -140,102 +140,6 @@
       "agent": false
     },
     {
-      "role": "1573381194425434263",
-      "name": "[ELD] Director of Engineering",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573381195561963520",
-      "name": "[ELD] Deputy Director of Engineering",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573381197847986257",
-      "name": "[ELD] Lead Engineer",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1569026905036955708",
-      "name": "[ELD] Senior Engineer",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1569026907335434361",
-      "name": "[ELD] Engineer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1569026910221107422",
-      "name": "[ELD] Technician",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1569026908157378570",
-      "name": "[ELD] Junior Engineer",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1569026911126945822",
-      "name": "[ELD] Engineering Trainee",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1573381213480157274",
-      "name": "[LOG] Head of Logistics",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1569026919830134844",
-      "name": "[LOG] Senior Logistics Officer",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1569026921126305997",
-      "name": "[LOG] Logistics Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1569026926293819404",
-      "name": "[LOG] Logistics Assistant",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1573381221767979141",
-      "name": "[IT] Head of IT",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1569026943267901652",
-      "name": "[IT] Senior Systems Administrator",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1569026944211746996",
-      "name": "[IT] Systems Administrator",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1569026947302826105",
-      "name": "[IT] IT Technician",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1568785076949483531",
       "name": "[AO] Site Director",
       "level": 5,
@@ -682,6 +586,102 @@
     {
       "role": "1568785062655164661",
       "name": "[EC] Ethics Associate",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1573381194425434263",
+      "name": "[ELD] Director of Engineering",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573381195561963520",
+      "name": "[ELD] Deputy Director of Engineering",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573381197847986257",
+      "name": "[ELD] Lead Engineer",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1569026905036955708",
+      "name": "[ELD] Senior Engineer",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1569026907335434361",
+      "name": "[ELD] Engineer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1569026910221107422",
+      "name": "[ELD] Technician",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1569026908157378570",
+      "name": "[ELD] Junior Engineer",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1569026911126945822",
+      "name": "[ELD] Engineering Trainee",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1573381213480157274",
+      "name": "[LOG] Head of Logistics",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1569026919830134844",
+      "name": "[LOG] Senior Logistics Officer",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1569026921126305997",
+      "name": "[LOG] Logistics Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1569026926293819404",
+      "name": "[LOG] Logistics Assistant",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1573381221767979141",
+      "name": "[IT] Head of IT",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1569026943267901652",
+      "name": "[IT] Senior Systems Administrator",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1569026944211746996",
+      "name": "[IT] Systems Administrator",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1569026947302826105",
+      "name": "[IT] IT Technician",
       "level": 1,
       "agent": false
     }
@@ -1236,38 +1236,6 @@
       }
     },
     {
-      "guild": "1569024245047107684",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "div:Engineering and Logistics Department": "1569026900356108449",
-        "rank:Senior Engineer": "1569026905036955708",
-        "rank:Engineer": "1569026907335434361",
-        "rank:Junior Engineer": "1569026908157378570",
-        "rank:Technician": "1569026910221107422",
-        "rank:Engineering Trainee": "1569026911126945822",
-        "cat:Engineering and Logistics Department": "1569026911777198231",
-        "rank:Senior Logistics Officer": "1569026919830134844",
-        "rank:Logistics Officer": "1569026921126305997",
-        "rank:Logistics Assistant": "1569026926293819404",
-        "div:Information Technology": "1569026929821229197",
-        "rank:Senior Systems Administrator": "1569026943267901652",
-        "rank:Systems Administrator": "1569026944211746996",
-        "rank:IT Technician": "1569026947302826105",
-        "cat:Information Technology": "1569026950167797773",
-        "rank:Director of Engineering": "1573381194425434263",
-        "rank:Deputy Director of Engineering": "1573381195561963520",
-        "rank:Lead Engineer": "1573381197847986257",
-        "div:Logistics": "1573381212549156884",
-        "rank:Head of Logistics": "1573381213480157274",
-        "cat:Logistics": "1573381220509945867",
-        "rank:Head of IT": "1573381221767979141"
-      }
-    },
-    {
       "guild": "1568312896834769007",
       "director": "",
       "uploader": "",
@@ -1436,6 +1404,38 @@
         "rank:Ethics Committee Member": "1573380492462391407",
         "rank:Senior Ethics Liaison": "1573380493888458803",
         "rank:Ethics Liaison": "1573380506249068706"
+      }
+    },
+    {
+      "guild": "1569024245047107684",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "div:Engineering and Logistics Department": "1569026900356108449",
+        "rank:Senior Engineer": "1569026905036955708",
+        "rank:Engineer": "1569026907335434361",
+        "rank:Junior Engineer": "1569026908157378570",
+        "rank:Technician": "1569026910221107422",
+        "rank:Engineering Trainee": "1569026911126945822",
+        "cat:Engineering and Logistics Department": "1569026911777198231",
+        "rank:Senior Logistics Officer": "1569026919830134844",
+        "rank:Logistics Officer": "1569026921126305997",
+        "rank:Logistics Assistant": "1569026926293819404",
+        "div:Information Technology": "1569026929821229197",
+        "rank:Senior Systems Administrator": "1569026943267901652",
+        "rank:Systems Administrator": "1569026944211746996",
+        "rank:IT Technician": "1569026947302826105",
+        "cat:Information Technology": "1569026950167797773",
+        "rank:Director of Engineering": "1573381194425434263",
+        "rank:Deputy Director of Engineering": "1573381195561963520",
+        "rank:Lead Engineer": "1573381197847986257",
+        "div:Logistics": "1573381212549156884",
+        "rank:Head of Logistics": "1573381213480157274",
+        "cat:Logistics": "1573381220509945867",
+        "rank:Head of IT": "1573381221767979141"
       }
     }
   ]
