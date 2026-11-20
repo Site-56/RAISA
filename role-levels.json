@@ -74,21 +74,9 @@
       "agent": false
     },
     {
-      "role": "1573396063195500585",
-      "name": "[LE] Lead Engineer",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573396065275609282",
       "name": "[SE] Senior Engineer",
       "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573396067981205644",
-      "name": "[ENG] Engineer",
-      "level": 2,
       "agent": false
     },
     {
@@ -137,12 +125,6 @@
       "role": "1573396095751688353",
       "name": "[HIT] Head of IT",
       "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573396097215234111",
-      "name": "[SSA] Senior Systems Administrator",
-      "level": 3,
       "agent": false
     },
     {
@@ -497,13 +479,7 @@
       "role": "1573396061047890060"
     },
     {
-      "role": "1573396063195500585"
-    },
-    {
       "role": "1573396065275609282"
-    },
-    {
-      "role": "1573396067981205644"
     },
     {
       "role": "1573396069994467409"
@@ -528,9 +504,6 @@
     },
     {
       "role": "1573396095751688353"
-    },
-    {
-      "role": "1573396097215234111"
     },
     {
       "role": "1573396100130410667"
