@@ -68,12 +68,6 @@
       "agent": false
     },
     {
-      "role": "1573396061047890060",
-      "name": "[DDE] Deputy Director of Engineering",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1573396065275609282",
       "name": "[SE] Senior Engineer",
       "level": 3,
@@ -86,12 +80,6 @@
       "agent": false
     },
     {
-      "role": "1573396072028704910",
-      "name": "[JE] Junior Engineer",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573396073706299406",
       "name": "[ET] Engineering Trainee",
       "level": 1,
@@ -101,12 +89,6 @@
       "role": "1573396081172021248",
       "name": "[HL] Head of Logistics",
       "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573396083038617640",
-      "name": "[SLO] Senior Logistics Officer",
-      "level": 3,
       "agent": false
     },
     {
@@ -470,25 +452,16 @@
       "role": "1573396059093336235"
     },
     {
-      "role": "1573396061047890060"
-    },
-    {
       "role": "1573396065275609282"
     },
     {
       "role": "1573396069994467409"
     },
     {
-      "role": "1573396072028704910"
-    },
-    {
       "role": "1573396073706299406"
     },
     {
       "role": "1573396081172021248"
-    },
-    {
-      "role": "1573396083038617640"
     },
     {
       "role": "1573396085806862336"
