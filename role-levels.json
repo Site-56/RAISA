@@ -98,12 +98,6 @@
       "agent": false
     },
     {
-      "role": "1569025618064973824",
-      "name": "[CD] Chief Containment Specialist",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1569025618929123438",
       "name": "[CD] Senior Containment Specialist",
       "level": 3,
@@ -1188,9 +1182,6 @@
     },
     {
       "role": "1568785250862239807"
-    },
-    {
-      "role": "1569025618064973824"
     },
     {
       "role": "1569025618929123438"
