@@ -62,18 +62,6 @@
       "agent": false
     },
     {
-      "role": "1573381153916846203",
-      "name": "[TRD] Tactical Response Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573381155103842304",
-      "name": "[TRD] Tactical Response Recruit",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1569446559064662147",
       "name": "[MD] Chief Medical Officer",
       "level": 4,
@@ -666,12 +654,6 @@
     },
     {
       "role": "1569446576101924906"
-    },
-    {
-      "role": "1573381153916846203"
-    },
-    {
-      "role": "1573381155103842304"
     },
     {
       "role": "1573381149172957236"
