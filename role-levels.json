@@ -524,12 +524,6 @@
       "agent": false
     },
     {
-      "role": "1573395362230571181",
-      "name": "[SCS] Senior Containment Specialist",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573395365850255360",
       "name": "[CSP] Containment Specialist",
       "level": 2,
@@ -675,9 +669,6 @@
     },
     {
       "role": "1573395359957516441"
-    },
-    {
-      "role": "1573395362230571181"
     },
     {
       "role": "1573395365850255360"
