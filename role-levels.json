@@ -368,18 +368,6 @@
       "agent": false
     },
     {
-      "role": "1569026927870738512",
-      "name": "[LOG] Logistics Trainee",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1569026940571226283",
-      "name": "[IT] IT Director",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1569026941615472741",
       "name": "[IT] Deputy IT Director",
       "level": 3,
@@ -975,12 +963,6 @@
     },
     {
       "role": "1569026926293819404"
-    },
-    {
-      "role": "1569026927870738512"
-    },
-    {
-      "role": "1569026940571226283"
     },
     {
       "role": "1569026941615472741"
