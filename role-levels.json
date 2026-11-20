@@ -80,84 +80,6 @@
       "agent": false
     },
     {
-      "role": "1573395334892093470",
-      "name": "[SD] Scientific Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573395335735418890",
-      "name": "[SD] Deputy Scientific Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573395336683061359",
-      "name": "[SD] Assistant Scientific Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573395338163916994",
-      "name": "[SD] Lead Researcher",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573395342739636348",
-      "name": "[SD] Senior Researcher",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573395345311006790",
-      "name": "[SD] Researcher",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573395347244458145",
-      "name": "[SD] Junior Researcher",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1573395349505048628",
-      "name": "[SD] Research Assistant",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1573395356555812895",
-      "name": "[CON] Head of Containment",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573395359957516441",
-      "name": "[CON] Containment Supervisor",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573395362230571181",
-      "name": "[CON] Senior Containment Specialist",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573395365850255360",
-      "name": "[CON] Containment Specialist",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573395368132087939",
-      "name": "[CON] Containment Technician",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573395477439979711",
       "name": "[RAISA] Deputy RAISA Director",
       "level": 5,
@@ -714,6 +636,84 @@
       "name": "[EAA] External Affairs Assistant",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1573395334892093470",
+      "name": "[SD] Scientific Director",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573395335735418890",
+      "name": "[DSD] Deputy Scientific Director",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573395336683061359",
+      "name": "[ASD] Assistant Scientific Director",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573395338163916994",
+      "name": "[LR] Lead Researcher",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573395342739636348",
+      "name": "[SR] Senior Researcher",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573395345311006790",
+      "name": "[RES] Researcher",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573395347244458145",
+      "name": "[JR] Junior Researcher",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1573395349505048628",
+      "name": "[RA] Research Assistant",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1573395356555812895",
+      "name": "[HC] Head of Containment",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573395359957516441",
+      "name": "[CSU] Containment Supervisor",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573395362230571181",
+      "name": "[SCS] Senior Containment Specialist",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573395365850255360",
+      "name": "[CSP] Containment Specialist",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573395368132087939",
+      "name": "[CT] Containment Technician",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -1196,46 +1196,6 @@
       }
     },
     {
-      "guild": "1568313414298640588",
-      "director": "",
-      "uploader": "",
-      "uploads": [
-        "Objects"
-      ],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "x:Server Administrator": "1573395331805216860",
-        "x:Server Moderator": "1573395332866244628",
-        "div:Scientific Department": "1573395333982199838",
-        "rank:Scientific Director": "1573395334892093470",
-        "rank:Deputy Scientific Director": "1573395335735418890",
-        "rank:Assistant Scientific Director": "1573395336683061359",
-        "rank:Lead Researcher": "1573395338163916994",
-        "rank:Senior Researcher": "1573395342739636348",
-        "rank:Researcher": "1573395345311006790",
-        "rank:Junior Researcher": "1573395347244458145",
-        "rank:Research Assistant": "1573395349505048628",
-        "cat:Scientific Department": "1573395352432681153",
-        "div:Containment Division": "1573395354408456202",
-        "rank:Head of Containment": "1573395356555812895",
-        "rank:Containment Supervisor": "1573395359957516441",
-        "rank:Senior Containment Specialist": "1573395362230571181",
-        "rank:Containment Specialist": "1573395365850255360",
-        "rank:Containment Technician": "1573395368132087939",
-        "cat:Containment Division": "1573395370497544372",
-        "xdiv:Server": "1573395373110857919",
-        "x:Verified": "1573395383751549068",
-        "x:Bots": "1573395386368921802",
-        "xdiv:Pings": "1573395388235251743",
-        "x:Announcement Ping": "1573395390504509662",
-        "x:Event Ping": "1573395392383557643",
-        "x:Training Ping": "1573395394237304903",
-        "x:Poll Ping": "1573395396485447771",
-        "x:Testing Ping": "1573395398654169148"
-      }
-    },
-    {
       "guild": "1568313673024274593",
       "director": "",
       "uploader": "",
@@ -1545,6 +1505,46 @@
         "x:Training Ping": "1573395226679054557",
         "x:Poll Ping": "1573395228327415870",
         "x:Site Meeting Ping": "1573395230286159872"
+      }
+    },
+    {
+      "guild": "1568313414298640588",
+      "director": "",
+      "uploader": "",
+      "uploads": [
+        "Objects"
+      ],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "x:Server Administrator": "1573395331805216860",
+        "x:Server Moderator": "1573395332866244628",
+        "div:Scientific Department": "1573395333982199838",
+        "rank:Scientific Director": "1573395334892093470",
+        "rank:Deputy Scientific Director": "1573395335735418890",
+        "rank:Assistant Scientific Director": "1573395336683061359",
+        "rank:Lead Researcher": "1573395338163916994",
+        "rank:Senior Researcher": "1573395342739636348",
+        "rank:Researcher": "1573395345311006790",
+        "rank:Junior Researcher": "1573395347244458145",
+        "rank:Research Assistant": "1573395349505048628",
+        "cat:Scientific Department": "1573395352432681153",
+        "div:Containment Division": "1573395354408456202",
+        "rank:Head of Containment": "1573395356555812895",
+        "rank:Containment Supervisor": "1573395359957516441",
+        "rank:Senior Containment Specialist": "1573395362230571181",
+        "rank:Containment Specialist": "1573395365850255360",
+        "rank:Containment Technician": "1573395368132087939",
+        "cat:Containment Division": "1573395371898699917",
+        "xdiv:Server": "1573395373110857919",
+        "x:Verified": "1573395383751549068",
+        "x:Bots": "1573395386368921802",
+        "xdiv:Pings": "1573395388235251743",
+        "x:Announcement Ping": "1573395390504509662",
+        "x:Event Ping": "1573395392383557643",
+        "x:Training Ping": "1573395394237304903",
+        "x:Poll Ping": "1573395396485447771",
+        "x:Testing Ping": "1573395398654169148"
       }
     }
   ]
