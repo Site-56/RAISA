@@ -392,24 +392,6 @@
       "agent": false
     },
     {
-      "role": "1569026854562693170",
-      "name": "[SEC] Security Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1569026855204425835",
-      "name": "[SEC] Deputy Security Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1569026856601002064",
-      "name": "[SEC] Chief of Security",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1569026857599504385",
       "name": "[SEC] Security Captain",
       "level": 3,
@@ -437,18 +419,6 @@
       "role": "1569026862703841491",
       "name": "[SEC] Security Officer",
       "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1569026864683556967",
-      "name": "[SEC] Junior Security Officer",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1569026865585455197",
-      "name": "[SEC] Security Recruit",
-      "level": 1,
       "agent": false
     },
     {
@@ -1106,15 +1076,6 @@
       "role": "1569025623823745095"
     },
     {
-      "role": "1569026854562693170"
-    },
-    {
-      "role": "1569026855204425835"
-    },
-    {
-      "role": "1569026856601002064"
-    },
-    {
       "role": "1569026857599504385"
     },
     {
@@ -1128,12 +1089,6 @@
     },
     {
       "role": "1569026862703841491"
-    },
-    {
-      "role": "1569026864683556967"
-    },
-    {
-      "role": "1569026865585455197"
     },
     {
       "role": "1569026868965806183"
