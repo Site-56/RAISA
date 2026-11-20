@@ -62,36 +62,6 @@
       "agent": false
     },
     {
-      "role": "1573381148724174939",
-      "name": "[TRD] Tactical Response Commander",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573381149726736474",
-      "name": "[TRD] Deputy Tactical Response Commander",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573381150842556620",
-      "name": "[TRD] Tactical Captain",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573381152222482492",
-      "name": "[TRD] Tactical Team Leader",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573381153350750278",
-      "name": "[TRD] Senior Tactical Response Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1573381153916846203",
       "name": "[TRD] Tactical Response Officer",
       "level": 2,
@@ -696,21 +666,6 @@
     },
     {
       "role": "1569446576101924906"
-    },
-    {
-      "role": "1573381148724174939"
-    },
-    {
-      "role": "1573381149726736474"
-    },
-    {
-      "role": "1573381150842556620"
-    },
-    {
-      "role": "1573381152222482492"
-    },
-    {
-      "role": "1573381153350750278"
     },
     {
       "role": "1573381153916846203"
