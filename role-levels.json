@@ -302,12 +302,6 @@
       "agent": false
     },
     {
-      "role": "1573395685707882658",
-      "name": "[DIS] Director of Internal Security",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1573395686685417604",
       "name": "[DDIS] Deputy Director of Internal Security",
       "level": 4,
@@ -326,12 +320,6 @@
       "agent": false
     },
     {
-      "role": "1573395725742776351",
-      "name": "[JIA] Junior ISD Agent",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573395688757399703",
       "name": "[IC] ISD Candidate",
       "level": 1,
@@ -344,27 +332,9 @@
       "agent": false
     },
     {
-      "role": "1573395694306468072",
-      "name": "[IS] Intelligence Supervisor",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573395694943731935",
       "name": "[SFA] Senior Field Agent",
       "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573395726485028875",
-      "name": "[SAN] Senior Analyst",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573395696558674225",
-      "name": "[FA] Field Agent",
-      "level": 2,
       "agent": false
     },
     {
@@ -611,9 +581,6 @@
       "role": "1568785037950717983"
     },
     {
-      "role": "1573395685707882658"
-    },
-    {
       "role": "1573395686685417604"
     },
     {
@@ -623,25 +590,13 @@
       "role": "1573395724832350348"
     },
     {
-      "role": "1573395725742776351"
-    },
-    {
       "role": "1573395688757399703"
     },
     {
       "role": "1573395691869307052"
     },
     {
-      "role": "1573395694306468072"
-    },
-    {
       "role": "1573395694943731935"
-    },
-    {
-      "role": "1573395726485028875"
-    },
-    {
-      "role": "1573395696558674225"
     },
     {
       "role": "1573395839676715008"
