@@ -326,12 +326,6 @@
       "agent": false
     },
     {
-      "role": "1573395846412771362",
-      "name": "[TRO] Tactical Response Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1573395847759269898",
       "name": "[TRR] Tactical Response Recruit",
       "level": 1,
@@ -459,9 +453,6 @@
     },
     {
       "role": "1568785037950717983"
-    },
-    {
-      "role": "1573395846412771362"
     },
     {
       "role": "1573395847759269898"
