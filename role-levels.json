@@ -62,30 +62,6 @@
       "agent": false
     },
     {
-      "role": "1568785183434350738",
-      "name": "[TO] Tactical Operations Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785184936034374",
-      "name": "[TO] Deputy Tactical Operations Director",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785186022494299",
-      "name": "[TO] Tactical Chief of Operations",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785186907496548",
-      "name": "[TO] Senior Tactical Operations Commander",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1568785188245344367",
       "name": "[TO] Tactical Operations Commander",
       "level": 3,
@@ -846,18 +822,6 @@
     },
     {
       "role": "1568785152363208805"
-    },
-    {
-      "role": "1568785183434350738"
-    },
-    {
-      "role": "1568785184936034374"
-    },
-    {
-      "role": "1568785186022494299"
-    },
-    {
-      "role": "1568785186907496548"
     },
     {
       "role": "1568785188245344367"
