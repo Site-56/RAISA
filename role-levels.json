@@ -110,42 +110,6 @@
       "agent": false
     },
     {
-      "role": "1573390284102967428",
-      "name": "[TFC] Director of Task Force Command",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573390286531330150",
-      "name": "[TFC] Deputy Director of Task Force Command",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573390287621857360",
-      "name": "[TFC] Task Force Operations Officer",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573390288381026479",
-      "name": "[TFC] Task Force Liaison",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573390290079842417",
-      "name": "[TFC] Task Force Coordinator",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573390291455574068",
-      "name": "[TFC] Task Force Command Assistant",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573380865541542091",
       "name": "[ISD] Director of Internal Security",
       "level": 4,
@@ -912,24 +876,6 @@
     },
     {
       "role": "1573380890137075742"
-    },
-    {
-      "role": "1573390284102967428"
-    },
-    {
-      "role": "1573390286531330150"
-    },
-    {
-      "role": "1573390287621857360"
-    },
-    {
-      "role": "1573390288381026479"
-    },
-    {
-      "role": "1573390290079842417"
-    },
-    {
-      "role": "1573390291455574068"
     },
     {
       "role": "1573380975033847908"
