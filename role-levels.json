@@ -110,24 +110,6 @@
       "agent": false
     },
     {
-      "role": "1573380821803597908",
-      "name": "[RAISA] Records Supervisor",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573380824936620032",
-      "name": "[RAISA] Senior Records Officer",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573380826987630612",
-      "name": "[RAISA] Records Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1573380829353086997",
       "name": "[RAISA] Junior Records Officer",
       "level": 1,
@@ -855,15 +837,6 @@
     },
     {
       "role": "1573381221767979141"
-    },
-    {
-      "role": "1573380821803597908"
-    },
-    {
-      "role": "1573380824936620032"
-    },
-    {
-      "role": "1573380826987630612"
     },
     {
       "role": "1573380829353086997"
