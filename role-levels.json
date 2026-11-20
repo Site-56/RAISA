@@ -302,18 +302,6 @@
       "agent": false
     },
     {
-      "role": "1573395724832350348",
-      "name": "[SIA] Senior ISD Agent",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573395694943731935",
-      "name": "[SFA] Senior Field Agent",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573399336111448074",
       "name": "[SD] Scientific Director",
       "level": 4,
@@ -555,12 +543,6 @@
     },
     {
       "role": "1568785037950717983"
-    },
-    {
-      "role": "1573395724832350348"
-    },
-    {
-      "role": "1573395694943731935"
     },
     {
       "role": "1573395839676715008"
