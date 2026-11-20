@@ -62,30 +62,6 @@
       "agent": false
     },
     {
-      "role": "1573399776748118227",
-      "name": "[TRC] Tactical Response Commander",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573399777868128427",
-      "name": "[DTRC] Deputy Tactical Response Commander",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573399779008847882",
-      "name": "[TC] Tactical Captain",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573399780133052528",
-      "name": "[TTL] Tactical Team Leader",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573399781328289855",
       "name": "[STRO] Senior Tactical Response Officer",
       "level": 2,
@@ -774,18 +750,6 @@
     },
     {
       "role": "1573399184630096023"
-    },
-    {
-      "role": "1573399776748118227"
-    },
-    {
-      "role": "1573399777868128427"
-    },
-    {
-      "role": "1573399779008847882"
-    },
-    {
-      "role": "1573399780133052528"
     },
     {
       "role": "1573399781328289855"
