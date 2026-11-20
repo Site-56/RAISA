@@ -290,12 +290,6 @@
       "agent": false
     },
     {
-      "role": "1568785236882358322",
-      "name": "[IA] Intelligence Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1568785237968691210",
       "name": "[IA] Intelligence Analyst",
       "level": 2,
@@ -308,21 +302,9 @@
       "agent": false
     },
     {
-      "role": "1568785240259043349",
-      "name": "[IA] Junior Agent",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1568785241475121247",
       "name": "[IA] Intelligence Recruit",
       "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568785244994146385",
-      "name": "[ISD] ISD Director",
-      "level": 4,
       "agent": false
     },
     {
@@ -1061,22 +1043,13 @@
       "role": "1568785219371409518"
     },
     {
-      "role": "1568785236882358322"
-    },
-    {
       "role": "1568785237968691210"
     },
     {
       "role": "1568785238740434977"
     },
     {
-      "role": "1568785240259043349"
-    },
-    {
       "role": "1568785241475121247"
-    },
-    {
-      "role": "1568785244994146385"
     },
     {
       "role": "1568785245975617657"
