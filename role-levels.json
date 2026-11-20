@@ -458,30 +458,6 @@
       "agent": false
     },
     {
-      "role": "1573398938671779941",
-      "name": "[ECVC] Ethics Committee Vice-Chair",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1573398940026671226",
-      "name": "[ECM] Ethics Committee Member",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573398941272252618",
-      "name": "[SEL] Senior Ethics Liaison",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573398942455173314",
-      "name": "[EL] Ethics Liaison",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573398943541502125",
       "name": "[EI] Ethics Investigator",
       "level": 2,
@@ -531,21 +507,6 @@
     },
     {
       "role": "1568785037950717983"
-    },
-    {
-      "role": "1573398937401032835"
-    },
-    {
-      "role": "1573398938671779941"
-    },
-    {
-      "role": "1573398940026671226"
-    },
-    {
-      "role": "1573398941272252618"
-    },
-    {
-      "role": "1573398942455173314"
     },
     {
       "role": "1573398943541502125"
