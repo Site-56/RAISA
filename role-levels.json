@@ -116,26 +116,8 @@
       "agent": false
     },
     {
-      "role": "1573395173461729391",
-      "name": "[SA] Site Administrator",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573395192994726009",
       "name": "[PO] Personnel Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573395194647412810",
-      "name": "[PA] Personnel Assistant",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1573395204810215627",
-      "name": "[EAO] External Affairs Officer",
       "level": 2,
       "agent": false
     },
@@ -623,16 +605,7 @@
       "role": "1568785037950717983"
     },
     {
-      "role": "1573395173461729391"
-    },
-    {
       "role": "1573395192994726009"
-    },
-    {
-      "role": "1573395194647412810"
-    },
-    {
-      "role": "1573395204810215627"
     },
     {
       "role": "1573395334892093470"
