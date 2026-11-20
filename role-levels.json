@@ -110,36 +110,6 @@
       "agent": false
     },
     {
-      "role": "1573380562800877588",
-      "name": "[PB] Senior Personnel Officer",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573380563786797248",
-      "name": "[PB] Personnel Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573380564571004928",
-      "name": "[PB] Personnel Assistant",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1573380567980970076",
-      "name": "[EA] Senior External Affairs Officer",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573380568941461535",
-      "name": "[EA] External Affairs Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1573380569788710943",
       "name": "[EA] External Affairs Assistant",
       "level": 1,
@@ -864,21 +834,6 @@
     },
     {
       "role": "1573381221767979141"
-    },
-    {
-      "role": "1573380562800877588"
-    },
-    {
-      "role": "1573380563786797248"
-    },
-    {
-      "role": "1573380564571004928"
-    },
-    {
-      "role": "1573380567980970076"
-    },
-    {
-      "role": "1573380568941461535"
     },
     {
       "role": "1573380569788710943"
