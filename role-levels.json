@@ -62,36 +62,6 @@
       "agent": false
     },
     {
-      "role": "1573380975033847908",
-      "name": "[SEC] Director of Security",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573380976174825493",
-      "name": "[SEC] Deputy Director of Security",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573380977089060986",
-      "name": "[SEC] Assistant Director of Security",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1569026862703841491",
-      "name": "[SEC] Security Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573380983116398654",
-      "name": "[SEC] Security Cadet",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573381148724174939",
       "name": "[TRD] Tactical Response Commander",
       "level": 4,
@@ -683,9 +653,6 @@
       "role": "1568785037950717983"
     },
     {
-      "role": "1569026862703841491"
-    },
-    {
       "role": "1569026905036955708"
     },
     {
@@ -780,18 +747,6 @@
     },
     {
       "role": "1573381221767979141"
-    },
-    {
-      "role": "1573380975033847908"
-    },
-    {
-      "role": "1573380976174825493"
-    },
-    {
-      "role": "1573380977089060986"
-    },
-    {
-      "role": "1573380983116398654"
     },
     {
       "role": "1573395169167020232"
