@@ -110,42 +110,6 @@
       "agent": false
     },
     {
-      "role": "1573390284102967428",
-      "name": "[TFC] Director of Task Force Command",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573390286531330150",
-      "name": "[TFC] Deputy Director of Task Force Command",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573390287621857360",
-      "name": "[TFC] Task Force Operations Officer",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573390288381026479",
-      "name": "[TFC] Task Force Liaison",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573390290079842417",
-      "name": "[TFC] Task Force Coordinator",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573390291455574068",
-      "name": "[TFC] Task Force Command Assistant",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573380975033847908",
       "name": "[SEC] Director of Security",
       "level": 4,
@@ -744,6 +708,42 @@
       "name": "[RAISA] Records Trainee",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1573390284102967428",
+      "name": "[TFC] Director of Task Force Command",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573390286531330150",
+      "name": "[TFC] Deputy Director of Task Force Command",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573390287621857360",
+      "name": "[TFC] Task Force Operations Officer",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573390288381026479",
+      "name": "[TFC] Task Force Liaison",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573390290079842417",
+      "name": "[TFC] Task Force Coordinator",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573390291455574068",
+      "name": "[TFC] Task Force Command Assistant",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -1226,24 +1226,6 @@
       }
     },
     {
-      "guild": "1568315022214692927",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "div:Task Force Command": "1573390283633336420",
-        "rank:Director of Task Force Command": "1573390284102967428",
-        "rank:Deputy Director of Task Force Command": "1573390286531330150",
-        "rank:Task Force Operations Officer": "1573390287621857360",
-        "rank:Task Force Liaison": "1573390288381026479",
-        "rank:Task Force Coordinator": "1573390290079842417",
-        "rank:Task Force Command Assistant": "1573390291455574068",
-        "cat:Task Force Command": "1573390292684378214"
-      }
-    },
-    {
       "guild": "1569023176510414976",
       "director": "",
       "uploader": "",
@@ -1465,6 +1447,24 @@
         "rank:Records Officer": "1573380826987630612",
         "rank:Junior Records Officer": "1573380829353086997",
         "rank:Records Trainee": "1573380831689441391"
+      }
+    },
+    {
+      "guild": "1568315022214692927",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "div:Task Force Command": "1573390283633336420",
+        "rank:Director of Task Force Command": "1573390284102967428",
+        "rank:Deputy Director of Task Force Command": "1573390286531330150",
+        "rank:Task Force Operations Officer": "1573390287621857360",
+        "rank:Task Force Liaison": "1573390288381026479",
+        "rank:Task Force Coordinator": "1573390290079842417",
+        "rank:Task Force Command Assistant": "1573390291455574068",
+        "cat:Task Force Command": "1573390292684378214"
       }
     }
   ]
