@@ -68,12 +68,6 @@
       "agent": false
     },
     {
-      "role": "1568785078333739138",
-      "name": "[AO] Site Administration Board",
-      "level": 5,
-      "agent": false
-    },
-    {
       "role": "1568785106431119400",
       "name": "[EA] Head of External Affairs",
       "level": 3,
@@ -1047,9 +1041,6 @@
     },
     {
       "role": "1568785076949483531"
-    },
-    {
-      "role": "1568785078333739138"
     },
     {
       "role": "1568785106431119400"
