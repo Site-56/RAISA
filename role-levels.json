@@ -68,21 +68,9 @@
       "agent": false
     },
     {
-      "role": "1573396065275609282",
-      "name": "[SE] Senior Engineer",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573396069994467409",
       "name": "[TEC] Technician",
       "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573396073706299406",
-      "name": "[ET] Engineering Trainee",
-      "level": 1,
       "agent": false
     },
     {
@@ -452,13 +440,7 @@
       "role": "1573396059093336235"
     },
     {
-      "role": "1573396065275609282"
-    },
-    {
       "role": "1573396069994467409"
-    },
-    {
-      "role": "1573396073706299406"
     },
     {
       "role": "1573396081172021248"
