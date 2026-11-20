@@ -392,27 +392,9 @@
       "agent": false
     },
     {
-      "role": "1573395334892093470",
-      "name": "[SD] Scientific Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573395338163916994",
-      "name": "[LR] Lead Researcher",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573395342739636348",
       "name": "[SR] Senior Researcher",
       "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573395345311006790",
-      "name": "[RES] Researcher",
-      "level": 2,
       "agent": false
     },
     {
@@ -653,16 +635,7 @@
       "role": "1568785037950717983"
     },
     {
-      "role": "1573395334892093470"
-    },
-    {
-      "role": "1573395338163916994"
-    },
-    {
       "role": "1573395342739636348"
-    },
-    {
-      "role": "1573395345311006790"
     },
     {
       "role": "1573395349505048628"
