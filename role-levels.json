@@ -74,33 +74,9 @@
       "agent": false
     },
     {
-      "role": "1568785104472641687",
-      "name": "[IA] Junior Internal Affairs Agent",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1568785106431119400",
       "name": "[EA] Head of External Affairs",
       "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785107475632168",
-      "name": "[EA] Senior External Affairs Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785109891686538",
-      "name": "[EA] External Affairs Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785110692667454",
-      "name": "[EA] Junior External Affairs Agent",
-      "level": 1,
       "agent": false
     },
     {
@@ -1076,19 +1052,7 @@
       "role": "1568785078333739138"
     },
     {
-      "role": "1568785104472641687"
-    },
-    {
       "role": "1568785106431119400"
-    },
-    {
-      "role": "1568785107475632168"
-    },
-    {
-      "role": "1568785109891686538"
-    },
-    {
-      "role": "1568785110692667454"
     },
     {
       "role": "1568785123908919439"
