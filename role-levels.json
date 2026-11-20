@@ -356,12 +356,6 @@
       "agent": false
     },
     {
-      "role": "1569026873583992832",
-      "name": "[ESD] ESD Operations Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1569026874330321017",
       "name": "[ESD] Security Agent",
       "level": 1,
@@ -1065,9 +1059,6 @@
     },
     {
       "role": "1569026862703841491"
-    },
-    {
-      "role": "1569026873583992832"
     },
     {
       "role": "1569026874330321017"
