@@ -62,42 +62,6 @@
       "agent": false
     },
     {
-      "role": "1568785174026518688",
-      "name": "[MTF] Platoon Leader",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785174873899121",
-      "name": "[MTF] Squad Leader",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785176689901609",
-      "name": "[MTF] Senior Operative",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785178019635273",
-      "name": "[MTF] Operative",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785179626176669",
-      "name": "[MTF] Junior Operative",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568785180695461908",
-      "name": "[MTF] Recruit",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1568785183434350738",
       "name": "[TO] Tactical Operations Director",
       "level": 4,
@@ -882,24 +846,6 @@
     },
     {
       "role": "1568785152363208805"
-    },
-    {
-      "role": "1568785174026518688"
-    },
-    {
-      "role": "1568785174873899121"
-    },
-    {
-      "role": "1568785176689901609"
-    },
-    {
-      "role": "1568785178019635273"
-    },
-    {
-      "role": "1568785179626176669"
-    },
-    {
-      "role": "1568785180695461908"
     },
     {
       "role": "1568785183434350738"
