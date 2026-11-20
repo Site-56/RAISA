@@ -134,24 +134,6 @@
       "agent": false
     },
     {
-      "role": "1568785061203943485",
-      "name": "[EC] Ethics Investigator",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785061774495788",
-      "name": "[EC] Ethics Auditor",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785062655164661",
-      "name": "[EC] Ethics Associate",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1568785076949483531",
       "name": "[AO] Site Director",
       "level": 5,
@@ -777,15 +759,6 @@
     },
     {
       "role": "1568785037950717983"
-    },
-    {
-      "role": "1568785061203943485"
-    },
-    {
-      "role": "1568785061774495788"
-    },
-    {
-      "role": "1568785062655164661"
     },
     {
       "role": "1568785076949483531"
