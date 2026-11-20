@@ -140,48 +140,6 @@
       "agent": false
     },
     {
-      "role": "1573380492038905997",
-      "name": "[EC] Ethics Committee Vice-Chair",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1573380492462391407",
-      "name": "[EC] Ethics Committee Member",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573380493888458803",
-      "name": "[EC] Senior Ethics Liaison",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573380506249068706",
-      "name": "[EC] Ethics Liaison",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1568785061203943485",
-      "name": "[EC] Ethics Investigator",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785061774495788",
-      "name": "[EC] Ethics Auditor",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785062655164661",
-      "name": "[EC] Ethics Associate",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573381194425434263",
       "name": "[ELD] Director of Engineering",
       "level": 4,
@@ -682,6 +640,48 @@
     {
       "role": "1573381155103842304",
       "name": "[TRD] Tactical Response Recruit",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1573380492038905997",
+      "name": "[EC] Ethics Committee Vice-Chair",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1573380492462391407",
+      "name": "[EC] Ethics Committee Member",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573380493888458803",
+      "name": "[EC] Senior Ethics Liaison",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573380506249068706",
+      "name": "[EC] Ethics Liaison",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1568785061203943485",
+      "name": "[EC] Ethics Investigator",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785061774495788",
+      "name": "[EC] Ethics Auditor",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785062655164661",
+      "name": "[EC] Ethics Associate",
       "level": 1,
       "agent": false
     }
@@ -1236,26 +1236,6 @@
       }
     },
     {
-      "guild": "1568312640235896886",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "div:Ethics Committee": "1568785053578829916",
-        "rank:Ethics Investigator": "1568785061203943485",
-        "rank:Ethics Auditor": "1568785061774495788",
-        "rank:Ethics Associate": "1568785062655164661",
-        "cat:Ethics Committee": "1568785064840405153",
-        "rank:Ethics Committee Chair": "1573380490709307716",
-        "rank:Ethics Committee Vice-Chair": "1573380492038905997",
-        "rank:Ethics Committee Member": "1573380492462391407",
-        "rank:Senior Ethics Liaison": "1573380493888458803",
-        "rank:Ethics Liaison": "1573380506249068706"
-      }
-    },
-    {
       "guild": "1569024245047107684",
       "director": "",
       "uploader": "",
@@ -1436,6 +1416,26 @@
         "rank:Tactical Response Officer": "1573381153916846203",
         "rank:Tactical Response Recruit": "1573381155103842304",
         "cat:Tactical Response Department": "1573381155967860962"
+      }
+    },
+    {
+      "guild": "1568312640235896886",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "div:Ethics Committee": "1568785053578829916",
+        "rank:Ethics Investigator": "1568785061203943485",
+        "rank:Ethics Auditor": "1568785061774495788",
+        "rank:Ethics Associate": "1568785062655164661",
+        "cat:Ethics Committee": "1568785064840405153",
+        "rank:Ethics Committee Chair": "1573380490709307716",
+        "rank:Ethics Committee Vice-Chair": "1573380492038905997",
+        "rank:Ethics Committee Member": "1573380492462391407",
+        "rank:Senior Ethics Liaison": "1573380493888458803",
+        "rank:Ethics Liaison": "1573380506249068706"
       }
     }
   ]
