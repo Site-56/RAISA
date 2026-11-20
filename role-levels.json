@@ -110,18 +110,6 @@
       "agent": false
     },
     {
-      "role": "1573380556572463114",
-      "name": "[AO] Assistant Site Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573380557445009479",
-      "name": "[AO] Site Administrator",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573380558342455406",
       "name": "[AO] Senior Administrative Officer",
       "level": 3,
@@ -900,12 +888,6 @@
     },
     {
       "role": "1573381221767979141"
-    },
-    {
-      "role": "1573380556572463114"
-    },
-    {
-      "role": "1573380557445009479"
     },
     {
       "role": "1573380558342455406"
