@@ -74,12 +74,6 @@
       "agent": false
     },
     {
-      "role": "1568785091679748107",
-      "name": "[TA] Head of Training Administration",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1568785092657287332",
       "name": "[TA] Senior Training Agent",
       "level": 2,
@@ -1122,9 +1116,6 @@
     },
     {
       "role": "1568785078333739138"
-    },
-    {
-      "role": "1568785091679748107"
     },
     {
       "role": "1568785092657287332"
