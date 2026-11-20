@@ -326,12 +326,6 @@
       "agent": false
     },
     {
-      "role": "1573395687398441004",
-      "name": "[ISA] ISD Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1573395725742776351",
       "name": "[JIA] Junior ISD Agent",
       "level": 1,
@@ -346,12 +340,6 @@
     {
       "role": "1573395691869307052",
       "name": "[DI] Director of Intelligence",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573395693240979519",
-      "name": "[DDI] Deputy Director of Intelligence",
       "level": 4,
       "agent": false
     },
@@ -377,24 +365,6 @@
       "role": "1573395696558674225",
       "name": "[FA] Field Agent",
       "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573395727743193220",
-      "name": "[INA] Intelligence Analyst",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573395697984610506",
-      "name": "[JFA] Junior Field Agent",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1573395698857287710",
-      "name": "[IR] Intelligence Recruit",
-      "level": 1,
       "agent": false
     },
     {
@@ -653,9 +623,6 @@
       "role": "1573395724832350348"
     },
     {
-      "role": "1573395687398441004"
-    },
-    {
       "role": "1573395725742776351"
     },
     {
@@ -663,9 +630,6 @@
     },
     {
       "role": "1573395691869307052"
-    },
-    {
-      "role": "1573395693240979519"
     },
     {
       "role": "1573395694306468072"
@@ -678,15 +642,6 @@
     },
     {
       "role": "1573395696558674225"
-    },
-    {
-      "role": "1573395727743193220"
-    },
-    {
-      "role": "1573395697984610506"
-    },
-    {
-      "role": "1573395698857287710"
     },
     {
       "role": "1573395839676715008"
@@ -1120,6 +1075,38 @@
       }
     },
     {
+      "guild": "1569161702627610757",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "x:Server Administrator": "1573395912938491947",
+        "x:Server Moderator": "1573395914364817430",
+        "div:Medical Department": "1573395915358863551",
+        "rank:Chief Medical Officer": "1573395916390531262",
+        "rank:Deputy Chief Medical Officer": "1573395917493506148",
+        "rank:Attending Physician": "1573395918466588834",
+        "rank:Head Nurse": "1573395919854903356",
+        "rank:Physician": "1573395920995754076",
+        "rank:Nurse": "1573395922476335245",
+        "rank:Paramedic": "1573395923579576320",
+        "rank:Medical Resident": "1573395924552654968",
+        "rank:Medical Trainee": "1573395925705949200",
+        "cat:Medical Department": "1573395926897262762",
+        "xdiv:Server": "1573395927912419588",
+        "x:Verified": "1573395931074924646",
+        "x:Bots": "1573395932333088809",
+        "xdiv:Pings": "1573395933327261933",
+        "x:Announcement Ping": "1573395934602076392",
+        "x:Event Ping": "1573395935453515799",
+        "x:Training Ping": "1573395936858611882",
+        "x:Poll Ping": "1573395937651327025",
+        "x:Emergency Ping": "1573395939819786321"
+      }
+    },
+    {
       "guild": "1569024245047107684",
       "director": "",
       "uploader": "",
@@ -1405,38 +1392,6 @@
         "cat:Task Force Command": "1573399493603500092",
         "xdiv:Server": "1573399494702268556",
         "xdiv:Pings": "1573399495834738708"
-      }
-    },
-    {
-      "guild": "1569161702627610757",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "x:Server Administrator": "1573395912938491947",
-        "x:Server Moderator": "1573395914364817430",
-        "div:Medical Department": "1573395915358863551",
-        "rank:Chief Medical Officer": "1573395916390531262",
-        "rank:Deputy Chief Medical Officer": "1573395917493506148",
-        "rank:Attending Physician": "1573395918466588834",
-        "rank:Head Nurse": "1573395919854903356",
-        "rank:Physician": "1573395920995754076",
-        "rank:Nurse": "1573395922476335245",
-        "rank:Paramedic": "1573395923579576320",
-        "rank:Medical Resident": "1573395924552654968",
-        "rank:Medical Trainee": "1573395925705949200",
-        "cat:Medical Department": "1573395926897262762",
-        "xdiv:Server": "1573395927912419588",
-        "x:Verified": "1573395931074924646",
-        "x:Bots": "1573395932333088809",
-        "xdiv:Pings": "1573395933327261933",
-        "x:Announcement Ping": "1573395934602076392",
-        "x:Event Ping": "1573395935453515799",
-        "x:Training Ping": "1573395936858611882",
-        "x:Poll Ping": "1573395937651327025",
-        "x:Emergency Ping": "1573395939819786321"
       }
     }
   ]
