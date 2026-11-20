@@ -62,27 +62,9 @@
       "agent": false
     },
     {
-      "role": "1573396059093336235",
-      "name": "[DE] Director of Engineering",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573396081172021248",
-      "name": "[HL] Head of Logistics",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1573396095751688353",
       "name": "[HIT] Head of IT",
       "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573396100130410667",
-      "name": "[SA] Systems Administrator",
-      "level": 2,
       "agent": false
     },
     {
@@ -419,16 +401,7 @@
       "role": "1568785037950717983"
     },
     {
-      "role": "1573396059093336235"
-    },
-    {
-      "role": "1573396081172021248"
-    },
-    {
       "role": "1573396095751688353"
-    },
-    {
-      "role": "1573396100130410667"
     },
     {
       "role": "1573398937401032835"
