@@ -356,24 +356,6 @@
       "agent": false
     },
     {
-      "role": "1573400094290739220",
-      "name": "[LO] Logistics Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573400099684483072",
-      "name": "[SSA] Senior Systems Administrator",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573400100783263947",
-      "name": "[SA] Systems Administrator",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1573402046860754984",
       "name": "[DIS] Director of Internal Security",
       "level": 4,
@@ -654,15 +636,6 @@
     },
     {
       "role": "1573399184630096023"
-    },
-    {
-      "role": "1573400094290739220"
-    },
-    {
-      "role": "1573400099684483072"
-    },
-    {
-      "role": "1573400100783263947"
     },
     {
       "role": "1573401646392803438"
