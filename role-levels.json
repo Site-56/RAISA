@@ -80,12 +80,6 @@
       "agent": false
     },
     {
-      "role": "1568785129449725982",
-      "name": "[RD] Laboratory Supervisor",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1568785127541055581",
       "name": "[RD] Researcher",
       "level": 2,
@@ -98,20 +92,8 @@
       "agent": false
     },
     {
-      "role": "1568785130485448754",
-      "name": "[RD] Laboratory Technician",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1568785131328508005",
       "name": "[RD] Research Assistant",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568785132180078743",
-      "name": "[RD] Research Trainee",
       "level": 1,
       "agent": false
     },
@@ -1037,16 +1019,7 @@
       "role": "1568785128623181934"
     },
     {
-      "role": "1568785129449725982"
-    },
-    {
-      "role": "1568785130485448754"
-    },
-    {
       "role": "1568785131328508005"
-    },
-    {
-      "role": "1568785132180078743"
     },
     {
       "role": "1568785145484411092"
