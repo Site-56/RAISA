@@ -74,24 +74,6 @@
       "agent": false
     },
     {
-      "role": "1568785123908919439",
-      "name": "[RD] Director of Research",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1568785125242576996",
-      "name": "[RD] Deputy Director of Research",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785125871714336",
-      "name": "[RD] Chief Researcher",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1568785126828155002",
       "name": "[RD] Senior Researcher",
       "level": 3,
@@ -1044,15 +1026,6 @@
     },
     {
       "role": "1568785106431119400"
-    },
-    {
-      "role": "1568785123908919439"
-    },
-    {
-      "role": "1568785125242576996"
-    },
-    {
-      "role": "1568785125871714336"
     },
     {
       "role": "1568785126828155002"
