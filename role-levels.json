@@ -62,12 +62,6 @@
       "agent": false
     },
     {
-      "role": "1573398603072929812",
-      "name": "[EAS] Ethics Associate",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573398621347520613",
       "name": "[DS] Director of Security",
       "level": 4,
@@ -660,6 +654,48 @@
       "name": "[ITT] IT Technician",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1573398938671779941",
+      "name": "[ECVC] Ethics Committee Vice-Chair",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1573398940026671226",
+      "name": "[ECM] Ethics Committee Member",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573398941272252618",
+      "name": "[SEL] Senior Ethics Liaison",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573398942455173314",
+      "name": "[EL] Ethics Liaison",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573398943541502125",
+      "name": "[EI] Ethics Investigator",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573398944841597038",
+      "name": "[EAU] Ethics Auditor",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573398946255216682",
+      "name": "[EAS] Ethics Associate",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -968,9 +1004,6 @@
       "role": "1573396103808950324"
     },
     {
-      "role": "1573398603072929812"
-    },
-    {
       "role": "1573398621347520613"
     },
     {
@@ -996,6 +1029,30 @@
     },
     {
       "role": "1573398638112276493"
+    },
+    {
+      "role": "1573398937401032835"
+    },
+    {
+      "role": "1573398938671779941"
+    },
+    {
+      "role": "1573398940026671226"
+    },
+    {
+      "role": "1573398941272252618"
+    },
+    {
+      "role": "1573398942455173314"
+    },
+    {
+      "role": "1573398943541502125"
+    },
+    {
+      "role": "1573398944841597038"
+    },
+    {
+      "role": "1573398946255216682"
     }
   ],
   "servers": [
@@ -1118,37 +1175,6 @@
         "staff:Tier 1 Supporter ($10/mo)": "1568846867180028005",
         "staff:Tier 2 Supporter ($6/mo)": "1568846868249714839",
         "staff:Tier 3 Supporter ($3/mo)": "1568846869117796482"
-      }
-    },
-    {
-      "guild": "1568312640235896886",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "div:Ethics Committee": "1573395047829741663",
-        "rank:Ethics Investigator": "1573398600787165316",
-        "rank:Ethics Auditor": "1573398602154385620",
-        "rank:Ethics Associate": "1573398603072929812",
-        "cat:Ethics Committee": "1573395053307764966",
-        "rank:Ethics Committee Chair": "1573398594285863040",
-        "rank:Ethics Committee Vice-Chair": "1573398596689076244",
-        "rank:Ethics Committee Member": "1573398597821530195",
-        "rank:Senior Ethics Liaison": "1573398598723436675",
-        "rank:Ethics Liaison": "1573398599457439857",
-        "x:Server Administrator": "1573395046118588466",
-        "x:Server Moderator": "1573395047221567720",
-        "xdiv:Server": "1573395054561853644",
-        "x:Verified": "1573395055262310414",
-        "x:Bots": "1573395056830849074",
-        "xdiv:Pings": "1573395057787277402",
-        "x:Announcement Ping": "1573395060496666784",
-        "x:Event Ping": "1573395062237434020",
-        "x:Training Ping": "1573395065382899802",
-        "x:Poll Ping": "1573395067480051842",
-        "x:Hearing Ping": "1573395069761749043"
       }
     },
     {
@@ -1470,6 +1496,37 @@
         "x:Training Ping": "1573396121181753657",
         "x:Poll Ping": "1573396123039563879",
         "x:Maintenance Ping": "1573396126118191256"
+      }
+    },
+    {
+      "guild": "1568312640235896886",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "x:Server Administrator": "1573395046118588466",
+        "x:Server Moderator": "1573395047221567720",
+        "x:Verified": "1573395055262310414",
+        "x:Bots": "1573395056830849074",
+        "x:Announcement Ping": "1573395060496666784",
+        "x:Event Ping": "1573395062237434020",
+        "x:Training Ping": "1573395065382899802",
+        "x:Poll Ping": "1573395067480051842",
+        "x:Hearing Ping": "1573395069761749043",
+        "div:Ethics Committee": "1573398851891495085",
+        "rank:Ethics Committee Chair": "1573398937401032835",
+        "rank:Ethics Committee Vice-Chair": "1573398938671779941",
+        "rank:Ethics Committee Member": "1573398940026671226",
+        "rank:Senior Ethics Liaison": "1573398941272252618",
+        "rank:Ethics Liaison": "1573398942455173314",
+        "rank:Ethics Investigator": "1573398943541502125",
+        "rank:Ethics Auditor": "1573398944841597038",
+        "rank:Ethics Associate": "1573398946255216682",
+        "cat:Ethics Committee": "1573398948234666116",
+        "xdiv:Server": "1573398949836882061",
+        "xdiv:Pings": "1573398951095177367"
       }
     }
   ]
