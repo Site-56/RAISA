@@ -164,48 +164,6 @@
       "agent": false
     },
     {
-      "role": "1573395839676715008",
-      "name": "[TRC] Tactical Response Commander",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573395840796590110",
-      "name": "[DTRC] Deputy Tactical Response Commander",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573395843325628469",
-      "name": "[TC] Tactical Captain",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573395844743561347",
-      "name": "[TTL] Tactical Team Leader",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573395845477306421",
-      "name": "[STRO] Senior Tactical Response Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573395846412771362",
-      "name": "[TRO] Tactical Response Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573395847759269898",
-      "name": "[TRR] Tactical Response Recruit",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573395916390531262",
       "name": "[CMO] Chief Medical Officer",
       "level": 4,
@@ -616,6 +574,48 @@
     {
       "role": "1573399352913821697",
       "name": "[CT] Containment Technician",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1573395839676715008",
+      "name": "[TRC] Tactical Response Commander",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573395840796590110",
+      "name": "[DTRC] Deputy Tactical Response Commander",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573395843325628469",
+      "name": "[TC] Tactical Captain",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573395844743561347",
+      "name": "[TTL] Tactical Team Leader",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573395845477306421",
+      "name": "[STRO] Senior Tactical Response Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573395846412771362",
+      "name": "[TRO] Tactical Response Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573395847759269898",
+      "name": "[TRR] Tactical Response Recruit",
       "level": 1,
       "agent": false
     }
@@ -1140,36 +1140,6 @@
       }
     },
     {
-      "guild": "1573377671654801469",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "x:Server Administrator": "1573395835838922783",
-        "x:Server Moderator": "1573395836795359322",
-        "div:Tactical Response Department": "1573395838049190000",
-        "rank:Tactical Response Commander": "1573395839676715008",
-        "rank:Deputy Tactical Response Commander": "1573395840796590110",
-        "rank:Tactical Captain": "1573395843325628469",
-        "rank:Tactical Team Leader": "1573395844743561347",
-        "rank:Senior Tactical Response Officer": "1573395845477306421",
-        "rank:Tactical Response Officer": "1573395846412771362",
-        "rank:Tactical Response Recruit": "1573395847759269898",
-        "cat:Tactical Response Department": "1573395848513986613",
-        "xdiv:Server": "1573395849776599050",
-        "x:Verified": "1573395851051671673",
-        "x:Bots": "1573395852016230482",
-        "xdiv:Pings": "1573395852536324319",
-        "x:Announcement Ping": "1573395853928956084",
-        "x:Event Ping": "1573395854793121862",
-        "x:Training Ping": "1573395857322025041",
-        "x:Poll Ping": "1573395858370592932",
-        "x:Deployment Ping": "1573395860157366442"
-      }
-    },
-    {
       "guild": "1569161702627610757",
       "director": "",
       "uploader": "",
@@ -1428,6 +1398,36 @@
         "cat:Containment Division": "1573399353777979443",
         "xdiv:Server": "1573399354671243444",
         "xdiv:Pings": "1573399355958759565"
+      }
+    },
+    {
+      "guild": "1573377671654801469",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "x:Server Administrator": "1573395835838922783",
+        "x:Server Moderator": "1573395836795359322",
+        "div:Tactical Response Department": "1573395838049190000",
+        "rank:Tactical Response Commander": "1573395839676715008",
+        "rank:Deputy Tactical Response Commander": "1573395840796590110",
+        "rank:Tactical Captain": "1573395843325628469",
+        "rank:Tactical Team Leader": "1573395844743561347",
+        "rank:Senior Tactical Response Officer": "1573395845477306421",
+        "rank:Tactical Response Officer": "1573395846412771362",
+        "rank:Tactical Response Recruit": "1573395847759269898",
+        "cat:Tactical Response Department": "1573395848513986613",
+        "xdiv:Server": "1573395849776599050",
+        "x:Verified": "1573395851051671673",
+        "x:Bots": "1573395852016230482",
+        "xdiv:Pings": "1573395852536324319",
+        "x:Announcement Ping": "1573395853928956084",
+        "x:Event Ping": "1573395854793121862",
+        "x:Training Ping": "1573395857322025041",
+        "x:Poll Ping": "1573395858370592932",
+        "x:Deployment Ping": "1573395860157366442"
       }
     }
   ]
