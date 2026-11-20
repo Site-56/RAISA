@@ -122,26 +122,8 @@
       "agent": false
     },
     {
-      "role": "1573395170232111205",
-      "name": "[DSD] Deputy Site Director",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1573395171817562122",
-      "name": "[ASD] Assistant Site Director",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1573395173461729391",
       "name": "[SA] Site Administrator",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573395175701749941",
-      "name": "[SAO] Senior Administrative Officer",
       "level": 3,
       "agent": false
     },
@@ -149,12 +131,6 @@
       "role": "1573395177781854281",
       "name": "[ADO] Administrative Officer",
       "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573395180466475038",
-      "name": "[AA] Administrative Assistant",
-      "level": 1,
       "agent": false
     },
     {
@@ -668,22 +644,10 @@
       "role": "1573395169167020232"
     },
     {
-      "role": "1573395170232111205"
-    },
-    {
-      "role": "1573395171817562122"
-    },
-    {
       "role": "1573395173461729391"
     },
     {
-      "role": "1573395175701749941"
-    },
-    {
       "role": "1573395177781854281"
-    },
-    {
-      "role": "1573395180466475038"
     },
     {
       "role": "1573395192994726009"
