@@ -62,18 +62,6 @@
       "agent": false
     },
     {
-      "role": "1573381194425434263",
-      "name": "[ELD] Director of Engineering",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573381195561963520",
-      "name": "[ELD] Deputy Director of Engineering",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1573381197847986257",
       "name": "[ELD] Lead Engineer",
       "level": 3,
@@ -585,12 +573,6 @@
     },
     {
       "role": "1568785037950717983"
-    },
-    {
-      "role": "1573381194425434263"
-    },
-    {
-      "role": "1573381195561963520"
     },
     {
       "role": "1573381197847986257"
