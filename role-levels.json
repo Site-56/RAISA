@@ -356,39 +356,9 @@
       "agent": false
     },
     {
-      "role": "1573400079136465026",
-      "name": "[DE] Director of Engineering",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573400081842053301",
-      "name": "[LE] Lead Engineer",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573400082940960858",
       "name": "[SE] Senior Engineer",
       "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573400084106969239",
-      "name": "[ENG] Engineer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573400085377720443",
-      "name": "[TEC] Technician",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573400086615167131",
-      "name": "[JE] Junior Engineer",
-      "level": 1,
       "agent": false
     },
     {
@@ -704,22 +674,7 @@
       "role": "1573399184630096023"
     },
     {
-      "role": "1573400079136465026"
-    },
-    {
-      "role": "1573400081842053301"
-    },
-    {
       "role": "1573400082940960858"
-    },
-    {
-      "role": "1573400084106969239"
-    },
-    {
-      "role": "1573400085377720443"
-    },
-    {
-      "role": "1573400086615167131"
     },
     {
       "role": "1573400094290739220"
