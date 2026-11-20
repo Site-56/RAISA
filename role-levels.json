@@ -110,18 +110,6 @@
       "agent": false
     },
     {
-      "role": "1573380818842423357",
-      "name": "[RAISA] Deputy RAISA Director",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1573380820188795093",
-      "name": "[RAISA] Assistant RAISA Director",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1573380821803597908",
       "name": "[RAISA] Records Supervisor",
       "level": 3,
@@ -136,12 +124,6 @@
     {
       "role": "1573380826987630612",
       "name": "[RAISA] Records Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785152363208805",
-      "name": "[RAISA] Archivist",
       "level": 2,
       "agent": false
     },
@@ -755,12 +737,6 @@
       "role": "1568785037950717983"
     },
     {
-      "role": "1568785145484411092"
-    },
-    {
-      "role": "1568785152363208805"
-    },
-    {
       "role": "1568785237968691210"
     },
     {
@@ -879,12 +855,6 @@
     },
     {
       "role": "1573381221767979141"
-    },
-    {
-      "role": "1573380818842423357"
-    },
-    {
-      "role": "1573380820188795093"
     },
     {
       "role": "1573380821803597908"
