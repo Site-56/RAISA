@@ -320,32 +320,8 @@
       "agent": false
     },
     {
-      "role": "1569026901584908348",
-      "name": "[ELD] Engineering Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1569026902046408827",
-      "name": "[ELD] Deputy Engineering Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1569026903808016595",
-      "name": "[ELD] Chief Engineer",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1569026905036955708",
       "name": "[ELD] Senior Engineer",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1569026906123276369",
-      "name": "[ELD] Maintenance Supervisor",
       "level": 3,
       "agent": false
     },
@@ -358,12 +334,6 @@
     {
       "role": "1569026908157378570",
       "name": "[ELD] Junior Engineer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1569026909277393087",
-      "name": "[ELD] Maintenance Technician",
       "level": 2,
       "agent": false
     },
@@ -1019,28 +989,13 @@
       "role": "1569026862703841491"
     },
     {
-      "role": "1569026901584908348"
-    },
-    {
-      "role": "1569026902046408827"
-    },
-    {
-      "role": "1569026903808016595"
-    },
-    {
       "role": "1569026905036955708"
-    },
-    {
-      "role": "1569026906123276369"
     },
     {
       "role": "1569026907335434361"
     },
     {
       "role": "1569026908157378570"
-    },
-    {
-      "role": "1569026909277393087"
     },
     {
       "role": "1569026910221107422"
