@@ -110,18 +110,6 @@
       "agent": false
     },
     {
-      "role": "1573380829353086997",
-      "name": "[RAISA] Junior Records Officer",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1573380831689441391",
-      "name": "[RAISA] Records Trainee",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573390284102967428",
       "name": "[TFC] Director of Task Force Command",
       "level": 4,
@@ -837,12 +825,6 @@
     },
     {
       "role": "1573381221767979141"
-    },
-    {
-      "role": "1573380829353086997"
-    },
-    {
-      "role": "1573380831689441391"
     },
     {
       "role": "1573380865541542091"
