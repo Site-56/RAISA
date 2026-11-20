@@ -110,30 +110,6 @@
       "agent": false
     },
     {
-      "role": "1573380558342455406",
-      "name": "[AO] Senior Administrative Officer",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573380559130992873",
-      "name": "[AO] Administrative Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573380560049545326",
-      "name": "[AO] Administrative Assistant",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1573380561966211184",
-      "name": "[PB] Head of Personnel",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1573380562800877588",
       "name": "[PB] Senior Personnel Officer",
       "level": 3,
@@ -888,18 +864,6 @@
     },
     {
       "role": "1573381221767979141"
-    },
-    {
-      "role": "1573380558342455406"
-    },
-    {
-      "role": "1573380559130992873"
-    },
-    {
-      "role": "1573380560049545326"
-    },
-    {
-      "role": "1573380561966211184"
     },
     {
       "role": "1573380562800877588"
