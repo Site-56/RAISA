@@ -74,36 +74,6 @@
       "agent": false
     },
     {
-      "role": "1568785079541702727",
-      "name": "[AO] Site Management",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785080715837450",
-      "name": "[AO] Site Supervision",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785081416552481",
-      "name": "[AO] Site Staff",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785084297912423",
-      "name": "[PB] Personnel Bureau Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1568785085652533338",
-      "name": "[PO] Head of Personnel Operations",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1568785087015690369",
       "name": "[PO] Senior Personnel Agent",
       "level": 2,
@@ -1170,21 +1140,6 @@
     },
     {
       "role": "1568785078333739138"
-    },
-    {
-      "role": "1568785079541702727"
-    },
-    {
-      "role": "1568785080715837450"
-    },
-    {
-      "role": "1568785081416552481"
-    },
-    {
-      "role": "1568785084297912423"
-    },
-    {
-      "role": "1568785085652533338"
     },
     {
       "role": "1568785087015690369"
