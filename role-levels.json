@@ -128,12 +128,6 @@
       "agent": false
     },
     {
-      "role": "1573380882918809603",
-      "name": "[IA] Intelligence Supervisor",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573380884910973121",
       "name": "[IA] Senior Field Agent",
       "level": 3,
@@ -843,9 +837,6 @@
     },
     {
       "role": "1573380879064244244"
-    },
-    {
-      "role": "1573380882918809603"
     },
     {
       "role": "1573380884910973121"
