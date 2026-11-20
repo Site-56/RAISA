@@ -98,18 +98,6 @@
       "agent": false
     },
     {
-      "role": "1569025615921946745",
-      "name": "[CD] Containment Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1569025616823451809",
-      "name": "[CD] Deputy Containment Director",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1569025618064973824",
       "name": "[CD] Chief Containment Specialist",
       "level": 4,
@@ -1200,12 +1188,6 @@
     },
     {
       "role": "1568785250862239807"
-    },
-    {
-      "role": "1569025615921946745"
-    },
-    {
-      "role": "1569025616823451809"
     },
     {
       "role": "1569025618064973824"
