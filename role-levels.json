@@ -80,12 +80,6 @@
       "agent": false
     },
     {
-      "role": "1569026857599504385",
-      "name": "[SEC] Security Captain",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1569026858970783888",
       "name": "[SEC] Security Lieutenant",
       "level": 3,
@@ -705,9 +699,6 @@
     },
     {
       "role": "1568785037950717983"
-    },
-    {
-      "role": "1569026857599504385"
     },
     {
       "role": "1569026858970783888"
