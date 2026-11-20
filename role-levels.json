@@ -290,18 +290,6 @@
       "agent": false
     },
     {
-      "role": "1569026884434534491",
-      "name": "[CPD] Chief Protection Officer",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1569026885252546702",
-      "name": "[CPD] Deputy Chief Protection Officer",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1569026885835292847",
       "name": "[CPD] Protection Team Leader",
       "level": 3,
@@ -317,12 +305,6 @@
       "role": "1569026887282589740",
       "name": "[CPD] Protection Officer",
       "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1569026881443991573",
-      "name": "[TRD] Tactical Recruit",
-      "level": 1,
       "agent": false
     },
     {
@@ -1023,15 +1005,6 @@
     },
     {
       "role": "1569026862703841491"
-    },
-    {
-      "role": "1569026881443991573"
-    },
-    {
-      "role": "1569026884434534491"
-    },
-    {
-      "role": "1569026885252546702"
     },
     {
       "role": "1569026885835292847"
