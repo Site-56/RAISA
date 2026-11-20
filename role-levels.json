@@ -80,12 +80,6 @@
       "agent": false
     },
     {
-      "role": "1573380880091840542",
-      "name": "[IA] Director of Intelligence",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1573380883984031795",
       "name": "[IA] Intelligence Supervisor",
       "level": 3,
@@ -122,18 +116,6 @@
       "agent": false
     },
     {
-      "role": "1573380879064244244",
-      "name": "[IA] Director of Intelligence",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573380884910973121",
-      "name": "[IA] Senior Field Agent",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1568785238740434977",
       "name": "[IA] Field Agent",
       "level": 2,
@@ -143,12 +125,6 @@
       "role": "1568785237968691210",
       "name": "[IA] Intelligence Analyst",
       "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573380890137075742",
-      "name": "[IA] Junior Field Agent",
-      "level": 1,
       "agent": false
     },
     {
@@ -834,15 +810,6 @@
     },
     {
       "role": "1573380874819477518"
-    },
-    {
-      "role": "1573380879064244244"
-    },
-    {
-      "role": "1573380884910973121"
-    },
-    {
-      "role": "1573380890137075742"
     },
     {
       "role": "1573380975033847908"
