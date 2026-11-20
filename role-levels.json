@@ -200,54 +200,6 @@
       "agent": false
     },
     {
-      "role": "1573380818842423357",
-      "name": "[RAISA] Deputy RAISA Director",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1573380820188795093",
-      "name": "[RAISA] Assistant RAISA Director",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573380821803597908",
-      "name": "[RAISA] Records Supervisor",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573380824936620032",
-      "name": "[RAISA] Senior Records Officer",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573380826987630612",
-      "name": "[RAISA] Records Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1568785152363208805",
-      "name": "[RAISA] Archivist",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573380829353086997",
-      "name": "[RAISA] Junior Records Officer",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1573380831689441391",
-      "name": "[RAISA] Records Trainee",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573380865541542091",
       "name": "[ISD] Director of Internal Security",
       "level": 4,
@@ -742,6 +694,54 @@
     {
       "role": "1569025623823745095",
       "name": "[CON] Containment Technician",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1573380818842423357",
+      "name": "[RAISA] Deputy RAISA Director",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1573380820188795093",
+      "name": "[RAISA] Assistant RAISA Director",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573380821803597908",
+      "name": "[RAISA] Records Supervisor",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573380824936620032",
+      "name": "[RAISA] Senior Records Officer",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573380826987630612",
+      "name": "[RAISA] Records Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1568785152363208805",
+      "name": "[RAISA] Archivist",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573380829353086997",
+      "name": "[RAISA] Junior Records Officer",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1573380831689441391",
+      "name": "[RAISA] Records Trainee",
       "level": 1,
       "agent": false
     }
@@ -1265,27 +1265,6 @@
       }
     },
     {
-      "guild": "1568313673024274593",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "div:Records and Information Security Administration": "1568785143647305769",
-        "rank:RAISA Director": "1568785145484411092",
-        "rank:Archivist": "1568785152363208805",
-        "cat:Records and Information Security Administration": "1568785155865321472",
-        "rank:Deputy RAISA Director": "1573380818842423357",
-        "rank:Assistant RAISA Director": "1573380820188795093",
-        "rank:Records Supervisor": "1573380821803597908",
-        "rank:Senior Records Officer": "1573380824936620032",
-        "rank:Records Officer": "1573380826987630612",
-        "rank:Junior Records Officer": "1573380829353086997",
-        "rank:Records Trainee": "1573380831689441391"
-      }
-    },
-    {
       "guild": "1568316002217893928",
       "director": "",
       "uploader": "",
@@ -1465,6 +1444,27 @@
         "div:Containment Division": "1573380717432414403",
         "rank:Head of Containment": "1573380719709786164",
         "cat:Containment Division": "1573380727628890224"
+      }
+    },
+    {
+      "guild": "1568313673024274593",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "div:Records and Information Security Administration": "1568785143647305769",
+        "rank:RAISA Director": "1568785145484411092",
+        "rank:Archivist": "1568785152363208805",
+        "cat:Records and Information Security Administration": "1568785155865321472",
+        "rank:Deputy RAISA Director": "1573380818842423357",
+        "rank:Assistant RAISA Director": "1573380820188795093",
+        "rank:Records Supervisor": "1573380821803597908",
+        "rank:Senior Records Officer": "1573380824936620032",
+        "rank:Records Officer": "1573380826987630612",
+        "rank:Junior Records Officer": "1573380829353086997",
+        "rank:Records Trainee": "1573380831689441391"
       }
     }
   ]
