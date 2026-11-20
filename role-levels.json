@@ -92,24 +92,6 @@
       "agent": false
     },
     {
-      "role": "1569026943267901652",
-      "name": "[IT] Senior Systems Administrator",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1569026944211746996",
-      "name": "[IT] Systems Administrator",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1569026947302826105",
-      "name": "[IT] IT Technician",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573395049213984829",
       "name": "[EC] Ethics Investigator",
       "level": 2,
@@ -603,15 +585,6 @@
     },
     {
       "role": "1568785037950717983"
-    },
-    {
-      "role": "1569026943267901652"
-    },
-    {
-      "role": "1569026944211746996"
-    },
-    {
-      "role": "1569026947302826105"
     },
     {
       "role": "1573381194425434263"
