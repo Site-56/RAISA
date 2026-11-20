@@ -80,36 +80,6 @@
       "agent": false
     },
     {
-      "role": "1569026905036955708",
-      "name": "[ELD] Senior Engineer",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1569026907335434361",
-      "name": "[ELD] Engineer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1569026910221107422",
-      "name": "[ELD] Technician",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1569026908157378570",
-      "name": "[ELD] Junior Engineer",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1569026911126945822",
-      "name": "[ELD] Engineering Trainee",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573381213480157274",
       "name": "[LOG] Head of Logistics",
       "level": 4,
@@ -651,21 +621,6 @@
     },
     {
       "role": "1568785037950717983"
-    },
-    {
-      "role": "1569026905036955708"
-    },
-    {
-      "role": "1569026907335434361"
-    },
-    {
-      "role": "1569026908157378570"
-    },
-    {
-      "role": "1569026910221107422"
-    },
-    {
-      "role": "1569026911126945822"
     },
     {
       "role": "1569026919830134844"
