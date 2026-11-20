@@ -498,6 +498,54 @@
       "name": "[EAA] External Affairs Assistant",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1573401853838753975",
+      "name": "[DRD] Deputy RAISA Director",
+      "level": 5,
+      "agent": false
+    },
+    {
+      "role": "1573401854858108928",
+      "name": "[ARD] Assistant RAISA Director",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573401855554224149",
+      "name": "[RS] Records Supervisor",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573401856518918266",
+      "name": "[SRO] Senior Records Officer",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573401857299321054",
+      "name": "[RO] Records Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573401858502824177",
+      "name": "[ARC] Archivist",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573401861753667706",
+      "name": "[JRO] Junior Records Officer",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1573401862961373385",
+      "name": "[RT] Records Trainee",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -768,6 +816,33 @@
     },
     {
       "role": "1573401773450727624"
+    },
+    {
+      "role": "1573401852610089023"
+    },
+    {
+      "role": "1573401853838753975"
+    },
+    {
+      "role": "1573401854858108928"
+    },
+    {
+      "role": "1573401855554224149"
+    },
+    {
+      "role": "1573401856518918266"
+    },
+    {
+      "role": "1573401857299321054"
+    },
+    {
+      "role": "1573401858502824177"
+    },
+    {
+      "role": "1573401861753667706"
+    },
+    {
+      "role": "1573401862961373385"
     }
   ],
   "servers": [
@@ -931,38 +1006,6 @@
         "x:Training Ping": "1573395707203944628",
         "x:Poll Ping": "1573395708244140202",
         "x:Briefing Ping": "1573395709229670443"
-      }
-    },
-    {
-      "guild": "1568313673024274593",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "x:Server Administrator": "1573395473153265665",
-        "x:Server Moderator": "1573395474440921168",
-        "x:Verified": "1573395488026394628",
-        "x:Bots": "1573395491692089386",
-        "x:Announcement Ping": "1573395496154693642",
-        "x:Event Ping": "1573395497912238122",
-        "x:Training Ping": "1573395499933900872",
-        "x:Poll Ping": "1573395502152552622",
-        "x:Archive Ping": "1573395504497164302",
-        "div:Records and Information Security Administration": "1573399428989984778",
-        "rank:RAISA Director": "1573399430068043827",
-        "rank:Deputy RAISA Director": "1573399431582318612",
-        "rank:Assistant RAISA Director": "1573399432567718010",
-        "rank:Records Supervisor": "1573399434308493512",
-        "rank:Senior Records Officer": "1573399436594253874",
-        "rank:Records Officer": "1573399439706562733",
-        "rank:Archivist": "1573399440373452897",
-        "rank:Junior Records Officer": "1573399442768273530",
-        "rank:Records Trainee": "1573399444630671581",
-        "cat:Records and Information Security Administration": "1573399445385773078",
-        "xdiv:Server": "1573399446346141786",
-        "xdiv:Pings": "1573399450871795832"
       }
     },
     {
@@ -1242,6 +1285,38 @@
         "cat:External Affairs": "1573399185531863162",
         "xdiv:Server": "1573399186345562186",
         "xdiv:Pings": "1573399187607781430"
+      }
+    },
+    {
+      "guild": "1568313673024274593",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "x:Server Administrator": "1573395473153265665",
+        "x:Server Moderator": "1573395474440921168",
+        "x:Verified": "1573395488026394628",
+        "x:Bots": "1573395491692089386",
+        "x:Announcement Ping": "1573395496154693642",
+        "x:Event Ping": "1573395497912238122",
+        "x:Training Ping": "1573395499933900872",
+        "x:Poll Ping": "1573395502152552622",
+        "x:Archive Ping": "1573395504497164302",
+        "div:Records and Information Security Administration": "1573401851796136026",
+        "rank:RAISA Director": "1573401852610089023",
+        "rank:Deputy RAISA Director": "1573401853838753975",
+        "rank:Assistant RAISA Director": "1573401854858108928",
+        "rank:Records Supervisor": "1573401855554224149",
+        "rank:Senior Records Officer": "1573401856518918266",
+        "rank:Records Officer": "1573401857299321054",
+        "rank:Archivist": "1573401858502824177",
+        "rank:Junior Records Officer": "1573401861753667706",
+        "rank:Records Trainee": "1573401862961373385",
+        "cat:Records and Information Security Administration": "1573401863951483041",
+        "xdiv:Server": "1573401864559403133",
+        "xdiv:Pings": "1573401865712967690"
       }
     }
   ]
