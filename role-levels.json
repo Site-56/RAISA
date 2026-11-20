@@ -110,60 +110,6 @@
       "agent": false
     },
     {
-      "role": "1569446559064662147",
-      "name": "[MD] Chief Medical Officer",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573381149172957236",
-      "name": "[MD] Deputy Chief Medical Officer",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573381150892884108",
-      "name": "[MD] Attending Physician",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573381151769497800",
-      "name": "[MD] Head Nurse",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1569446572138307635",
-      "name": "[MD] Physician",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1569446574851887175",
-      "name": "[MD] Nurse",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573381156026589346",
-      "name": "[MD] Paramedic",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573381156626243728",
-      "name": "[MD] Medical Resident",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1569446576101924906",
-      "name": "[MD] Medical Trainee",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573381148724174939",
       "name": "[TRD] Tactical Response Commander",
       "level": 4,
@@ -744,6 +690,60 @@
       "name": "[CON] Containment Technician",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1569446559064662147",
+      "name": "[MD] Chief Medical Officer",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573381149172957236",
+      "name": "[MD] Deputy Chief Medical Officer",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573381150892884108",
+      "name": "[MD] Attending Physician",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573381151769497800",
+      "name": "[MD] Head Nurse",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1569446572138307635",
+      "name": "[MD] Physician",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1569446574851887175",
+      "name": "[MD] Nurse",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573381156026589346",
+      "name": "[MD] Paramedic",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573381156626243728",
+      "name": "[MD] Medical Resident",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1569446576101924906",
+      "name": "[MD] Medical Trainee",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -1226,27 +1226,6 @@
       }
     },
     {
-      "guild": "1569161702627610757",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "div:Medical Department": "1569446555444969673",
-        "rank:Chief Medical Officer": "1569446559064662147",
-        "rank:Physician": "1569446572138307635",
-        "rank:Nurse": "1569446574851887175",
-        "rank:Medical Trainee": "1569446576101924906",
-        "cat:Medical Department": "1569446577905606826",
-        "rank:Deputy Chief Medical Officer": "1573381149172957236",
-        "rank:Attending Physician": "1573381150892884108",
-        "rank:Head Nurse": "1573381151769497800",
-        "rank:Paramedic": "1573381156026589346",
-        "rank:Medical Resident": "1573381156626243728"
-      }
-    },
-    {
       "guild": "1573377671654801469",
       "director": "",
       "uploader": "",
@@ -1465,6 +1444,27 @@
         "div:Containment Division": "1573380717432414403",
         "rank:Head of Containment": "1573380719709786164",
         "cat:Containment Division": "1573380727628890224"
+      }
+    },
+    {
+      "guild": "1569161702627610757",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "div:Medical Department": "1569446555444969673",
+        "rank:Chief Medical Officer": "1569446559064662147",
+        "rank:Physician": "1569446572138307635",
+        "rank:Nurse": "1569446574851887175",
+        "rank:Medical Trainee": "1569446576101924906",
+        "cat:Medical Department": "1569446577905606826",
+        "rank:Deputy Chief Medical Officer": "1573381149172957236",
+        "rank:Attending Physician": "1573381150892884108",
+        "rank:Head Nurse": "1573381151769497800",
+        "rank:Paramedic": "1573381156026589346",
+        "rank:Medical Resident": "1573381156626243728"
       }
     }
   ]
