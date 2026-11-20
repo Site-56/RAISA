@@ -110,18 +110,6 @@
       "agent": false
     },
     {
-      "role": "1568785076949483531",
-      "name": "[AO] Site Director",
-      "level": 5,
-      "agent": false
-    },
-    {
-      "role": "1573380554949271676",
-      "name": "[AO] Deputy Site Director",
-      "level": 5,
-      "agent": false
-    },
-    {
       "role": "1573380556572463114",
       "name": "[AO] Assistant Site Director",
       "level": 4,
@@ -173,12 +161,6 @@
       "role": "1573380564571004928",
       "name": "[PB] Personnel Assistant",
       "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1568785106431119400",
-      "name": "[EA] Head of External Affairs",
-      "level": 4,
       "agent": false
     },
     {
@@ -755,12 +737,6 @@
       "role": "1568785037950717983"
     },
     {
-      "role": "1568785076949483531"
-    },
-    {
-      "role": "1568785106431119400"
-    },
-    {
       "role": "1568785126828155002"
     },
     {
@@ -924,9 +900,6 @@
     },
     {
       "role": "1573381221767979141"
-    },
-    {
-      "role": "1573380554949271676"
     },
     {
       "role": "1573380556572463114"
