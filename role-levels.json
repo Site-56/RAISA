@@ -362,24 +362,6 @@
       "agent": false
     },
     {
-      "role": "1573395916390531262",
-      "name": "[CMO] Chief Medical Officer",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573395917493506148",
-      "name": "[DCMO] Deputy Chief Medical Officer",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573395918466588834",
-      "name": "[AP] Attending Physician",
-      "level": 3,
-      "agent": false
-    },
-    {
       "role": "1573395919854903356",
       "name": "[HN] Head Nurse",
       "level": 3,
@@ -489,15 +471,6 @@
     },
     {
       "role": "1568785037950717983"
-    },
-    {
-      "role": "1573395916390531262"
-    },
-    {
-      "role": "1573395917493506148"
-    },
-    {
-      "role": "1573395918466588834"
     },
     {
       "role": "1573395919854903356"
