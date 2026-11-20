@@ -362,24 +362,6 @@
       "agent": false
     },
     {
-      "role": "1573395923579576320",
-      "name": "[PAR] Paramedic",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573395924552654968",
-      "name": "[MR] Medical Resident",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1573395925705949200",
-      "name": "[MT] Medical Trainee",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573399776748118227",
       "name": "[TRC] Tactical Response Commander",
       "level": 4,
@@ -453,15 +435,6 @@
     },
     {
       "role": "1568785037950717983"
-    },
-    {
-      "role": "1573395923579576320"
-    },
-    {
-      "role": "1573395924552654968"
-    },
-    {
-      "role": "1573395925705949200"
     },
     {
       "role": "1573396059093336235"
