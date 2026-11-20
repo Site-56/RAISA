@@ -576,6 +576,48 @@
       "name": "[IA] Intelligence Recruit",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1573395839676715008",
+      "name": "[TRD] Tactical Response Commander",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573395840796590110",
+      "name": "[TRD] Deputy Tactical Response Commander",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573395843325628469",
+      "name": "[TRD] Tactical Captain",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573395844743561347",
+      "name": "[TRD] Tactical Team Leader",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573395845477306421",
+      "name": "[TRD] Senior Tactical Response Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573395846412771362",
+      "name": "[TRD] Tactical Response Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573395847759269898",
+      "name": "[TRD] Tactical Response Recruit",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -861,6 +903,27 @@
     },
     {
       "role": "1573395698857287710"
+    },
+    {
+      "role": "1573395839676715008"
+    },
+    {
+      "role": "1573395840796590110"
+    },
+    {
+      "role": "1573395843325628469"
+    },
+    {
+      "role": "1573395844743561347"
+    },
+    {
+      "role": "1573395845477306421"
+    },
+    {
+      "role": "1573395846412771362"
+    },
+    {
+      "role": "1573395847759269898"
     }
   ],
   "servers": [
@@ -1024,25 +1087,6 @@
         "rank:Deputy Director of Security": "1573380976174825493",
         "rank:Assistant Director of Security": "1573380977089060986",
         "rank:Security Cadet": "1573380983116398654"
-      }
-    },
-    {
-      "guild": "1573377671654801469",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "div:Tactical Response Department": "1573381147856081046",
-        "rank:Tactical Response Commander": "1573381148724174939",
-        "rank:Deputy Tactical Response Commander": "1573381149726736474",
-        "rank:Tactical Captain": "1573381150842556620",
-        "rank:Tactical Team Leader": "1573381152222482492",
-        "rank:Senior Tactical Response Officer": "1573381153350750278",
-        "rank:Tactical Response Officer": "1573381153916846203",
-        "rank:Tactical Response Recruit": "1573381155103842304",
-        "cat:Tactical Response Department": "1573381155967860962"
       }
     },
     {
@@ -1280,6 +1324,36 @@
         "x:Training Ping": "1573395707203944628",
         "x:Poll Ping": "1573395708244140202",
         "x:Briefing Ping": "1573395709229670443"
+      }
+    },
+    {
+      "guild": "1573377671654801469",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "x:Server Administrator": "1573395835838922783",
+        "x:Server Moderator": "1573395836795359322",
+        "div:Tactical Response Department": "1573395838049190000",
+        "rank:Tactical Response Commander": "1573395839676715008",
+        "rank:Deputy Tactical Response Commander": "1573395840796590110",
+        "rank:Tactical Captain": "1573395843325628469",
+        "rank:Tactical Team Leader": "1573395844743561347",
+        "rank:Senior Tactical Response Officer": "1573395845477306421",
+        "rank:Tactical Response Officer": "1573395846412771362",
+        "rank:Tactical Response Recruit": "1573395847759269898",
+        "cat:Tactical Response Department": "1573395848513986613",
+        "xdiv:Server": "1573395849776599050",
+        "x:Verified": "1573395851051671673",
+        "x:Bots": "1573395852016230482",
+        "xdiv:Pings": "1573395852536324319",
+        "x:Announcement Ping": "1573395853928956084",
+        "x:Event Ping": "1573395854793121862",
+        "x:Training Ping": "1573395857322025041",
+        "x:Poll Ping": "1573395858370592932",
+        "x:Deployment Ping": "1573395860157366442"
       }
     }
   ]
