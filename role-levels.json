@@ -320,60 +320,6 @@
       "agent": false
     },
     {
-      "role": "1573380975033847908",
-      "name": "[SEC] Director of Security",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573380976174825493",
-      "name": "[SEC] Deputy Director of Security",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573380977089060986",
-      "name": "[SEC] Assistant Director of Security",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1569026857599504385",
-      "name": "[SEC] Security Captain",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1569026858970783888",
-      "name": "[SEC] Security Lieutenant",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1569026860170350702",
-      "name": "[SEC] Security Sergeant",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1569026861298876428",
-      "name": "[SEC] Senior Security Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1569026862703841491",
-      "name": "[SEC] Security Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573380983116398654",
-      "name": "[SEC] Security Cadet",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573381148724174939",
       "name": "[TRD] Tactical Response Commander",
       "level": 4,
@@ -742,6 +688,60 @@
     {
       "role": "1568785241475121247",
       "name": "[IA] Intelligence Recruit",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1573380975033847908",
+      "name": "[SEC] Director of Security",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573380976174825493",
+      "name": "[SEC] Deputy Director of Security",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573380977089060986",
+      "name": "[SEC] Assistant Director of Security",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1569026857599504385",
+      "name": "[SEC] Security Captain",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1569026858970783888",
+      "name": "[SEC] Security Lieutenant",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1569026860170350702",
+      "name": "[SEC] Security Sergeant",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1569026861298876428",
+      "name": "[SEC] Senior Security Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1569026862703841491",
+      "name": "[SEC] Security Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573380983116398654",
+      "name": "[SEC] Security Cadet",
       "level": 1,
       "agent": false
     }
@@ -1306,27 +1306,6 @@
       }
     },
     {
-      "guild": "1569023176510414976",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "div:Security Department": "1569026853400744018",
-        "rank:Security Captain": "1569026857599504385",
-        "rank:Security Lieutenant": "1569026858970783888",
-        "rank:Security Sergeant": "1569026860170350702",
-        "rank:Senior Security Officer": "1569026861298876428",
-        "rank:Security Officer": "1569026862703841491",
-        "cat:Security Department": "1569026866910728364",
-        "rank:Director of Security": "1573380975033847908",
-        "rank:Deputy Director of Security": "1573380976174825493",
-        "rank:Assistant Director of Security": "1573380977089060986",
-        "rank:Security Cadet": "1573380983116398654"
-      }
-    },
-    {
       "guild": "1573377671654801469",
       "director": "",
       "uploader": "",
@@ -1465,6 +1444,27 @@
         "rank:Senior Field Agent": "1573380884910973121",
         "rank:Senior Analyst": "1573380887419027518",
         "rank:Junior Field Agent": "1573380890137075742"
+      }
+    },
+    {
+      "guild": "1569023176510414976",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "div:Security Department": "1569026853400744018",
+        "rank:Security Captain": "1569026857599504385",
+        "rank:Security Lieutenant": "1569026858970783888",
+        "rank:Security Sergeant": "1569026860170350702",
+        "rank:Senior Security Officer": "1569026861298876428",
+        "rank:Security Officer": "1569026862703841491",
+        "cat:Security Department": "1569026866910728364",
+        "rank:Director of Security": "1573380975033847908",
+        "rank:Deputy Director of Security": "1573380976174825493",
+        "rank:Assistant Director of Security": "1573380977089060986",
+        "rank:Security Cadet": "1573380983116398654"
       }
     }
   ]
