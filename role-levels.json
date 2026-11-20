@@ -80,24 +80,6 @@
       "agent": false
     },
     {
-      "role": "1569026858970783888",
-      "name": "[SEC] Security Lieutenant",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1569026860170350702",
-      "name": "[SEC] Security Sergeant",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1569026861298876428",
-      "name": "[SEC] Senior Security Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1569026862703841491",
       "name": "[SEC] Security Officer",
       "level": 2,
@@ -699,15 +681,6 @@
     },
     {
       "role": "1568785037950717983"
-    },
-    {
-      "role": "1569026858970783888"
-    },
-    {
-      "role": "1569026860170350702"
-    },
-    {
-      "role": "1569026861298876428"
     },
     {
       "role": "1569026862703841491"
