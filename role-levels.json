@@ -290,24 +290,6 @@
       "agent": false
     },
     {
-      "role": "1569026885835292847",
-      "name": "[CPD] Protection Team Leader",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1569026886963564737",
-      "name": "[CPD] Senior Protection Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1569026887282589740",
-      "name": "[CPD] Protection Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1569026857599504385",
       "name": "[SEC] Security Captain",
       "level": 3,
@@ -1005,15 +987,6 @@
     },
     {
       "role": "1569026862703841491"
-    },
-    {
-      "role": "1569026885835292847"
-    },
-    {
-      "role": "1569026886963564737"
-    },
-    {
-      "role": "1569026887282589740"
     },
     {
       "role": "1569026901584908348"
