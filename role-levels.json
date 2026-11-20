@@ -320,30 +320,6 @@
       "agent": false
     },
     {
-      "role": "1569026876809285796",
-      "name": "[TRD] Tactical Commander",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1569026877396492481",
-      "name": "[TRD] Deputy Tactical Commander",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1569026878633803808",
-      "name": "[TRD] Tactical Squad Leader",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1569026879413813331",
-      "name": "[TRD] Senior Tactical Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
       "role": "1569026880445620295",
       "name": "[TRD] Tactical Officer",
       "level": 2,
@@ -1053,18 +1029,6 @@
     },
     {
       "role": "1569026862703841491"
-    },
-    {
-      "role": "1569026876809285796"
-    },
-    {
-      "role": "1569026877396492481"
-    },
-    {
-      "role": "1569026878633803808"
-    },
-    {
-      "role": "1569026879413813331"
     },
     {
       "role": "1569026880445620295"
