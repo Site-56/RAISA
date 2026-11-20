@@ -356,30 +356,6 @@
       "agent": false
     },
     {
-      "role": "1573399862387540271",
-      "name": "[NUR] Nurse",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573399863624728727",
-      "name": "[PAR] Paramedic",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573399864438558752",
-      "name": "[MR] Medical Resident",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1573399865629605944",
-      "name": "[MT] Medical Trainee",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573400079136465026",
       "name": "[DE] Director of Engineering",
       "level": 4,
@@ -702,18 +678,6 @@
     },
     {
       "role": "1573399184630096023"
-    },
-    {
-      "role": "1573399862387540271"
-    },
-    {
-      "role": "1573399863624728727"
-    },
-    {
-      "role": "1573399864438558752"
-    },
-    {
-      "role": "1573399865629605944"
     },
     {
       "role": "1573400079136465026"
