@@ -110,12 +110,6 @@
       "agent": false
     },
     {
-      "role": "1573380719709786164",
-      "name": "[CON] Head of Containment",
-      "level": 4,
-      "agent": false
-    },
-    {
       "role": "1573380818842423357",
       "name": "[RAISA] Deputy RAISA Director",
       "level": 5,
@@ -756,9 +750,6 @@
     },
     {
       "role": "1569446576101924906"
-    },
-    {
-      "role": "1573380719709786164"
     },
     {
       "role": "1573381148724174939"
