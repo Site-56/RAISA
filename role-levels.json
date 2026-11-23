@@ -62,102 +62,6 @@
       "agent": false
     },
     {
-      "role": "1573402046860754984",
-      "name": "[DIS] Director of Internal Security",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573402047913533460",
-      "name": "[DDIS] Deputy Director of Internal Security",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573402048823697408",
-      "name": "[SVA] Supervisory Agent",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573402049834520768",
-      "name": "[SIA] Senior ISD Agent",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573402051294265386",
-      "name": "[ISA] ISD Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573402052615213126",
-      "name": "[JIA] Junior ISD Agent",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1573402053672312973",
-      "name": "[IC] ISD Candidate",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1573402056184696905",
-      "name": "[DI] Director of Intelligence",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573402057698967572",
-      "name": "[DDI] Deputy Director of Intelligence",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573402058223259831",
-      "name": "[IS] Intelligence Supervisor",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573402059019915338",
-      "name": "[SFA] Senior Field Agent",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573402060450308136",
-      "name": "[SAN] Senior Analyst",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573402061444223117",
-      "name": "[FA] Field Agent",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573402062237081683",
-      "name": "[INA] Intelligence Analyst",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573402063495241870",
-      "name": "[JFA] Junior Field Agent",
-      "level": 1,
-      "agent": false
-    },
-    {
-      "role": "1573402064682225856",
-      "name": "[IR] Intelligence Recruit",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573402137189294202",
       "name": "[DS] Director of Security",
       "level": 4,
@@ -696,6 +600,102 @@
       "name": "[TFCA] Task Force Command Assistant",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1573402046860754984",
+      "name": "[DIS] Director of Internal Security",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573402047913533460",
+      "name": "[DDIS] Deputy Director of Internal Security",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573402048823697408",
+      "name": "[SVA] Supervisory Agent",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573402049834520768",
+      "name": "[SIA] Senior ISD Agent",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573402051294265386",
+      "name": "[ISA] ISD Agent",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573402052615213126",
+      "name": "[JIA] Junior ISD Agent",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1573402053672312973",
+      "name": "[IC] ISD Candidate",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1573402056184696905",
+      "name": "[DI] Director of Intelligence",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573402057698967572",
+      "name": "[DDI] Deputy Director of Intelligence",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573402058223259831",
+      "name": "[IS] Intelligence Supervisor",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573402059019915338",
+      "name": "[SFA] Senior Field Agent",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573402060450308136",
+      "name": "[SAN] Senior Analyst",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573402061444223117",
+      "name": "[FA] Field Agent",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573402062237081683",
+      "name": "[INA] Intelligence Analyst",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573402063495241870",
+      "name": "[JFA] Junior Field Agent",
+      "level": 1,
+      "agent": false
+    },
+    {
+      "role": "1573402064682225856",
+      "name": "[IR] Intelligence Recruit",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -1178,47 +1178,6 @@
       }
     },
     {
-      "guild": "1568316002217893928",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "x:Server Administrator": "1573395683623309343",
-        "x:Server Moderator": "1573395684718018701",
-        "x:Verified": "1573395701935644783",
-        "x:Bots": "1573395702988677171",
-        "x:Announcement Ping": "1573395705106661550",
-        "x:Event Ping": "1573395706033602670",
-        "x:Training Ping": "1573395707203944628",
-        "x:Poll Ping": "1573395708244140202",
-        "x:Briefing Ping": "1573395709229670443",
-        "div:Internal Security Department": "1573402045421985832",
-        "rank:Director of Internal Security": "1573402046860754984",
-        "rank:Deputy Director of Internal Security": "1573402047913533460",
-        "rank:Supervisory Agent": "1573402048823697408",
-        "rank:Senior ISD Agent": "1573402049834520768",
-        "rank:ISD Agent": "1573402051294265386",
-        "rank:Junior ISD Agent": "1573402052615213126",
-        "rank:ISD Candidate": "1573402053672312973",
-        "cat:Internal Security Department": "1573402054460837979",
-        "div:Intelligence Agency": "1573402055358292080",
-        "rank:Director of Intelligence": "1573402056184696905",
-        "rank:Deputy Director of Intelligence": "1573402057698967572",
-        "rank:Intelligence Supervisor": "1573402058223259831",
-        "rank:Senior Field Agent": "1573402059019915338",
-        "rank:Senior Analyst": "1573402060450308136",
-        "rank:Field Agent": "1573402061444223117",
-        "rank:Intelligence Analyst": "1573402062237081683",
-        "rank:Junior Field Agent": "1573402063495241870",
-        "rank:Intelligence Recruit": "1573402064682225856",
-        "cat:Intelligence Agency": "1573402065689124874",
-        "xdiv:Server": "1573402066875981866",
-        "xdiv:Pings": "1573402067492405291"
-      }
-    },
-    {
       "guild": "1569023176510414976",
       "director": "",
       "uploader": "",
@@ -1534,6 +1493,47 @@
         "cat:Task Force Command": "1573401946956759213",
         "xdiv:Server": "1573401948114395278",
         "xdiv:Pings": "1573401949217366106"
+      }
+    },
+    {
+      "guild": "1568316002217893928",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "x:Server Administrator": "1573395683623309343",
+        "x:Server Moderator": "1573395684718018701",
+        "x:Verified": "1573395701935644783",
+        "x:Bots": "1573395702988677171",
+        "x:Announcement Ping": "1573395705106661550",
+        "x:Event Ping": "1573395706033602670",
+        "x:Training Ping": "1573395707203944628",
+        "x:Poll Ping": "1573395708244140202",
+        "x:Briefing Ping": "1573395709229670443",
+        "div:Internal Security Department": "1573402045421985832",
+        "rank:Director of Internal Security": "1573402046860754984",
+        "rank:Deputy Director of Internal Security": "1573402047913533460",
+        "rank:Supervisory Agent": "1573402048823697408",
+        "rank:Senior ISD Agent": "1573402049834520768",
+        "rank:ISD Agent": "1573402051294265386",
+        "rank:Junior ISD Agent": "1573402052615213126",
+        "rank:ISD Candidate": "1573402053672312973",
+        "cat:Internal Security Department": "1573402054460837979",
+        "div:Intelligence Agency": "1573402055358292080",
+        "rank:Director of Intelligence": "1573402056184696905",
+        "rank:Deputy Director of Intelligence": "1573402057698967572",
+        "rank:Intelligence Supervisor": "1573402058223259831",
+        "rank:Senior Field Agent": "1573402059019915338",
+        "rank:Senior Analyst": "1573402060450308136",
+        "rank:Field Agent": "1573402061444223117",
+        "rank:Intelligence Analyst": "1573402062237081683",
+        "rank:Junior Field Agent": "1573402063495241870",
+        "rank:Intelligence Recruit": "1573402064682225856",
+        "cat:Intelligence Agency": "1573402065689124874",
+        "xdiv:Server": "1573402066875981866",
+        "xdiv:Pings": "1573402067492405291"
       }
     }
   ]
