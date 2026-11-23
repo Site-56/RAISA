@@ -62,48 +62,6 @@
       "agent": false
     },
     {
-      "role": "1573402206013493328",
-      "name": "[TRC] Tactical Response Commander",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573402206760079452",
-      "name": "[DTRC] Deputy Tactical Response Commander",
-      "level": 4,
-      "agent": false
-    },
-    {
-      "role": "1573402208421154816",
-      "name": "[TC] Tactical Captain",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573402209671188520",
-      "name": "[TTL] Tactical Team Leader",
-      "level": 3,
-      "agent": false
-    },
-    {
-      "role": "1573402210480554094",
-      "name": "[STRO] Senior Tactical Response Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573402211390853121",
-      "name": "[TRO] Tactical Response Officer",
-      "level": 2,
-      "agent": false
-    },
-    {
-      "role": "1573402211977924659",
-      "name": "[TRR] Tactical Response Recruit",
-      "level": 1,
-      "agent": false
-    },
-    {
       "role": "1573402287735316550",
       "name": "[CMO] Chief Medical Officer",
       "level": 4,
@@ -696,6 +654,48 @@
       "name": "[SCD] Security Cadet",
       "level": 1,
       "agent": false
+    },
+    {
+      "role": "1573402206013493328",
+      "name": "[TRC] Tactical Response Commander",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573402206760079452",
+      "name": "[DTRC] Deputy Tactical Response Commander",
+      "level": 4,
+      "agent": false
+    },
+    {
+      "role": "1573402208421154816",
+      "name": "[TC] Tactical Captain",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573402209671188520",
+      "name": "[TTL] Tactical Team Leader",
+      "level": 3,
+      "agent": false
+    },
+    {
+      "role": "1573402210480554094",
+      "name": "[STRO] Senior Tactical Response Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573402211390853121",
+      "name": "[TRO] Tactical Response Officer",
+      "level": 2,
+      "agent": false
+    },
+    {
+      "role": "1573402211977924659",
+      "name": "[TRR] Tactical Response Recruit",
+      "level": 1,
+      "agent": false
     }
   ],
   "departments": [],
@@ -1178,40 +1178,6 @@
       }
     },
     {
-      "guild": "1573377671654801469",
-      "director": "",
-      "uploader": "",
-      "uploads": [],
-      "depts": [],
-      "autoHeads": {},
-      "made": {
-        "x:Server Administrator": "1573395835838922783",
-        "x:Server Moderator": "1573395836795359322",
-        "x:Verified": "1573395851051671673",
-        "x:Bots": "1573395852016230482",
-        "x:Announcement Ping": "1573395853928956084",
-        "x:Event Ping": "1573395854793121862",
-        "x:Training Ping": "1573395857322025041",
-        "x:Poll Ping": "1573395858370592932",
-        "x:Deployment Ping": "1573395860157366442",
-        "div:Tactical Response Department": "1573402205107650620",
-        "rank:Tactical Response Commander": "1573402206013493328",
-        "rank:Deputy Tactical Response Commander": "1573402206760079452",
-        "rank:Tactical Captain": "1573402208421154816",
-        "rank:Tactical Team Leader": "1573402209671188520",
-        "rank:Senior Tactical Response Officer": "1573402210480554094",
-        "rank:Tactical Response Officer": "1573402211390853121",
-        "rank:Tactical Response Recruit": "1573402211977924659",
-        "cat:Tactical Response Department": "1573402213332815872",
-        "xdiv:Server": "1573402214486253608",
-        "xdiv:Pings": "1573402215329177763",
-        "team:TRD:Alpha Team": "1573450263849734261",
-        "team:TRD:Bravo Team": "1573450265430855700",
-        "team:TRD:Charlie Team": "1573450266676568114",
-        "team:TRD:Overwatch": "1573450267716751550"
-      }
-    },
-    {
       "guild": "1569161702627610757",
       "director": "",
       "uploader": "",
@@ -1534,6 +1500,40 @@
         "team:SecD:A Watch": "1573450247592607834",
         "team:SecD:B Watch": "1573450248611831858",
         "team:SecD:C Watch": "1573450249874178139"
+      }
+    },
+    {
+      "guild": "1573377671654801469",
+      "director": "",
+      "uploader": "",
+      "uploads": [],
+      "depts": [],
+      "autoHeads": {},
+      "made": {
+        "x:Server Administrator": "1573395835838922783",
+        "x:Server Moderator": "1573395836795359322",
+        "x:Verified": "1573395851051671673",
+        "x:Bots": "1573395852016230482",
+        "x:Announcement Ping": "1573395853928956084",
+        "x:Event Ping": "1573395854793121862",
+        "x:Training Ping": "1573395857322025041",
+        "x:Poll Ping": "1573395858370592932",
+        "x:Deployment Ping": "1573395860157366442",
+        "div:Tactical Response Department": "1573402205107650620",
+        "rank:Tactical Response Commander": "1573402206013493328",
+        "rank:Deputy Tactical Response Commander": "1573402206760079452",
+        "rank:Tactical Captain": "1573402208421154816",
+        "rank:Tactical Team Leader": "1573402209671188520",
+        "rank:Senior Tactical Response Officer": "1573402210480554094",
+        "rank:Tactical Response Officer": "1573402211390853121",
+        "rank:Tactical Response Recruit": "1573402211977924659",
+        "cat:Tactical Response Department": "1573402213332815872",
+        "xdiv:Server": "1573402214486253608",
+        "xdiv:Pings": "1573402215329177763",
+        "team:TRD:Alpha Team": "1573450263849734261",
+        "team:TRD:Bravo Team": "1573450265430855700",
+        "team:TRD:Charlie Team": "1573450266676568114",
+        "team:TRD:Overwatch": "1573450267716751550"
       }
     }
   ]
